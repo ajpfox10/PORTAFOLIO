@@ -1,0 +1,891 @@
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.barcodes.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.commons.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.forms.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.io.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.kernel.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.layout.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.pdfa.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.sign.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.svg.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\MySql.Data.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Syncfusion.Licensing.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Memory.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Google.Protobuf.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\ZstdNet.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\K4os.Compression.LZ4.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\K4os.Hash.xxHash.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.barcodes.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.commons.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.forms.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.io.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.kernel.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.layout.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.pdfa.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.sign.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.svg.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\MySql.Data.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Buffers.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Memory.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGADEDOMICILIO.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGARFAMILIA.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIOPRINCIPAL.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MESADEENTRADA.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.barcodes.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.commons.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.forms.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.io.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.kernel.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.layout.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.pdfa.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.sign.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.svg.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\MySql.Data.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Memory.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.barcodes.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.commons.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.forms.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.io.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.kernel.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.layout.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.pdfa.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.sign.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\itext.svg.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\MySql.Data.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Buffers.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Memory.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGADEDOMICILIO.resources
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGARFAMILIA.resources
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIODESIGNACION.resources
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIOPRINCIPAL.resources
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.HVIDA.resources
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MESADEENTRADA.resources
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BONIFICACIONES.resources
+C:\Users\evana\OneDrive\Escritorio\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CUMPLESS.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\MySql.Data.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Licensing.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Google.Protobuf.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\ZstdNet.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Compression.LZ4.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Hash.xxHash.dll
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\MySql.Data.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BONIFICACIONES.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGADEDOMICILIO.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGARFAMILIA.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CUMPLESS.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIODESIGNACION.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIOPRINCIPAL.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.HVIDA.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MESADEENTRADA.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Users\foxtrot\Desktop\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.gestionrr.resources
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BONIFICACIONES.resources
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGADEDOMICILIO.resources
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGARFAMILIA.resources
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CUMPLESS.resources
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIODESIGNACION.resources
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIOPRINCIPAL.resources
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.gestionrr.resources
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.HVIDA.resources
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MESADEENTRADA.resources
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\evana\OneDrive\Escritorio\Basetrabajo\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\MySql.Data.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Licensing.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Google.Protobuf.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\ZstdNet.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Compression.LZ4.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Hash.xxHash.dll
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\MySql.Data.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BONIFICACIONES.resources
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGADEDOMICILIO.resources
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGARFAMILIA.resources
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CUMPLESS.resources
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIODESIGNACION.resources
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIOPRINCIPAL.resources
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.gestionrr.resources
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.HVIDA.resources
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MESADEENTRADA.resources
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Users\foxtrot\Desktop\base\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\MySql.Data.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Licensing.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Google.Protobuf.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\ZstdNet.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Compression.LZ4.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Hash.xxHash.dll
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\MySql.Data.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BONIFICACIONES.resources
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGADEDOMICILIO.resources
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGARFAMILIA.resources
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CUMPLESS.resources
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIODESIGNACION.resources
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIOPRINCIPAL.resources
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.gestionrr.resources
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.HVIDA.resources
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MESADEENTRADA.resources
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Users\foxtrot\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Google.Protobuf.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\ZstdNet.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\MySql.Data.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BONIFICACIONES.resources
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGADEDOMICILIO.resources
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGARFAMILIA.resources
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CUMPLESS.resources
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIODESIGNACION.resources
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIOPRINCIPAL.resources
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.gestionrr.resources
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.HVIDA.resources
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MESADEENTRADA.resources
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\famil\Desktop\mesadeentrada\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.PEDIDOSS.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\1.docx
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.bouncy-castle-connector.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\OpenXmlPowerTools.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Management.Automation.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.bouncy-castle-connector.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.ResolveComReference.cache
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BONIFICACIONES.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGADEDOMICILIO.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGARFAMILIA.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CUMPLESS.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIODESIGNACION.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIOPRINCIPAL.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.gestionrr.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.HVIDA.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MESADEENTRADA.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.PEDIDOSS.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\famil\Desktop\mesadeentradafinal\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\1.docx
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.bouncy-castle-connector.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\MySql.Data.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\OpenXmlPowerTools.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Licensing.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Management.Automation.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Google.Protobuf.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\ZstdNet.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Compression.LZ4.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\K4os.Hash.xxHash.dll
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.bouncy-castle-connector.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\MySql.Data.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.ResolveComReference.cache
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BONIFICACIONES.resources
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGADEDOMICILIO.resources
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGARFAMILIA.resources
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CUMPLESS.resources
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIODESIGNACION.resources
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIOPRINCIPAL.resources
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.gestionrr.resources
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.HVIDA.resources
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MESADEENTRADA.resources
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.PEDIDOSS.resources
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Users\foxtrot\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\1.docx
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.bouncy-castle-connector.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\OpenXmlPowerTools.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Management.Automation.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.barcodes.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.bouncy-castle-connector.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.commons.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.forms.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.io.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.kernel.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.layout.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.pdfa.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.sign.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.styledxmlparser.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\itext.svg.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Compression.Base.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Buffers.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Memory.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.ResolveComReference.cache
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BONIFICACIONES.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGADEDOMICILIO.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CARGARFAMILIA.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CUMPLESS.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIODESIGNACION.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIOPRINCIPAL.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.gestionrr.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.HVIDA.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MESADEENTRADA.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.PEDIDOSS.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.bajaformulario.resources
+C:\Users\famil\Desktop\mesadeentradafinal1\Basetrabajo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CORREGIRERRORES.resources
