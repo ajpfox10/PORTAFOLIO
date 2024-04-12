@@ -7,31 +7,31 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public class crearTicket
+    public class CrearTicket
     {
-        public string agentedeatencion { get; set; }
-        public string horadeatencion { get; set; }
-        public string motivodeconsulta { get; set; }
-        public string explicaciondada { get; set; }
-        public string agente { get; set; }
-        private PrintDocument doc = new PrintDocument();
-        private PrintPreviewDialog vista = new PrintPreviewDialog();
-        public void imprimir(crearTicket p, int anchoMaximo)
+        public string Agentedeatencion { get; set; }
+        public string Horadeatencion { get; set; }
+        public string Motivodeconsulta { get; set; }
+        public string Explicaciondada { get; set; }
+        public string Agente { get; set; }
+        private readonly PrintDocument doc = new PrintDocument();
+        private readonly PrintPreviewDialog vista = new PrintPreviewDialog();
+        public void Imprimir()
         {
             doc.PrinterSettings.PrinterName = doc.DefaultPageSettings.PrinterSettings.PrinterName;
-            doc.PrintPage += new PrintPageEventHandler(imprimeticket);
+            doc.PrintPage += new PrintPageEventHandler(Imprimeticket);
             vista.Document = doc;
             vista.Show();
         }
-        public void imprimeticket(object sender, PrintPageEventArgs e)
+        public void Imprimeticket(object sender, PrintPageEventArgs e)
         {
             int posX = 0;
             int posY = 0;
             Font fuente = new Font("consola", 8, FontStyle.Bold);
             int ticketAncho = e.PageBounds.Width; // Obtener el ancho máximo del ticket
 
-            string agenteText = "Agente de Atención: " + agentedeatencion;
-            string horaText = "Hora de Atención: " + horadeatencion;
+            string agenteText = "Agente de Atención: " + Agentedeatencion;
+            string horaText = "Hora de Atención: " + Horadeatencion;
             string consultaText = "Consulta";
 
             // Centrar "Consulta" debajo de "Hora de Atención"
@@ -46,14 +46,14 @@ namespace WindowsFormsApp1
             e.Graphics.DrawString(horaText, fuente, Brushes.Black, posX, posY);
             posY += (int)fuente.GetHeight() + 10;
             // Calcular el ancho del campo para motivodeconsulta
-            int campoAnchoMotivoConsulta = CalcularAnchoCampo(e.Graphics, fuente, motivodeconsulta, ticketAncho);
-            int campoAnchoExplicacionDada = CalcularAnchoCampo(e.Graphics, fuente, explicaciondada, ticketAncho);
+            int campoAnchoMotivoConsulta = CalcularAnchoCampo(e.Graphics, fuente, Motivodeconsulta, ticketAncho);
+            int campoAnchoExplicacionDada = CalcularAnchoCampo(e.Graphics, fuente, Explicaciondada, ticketAncho);
             // Mostrar el título "Motivo de Consulta"
             string tituloMotivoConsulta = "Motivo de Consulta:";
             e.Graphics.DrawString(tituloMotivoConsulta, fuente, Brushes.Black, posX, posY);
             posY += (int)fuente.GetHeight() + 5;
             // Mostrar el texto en el campo motivodeconsulta
-            string[] lineasMotivoConsulta = WrapText(motivodeconsulta, fuente, campoAnchoMotivoConsulta);
+            string[] lineasMotivoConsulta = WrapText(Motivodeconsulta, fuente, campoAnchoMotivoConsulta);
             foreach (string linea in lineasMotivoConsulta)
             {
                 e.Graphics.DrawString(linea, fuente, Brushes.Black, posX, posY);
@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
             posY += (int)fuente.GetHeight() + 5;
 
             // Mostrar el texto de explicaciondada
-            string[] lineasExplicacionDada = WrapText(explicaciondada, fuente, campoAnchoExplicacionDada);
+            string[] lineasExplicacionDada = WrapText(Explicaciondada, fuente, campoAnchoExplicacionDada);
             foreach (string linea in lineasExplicacionDada)
             {
                 e.Graphics.DrawString(linea, fuente, Brushes.Black, posX, posY);

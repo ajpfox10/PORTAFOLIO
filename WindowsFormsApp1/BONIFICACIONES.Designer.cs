@@ -171,8 +171,8 @@
             this.boni.TabIndex = 12;
             this.boni.UseCompatibleStateImageBehavior = false;
             this.boni.View = System.Windows.Forms.View.Details;
-            this.boni.DoubleClick += new System.EventHandler(this.boni_DoubleClick);
-            this.boni.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.boni_MouseDoubleClick);
+            this.boni.DoubleClick += new System.EventHandler(this.Boni_DoubleClick);
+            this.boni.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Boni_MouseDoubleClick);
             // 
             // webBrowser1
             // 

@@ -5,13 +5,13 @@ using System.Net;
 
 namespace WindowsFormsApp1.MODULOS
 {
-    internal class generarcertificadodetrabajo
+    internal class generarCertificadodetrabajo
     {
-        private readonly string _dnis;
+        private readonly string Dnis_;
 
-        public generarcertificadodetrabajo(string dnis)
+        public generarCertificadodetrabajo(string dnis)
         {
-            _dnis = dnis;
+            Dnis_ = dnis;
         }
 
         public void GenerateCertificate()
@@ -20,7 +20,7 @@ namespace WindowsFormsApp1.MODULOS
             using (ConexionMySQL conexionMySQL = new ConexionMySQL())
             {
                 // Obtén los datos de la base de datos
-                var datos = conexionMySQL.certificadodetrabajo(Convert.ToInt64(_dnis));
+                var datos = conexionMySQL.Certificadodetrabajo(Convert.ToInt64(Dnis_));
 
                 // Crea una instancia de Word
                 Word.Application wordApp = new Word.Application();

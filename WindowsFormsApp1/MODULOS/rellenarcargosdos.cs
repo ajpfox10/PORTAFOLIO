@@ -15,14 +15,14 @@ namespace WindowsFormsApp1
         {
             nombreCarpetaAdicional = nombreCarpeta;
         }
-        public void FillPdfForm(string _dnis)
+        public void FillPdfForm(string Dnis_)
         {
             PdfDocument pdfDoc = null;
             string rutaOrigen = "C:/FORMULARIOS/CARGOS.pdf";
             string rutaDestino = "C:/FORMULARIOS/CARGOS1.pdf";
             string consulta = "SELECT cargosdeinicio.ID, cargosdeinicio.CARGODEINICIOS AS 'CARGO', cargosdeinicio.MINISTERIODEDESIGNACION AS 'MINISTERIO', ";
             consulta += "cargosdeinicio.FECHADEDESIGNACION AS 'DIA DE DESIGNACION', ";
-            consulta += "cargosdeinicio.CATEGORIA, cargosdeinicio.REGIMENHORARIO AS 'REGIMEN HORARIO', ";
+            consulta += "cargosdeinicio.CATEGORIA, cargosdeinicio.Regimenhorario AS 'REGIMEN HORARIO', ";
             consulta += "cargosdeinicio.FECHADEBAJA AS 'DIA DE BAJA', ";
             consulta += "cargosdeinicio.DEPENDENCIA, cargosdeinicio.RESOLUCION, cargosdeinicio.DNIAGENTE AS 'DNI', ";
             consulta += "cargosdeinicio.MOTIVODEBAJA AS 'MOTIVO DE BAJA', ";
@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
                 conexion.Conectar();
                 using (var da = new MySqlDataAdapter(consulta, conexion.GetConnection()))
                 {
-                    da.SelectCommand.Parameters.AddWithValue("@DNIAGENTE", _dnis);
+                    da.SelectCommand.Parameters.AddWithValue("@DNIAGENTE", Dnis_);
                     var dt = new DataTable();
                     da.Fill(dt);
                     var ds = new DataSet("Dataset1");

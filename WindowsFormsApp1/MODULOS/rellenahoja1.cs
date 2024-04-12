@@ -12,21 +12,23 @@ using static Syncfusion.Windows.Forms.Tools.TextBoxExt;
 
 namespace WindowsFormsApp1
 {
-    internal class rellenahoja1
+    internal class Rellenahoja1
     {
-        private string nombreCarpetaAdicional;
-        public rellenahoja1(string nombreCarpeta)
+        private readonly string nombreCarpetaAdicional;
+        public Rellenahoja1(string nombreCarpeta)
         {
             nombreCarpetaAdicional = nombreCarpeta;
         }
-        public void FillPdfForm(string _dnis)
+        public void FillPdfForm(string Dnis_)
         {
+#pragma warning disable IDE0059 // Asignación innecesaria de un valor
             PdfDocument pdfDoc = null;
+#pragma warning restore IDE0059 // Asignación innecesaria de un valor
             string rutaOrigen = "c:/FORMULARIOS/hoja1legajo.pdf";
             string rutaDestino = "c:/FORMULARIOS/hoja1legajo1.pdf";
             PdfReader pdfReader = new PdfReader(rutaOrigen);
             PdfAcroForm pdfFormFields;
-            string[] primerafila = new string[10];
+       
             using (var conexion = new ConexionMySQL())
             {
                 conexion.Conectar();
@@ -65,7 +67,7 @@ namespace WindowsFormsApp1
                     "form2.JUEZQLAOTORGO" +
                     "FROM personal INNER JOIN form2 ON personal.dni = form2.DNIDELAGENTE WHERE form2.DNIDELAGENTE = @DNIAGENTE", conexion.GetConnection()))
                 {
-                    da.SelectCommand.Parameters.AddWithValue("@DNIAGENTE", _dnis);
+                    da.SelectCommand.Parameters.AddWithValue("@DNIAGENTE", Dnis_);
                     var dt = new DataTable();
                     da.Fill(dt);
                     var ds = new DataSet("Dataset1");

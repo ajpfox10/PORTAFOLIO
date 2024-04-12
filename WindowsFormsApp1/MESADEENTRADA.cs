@@ -13,16 +13,16 @@ namespace WindowsFormsApp1
     {
         public static readonly String DEST = "C:\\FORMULARIOS\\TICKETS.pdf";
         public static readonly String SRC = "C:\\FORMULARIOS\\TICKETS 1.pdf";
-        public  Int64 _dnis;
-        private string _agentedeatencions ;
+        public  Int64 Dnis_;
+        private readonly string Agentedeatencions_ ;
         private ToolTip tooltip;        
-        private ConexionMySQL conexion = new ConexionMySQL();
-        public MESADEENTRADA(FORMULARIOPRINCIPAL formularioPrincipal, Int64 DNI, string agenteDeAtencion)
+       
+        public MESADEENTRADA(Int64 DNI, string agenteDeAtencion)
         {
             InitializeComponent();
-            _dnis = DNI;
+            Dnis_ = DNI;
    
-            _agentedeatencions = agenteDeAtencion;
+            Agentedeatencions_ = agenteDeAtencion;
    
             CONSULTASVIEJAS.MouseUp += CONSULTASVIEJAS_MouseUp;
         }    
@@ -30,34 +30,34 @@ namespace WindowsFormsApp1
         {
  
             this.BackColor = Color.MediumPurple;
-            DatosYAccionesLoader loader = new DatosYAccionesLoader(_dnis);
-            string consultaCitaciones = "SELECT dni, citadopor AS 'CITADO POR', id, MOTIVODECITACION AS 'MOTIVO DE LA CITACION', CITACIONACTIVA AS 'CITACION ACTIVA', FECHADECITACION AS 'FECHA DE CITACION', CIERREDECITACION AS 'CIERRE DE CITACION' FROM citaciones WHERE CIERREDECITACION IS NULL AND dni='" + _dnis + "' ORDER BY id DESC";
+            DatosYAccionesLoader loader = new DatosYAccionesLoader(Dnis_);
+            string consultaCitaciones = "SELECT dni, citadopor AS 'CITADO POR', id, MOTIVODECITACION AS 'MOTIVO DE LA CITACION', CITACIONACTIVA AS 'CITACION ACTIVA', FECHADECITACION AS 'FECHA DE CITACION', CIERREDECITACION AS 'CIERRE DE CITACION' FROM citaciones WHERE CIERREDECITACION IS NULL AND dni='" + Dnis_ + "' ORDER BY id DESC";
             string[] columnasCitaciones = { "ID:75", "DNI:0", "CITADO POR:100", "MOTIVO DE LA CITACION:450", "CITACION ACTIVA:125", "FECHA DE CITACION:125", "CIERRE DE CITACION:0" };
             loader.CargarDatosYAcciones(citaciones, consultaCitaciones, columnasCitaciones);
 
-            string consultaPedidos = "SELECT dni, id, PEDIDO, AGENTE, fechadepedido AS 'FECHA DE PEDIDO', fechaderetiro AS 'FECHA DE RETIRO', agenteqretiro AS 'AGENTE QUE RETIRO', activa FROM pedidos WHERE activa IS NULL AND dni='" + _dnis + "' ORDER BY id DESC";
+            string consultaPedidos = "SELECT dni, id, PEDIDO, AGENTE, fechadepedido AS 'FECHA DE PEDIDO', fechaderetiro AS 'FECHA DE RETIRO', agenteqretiro AS 'AGENTE QUE RETIRO', activa FROM pedidos WHERE activa IS NULL AND dni='" + Dnis_ + "' ORDER BY id DESC";
             string[] columnasPedidos = new string[] { "DNI:0", "ID:75", "PEDIDO:300", "AGENTE:175", "FECHA DE PEDIDO:125", "FECHA DE RETIRO:125", "AGENTE QUE RETIRO:0" };
             loader.CargarDatosYAcciones(PEDIDOS, consultaPedidos, columnasPedidos);
 
-            string consultaExpedientes = "SELECT id, AGENTE, expedientenumero AS 'EXPEDIENTE NUMERO', MEMO, archivo FROM expedientes WHERE AGENTE='" + _dnis + "' ORDER BY id DESC";
+            string consultaExpedientes = "SELECT id, AGENTE, expedientenumero AS 'EXPEDIENTE NUMERO', MEMO, archivo FROM expedientes WHERE AGENTE='" + Dnis_ + "' ORDER BY id DESC";
             string[] columnasExpedientes = new string[] { "ID:75", "AGENTE:0", "EXPEDIENTE NUMERO:300", "MEMO:175", "ARCHIVO:125" };
             loader.CargarDatosYAcciones(EXPEDIENTES, consultaExpedientes, columnasExpedientes);
 
-            string consultaResoluciones = "SELECT RESOLUCIONES.id, resoluciones.dni, resoluciones.resolucion, tiporesolucion.resolucion as TIPO_RESOLUCION, resoluciones.FECHADERESOLUCION AS 'FECHA DE RESOLUCION', resoluciones.FECHADENOTIFICACION AS 'FECHA DE NOTIFICACION', resoluciones.COMBINACION FROM resoluciones INNER JOIN tipoderesolucion AS tiporesolucion ON resoluciones.tipoderesolucion = tiporesolucion.id WHERE dni='" + _dnis + "' ORDER BY id DESC";
+            string consultaResoluciones = "SELECT RESOLUCIONES.id, resoluciones.dni, resoluciones.resolucion, tiporesolucion.resolucion as TIPO_RESOLUCION, resoluciones.FECHADERESOLUCION AS 'FECHA DE RESOLUCION', resoluciones.FECHADENOTIFICACION AS 'FECHA DE NOTIFICACION', resoluciones.COMBINACION FROM resoluciones INNER JOIN tipoderesolucion AS tiporesolucion ON resoluciones.tipoderesolucion = tiporesolucion.id WHERE dni='" + Dnis_ + "' ORDER BY id DESC";
             string[] columnasResoluciones = new string[] { "ID:75", "DNI:0", "RESOLUCION:135", "TIPO_RESOLUCION:300", "FECHA DE RESOLUCION:155", "FECHA DE NOTIFICACION:155", "COMBINACION:145" };
             loader.CargarDatosYAcciones(RESOLUCIONES, consultaResoluciones, columnasResoluciones);
 
-            string consultaViejas = "SELECT IDDECONSULTA AS 'ID', DNI, MOTIVODECONSULTA AS 'MOTIVO DE CONSULTA', EXPLICACIONDADA AS 'EXPLICACION DADA', ATENDIDOPOR AS 'ATENDIDO POR', HORADEATENCION AS 'HORA DE ATENCION' FROM consultas WHERE DNI='" + _dnis + "' ORDER BY IDDECONSULTA DESC";
+            string consultaViejas = "SELECT IDDECONSULTA AS 'ID', DNI, MOTIVODECONSULTA AS 'MOTIVO DE CONSULTA', EXPLICACIONDADA AS 'EXPLICACION DADA', ATENDIDOPOR AS 'ATENDIDO POR', HORADEATENCION AS 'HORA DE ATENCION' FROM consultas WHERE DNI='" + Dnis_ + "' ORDER BY IDDECONSULTA DESC";
             string[] columnasViejas = new string[] { "ID:75", "DNI:0", "MOTIVO DE CONSULTA:300", "EXPLICACION DADA:175", "ATENDIDO POR:125", "HORA DE ATENCION:125" };
             loader.CargarDatosYAcciones(CONSULTASVIEJAS, consultaViejas, columnasViejas);
 
             List<Control> controles = new List<Control> { apellynombre, legajo, dni, legajohecho, REALIZODOMICILIO };
             List<string> nombresColumnas = new List<string> { "apellynombre", "legajo", "dni", "LEGAJO ECHO", "REALIZO CAMBIO DE DOMICILIO" };
-            ConsultaMySQL consulta = new ConsultaMySQL("SELECT personal.`apelldo y nombre`, personal.Legajo, personal.dni, personal.`Legajo Hecho`, personal.realizodomicilio FROM personal WHERE personal.dni = '" + _dnis + "'", controles, nombresColumnas);
+            ConsultaMySQL consulta = new ConsultaMySQL("SELECT personal.`apelldo y nombre`, personal.Legajo, personal.dni, personal.`Legajo Hecho`, personal.realizodomicilio FROM personal WHERE personal.dni = '" + Dnis_ + "'", controles, nombresColumnas);
             consulta.EjecutarConsulta();
             consulta.Dispose();
         }
-        private void citaciones_DoubleClick(object sender, EventArgs e)
+        private void Citaciones_DoubleClick(object sender, EventArgs e)
         {
             var conexion = new ConexionMySQL();
             if (citaciones.SelectedItems.Count > 0)
@@ -71,12 +71,12 @@ namespace WindowsFormsApp1
                     conexion.ActualizarCierreDeCitacion(id);
                 }               
             }
-            DatosYAccionesLoader loader = new DatosYAccionesLoader(_dnis);
-            string consultaCitaciones = "SELECT dni, citadopor AS 'CITADO POR', id, MOTIVODECITACION AS 'MOTIVO DE LA CITACION', CITACIONACTIVA AS 'CITACION ACTIVA', FECHADECITACION AS 'FECHA DE CITACION', CIERREDECITACION AS 'CIERRE DE CITACION' FROM citaciones WHERE CIERREDECITACION IS NULL AND dni='" + _dnis + "' ORDER BY id DESC";
+            DatosYAccionesLoader loader = new DatosYAccionesLoader(Dnis_);
+            string consultaCitaciones = "SELECT dni, citadopor AS 'CITADO POR', id, MOTIVODECITACION AS 'MOTIVO DE LA CITACION', CITACIONACTIVA AS 'CITACION ACTIVA', FECHADECITACION AS 'FECHA DE CITACION', CIERREDECITACION AS 'CIERRE DE CITACION' FROM citaciones WHERE CIERREDECITACION IS NULL AND dni='" + Dnis_ + "' ORDER BY id DESC";
             string[] columnasCitaciones = { "ID:75", "DNI:0", "CITADO POR:100", "MOTIVO DE LA CITACION:450", "CITACION ACTIVA:125", "FECHA DE CITACION:125", "CIERRE DE CITACION:0" };
             loader.CargarDatosYAcciones(citaciones, consultaCitaciones, columnasCitaciones);
         }
-        private void citaciones_MouseClick(object sender, MouseEventArgs e)
+        private void Citaciones_MouseClick(object sender, MouseEventArgs e)
         {
             if (citaciones.SelectedItems.Count > 0)
             {
@@ -116,7 +116,7 @@ namespace WindowsFormsApp1
                 DATOSANALIZAR.Text = campo3Value;
             }
         }  
-        private void citaciones_MouseMove(object sender, MouseEventArgs e)
+        private void Citaciones_MouseMove(object sender, MouseEventArgs e)
         {
             try
             {
@@ -146,7 +146,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-        private void citaciones_MouseLeave(object sender, EventArgs e)
+        private void Citaciones_MouseLeave(object sender, EventArgs e)
         {
             // Establecer el tiempo de espera para que aparezca el tooltip de nuevo
             tooltip.InitialDelay = 9000;
@@ -296,26 +296,26 @@ namespace WindowsFormsApp1
             }
             nombresSeleccionados = nombresSeleccionados.TrimEnd(',', ' ');
             string pedido = textoadjuntars.Text;
-            string dni = _dnis.ToString();
-            string agente = _agentedeatencions.ToString();
+            string dni = Dnis_.ToString();
+            string agente = Agentedeatencions_.ToString();
             DateTime fechaPedido = DateTime.Now;
             string pedidoCompleto = nombresSeleccionados + " " + pedido;
             MessageBox.Show("Valor en pedidoCompleto: " + pedidoCompleto);
             CARGARMESADEENTRADA formularioPrincipal = new CARGARMESADEENTRADA();
             formularioPrincipal.AgregarPedido("pedidos", "pedido, dni, agente, fechadepedido", GroupBox1, pedidoCompleto, dni, agente, fechaPedido);
-            crearTicket miCrearTicket = new crearTicket();
-            // Establecer los valores de las propiedades
-            miCrearTicket.agentedeatencion = _agentedeatencions.ToString();
-            miCrearTicket.horadeatencion = DateTime.Now.ToString();
-            miCrearTicket.motivodeconsulta = pedidoCompleto;
-            miCrearTicket.explicaciondada = "RECORDA QUE IOMA SE RETIRA EN 48 HORAS SI LO SOLICITASTE EL RESTO SE AVISA POR EL TEL";
-            miCrearTicket.agente = _dnis.ToString();
+           CrearTicket miCrearTicket = new CrearTicket
+            {
+                // Establecer los valores de las propiedades
+               Agentedeatencion = Agentedeatencions_.ToString(),
+                Horadeatencion = DateTime.Now.ToString(),
+                Motivodeconsulta = pedidoCompleto,
+                Explicaciondada = "RECORDA QUE IOMA SE RETIRA EN 48 HORAS SI LO SOLICITASTE EL RESTO SE AVISA POR EL TEL",
+                Agente = Dnis_.ToString()
+            };
             // Calcular el ancho máximo en píxeles
-            int anchoMaximoCm = 8; // Especificar el ancho máximo en centímetros
-            int anchoMaximoPixels = (int)(anchoMaximoCm * 300 / 2.54); // Utilizar una aproximación de 300 DPI
-            miCrearTicket.imprimir(miCrearTicket, anchoMaximoPixels);
-            DatosYAccionesLoader loader = new DatosYAccionesLoader(_dnis);
-            string consultaPedidos = "SELECT dni, id, PEDIDO, AGENTE, fechadepedido AS 'FECHA DE PEDIDO', fechaderetiro AS 'FECHA DE RETIRO', agenteqretiro AS 'AGENTE QUE RETIRO', activa FROM pedidos WHERE activa IS NULL AND dni='" + _dnis + "' ORDER BY id DESC";
+            miCrearTicket.Imprimir();
+            DatosYAccionesLoader loader = new DatosYAccionesLoader(Dnis_);
+            string consultaPedidos = "SELECT dni, id, PEDIDO, AGENTE, fechadepedido AS 'FECHA DE PEDIDO', fechaderetiro AS 'FECHA DE RETIRO', agenteqretiro AS 'AGENTE QUE RETIRO', activa FROM pedidos WHERE activa IS NULL AND dni='" + Dnis_ + "' ORDER BY id DESC";
             string[] columnasPedidos = new string[] { "DNI:0", "ID:75", "PEDIDO:300", "AGENTE:175", "FECHA DE PEDIDO:125", "FECHA DE RETIRO:125", "AGENTE QUE RETIRO:0" };
             loader.CargarDatosYAcciones(PEDIDOS, consultaPedidos, columnasPedidos);
             // Limpiar los CheckBox
@@ -330,25 +330,26 @@ namespace WindowsFormsApp1
         private void Button1_Click_1(object sender, EventArgs e)
         {
             ConexionMySQL conexionMySQL = new ConexionMySQL();
-            crearTicket miCrearTicket = new crearTicket();
-            // Establecer los valores de las propiedades
-            miCrearTicket.agentedeatencion = _agentedeatencions.ToString();
-            miCrearTicket.horadeatencion = DateTime.Now.ToString();
-            miCrearTicket.motivodeconsulta = MOTIVODECONSULTA.Text;
-            miCrearTicket.explicaciondada = EXPLICACIONDADA.Text;
-            miCrearTicket.agente = _dnis.ToString();
+            CrearTicket miCrearTicket = new CrearTicket
+            {
+                // Establecer los valores de las propiedades
+                Agentedeatencion = Agentedeatencions_.ToString(),
+                Horadeatencion = DateTime.Now.ToString(),
+                Motivodeconsulta = MOTIVODECONSULTA.Text,
+                Explicaciondada = EXPLICACIONDADA.Text,
+                Agente = Dnis_.ToString()
+            };
             // Calcular el ancho máximo en píxeles
-            int anchoMaximoCm = 8; // Especificar el ancho máximo en centímetros
-            int anchoMaximoPixels = (int)(anchoMaximoCm * 300 / 2.54); // Utilizar una aproximación de 300 DPI
+  
             // Llamar al método imprimir
-            miCrearTicket.imprimir(miCrearTicket, anchoMaximoPixels);
+            miCrearTicket.Imprimir();
             string motivo = MOTIVODECONSULTA.Text;
             string explicacion = EXPLICACIONDADA.Text;
-            string dni = _dnis.ToString();
-            string atendidoPor = _agentedeatencions.ToString();
+            string dni = Dnis_.ToString();
+            string atendidoPor = Agentedeatencions_.ToString();
             conexionMySQL.AgregarConsulta(motivo, explicacion, dni, atendidoPor);            
-            DatosYAccionesLoader loader = new DatosYAccionesLoader(_dnis);
-            string consultaViejas = "SELECT IDDECONSULTA AS 'ID', DNI, MOTIVODECONSULTA AS 'MOTIVO DE CONSULTA', EXPLICACIONDADA AS 'EXPLICACION DADA', ATENDIDOPOR AS 'ATENDIDO POR', HORADEATENCION AS 'HORA DE ATENCION' FROM consultas WHERE DNI='" + _dnis + "' ORDER BY IDDECONSULTA DESC";
+            DatosYAccionesLoader loader = new DatosYAccionesLoader(Dnis_);
+            string consultaViejas = "SELECT IDDECONSULTA AS 'ID', DNI, MOTIVODECONSULTA AS 'MOTIVO DE CONSULTA', EXPLICACIONDADA AS 'EXPLICACION DADA', ATENDIDOPOR AS 'ATENDIDO POR', HORADEATENCION AS 'HORA DE ATENCION' FROM consultas WHERE DNI='" + Dnis_ + "' ORDER BY IDDECONSULTA DESC";
             string[] columnasViejas = new string[] { "ID:75", "DNI:0", "MOTIVO DE CONSULTA:300", "EXPLICACION DADA:175", "ATENDIDO POR:125", "HORA DE ATENCION:125" };
             loader.CargarDatosYAcciones(CONSULTASVIEJAS, consultaViejas, columnasViejas);
         }
@@ -360,27 +361,26 @@ namespace WindowsFormsApp1
                 // Obtener el ID de la fila seleccionada
                 int id = Convert.ToInt32(citaciones.SelectedItems[0].SubItems[0].Text);
                 string entregada = "ENTREGADO";
-                int dniss = (int)_dnis;
+                int dniss = (int)Dnis_;
                 // Mostrar mensaje de confirmación
                 DialogResult result = MessageBox.Show("¿Está seguro de que desea actualizar la entregada con ID " + id + "?", "Confirmar actualización", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {  // Actualizar el campo "cierredecitacion" de la citación correspondient                    
                     conexion.ActualizarCIERREDEPEDIDO(id,dniss,entregada);
                 }
-                crearTicket miCrearTicket = new crearTicket();
-                // Establecer los valores de las propiedades
-                miCrearTicket.agentedeatencion = _agentedeatencions.ToString();
-                miCrearTicket.horadeatencion = DateTime.Now.ToString();
-                miCrearTicket.motivodeconsulta = "ENTREGA DEL " + id;
-                miCrearTicket.explicaciondada = "ENTREGADO";
-                miCrearTicket.agente = _dnis.ToString();
-                // Calcular el ancho máximo en píxeles
-                int anchoMaximoCm = 8; // Especificar el ancho máximo en centímetros
-                int anchoMaximoPixels = (int)(anchoMaximoCm * 300 / 2.54); // Utilizar una aproximación de 300 DPI
-                                                                           // Llamar al método imprimir
-                miCrearTicket.imprimir(miCrearTicket, anchoMaximoPixels);
-                DatosYAccionesLoader loader = new DatosYAccionesLoader(_dnis);
-                string consultaPedidos = "SELECT dni, id, PEDIDO, AGENTE, fechadepedido AS 'FECHA DE PEDIDO', fechaderetiro AS 'FECHA DE RETIRO', agenteqretiro AS 'AGENTE QUE RETIRO', activa FROM pedidos WHERE activa IS NULL AND dni='" + _dnis + "' ORDER BY id DESC";
+                CrearTicket miCrearTicket = new CrearTicket
+                {
+                    // Establecer los valores de las propiedades
+                    Agentedeatencion = Agentedeatencions_.ToString(),
+                    Horadeatencion = DateTime.Now.ToString(),
+                    Motivodeconsulta = "ENTREGA DEL " + id,
+                    Explicaciondada = "ENTREGADO",
+                    Agente = Dnis_.ToString()
+                };
+         
+                miCrearTicket.Imprimir();
+                DatosYAccionesLoader loader = new DatosYAccionesLoader(Dnis_);
+                string consultaPedidos = "SELECT dni, id, PEDIDO, AGENTE, fechadepedido AS 'FECHA DE PEDIDO', fechaderetiro AS 'FECHA DE RETIRO', agenteqretiro AS 'AGENTE QUE RETIRO', activa FROM pedidos WHERE activa IS NULL AND dni='" + Dnis_ + "' ORDER BY id DESC";
                 string[] columnasPedidos = new string[] { "DNI:0", "ID:75", "PEDIDO:300", "AGENTE:175", "FECHA DE PEDIDO:125", "FECHA DE RETIRO:125", "AGENTE QUE RETIRO:0" };
                 loader.CargarDatosYAcciones(PEDIDOS, consultaPedidos, columnasPedidos);
             

@@ -7,10 +7,10 @@ namespace WindowsFormsApp1
 {
     public class ConsultaMySQL : IDisposable
     {
-        private ConexionMySQL conexion;
-        private string consulta;
-        private List<Control> controles;
-        private List<string> nombresColumnas;
+        private readonly ConexionMySQL conexion;
+        private readonly string consulta;
+        private readonly List<Control> controles;
+        private readonly List<string> nombresColumnas;
 
         public ConsultaMySQL(string consulta, List<Control> controles, List<string> nombresColumnas)
         {
@@ -44,10 +44,10 @@ namespace WindowsFormsApp1
                                     controles[i].Text = "FALTA HACER (" + nombreColumna + ")";
                                 }
                             }
-                            else if (controles[i] is CheckBox)
+                            else if (controles[i] is CheckBox box)
                             {
                                 bool valor = reader.GetBoolean(i);
-                                ((CheckBox)controles[i]).Checked = valor;
+                                box.Checked = valor;
                             }
                             else if (controles[i] is TextBox)
                             {

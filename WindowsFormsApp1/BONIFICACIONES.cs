@@ -11,13 +11,13 @@ namespace WindowsFormsApp1
 {
     public partial class BONIFICACIONES : Form
     {       
-        public Int64 _dnis;
+        public Int64 Dnis_;
    
-        public BONIFICACIONES(FORMULARIOPRINCIPAL formularioPrincipal, Int64 DNI, string agenteDeAtencion)
+        public BONIFICACIONES(Int64 DNI)
         {
             InitializeComponent();
-            _dnis = DNI;
-            MessageBox.Show(_dnis.ToString());           
+            Dnis_ = DNI;
+            MessageBox.Show(Dnis_.ToString());           
         }
         private void CARGARDATOS_Click(object sender, EventArgs e)
         {
@@ -33,10 +33,10 @@ namespace WindowsFormsApp1
                 string A8 = observaciones.Text;
                 int A9 = DateTime.Now.Year;
                 string A11 = observaciones.Text;
-                string A12 = _dnis.ToString();
+                string A12 = Dnis_.ToString();
                 ConexionMySQL conexion = new ConexionMySQL();
                 conexion.INSERTARDATOSBONIFICACIONES(A2, A3, A4, A5, A6, A8, A9, A11, A12);
-                string consulta = "SELECT bonificaciones.ID, DATE_FORMAT(bonificaciones.FECHAALTA, '%Y-%m-%d') AS 'FECHA DE ALTA', DATE_FORMAT(bonificaciones.FECHABAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', bonificaciones.FECHA, bonificaciones.DECRETO, bonificaciones.MOTIVO, bonificaciones.EXPEDIENTE, bonificaciones.AÑO, bonificaciones.OBSERVACIONES, bonificaciones.DNIAGENTE FROM bonificaciones WHERE bonificaciones.DNIAGENTE = '" + _dnis + "'";
+                string consulta = "SELECT bonificaciones.ID, DATE_FORMAT(bonificaciones.FECHAALTA, '%Y-%m-%d') AS 'FECHA DE ALTA', DATE_FORMAT(bonificaciones.FECHABAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', bonificaciones.FECHA, bonificaciones.DECRETO, bonificaciones.MOTIVO, bonificaciones.EXPEDIENTE, bonificaciones.AÑO, bonificaciones.OBSERVACIONES, bonificaciones.DNIAGENTE FROM bonificaciones WHERE bonificaciones.DNIAGENTE = '" + Dnis_ + "'";
                 conexion.CargarResultadosConsulta(consulta, boni);
             }
             else
@@ -57,34 +57,31 @@ namespace WindowsFormsApp1
             string A10 = ID.Text;
             ConexionMySQL conexion = new ConexionMySQL();
             conexion.ActualizarDatosbonificacioness(A2, A3, A4, A5, A6, A7, A8, A9, A10);
-            string consulta = "SELECT bonificaciones.ID, DATE_FORMAT(bonificaciones.FECHAALTA, '%Y-%m-%d') AS 'FECHA DE ALTA', DATE_FORMAT(bonificaciones.FECHABAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', bonificaciones.FECHA, bonificaciones.DECRETO, bonificaciones.MOTIVO, bonificaciones.EXPEDIENTE, bonificaciones.AÑO, bonificaciones.OBSERVACIONES, bonificaciones.DNIAGENTE FROM bonificaciones WHERE bonificaciones.DNIAGENTE = '" + _dnis + "'";
-            ListView miListView = new ListView();
+            string consulta = "SELECT bonificaciones.ID, DATE_FORMAT(bonificaciones.FECHAALTA, '%Y-%m-%d') AS 'FECHA DE ALTA', DATE_FORMAT(bonificaciones.FECHABAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', bonificaciones.FECHA, bonificaciones.DECRETO, bonificaciones.MOTIVO, bonificaciones.EXPEDIENTE, bonificaciones.AÑO, bonificaciones.OBSERVACIONES, bonificaciones.DNIAGENTE FROM bonificaciones WHERE bonificaciones.DNIAGENTE = '" + Dnis_ + "'";
+ 
             ControlHelper.LimpiarControles(this);            
             conexion.CargarResultadosConsulta(consulta, boni);
         }
-        private void boni_DoubleClick(object sender, EventArgs e)
+        private void Boni_DoubleClick(object sender, EventArgs e)
         {
             ListViewItem selectedItem = boni.SelectedItems[0];
             // Obtener los subelementos de la fila seleccionada
             string columna0 = selectedItem.SubItems[0].Text;
             string fechaTexto1 = selectedItem.SubItems[1].Text;
             string formatoFecha = "yyyy-MM-dd";
-            DateTime columna1;
-            if (DateTime.TryParseExact(fechaTexto1, formatoFecha, CultureInfo.InvariantCulture, DateTimeStyles.None, out columna1))
+            if (DateTime.TryParseExact(fechaTexto1, formatoFecha, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime columna1))
             {
                 string fechaFormateada = columna1.ToString("dd/MM/yyyy");
                 FECHAALTA.Value = DateTime.ParseExact(fechaFormateada, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
             string fechaTexto2 = selectedItem.SubItems[2].Text;
-            DateTime columna2;
-            if (DateTime.TryParseExact(fechaTexto2, formatoFecha, CultureInfo.InvariantCulture, DateTimeStyles.None, out columna2))
+            if (DateTime.TryParseExact(fechaTexto2, formatoFecha, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime columna2))
             {
                 string fechaFormateada = columna2.ToString("dd/MM/yyyy");
                 FECHABAJA.Value = DateTime.ParseExact(fechaFormateada, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
             string fechaTexto3 = selectedItem.SubItems[3].Text;
-             DateTime columna3;
-            if (DateTime.TryParseExact(fechaTexto3, formatoFecha, CultureInfo.InvariantCulture, DateTimeStyles.None, out columna3))
+            if (DateTime.TryParseExact(fechaTexto3, formatoFecha, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime columna3))
             {
                 string fechaFormateada = columna3.ToString("dd/MM/yyyy");
                 FECHAALTA.Value = DateTime.ParseExact(fechaFormateada, "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -92,8 +89,6 @@ namespace WindowsFormsApp1
             string columna4 = selectedItem.SubItems[4].Text;
             string columna5 = selectedItem.SubItems[5].Text;
             string columna6 = selectedItem.SubItems[6].Text;
-            string columna7 = selectedItem.SubItems[7].Text;
-            string columna8 = selectedItem.SubItems[8].Text;
             string columna9 = selectedItem.SubItems[9].Text;         
             ID.Text = columna0;
             DECRETO.Text = columna4;
@@ -101,7 +96,7 @@ namespace WindowsFormsApp1
             EXPEDIENTE.Text = columna6;            
             observaciones.Text = columna9;            
         }
-        private void boni_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void Boni_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -132,7 +127,7 @@ namespace WindowsFormsApp1
         private void BONIFICACIONES_Load(object sender, EventArgs e)
         {
             ConexionMySQL conexion = new ConexionMySQL();
-            string consulta = "SELECT bonificaciones.ID, DATE_FORMAT(bonificaciones.FECHAALTA, '%Y-%m-%d') AS 'FECHA DE ALTA', DATE_FORMAT(bonificaciones.FECHABAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', bonificaciones.FECHA, bonificaciones.DECRETO, bonificaciones.MOTIVO, bonificaciones.EXPEDIENTE, bonificaciones.AÑO, bonificaciones.OBSERVACIONES, bonificaciones.DNIAGENTE FROM bonificaciones WHERE bonificaciones.DNIAGENTE = '" + _dnis + "'";
+            string consulta = "SELECT bonificaciones.ID, DATE_FORMAT(bonificaciones.FECHAALTA, '%Y-%m-%d') AS 'FECHA DE ALTA', DATE_FORMAT(bonificaciones.FECHABAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', bonificaciones.FECHA, bonificaciones.DECRETO, bonificaciones.MOTIVO, bonificaciones.EXPEDIENTE, bonificaciones.AÑO, bonificaciones.OBSERVACIONES, bonificaciones.DNIAGENTE FROM bonificaciones WHERE bonificaciones.DNIAGENTE = '" + Dnis_ + "'";
             conexion.CargarResultadosConsulta(consulta, boni);
         }
 

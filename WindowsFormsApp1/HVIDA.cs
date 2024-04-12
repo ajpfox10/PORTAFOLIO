@@ -12,13 +12,13 @@ namespace WindowsFormsApp1
 {
     public partial class HVIDA : Form
     {
-        public Int64 _dnis;
-        private readonly string _agentedeatencions;
-        public HVIDA(FORMULARIOPRINCIPAL formularioPrincipal, Int64 DNI, string agenteDeAtencion)
+        public Int64 Dnis_;
+        private readonly string Agentedeatencions_;
+        public HVIDA(Int64 DNI, string agenteDeAtencion)
         {
             InitializeComponent();
-            _dnis = DNI;
-            _agentedeatencions = agenteDeAtencion;
+            Dnis_ = DNI;
+            Agentedeatencions_ = agenteDeAtencion;
         }
         private void HVIDA_Load(object sender, EventArgs e)
         {
@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
                               "form2.PRESTOSERVICIOS AS `PRESTO SERVICIOS MILITARES`, form2.ARMA, form2.ESPECIALIDADARMAMILITAR AS `ESPECIALIDAD MILITAR`, form2.GRADO, form2.DESTINO, form2.MATRICULA, " +
                               "form2.cartaciudadania AS `CARTA DE CIUDADANIA`, DATE_FORMAT(form2.fechadeciudadania, '%Y-%m-%d') AS `FECHA DE CIUDADANIA`, form2.OTORGADACIUDAD AS `OTORGO EN`, form2.JUEZQLAOTORGO AS `JUEZ QUE OTORGO LA CARTA`, ESTUDIOSENCURSO AS 'ESTUDIOS EN CURSO',TITULODELESTUDIOENCURSO AS 'TITULO DE ESTUDIO EN CURSO', causalexcepcion AS 'CAUSAL DE EXCEPCION DE SERVICIOS MILITARES' " +
                               "FROM form2";
-            ListView miListView = new ListView();
+   
             conexion.CargarResultadosConsulta(consulta, hdevida);
         
         }
@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             VERIFICARCONTR verificador = new VERIFICARCONTR();
             if (verificador.VerificarControles(this.Controls))
             {
-                string A1 = _dnis.ToString();
+                string A1 = Dnis_.ToString();
                 string A2 = PAISNACIMIENTO.Text;
                 string A3 = PROVINCIANACIMIENTO.Text;
                 string A4 = PARTIDONACIMIENTO.Text;
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
                              "form2.PRESTOSERVICIOS AS `PRESTO SERVICIOS MILITARES`, form2.ARMA, form2.ESPECIALIDADARMAMILITAR AS `ESPECIALIDAD MILITAR`, form2.GRADO, form2.DESTINO, form2.MATRICULA, " +
                              "form2.cartaciudadania AS `CARTA DE CIUDADANIA`, form2.fechadeciudadania AS `FECHA DE CIUDADANIA`, form2.OTORGADACIUDAD AS `OTORGO EN`, form2.JUEZQLAOTORGO AS `JUEZ QUE OTORGO LA CARTA`, ESTUDIOSENCURSO AS 'ESTUDIOS EN CURSO',TITULODELESTUDIOENCURSO AS 'TITULO DE ESTUDIO EN CURSO', causalexcepcion AS 'CAUSAL DE EXCEPCION DE SERVICIOS MILITARES' " +
                              "FROM form2";
-                ListView miListView = new ListView();
+       
                 ControlHelper.LimpiarControles(this);
                 conexion.CargarResultadosConsulta(consulta, hdevida);
             }
@@ -88,7 +88,7 @@ namespace WindowsFormsApp1
             VERIFICARCONTR verificador = new VERIFICARCONTR();
             if (verificador.VerificarControles(this.Controls))
             {
-                string A1 = _dnis.ToString();
+                string A1 = Dnis_.ToString();
                 string A2 = PAISNACIMIENTO.Text;
                 string A3 = PROVINCIANACIMIENTO.Text;
                 string A4 = PARTIDONACIMIENTO.Text;
@@ -114,10 +114,11 @@ namespace WindowsFormsApp1
                 string A24 = ESTUDIANDONUEVO.ValueMember;
                 string A25 = QESTUDIANUEVO.Text;
                 string A26 = CAUSALEXCEPCION.Text;
+                string A27 = idx.Text;
                 ConexionMySQL conexion = new ConexionMySQL();
-                conexion.ActualizarDatosVida1(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, A22, A23, A24, A25, A26);
+                conexion.ActualizarDatosVida1(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, A22, A23, A24, A25, A26, A27);
                 //, OTORGADOPORSECUNDAR1:OTORGADOPORSECUNDAR1
-
+                string Valor = idx.Text;
 
                 string consulta = "SELECT form2.Id1 AS ID, form2.DNIDELAGENTE AS DNI, form2.NACIOPAIS AS `NACIO EN`, form2.PROVINCIADENAC AS `PCIA DE NACIMIENTO`, form2.PARTIDO AS `PARTIDO DE NACIMIENTO`, " +
                              "DATE_FORMAT(form2.FCHANACI, '%Y-%m-%d') AS `FECHA DE NACIMIENTO`, form2.ESTADOCIVIL AS `ESTADO CIVIL`, form2.MAXIMONIVELESTUDIOS AS `MAXIMO NIVEL DE ESTUDIOS`, " +
@@ -126,7 +127,7 @@ namespace WindowsFormsApp1
                              "form2.PRESTOSERVICIOS AS `PRESTO SERVICIOS MILITARES`, form2.ARMA, form2.ESPECIALIDADARMAMILITAR AS `ESPECIALIDAD MILITAR`, form2.GRADO, form2.DESTINO, form2.MATRICULA, " +
                              "form2.cartaciudadania AS `CARTA DE CIUDADANIA`, DATE_FORMAT(form2.fechadeciudadania, '%Y-%m-%d') AS `FECHA DE CIUDADANIA`, form2.OTORGADACIUDAD AS `OTORGO EN`, form2.JUEZQLAOTORGO AS `JUEZ QUE OTORGO LA CARTA`, ESTUDIOSENCURSO AS 'ESTUDIOS EN CURSO',TITULODELESTUDIOENCURSO AS 'TITULO DE ESTUDIO EN CURSO' " +
                              "FROM form2";
-                ListView miListView = new ListView();
+
                 ControlHelper.LimpiarControles(this);
                 conexion.CargarResultadosConsulta(consulta, hdevida);
 
@@ -140,17 +141,15 @@ namespace WindowsFormsApp1
         {            
             ListViewItem selectedItem = hdevida.SelectedItems[0];
             string columna0 = selectedItem.SubItems[0].Text;
-            string columna1 = selectedItem.SubItems[1].Text;
             string columna2 = selectedItem.SubItems[2].Text;
             string columna3 = selectedItem.SubItems[3].Text;
             string columna4 = selectedItem.SubItems[4].Text;        
             string fechaTexto1 = selectedItem.SubItems[5].Text;
             string formatoFecha = "yyyy-MM-dd";
-            DateTime columna5;
-            if (DateTime.TryParseExact(fechaTexto1, formatoFecha, CultureInfo.InvariantCulture, DateTimeStyles.None, out columna5))
+            if (DateTime.TryParseExact(fechaTexto1, formatoFecha, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime columna5))
             {
                 string fechaFormateada = columna5.ToString("yyyy-MM-dd");
-                FECHADECARTACIUDADANIA.Value = DateTime.ParseExact(fechaFormateada, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                FECHADECARTACIUDADANIA.Value = DateTime.ParseExact(fechaFormateada, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             }
             string columna6 = selectedItem.SubItems[6].Text;
             string columna7 = selectedItem.SubItems[7].Text;
@@ -169,8 +168,7 @@ namespace WindowsFormsApp1
             string columna20 = selectedItem.SubItems[20].Text;  
             string fechaTexto2 = selectedItem.SubItems[21].Text;
             string formatoFecha1 = "yyyy-MM-dd";
-            DateTime columna21;
-            if (DateTime.TryParseExact(fechaTexto2, formatoFecha1, CultureInfo.InvariantCulture, DateTimeStyles.None, out columna21))
+            if (DateTime.TryParseExact(fechaTexto2, formatoFecha1, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime columna21))
             {
                 string fechaFormateada = columna21.ToString("dd/MM/yyyy");
                 FECHADECARTACIUDADANIA.Value = DateTime.ParseExact(fechaFormateada, "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -236,15 +234,16 @@ namespace WindowsFormsApp1
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            string nombreCarpeta = _dnis.ToString(); // Obtener el nombre de la carpeta adicional desde otra fuente (por ejemplo, otro formulario)
+            string nombreCarpeta = Dnis_.ToString(); // Obtener el nombre de la carpeta adicional desde otra fuente (por ejemplo, otro formulario)
 
-            rellenahoja1 formFiller = new rellenahoja1(nombreCarpeta);
-            formFiller.FillPdfForm(_dnis.ToString());
+            Rellenahoja1 formFiller = new Rellenahoja1(nombreCarpeta);
+            formFiller.FillPdfForm(Dnis_.ToString());
         }
-
         private void Hdevida_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+     
     }
 }

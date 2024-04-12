@@ -12,29 +12,50 @@ using System.Diagnostics;
 using System.Data;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Drawing;
 
 namespace WindowsFormsApp1
 {
     public partial class FORMULARIODESIGNACION : Form
     {
-        private CargarComboBoxes cargadorComboBoxes = new CargarComboBoxes();
-        public Int64 _dnis;   
-        public FORMULARIODESIGNACION(FORMULARIOPRINCIPAL formularioPrincipal, Int64 DNI, string agenteDeAtencion)
+        private readonly CargarComboBoxes cargadorComboBoxes = new CargarComboBoxes();
+        public Int64 Dnis_;   
+        public FORMULARIODESIGNACION(Int64 DNI)
         {
             InitializeComponent();
-            _dnis = DNI;
-            MessageBox.Show(_dnis.ToString());
+            Dnis_ = DNI;
+ 
         }
         private void FORMULARIODESIGNACION_Load(object sender, EventArgs e)
         {
-            cargadorComboBoxes.nomenclador(CARGOS);
-            cargadorComboBoxes.regimenhorario(REGIMENHORARIO);
-            cargadorComboBoxes.ministerios(MINISTERIOS);
+            cargadorComboBoxes.Nomenclador(CARGOS);
+            cargadorComboBoxes.Regimenhorario(Regimenhorario);
+            cargadorComboBoxes.Ministerios(Ministerios);
             cargadorComboBoxes.CATEGORIA(CATEGORIA);
             ConexionMySQL conexion = new ConexionMySQL();
-            string consulta = "SELECT cargosdeinicio.ID, cargosdeinicio.CARGODEINICIOS AS 'CARGO', cargosdeinicio.MINISTERIODEDESIGNACION AS 'MINISTERIO', DATE_FORMAT(cargosdeinicio.FECHADEDESIGNACION, '%Y-%m-%d') AS 'FECHA DE DESIGNACION', cargosdeinicio.CATEGORIA, cargosdeinicio.REGIMENHORARIO AS 'REGIMEN HORARIO', DATE_FORMAT(cargosdeinicio.FECHADEBAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', cargosdeinicio.DEPENDENCIA, cargosdeinicio.RESOLUCION, cargosdeinicio.DNIAGENTE AS 'DNI', cargosdeinicio.MOTIVODEBAJA AS 'MOTIVO DE BAJA', cargosdeinicio.ifgradenombramiento as 'IFGRA DE NOMBRAMIENTO' FROM cargosdeinicio WHERE cargosdeinicio.DNIAGENTE = '" + _dnis + "'";
-            DataTable dataTable = new DataTable();
-            ListView miListView = new ListView();
+            //string consulta = "SELECT cargosdeinicio.ID, cargosdeinicio.CARGODEINICIOS AS 'CARGO', cargosdeinicio.MINISTERIODEDESIGNACION AS 'MINISTERIO', DATE_FORMAT(cargosdeinicio.FECHADEDESIGNACION, '%Y-%m-%d') AS 'FECHA DE DESIGNACION', cargosdeinicio.CATEGORIA, cargosdeinicio.Regimenhorario AS 'REGIMEN HORARIO', DATE_FORMAT(cargosdeinicio.FECHADEBAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', cargosdeinicio.DEPENDENCIA, cargosdeinicio.RESOLUCION, cargosdeinicio.DNIAGENTE AS 'DNI', cargosdeinicio.MOTIVODEBAJA AS 'MOTIVO DE BAJA', cargosdeinicio.ifgradenombramiento as 'IFGRA DE NOMBRAMIENTO' FROM cargosdeinicio WHERE cargosdeinicio.DNIAGENTE = '" + Dnis_ + "'";
+
+
+
+            string consulta = " SELECT cargosdeinicio.ID, cargosdeinicio.CARGODEINICIOS AS 'CARGO' , ministerios.MINISTERIO AS 'MINISTERIO', DATE_FORMAT(cargosdeinicio.FECHADEDESIGNACION, '%Y-%m-%d') AS 'FECHA DE DESIGNACION', cargosdeinicio.CATEGORIA, regimenhorario.`REGIMEN HORARIO` AS 'REGIMEN HORARIO', DATE_FORMAT(cargosdeinicio.FECHADEBAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', cargosdeinicio.DEPENDENCIA, cargosdeinicio.RESOLUCION, cargosdeinicio.DNIAGENTE AS 'DNI', cargosdeinicio.MOTIVODEBAJA AS 'MOTIVO DE BAJA', cargosdeinicio.IFGRADENOMBRAMIENTO as 'IFGRA DE NOMBRAMIENTO' FROM ministerios INNER JOIN(cargosdeinicio INNER JOIN regimenhorario ON cargosdeinicio.REGIMENHORARIO = regimenhorario.ID) ON ministerios.ID = cargosdeinicio.MINISTERIODEDESIGNACION WHERE cargosdeinicio.DNIAGENTE = '" + Dnis_ + "'";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             conexion.CargarResultadosConsulta(consulta, DESIGNACIONESSS);      
         }
         private void CARGARDATOS_Click(object sender, EventArgs e)
@@ -43,18 +64,18 @@ namespace WindowsFormsApp1
             if (verificador.VerificarControles(this.Controls))
             {
                 // Todos los controles están completos, por lo que se puede insertar los datos en la base de datos
-                string A2 = CARGOS.ValueMember;
-                string A3 = MINISTERIOS.ValueMember;
+                string A2 = CARGOS.SelectedValue.ToString();
+                string A3 = Ministerios.SelectedValue.ToString();
                 DateTime A4 = INGRESO.Value;
-                int A5 = Convert.ToInt32(CATEGORIA.SelectedValue);
-                int A6 = Convert.ToInt32(REGIMENHORARIO.SelectedValue);
+                int A5 = Convert.ToInt32(CATEGORIA.SelectedValue.ToString());
+                int A6 = Convert.ToInt32(Regimenhorario.SelectedValue.ToString());
                 string A8 = DEPENDENCIA.Text;
                 string A9 = RESOLUCION.Text;
-                string A11 = _dnis.ToString();
-                string A12 = textBox1.Text;
+                string A11 = Dnis_.ToString();
+                string A12 = IFGRA.Text;
                 ConexionMySQL conexion = new ConexionMySQL();
                 conexion.INSERTARDATOSIFGRA(A2, A3, A4, A5, A6, A8, A9, A11, A12);
-                string consulta = "SELECT cargosdeinicio.ID, cargosdeinicio.CARGODEINICIOS AS 'CARGO', cargosdeinicio.MINISTERIODEDESIGNACION AS 'MINISTERIO', DATE_FORMAT(cargosdeinicio.FECHADEDESIGNACION, '%Y-%m-%d') AS 'FECHA DE DESIGNACION', cargosdeinicio.CATEGORIA, cargosdeinicio.REGIMENHORARIO AS 'REGIMEN HORARIO', DATE_FORMAT(cargosdeinicio.FECHADEBAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', cargosdeinicio.DEPENDENCIA, cargosdeinicio.RESOLUCION, cargosdeinicio.DNIAGENTE AS 'DNI', cargosdeinicio.MOTIVODEBAJA AS 'MOTIVO DE BAJA', cargosdeinicio.ifgradenombramiento as 'IFGRA DE NOMBRAMIENTO' FROM cargosdeinicio WHERE cargosdeinicio.DNIAGENTE = '" + _dnis + "'";
+                string consulta = "SELECT cargosdeinicio.ID, cargosdeinicio.CARGODEINICIOS AS 'CARGO', cargosdeinicio.MINISTERIODEDESIGNACION AS 'MINISTERIO', DATE_FORMAT(cargosdeinicio.FECHADEDESIGNACION, '%Y-%m-%d') AS 'FECHA DE DESIGNACION', cargosdeinicio.CATEGORIA, cargosdeinicio.Regimenhorario AS 'REGIMEN HORARIO', DATE_FORMAT(cargosdeinicio.FECHADEBAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', cargosdeinicio.DEPENDENCIA, cargosdeinicio.RESOLUCION, cargosdeinicio.DNIAGENTE AS 'DNI', cargosdeinicio.MOTIVODEBAJA AS 'MOTIVO DE BAJA', cargosdeinicio.ifgradenombramiento as 'IFGRA DE NOMBRAMIENTO' FROM cargosdeinicio WHERE cargosdeinicio.DNIAGENTE = '" + Dnis_ + "'";
                 conexion.CargarResultadosConsulta(consulta, DESIGNACIONESSS);
             }
             else
@@ -62,26 +83,22 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Por favor complete los campos faltantes.");
             }
         }
-        private void DESIGNACIONESSS_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void button1_Click(object sender, EventArgs e)
+        private void EDITARDATOS_Click(object sender, EventArgs e)
         {
             string A2 = CARGOS.ValueMember;
-            string A3 = MINISTERIOS.ValueMember;
+            string A3 = Ministerios.ValueMember;
             DateTime A4 = INGRESO.Value;
             int A5 = Convert.ToInt32(CATEGORIA.SelectedValue);
-            int A6 = Convert.ToInt32(REGIMENHORARIO.SelectedValue);
+            int A6 = Convert.ToInt32(Regimenhorario.SelectedValue);
             DateTime A7=BAJA.Value;
             string A8 = DEPENDENCIA.Text;
             string A9 = RESOLUCION.Text;
             string A10 = MOTIVODEBAJA.Text;
-            string A12 = textBox1.Text;
+            string A12 = IFGRA.Text;
             ConexionMySQL conexion = new ConexionMySQL();
             conexion.ActualizarDatosdesignaciones(A2, A3, A4, A5, A6, A7, A8, A9, A10, A12);
-            string consulta = "SELECT cargosdeinicio.ID, cargosdeinicio.CARGODEINICIOS AS 'CARGO', cargosdeinicio.MINISTERIODEDESIGNACION AS 'MINISTERIO', DATE_FORMAT(cargosdeinicio.FECHADEDESIGNACION, '%Y-%m-%d') AS 'FECHA DE DESIGNACION', cargosdeinicio.CATEGORIA, cargosdeinicio.REGIMENHORARIO AS 'REGIMEN HORARIO', DATE_FORMAT(cargosdeinicio.FECHADEBAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', cargosdeinicio.DEPENDENCIA, cargosdeinicio.RESOLUCION, cargosdeinicio.DNIAGENTE AS 'DNI', cargosdeinicio.MOTIVODEBAJA AS 'MOTIVO DE BAJA', cargosdeinicio.ifgradenombramiento as 'IFGRA DE NOMBRAMIENTO' FROM cargosdeinicio WHERE cargosdeinicio.DNIAGENTE = '" + _dnis + "'";
-            ListView miListView = new ListView();
+            string consulta = "SELECT cargosdeinicio.ID, cargosdeinicio.CARGODEINICIOS AS 'CARGO', cargosdeinicio.MINISTERIODEDESIGNACION AS 'MINISTERIO', DATE_FORMAT(cargosdeinicio.FECHADEDESIGNACION, '%Y-%m-%d') AS 'FECHA DE DESIGNACION', cargosdeinicio.CATEGORIA, cargosdeinicio.Regimenhorario AS 'REGIMEN HORARIO', DATE_FORMAT(cargosdeinicio.FECHADEBAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', cargosdeinicio.DEPENDENCIA, cargosdeinicio.RESOLUCION, cargosdeinicio.DNIAGENTE AS 'DNI', cargosdeinicio.MOTIVODEBAJA AS 'MOTIVO DE BAJA', cargosdeinicio.ifgradenombramiento as 'IFGRA DE NOMBRAMIENTO' FROM cargosdeinicio WHERE cargosdeinicio.DNIAGENTE = '" + Dnis_ + "'";
+
             conexion.CargarResultadosConsulta(consulta, DESIGNACIONESSS);
         }
         private void DESIGNACIONESSS_DoubleClick(object sender, EventArgs e)
@@ -93,34 +110,35 @@ namespace WindowsFormsApp1
             string columna2 = selectedItem.SubItems[2].Text;
             string fechaTexto1 = selectedItem.SubItems[3].Text;
             string formatoFecha = "yyyy-MM-dd";
-            DateTime columna3;
-            if (DateTime.TryParseExact(fechaTexto1, formatoFecha, CultureInfo.InvariantCulture, DateTimeStyles.None, out columna3))
+            if (DateTime.TryParseExact(fechaTexto1, formatoFecha, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime columna3))
             {
                 string fechaFormateada = columna3.ToString("dd/MM/yyyy");
                 INGRESO.Value = DateTime.ParseExact(fechaFormateada, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
             string columna4 = selectedItem.SubItems[4].Text;
             string columna5 = selectedItem.SubItems[5].Text;
-            string fechaTexto2 = selectedItem.SubItems[6].Text;     
-            DateTime columna6;
-            if (DateTime.TryParseExact(fechaTexto2, formatoFecha, CultureInfo.InvariantCulture, DateTimeStyles.None, out columna6))
+            string fechaTexto2 = selectedItem.SubItems[6].Text;
+            if (DateTime.TryParseExact(fechaTexto2, formatoFecha, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime columna6))
             {
                 string fechaFormateada = columna6.ToString("dd/MM/yyyy");
                 BAJA.Value = DateTime.ParseExact(fechaFormateada, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
             string columna7 = selectedItem.SubItems[7].Text;
             string columna8 = selectedItem.SubItems[8].Text;
-            string columna9 = selectedItem.SubItems[9].Text;
+            //string columna9 = selectedItem.SubItems[9].Text;
             string columna10 = selectedItem.SubItems[10].Text;
+            string columna11 = selectedItem.SubItems[11].Text;
             ID.Text = columna0;
             CARGOS.Text = columna1;
-            MINISTERIOS.Text = columna2;
+            Ministerios.Text = columna2;
+            INGRESO.Value = columna3;
             CATEGORIA.SelectedItem = columna4;
-            REGIMENHORARIO.SelectedItem = columna5;
+            Regimenhorario.SelectedItem = columna5;
             DEPENDENCIA.Text = columna7;
             RESOLUCION.Text = columna8;
-            MOTIVODEBAJA.Text = columna9;
-            textBox1.Text = columna10;
+
+            MOTIVODEBAJA.Text = columna10;
+            IFGRA.Text = columna11;
         }
         private void DESIGNACIONESSS_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -156,18 +174,31 @@ namespace WindowsFormsApp1
 
                 if (trackBarValue >= 0 && trackBarValue < 25)
                 {
-                    string nombreCarpeta = _dnis.ToString(); 
+                    string nombreCarpeta = Dnis_.ToString(); 
                     rellenACARGODEINICIO formFiller = new rellenACARGODEINICIO(nombreCarpeta);
-                    formFiller.FillPdfForm(_dnis.ToString()); ;
+                    formFiller.FillPdfForm(Dnis_.ToString()); ;
                 }
                 else if (trackBarValue >= 50 && trackBarValue < 100)
                 {
-                string nombreCarpeta = _dnis.ToString(); 
+                string nombreCarpeta = Dnis_.ToString(); 
                 rellenrcargosdos formFiller = new rellenrcargosdos(nombreCarpeta);
-                formFiller.FillPdfForm(_dnis.ToString());
+                formFiller.FillPdfForm(Dnis_.ToString());
             }
               
         }
 
+        private void EDITARBAJA_Click(object sender, EventArgs e)
+        {
+            string A8 = ID.Text;
+            DateTime A7 = BAJA.Value;
+            string A10 = MOTIVODEBAJA.Text;
+            ConexionMySQL conexion = new ConexionMySQL();
+            conexion.ActualizarDatosdesignacionesBAJADECAR( A7, A10, A8);
+            string consulta = "SELECT cargosdeinicio.ID, cargosdeinicio.CARGODEINICIOS AS 'CARGO', cargosdeinicio.MINISTERIODEDESIGNACION AS 'MINISTERIO', DATE_FORMAT(cargosdeinicio.FECHADEDESIGNACION, '%Y-%m-%d') AS 'FECHA DE DESIGNACION', cargosdeinicio.CATEGORIA, cargosdeinicio.Regimenhorario AS 'REGIMEN HORARIO', DATE_FORMAT(cargosdeinicio.FECHADEBAJA, '%Y-%m-%d') AS 'FECHA DE BAJA', cargosdeinicio.DEPENDENCIA, cargosdeinicio.RESOLUCION, cargosdeinicio.DNIAGENTE AS 'DNI', cargosdeinicio.MOTIVODEBAJA AS 'MOTIVO DE BAJA', cargosdeinicio.ifgradenombramiento as 'IFGRA DE NOMBRAMIENTO' FROM cargosdeinicio WHERE cargosdeinicio.DNIAGENTE = '" + Dnis_ + "'";
+
+            conexion.CargarResultadosConsulta(consulta, DESIGNACIONESSS);
+        }
+
+      
     }
 }

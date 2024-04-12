@@ -50,6 +50,7 @@
             this.Label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.CARGARPDF = new System.Windows.Forms.Button();
+            this.Cargafamilia = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ID
@@ -64,13 +65,10 @@
             // 
             // Button1
             // 
-            this.Button1.Location = new System.Drawing.Point(237, 115);
+            this.Button1.Location = new System.Drawing.Point(0, 0);
             this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(197, 69);
-            this.Button1.TabIndex = 59;
-            this.Button1.Text = "EDITAR DATOS";
-            this.Button1.UseVisualStyleBackColor = true;
-            this.Button1.Click += new System.EventHandler(this.Button1_Click);
+            this.Button1.Size = new System.Drawing.Size(75, 23);
+            this.Button1.TabIndex = 68;
             // 
             // DATOSCARGAFAMILIA
             // 
@@ -281,11 +279,22 @@
             this.CARGARPDF.UseVisualStyleBackColor = true;
             this.CARGARPDF.Click += new System.EventHandler(this.CARGARPDF_Click);
             // 
+            // Cargafamilia
+            // 
+            this.Cargafamilia.Location = new System.Drawing.Point(247, 115);
+            this.Cargafamilia.Name = "Cargafamilia";
+            this.Cargafamilia.Size = new System.Drawing.Size(199, 69);
+            this.Cargafamilia.TabIndex = 69;
+            this.Cargafamilia.Text = "EDITAR DATOS";
+            this.Cargafamilia.UseVisualStyleBackColor = true;
+            this.Cargafamilia.Click += new System.EventHandler(this.Cargafamilia_Click);
+            // 
             // CARGARFAMILIA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 906);
+            this.Controls.Add(this.Cargafamilia);
             this.Controls.Add(this.CARGARPDF);
             this.Controls.Add(this.Label8);
             this.Controls.Add(this.label9);
@@ -341,5 +350,6 @@
         internal System.Windows.Forms.Label Label8;
         internal System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button CARGARPDF;
+        private System.Windows.Forms.Button Cargafamilia;
     }
 }

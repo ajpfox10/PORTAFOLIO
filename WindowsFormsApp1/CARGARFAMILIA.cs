@@ -8,18 +8,19 @@ namespace WindowsFormsApp1
 {
     public partial class CARGARFAMILIA : Form
     {
-        public Int64 _dnis;
-        private readonly string _agentedeatencions;
-        public CARGARFAMILIA(FORMULARIOPRINCIPAL formularioPrincipal, Int64 DNI, string agenteDeAtencion)
+        public Int64 Dnis_;
+
+        private readonly string Agentedeatencions_;
+        public CARGARFAMILIA(Int64 DNI, string agenteDeAtencion)
         {
             InitializeComponent();
-            _dnis = DNI;
-            _agentedeatencions = agenteDeAtencion;
+            Dnis_ = DNI;
+            Agentedeatencions_ = agenteDeAtencion;
         }
         private void CARGARFAMILIA_Load(object sender, EventArgs e)
         {
             ConexionMySQL conexion = new ConexionMySQL();
-            string consulta = "(SELECT form1.idx AS ID, form1.PARENTESCO, form1.NOMBREYAPELLIDO AS 'NOMBRE Y APELLIDO', form1.VIVE, DATE_FORMAT(form1.FECHA, '%Y-%m-%d') AS 'FECHA DE NACIMIENTO', form1.JUB AS JUBILADO, form1.PROFESION, form1.cajajubilacion as 'CAJA DE JUBILACION', form1.SEXO, form1.DNIAGENTE FROM form1 WHERE DNIAGENTE='" + _dnis + "')"; 
+            string consulta = "(SELECT form1.idx AS ID, form1.PARENTESCO, form1.NOMBREYAPELLIDO AS 'NOMBRE Y APELLIDO', form1.VIVE, DATE_FORMAT(form1.FECHA, '%Y-%m-%d') AS 'FECHA DE NACIMIENTO', form1.JUB AS JUBILADO, form1.PROFESION, form1.cajajubilacion as 'CAJA DE JUBILACION', form1.SEXO, form1.DNIAGENTE FROM form1 WHERE DNIAGENTE='" + Dnis_ + "')"; 
             conexion.CargarResultadosConsulta(consulta, FAMILIAS);
             FAMILIAS.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             string filePath = "c:/domicilio1.pdf"; // Ruta al archivo PDF
@@ -31,7 +32,7 @@ namespace WindowsFormsApp1
                 if (verificador.VerificarControles(this.Controls))
                 {
                     // Todos los controles están completos, por lo que se puede insertar los datos en la base de datos
-                    string DNIAGENTE1 = _dnis.ToString();
+                    string DNIAGENTE1 = Dnis_.ToString();
                     string PARENTESCO1 = PARENTESCO.Text;
                     string NOMBREYAPELLIDO1 = APEELIDOYNOMBRE.Text;
                     string VIVE1 = VIVE.Text;
@@ -42,8 +43,8 @@ namespace WindowsFormsApp1
                     string SEXO1 = sexo.Text;
                     ConexionMySQL conexion = new ConexionMySQL();
                     conexion.InsertarDatosdomicilio(DNIAGENTE1, PARENTESCO1, NOMBREYAPELLIDO1, VIVE1, FECHA1, JUB1, CAJAJUBILACION1, PROFESION1, SEXO1);
-                    string consulta = "(SELECT form1.idx AS ID, form1.PARENTESCO, form1.NOMBREYAPELLIDO AS 'NOMBRE Y APELLIDO', form1.VIVE, DATE_FORMAT(form1.FECHA, '%Y-%m-%d') AS 'FECHA DE NACIMIENTO', form1.JUB AS JUBILADO, form1.PROFESION, form1.cajajubilacion as 'CAJA DE JUBILACION', form1.SEXO, form1.DNIAGENTE FROM form1 WHERE DNIAGENTE='" + _dnis + "')";
-                    ListView miListView = new ListView();
+                    string consulta = "(SELECT form1.idx AS ID, form1.PARENTESCO, form1.NOMBREYAPELLIDO AS 'NOMBRE Y APELLIDO', form1.VIVE, DATE_FORMAT(form1.FECHA, '%Y-%m-%d') AS 'FECHA DE NACIMIENTO', form1.JUB AS JUBILADO, form1.PROFESION, form1.cajajubilacion as 'CAJA DE JUBILACION', form1.SEXO, form1.DNIAGENTE FROM form1 WHERE DNIAGENTE='" + Dnis_ + "')";
+           
                     ControlHelper.LimpiarControles(this);
                     conexion.CargarResultadosConsulta(consulta, FAMILIAS);
                 }
@@ -77,23 +78,6 @@ namespace WindowsFormsApp1
                 PROFESION.Text = columna6;
                 sexo.Text = columna8;              
         }
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            string PARENTESCOSS = PARENTESCO.Text;
-            string NOMBRESS = PARENTESCO.Text;
-            string VIVESS = VIVE.Text;
-            DateTime FECHASSS = DateTime.Parse(fechanacimiento.Text);
-            string CAJAJUBILACIONS = CAJADEJUBILACION.Text;
-            string PROFESIONS = PROFESION.Text;
-            string SEXOS = sexo.Text;            
-            String ID1 = ID.Text;
-            String JUBS = jubilacion.Text;
-            ConexionMySQL conexion = new ConexionMySQL();
-            conexion.ActualizarDatosFAMILIA(PARENTESCOSS, NOMBRESS, VIVESS, FECHASSS, CAJAJUBILACIONS, PROFESIONS, SEXOS, ID1, JUBS);
-            string consulta = "(SELECT form1.idx AS ID, form1.PARENTESCO, form1.NOMBREYAPELLIDO AS 'NOMBRE Y APELLIDO', form1.VIVE, DATE_FORMAT(form1.FECHA, '%Y-%m-%d') AS 'FECHA DE NACIMIENTO', form1.JUB AS JUBILADO, form1.PROFESION, form1.cajajubilacion as 'CAJA DE JUBILACION', form1.SEXO, form1.DNIAGENTE FROM form1 WHERE DNIAGENTE='" + _dnis + "')";
-            ListView miListView = new ListView();
-            conexion.CargarResultadosConsulta(consulta, FAMILIAS);
-        }
         private void FAMILIAS_MouseDoubleClick(object sender, MouseEventArgs e)
         {
                 if (e.Button == MouseButtons.Right)
@@ -117,20 +101,36 @@ namespace WindowsFormsApp1
                                 command.Parameters.AddWithValue("@idt", idtValue);
                                 command.ExecuteNonQuery();
                             }
-                        string consulta = "(SELECT form1.idx AS ID, form1.PARENTESCO, form1.NOMBREYAPELLIDO AS 'NOMBRE Y APELLIDO', form1.VIVE, DATE_FORMAT(form1.FECHA, '%Y-%m-%d') AS 'FECHA DE NACIMIENTO', form1.JUB AS JUBILADO, form1.PROFESION, form1.cajajubilacion as 'CAJA DE JUBILACION', form1.SEXO, form1.DNIAGENTE FROM form1 WHERE DNIAGENTE='" + _dnis + "')";
-                        ListView miListView = new ListView();
+                        string consulta = "(SELECT form1.idx AS ID, form1.PARENTESCO, form1.NOMBREYAPELLIDO AS 'NOMBRE Y APELLIDO', form1.VIVE, DATE_FORMAT(form1.FECHA, '%Y-%m-%d') AS 'FECHA DE NACIMIENTO', form1.JUB AS JUBILADO, form1.PROFESION, form1.cajajubilacion as 'CAJA DE JUBILACION', form1.SEXO, form1.DNIAGENTE FROM form1 WHERE DNIAGENTE='" + Dnis_ + "')";
+            
                         conexion.CargarResultadosConsulta(consulta, FAMILIAS);
                     }
                     }
                 }
             }
-
         private void CARGARPDF_Click(object sender, EventArgs e)
         {
-            string nombreCarpeta = _dnis.ToString(); // Obtener el nombre de la carpeta adicional desde otra fuente (por ejemplo, otro formulario)
+            string nombreCarpeta = Dnis_.ToString(); // Obtener el nombre de la carpeta adicional desde otra fuente (por ejemplo, otro formulario)
             rellenafamiliares formFiller = new rellenafamiliares(nombreCarpeta);
-            formFiller.FillPdfForm(_dnis.ToString());
+            formFiller.FillPdfForm(Dnis_.ToString());
         }
+        private void Cargafamilia_Click(object sender, EventArgs e)
+      
+            {
+                string PARENTESCOSS = PARENTESCO.Text;
+                string NOMBRESS = APEELIDOYNOMBRE.Text;
+                string VIVESS = VIVE.Text;
+                DateTime FECHASSS = DateTime.Parse(fechanacimiento.Text);
+                string CAJAJUBILACIONS = CAJADEJUBILACION.Text;
+                string PROFESIONS = PROFESION.Text;
+                string SEXOS = sexo.Text;
+                String ID1 = ID.Text;
+                String JUBS = jubilacion.Text;
+                ConexionMySQL conexion = new ConexionMySQL();
+                conexion.ActualizarDatosFAMILIA(PARENTESCOSS, NOMBRESS, VIVESS, FECHASSS, CAJAJUBILACIONS, PROFESIONS, SEXOS, ID1, JUBS);
+                string consulta = "(SELECT form1.idx AS ID, form1.PARENTESCO, form1.NOMBREYAPELLIDO AS 'NOMBRE Y APELLIDO', form1.VIVE, DATE_FORMAT(form1.FECHA, '%Y-%m-%d') AS 'FECHA DE NACIMIENTO', form1.JUB AS JUBILADO, form1.PROFESION, form1.cajajubilacion as 'CAJA DE JUBILACION', form1.SEXO, form1.DNIAGENTE FROM form1 WHERE DNIAGENTE='" + Dnis_ + "')";
+                conexion.CargarResultadosConsulta(consulta, FAMILIAS);
+            }
     }
-    }
+}
   

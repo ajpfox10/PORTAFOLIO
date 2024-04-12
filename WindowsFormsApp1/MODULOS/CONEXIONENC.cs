@@ -361,7 +361,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No se pudo actualizar los datos.", "Error al actualizar");
             }
         }
-        public void ActualizarDatosVida1(string A1, string A2, string A3, string A4, DateTime A5, string A6, string A7, string A8, string A9, string A10, string A11, string A12, string A13, string A14, string A15, string A16, string A17, string A18, string A19, string A20, DateTime A21, string A22, string A23, string A24, string A25, string A26)
+        public void ActualizarDatosVida1(string A1, string A2, string A3, string A4, DateTime A5, string A6, string A7, string A8, string A9, string A10, string A11, string A12, string A13, string A14, string A15, string A16, string A17, string A18, string A19, string A20, DateTime A21, string A22, string A23, string A24, string A25, string A26, string A27)
         {
             string query = "UPDATE form2 SET " +
             "DNIDELAGENTE = @DNI, " +
@@ -389,7 +389,8 @@ namespace WindowsFormsApp1
             "ESTUDIOSENCURSO=@ESTUDIO," +
             "TITULODELESTUDIOENCURSO=@QESTUDIA," +
             "causalexcepcion=@CAUSAL," +
-            "JUEZQLAOTORGO = @JUEZ_QUE_OTORGO_LA_CARTA ";
+            "JUEZQLAOTORGO = @JUEZ_QUE_OTORGO_LA_CARTA " +
+            "WHERE Id1 = @ID";
             using (MySqlCommand cmd = new MySqlCommand(query, conexion))
             {
                 cmd.Parameters.AddWithValue("@DNI", A1);
@@ -418,6 +419,7 @@ namespace WindowsFormsApp1
                 cmd.Parameters.AddWithValue("@ESTUDIO", A24);
                 cmd.Parameters.AddWithValue("@QESTUDIA", A25);
                 cmd.Parameters.AddWithValue("@CAUSAL", A26);
+                cmd.Parameters.AddWithValue("@ID", A27);
                 // Abrir la conexión a la base de datos
                 Conectar();
             // Ejecutar la consulta SQL
@@ -485,15 +487,15 @@ namespace WindowsFormsApp1
         }
         public void INSERTARDATOSIFGRA(string A2, string A3, DateTime A4, int A5, int A6, string A8, string A9, string A11, string A12)
         {
-            string query = "INSERT INTO cargosdeinicio (cargosdeinicio.CARGODEINICIOS, cargosdeinicio.MINISTERIODEDESIGNACION, cargosdeinicio.FECHADEDESIGNACION, cargosdeinicio.CATEGORIA, cargosdeinicio.REGIMENHORARIO, cargosdeinicio.DEPENDENCIA, cargosdeinicio.RESOLUCION, cargosdeinicio.DNIAGENTE, cargosdeinicio.ifgradenombramiento ) " +
-            "VALUES (@CARGODEINICIOS, @MINISTERIOSDEDESIGNACION, @FECHADEDESIGNACION, @CATEGORIA, @REGIMENHORARIO, @DEPENDENCIA, @RESOLUCION, @DNIAGENTE, @if)";
+            string query = "INSERT INTO cargosdeinicio (cargosdeinicio.CARGODEINICIOS, cargosdeinicio.MINISTERIODEDESIGNACION, cargosdeinicio.FECHADEDESIGNACION, cargosdeinicio.CATEGORIA, cargosdeinicio.Regimenhorario, cargosdeinicio.DEPENDENCIA, cargosdeinicio.RESOLUCION, cargosdeinicio.DNIAGENTE, cargosdeinicio.ifgradenombramiento ) " +
+            "VALUES (@CARGODEINICIOS, @MinisteriosDEDESIGNACION, @FECHADEDESIGNACION, @CATEGORIA, @Regimenhorario, @DEPENDENCIA, @RESOLUCION, @DNIAGENTE, @if)";
                 using (MySqlCommand cmd = new MySqlCommand(query, conexion))
             {
                 cmd.Parameters.AddWithValue("@CARGODEINICIOS", A2);
-                cmd.Parameters.AddWithValue("@MINISTERIOSDEDESIGNACION", A3);
+                cmd.Parameters.AddWithValue("@MinisteriosDEDESIGNACION", A3);
                 cmd.Parameters.AddWithValue("@FECHADEDESIGNACION", A4);
                 cmd.Parameters.AddWithValue("@CATEGORIA", A5);
-                cmd.Parameters.AddWithValue("@REGIMENHORARIO", A6);
+                cmd.Parameters.AddWithValue("@Regimenhorario", A6);
                 cmd.Parameters.AddWithValue("@DEPENDENCIA", A8);
                 cmd.Parameters.AddWithValue("@RESOLUCION", A9);
                 cmd.Parameters.AddWithValue("@DNIAGENTE", A11);
@@ -580,7 +582,7 @@ namespace WindowsFormsApp1
         }
         public void ActualizarDatosdesignaciones(string A2, string A3, DateTime A4, int A5, int A6, DateTime A7, string A8, string A9, string A10, string A12)
         {
-            string query = "UPDATE cargosdeinicio SET CARGODEINICIOS = @FECHAALTA, MINISTERIODEDESIGNACION = @FECHABAJA, FECHADEDESIGNACION = @FECHA, CATEGORIA = @DECRETO, REGIMENHORARIO = @MOTIVO, FECHADEBAJA=@EXPEDIENTE, DEPENDENCIA=@DEPENDENCIA, RESOLUCION=@AÑO, MOTIVODEBAJA=@OBSERVACIONES, IFGRADENOMBRAMIENTO=@IFGRA" +
+            string query = "UPDATE cargosdeinicio SET CARGODEINICIOS = @FECHAALTA, MINISTERIODEDESIGNACION = @FECHABAJA, FECHADEDESIGNACION = @FECHA, CATEGORIA = @DECRETO, Regimenhorario = @MOTIVO, FECHADEBAJA=@EXPEDIENTE, DEPENDENCIA=@DEPENDENCIA, RESOLUCION=@AÑO, MOTIVODEBAJA=@OBSERVACIONES, IFGRADENOMBRAMIENTO=@IFGRA" +
                 "WHERE ID = @ID";
             MySqlCommand cmd = new MySqlCommand(query, conexion);
             cmd.Parameters.AddWithValue("@FECHAALTA", A2);
@@ -712,20 +714,20 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No se pudo agregar la consulta.", "Error al agregar");
             }
         }
-        public void CARGADECITACION(long dni, string CITADOPOR, string MOTIVACION, string CITACIONACTIVA, DateTime fechadecitacion)
+        public void CARGADECITACION(long dni, string CITADOPOR, string MOTIVACION, DateTime fechadecitacion)
         {
             // Construir la consulta SQL para insertar los datos en la tabla "consulta"
-            string query = "INSERT INTO CITACIONES (DNI, CITADOPOR, MOTIVODECITACION, CITACIONACTIVA, fechadecitacion) " +
-                           "VALUES (@dni, @atendidoPor, @año, @notanumero, @memo";
+            string query = "INSERT INTO CITACIONES (DNI, CITADOPOR, MOTIVODECITACION, fechadecitacion) " +
+                           "VALUES (@dni, @atendidoPor, @notanumero, @memo)";
 
+            string fechaFormateada = fechadecitacion.ToString("yyyy-MM-dd HH:mm:ss");
             // Crear el objeto MySqlCommand con la consulta y la conexión a la base de datos
             MySqlCommand cmd = new MySqlCommand(query, conexion);
             // Agregar los parámetros a la consulta
             cmd.Parameters.AddWithValue("@dni", dni);
             cmd.Parameters.AddWithValue("@atendidoPor", CITADOPOR);
             cmd.Parameters.AddWithValue("@notanumero", MOTIVACION);
-            cmd.Parameters.AddWithValue("@año", CITACIONACTIVA);
-            cmd.Parameters.AddWithValue("@memo", fechadecitacion);
+            cmd.Parameters.AddWithValue("@memo", fechaFormateada);
           
 
             // Abrir la conexión a la base de datos
@@ -745,7 +747,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No se pudo agregar la consulta.", "Error al agregar");
             }
         }
-        public IQueryable<string> certificadodetrabajo(long dni)
+        public IQueryable<string> Certificadodetrabajo(long dni)
         {
             List<string> resultados = new List<string>();
 
@@ -792,7 +794,7 @@ namespace WindowsFormsApp1
 
             return resultados.AsQueryable();
         }
-        public void ActualizarESTADOAGENTE(int activo, long _dniss)
+        public void ActualizarESTADOAGENTE(int activo, long Dnis_s)
         {
             // Construir la consulta SQL para actualizar el campo "cierredecitacion"
             string query = "UPDATE personal SET activo = @activo WHERE dni = @dnis";
@@ -800,7 +802,7 @@ namespace WindowsFormsApp1
             MySqlCommand cmd = new MySqlCommand(query, conexion);
             // Agregar los parámetros a la consulta
             cmd.Parameters.AddWithValue("@activo", activo);
-            cmd.Parameters.AddWithValue("@dnis", _dniss);
+            cmd.Parameters.AddWithValue("@dnis", Dnis_s);
             // Abrir la conexión a la base de datos
             Conectar();
             // Ejecutar la consulta SQL
@@ -818,7 +820,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No se pudo actualizar la baja del agente");
             }
         }
-        public void ActualizarESTADOAGENTE1(int activo, long _dniss)
+        public void ActualizarESTADOAGENTE1(int activo, long Dnis_s)
         {
             // Construir la consulta SQL para actualizar el campo "cierredecitacion"
             string query = "UPDATE personal SET activo = @activo WHERE dni = @dnis";
@@ -826,7 +828,7 @@ namespace WindowsFormsApp1
             MySqlCommand cmd = new MySqlCommand(query, conexion);
             // Agregar los parámetros a la consulta
             cmd.Parameters.AddWithValue("@activo", activo);
-            cmd.Parameters.AddWithValue("@dnis", _dniss);
+            cmd.Parameters.AddWithValue("@dnis", Dnis_s);
             // Abrir la conexión a la base de datos
             Conectar();
             // Ejecutar la consulta SQL
@@ -974,6 +976,118 @@ namespace WindowsFormsApp1
                 // Mostrar mensaje de error si no se insertó ninguna fila
                 MessageBox.Show("No se pudo agregar la consulta.", "Error al agregar");
             }
+        }
+        public void ActualizarDatosdesignacionesBAJADECAR(DateTime A7, string A10, string A8)
+        {
+            string query = "UPDATE cargosdeinicio SET FECHADEBAJA=@EXPEDIENTE, MOTIVODEBAJA=@OBSERVACIONES " +
+                "WHERE ID = @ID";
+            MySqlCommand cmd = new MySqlCommand(query, conexion);
+            cmd.Parameters.AddWithValue("@EXPEDIENTE", A7);        
+            cmd.Parameters.AddWithValue("@OBSERVACIONES", A10);
+            cmd.Parameters.AddWithValue("@ID", A8);
+            // Abrir la conexión a la base de datos
+            Conectar();
+            // Ejecutar la consulta SQL
+            int filasAfectadas = cmd.ExecuteNonQuery();
+            // Cerrar la conexión a la base de datos
+            Dispose();
+            if (filasAfectadas > 0)
+            {
+                // Mostrar mensaje de confirmación de actualización
+                MessageBox.Show("Los datos han sido actualizados con éxito.", "Actualización exitosa");
+            }
+            else
+            {
+                // Mostrar mensaje de error si no se pudo actualizar
+                MessageBox.Show("No se pudo actualizar los datos.", "Error al actualizar");
+            }
+        }
+        public void ActualizarCierreDetarea(int id, string comentariosAgenteRealizo)
+        {
+            // Obtener la fecha y hora actual en el formato deseado
+            string fechaActual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            // Construir la consulta SQL para actualizar el campo "cierredecitacion"
+            string query = "UPDATE tareas SET fechadebajadetarea = @fechaActual, comentariosagenterealizo = @comentariosAgenteRealizo WHERE id = @id";
+            // Crear el objeto MySqlCommand con la consulta y la conexión a la base de datos
+            MySqlCommand cmd = new MySqlCommand(query, conexion);
+            // Agregar los parámetros a la consulta
+            cmd.Parameters.AddWithValue("@fechaActual", fechaActual);
+            cmd.Parameters.AddWithValue("@comentariosAgenteRealizo", comentariosAgenteRealizo);
+            cmd.Parameters.AddWithValue("@id", id);
+            // Abrir la conexión a la base de datos
+            Conectar();
+            // Ejecutar la consulta SQL
+            int filasAfectadas = cmd.ExecuteNonQuery();
+            // Cerrar la conexión a la base de datos
+            Dispose();
+            if (filasAfectadas > 0)
+            {
+                // Mostrar mensaje de confirmación de actualización
+                MessageBox.Show("La citación con ID " + id + " ha sido actualizada con éxito.", "Actualización exitosa");
+            }
+            else
+            {
+                // Mostrar mensaje de error si no se actualizó ninguna fila
+                MessageBox.Show("No se pudo actualizar la citación con ID " + id + ".", "Error al actualizar");
+            }
+        }
+        public void AgregarTAREAS(string TAREA, DateTime FECHA, string ASIGNADOA)
+        {
+            // Construir la consulta SQL para insertar los datos en la tabla "consulta"
+            string query = "INSERT INTO TAREAS (TAREA, fechadealtadetarea, asifgnadoa) " +
+                           "VALUES (@TAREA, @FECHA, @ASIGNADOA)";
+
+            // Crear el objeto MySqlCommand con la consulta y la conexión a la base de datos
+            MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+            // Agregar los parámetros a la consulta
+            cmd.Parameters.AddWithValue("@TAREA", TAREA);
+            cmd.Parameters.AddWithValue("@FECHA", FECHA);
+            cmd.Parameters.AddWithValue("@ASIGNADOA", ASIGNADOA);
+  
+
+            // Abrir la conexión a la base de datos
+            Conectar();
+
+            // Ejecutar la consulta SQL
+            int filasAfectadas = cmd.ExecuteNonQuery();
+
+            // Cerrar la conexión a la base de datos
+            Dispose();
+
+            if (filasAfectadas > 0)
+            {
+                // Mostrar mensaje de confirmación de inserción
+                MessageBox.Show("Los datos de la consulta han sido agregados con éxito.", "Inserción exitosa");
+            }
+            else
+            {
+                // Mostrar mensaje de error si no se insertó ninguna fila
+                MessageBox.Show("No se pudo agregar la consulta.", "Error al agregar");
+            }
+        }
+
+
+
+        public string SeleccionarRegistros(string tabla, string columna, int id)
+        {
+            string str = (string)null;
+            using (MySqlCommand mySqlCommand = new MySqlCommand("SELECT `" + columna + "` FROM " + tabla + " WHERE dni = @Id", this.conexion))
+            {
+                mySqlCommand.Parameters.AddWithValue("@Id", (object)id);
+                this.Conectar();
+                object obj = mySqlCommand.ExecuteScalar();
+                if (obj != null)
+                {
+                    str = obj.ToString();
+                }
+                else
+                {
+                    int num = (int)MessageBox.Show("No se encontraron registros con el ID especificado", "Error de consulta");
+                }
+                this.Dispose();
+            }
+            return str;
         }
 
     }

@@ -106,7 +106,7 @@ namespace WindowsFormsApp1
                     if (hayCheckBoxSeleccionados)
                     {
                         nombresSeleccionados = nombresSeleccionados.TrimEnd(',', ' ');
-                        string consulta = $"INSERT INTO {nombreTabla} ({nombreColumna}) VALUES ('{pedido}', '{dni}', '{agente}', '{fechaPedido.ToString("yyyy-MM-dd")}')";
+                        string consulta = $"INSERT INTO {nombreTabla} ({nombreColumna}) VALUES ('{pedido}', '{dni}', '{agente}', '{fechaPedido:yyyy-MM-dd}')";
 
 
 

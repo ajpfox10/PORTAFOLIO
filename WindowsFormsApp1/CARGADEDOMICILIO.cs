@@ -9,20 +9,22 @@ namespace WindowsFormsApp1
     {
         private readonly CargarComboBoxes cargadorComboBoxes = new CargarComboBoxes();
         private readonly CargarComboBoxes provincias = new CargarComboBoxes();
-        public Int64 _dnis;
-        private string _agentedeatencions;
-        public CARGADEDOMICILIO(FORMULARIOPRINCIPAL formularioPrincipal, Int64 DNI, string agenteDeAtencion)
+        public Int64 Dnis_;
+
+        private readonly string Agentedeatencions_;
+
+        public CARGADEDOMICILIO(Int64 DNI, string agenteDeAtencion)
         {
             InitializeComponent();
-            _dnis = DNI;
-            _agentedeatencions = agenteDeAtencion;
+            Dnis_ = DNI;
+            Agentedeatencions_ = agenteDeAtencion;
             provincias.PCIA(PCIA);
         }
         private void CARGADEDOMICILIO_Load(object sender, EventArgs e)
         {
             CARDADEDOMICILIO.MouseDoubleClick += CARDADEDOMICILIO_MouseDoubleClick;
             ConexionMySQL conexion = new ConexionMySQL();
-            string consulta = " SELECT form3.Id, form3.CALLE, form3.NUMERO, form3.PISO, form3.DEPTO, localidades1.Provincia AS PROVINCIA, localidades1.municipio AS MUNICIPIO, localidades1.nombre AS NOMBRE, localidades1.provincia_id AS PCIA, form3.PARTIDO, form3.LOCALIDAD, form3.TELEMERGEN AS TEL, form3.EMAILOFICIAL AS EMAIL, form3.TELCELCONTA AS CONTACTO, form3.OTRAS, form3.DNIAGENTE AS DNI FROM form3 INNER JOIN localidades1 ON(form3.LOCALIDAD = localidades1.idlocalidad) AND(form3.PARTIDO = localidades1.municipio_id) WHERE form3.DNIAGENTE = '" + _dnis + "'";
+            string consulta = " SELECT form3.Id, form3.CALLE, form3.NUMERO, form3.PISO, form3.DEPTO, localidades1.Provincia AS PROVINCIA, localidades1.municipio AS MUNICIPIO, localidades1.nombre AS NOMBRE, localidades1.provincia_id AS PCIA, form3.PARTIDO, form3.LOCALIDAD, form3.TELEMERGEN AS TEL, form3.EMAILOFICIAL AS EMAIL, form3.TELCELCONTA AS CONTACTO, form3.OTRAS, form3.DNIAGENTE AS DNI FROM form3 INNER JOIN localidades1 ON(form3.LOCALIDAD = localidades1.idlocalidad) AND(form3.PARTIDO = localidades1.municipio_id) WHERE form3.DNIAGENTE = '" + Dnis_ + "'";
             ListView miListView = new ListView();
             conexion.CargarResultadosConsulta(consulta, CARDADEDOMICILIO);
             string filePath = "c:/domicilio1.pdf"; // Ruta al archivo PDF
@@ -115,7 +117,7 @@ namespace WindowsFormsApp1
             if (verificador.VerificarControles(this.Controls))
             {
                 // Todos los controles están completos, por lo que se puede insertar los datos en la base de datos
-                string IDXX1 = ID.Text;
+              
                 string calle1 = calle.Text;
                 string numero1 = numero.Text;
                 string piso1 = piso.Text;
@@ -124,14 +126,14 @@ namespace WindowsFormsApp1
                 string localidad = LOCALIDAD.SelectedValue.ToString();
                 string telefono = TELCONTACTO.Text;
                 string email = EMAIL.Text;
-                string dni = _dnis.ToString();
+                string dni = Dnis_.ToString();
                 string tele = TELEMERGENCIA.Text;
                 string otrosss = OTRASCARACTERISTICAS.Text;
                 ConexionMySQL conexion = new ConexionMySQL();
                 conexion.InsertarDatos(calle1, numero1, piso1, depto1, partido, localidad, telefono, email, dni, tele, otrosss);
 
                 string consulta = " SELECT form3.Id, form3.CALLE, form3.NUMERO, form3.PISO, form3.DEPTO, localidades1.Provincia AS PROVINCIA, localidades1.municipio AS MUNICIPIO, localidades1.nombre AS NOMBRE, form3.PARTIDO, form3.LOCALIDAD, form3.TELEMERGEN AS TEL, form3.EMAILOFICIAL AS EMAIL, form3.TELCELCONTA AS CONTACTO, form3.OTRAS FROM form3 INNER JOIN localidades1 ON(form3.LOCALIDAD = localidades1.idlocalidad) AND(form3.PARTIDO = localidades1.municipio_id)";
-                ListView miListView = new ListView();
+      
                 ControlHelper.LimpiarControles(this);
                 provincias.PCIA(PCIA);
                 conexion.CargarResultadosConsulta(consulta, CARDADEDOMICILIO);
@@ -207,14 +209,14 @@ namespace WindowsFormsApp1
             ConexionMySQL conexion = new ConexionMySQL();
             conexion.ActualizarDatos(calle2, numero2, piso3, depto4, partido1, localidad1, telefono1, email1, IDXX1, tele, otross);
             string consulta = " SELECT form3.Id, form3.CALLE, form3.NUMERO, form3.PISO, form3.DEPTO, localidades1.Provincia AS PROVINCIA, localidades1.municipio AS MUNICIPIO, localidades1.nombre AS NOMBRE, form3.PARTIDO, form3.LOCALIDAD, form3.TELEMERGEN AS TEL, form3.EMAILOFICIAL AS EMAIL, form3.TELCELCONTA AS CONTACTO, form3.OTRAS FROM form3 INNER JOIN localidades1 ON(form3.LOCALIDAD = localidades1.idlocalidad) AND(form3.PARTIDO = localidades1.municipio_id)";
-            ListView miListView = new ListView();
+         
             conexion.CargarResultadosConsulta(consulta, CARDADEDOMICILIO);
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            string nombreCarpeta = _dnis.ToString(); // Obtener el nombre de la carpeta adicional desde otra fuente (por ejemplo, otro formulario)
+            string nombreCarpeta = Dnis_.ToString(); // Obtener el nombre de la carpeta adicional desde otra fuente (por ejemplo, otro formulario)
             PdfFormFiller formFiller = new PdfFormFiller(nombreCarpeta);
-            formFiller.FillPdfForm(_dnis.ToString());
+            formFiller.FillPdfForm(Dnis_.ToString());
         }
     }
 }

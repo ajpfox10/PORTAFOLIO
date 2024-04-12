@@ -33,7 +33,7 @@
             this.AGENTE = new System.Windows.Forms.ComboBox();
             this.BOTONCARGAFAMILIA = new System.Windows.Forms.Button();
             this.CARGADAMICILIO = new System.Windows.Forms.Button();
-            this.Button1 = new System.Windows.Forms.Button();
+            this.FORMULARIODESIGNACION = new System.Windows.Forms.Button();
             this.CARGARFAMILIA = new System.Windows.Forms.Button();
             this.DNI = new System.Windows.Forms.TextBox();
             this.Label1 = new System.Windows.Forms.Label();
@@ -42,12 +42,15 @@
             this.GESTIONRRHH = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.apellido1 = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.PORDNI = new System.Windows.Forms.RadioButton();
+            this.PORAPELLIDO = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnpedidos = new System.Windows.Forms.Button();
             this.BOTONBAJA = new System.Windows.Forms.Button();
             this.CORREGIRERRORES = new System.Windows.Forms.Button();
+            this.TAREASASIGNAR = new System.Windows.Forms.Button();
+            this.ASIGNACIONTAREAS = new System.Windows.Forms.Button();
+            this.FOTOTARJETA = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,16 +106,16 @@
             this.CARGADAMICILIO.UseVisualStyleBackColor = true;
             this.CARGADAMICILIO.Click += new System.EventHandler(this.CARGADAMICILIO_Click);
             // 
-            // Button1
+            // FORMULARIODESIGNACION
             // 
-            this.Button1.Location = new System.Drawing.Point(257, 239);
-            this.Button1.Margin = new System.Windows.Forms.Padding(2);
-            this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(120, 37);
-            this.Button1.TabIndex = 12;
-            this.Button1.Text = "FORMULARIO DE DESIGNACION";
-            this.Button1.UseVisualStyleBackColor = true;
-            this.Button1.Click += new System.EventHandler(this.Button1_Click);
+            this.FORMULARIODESIGNACION.Location = new System.Drawing.Point(257, 239);
+            this.FORMULARIODESIGNACION.Margin = new System.Windows.Forms.Padding(2);
+            this.FORMULARIODESIGNACION.Name = "FORMULARIODESIGNACION";
+            this.FORMULARIODESIGNACION.Size = new System.Drawing.Size(120, 37);
+            this.FORMULARIODESIGNACION.TabIndex = 12;
+            this.FORMULARIODESIGNACION.Text = "FORMULARIO DE DESIGNACION";
+            this.FORMULARIODESIGNACION.UseVisualStyleBackColor = true;
+            this.FORMULARIODESIGNACION.Click += new System.EventHandler(this.FORMULARIODESIGNACION_Click);
             // 
             // CARGARFAMILIA
             // 
@@ -133,8 +136,7 @@
             this.DNI.Size = new System.Drawing.Size(284, 20);
             this.DNI.TabIndex = 10;
             this.DNI.Text = "0";
-            this.DNI.TextChanged += new System.EventHandler(this.DNI_TextChanged);
-            this.DNI.Validating += new System.ComponentModel.CancelEventHandler(this.DNI_Validating);
+      
             // 
             // Label1
             // 
@@ -195,38 +197,37 @@
             this.apellido1.Name = "apellido1";
             this.apellido1.Size = new System.Drawing.Size(283, 21);
             this.apellido1.TabIndex = 22;
-            this.apellido1.SelectedIndexChanged += new System.EventHandler(this.apellido1_SelectedIndexChanged_1);
-            this.apellido1.SelectedValueChanged += new System.EventHandler(this.apellido1_SelectedValueChanged);
+   
             // 
-            // radioButton1
+            // PORDNI
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(21, 44);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(140, 20);
-            this.radioButton1.TabIndex = 23;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "BUSQUEDA POR DNI";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.Click += new System.EventHandler(this.radioButton1_Click);
+            this.PORDNI.AutoSize = true;
+            this.PORDNI.Location = new System.Drawing.Point(21, 44);
+            this.PORDNI.Name = "PORDNI";
+            this.PORDNI.Size = new System.Drawing.Size(133, 17);
+            this.PORDNI.TabIndex = 23;
+            this.PORDNI.TabStop = true;
+            this.PORDNI.Text = "BUSQUEDA POR DNI";
+            this.PORDNI.UseVisualStyleBackColor = true;
+         
             // 
-            // radioButton2
+            // PORAPELLIDO
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(21, 67);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(173, 20);
-            this.radioButton2.TabIndex = 24;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "BUSQUEDA POR APELLIDO";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.Click += new System.EventHandler(this.radioButton2_Click);
+            this.PORAPELLIDO.AutoSize = true;
+            this.PORAPELLIDO.Location = new System.Drawing.Point(21, 67);
+            this.PORAPELLIDO.Name = "PORAPELLIDO";
+            this.PORAPELLIDO.Size = new System.Drawing.Size(166, 17);
+            this.PORAPELLIDO.TabIndex = 24;
+            this.PORAPELLIDO.TabStop = true;
+            this.PORAPELLIDO.Text = "BUSQUEDA POR APELLIDO";
+            this.PORAPELLIDO.UseVisualStyleBackColor = true;
+        
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.PORDNI);
             this.groupBox1.Controls.Add(this.apellido1);
-            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.PORAPELLIDO);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.DNI);
             this.groupBox1.Controls.Add(this.Label1);
@@ -246,7 +247,7 @@
             this.btnpedidos.TabIndex = 26;
             this.btnpedidos.Text = "PEDIDOS";
             this.btnpedidos.UseVisualStyleBackColor = true;
-            this.btnpedidos.Click += new System.EventHandler(this.btnpedidos_Click);
+            this.btnpedidos.Click += new System.EventHandler(this.Btnpedidos_Click);
             // 
             // BOTONBAJA
             // 
@@ -269,12 +270,46 @@
             this.CORREGIRERRORES.UseVisualStyleBackColor = true;
             this.CORREGIRERRORES.Click += new System.EventHandler(this.CORREGIRERRORES_Click);
             // 
+            // TAREASASIGNAR
+            // 
+            this.TAREASASIGNAR.Location = new System.Drawing.Point(531, 294);
+            this.TAREASASIGNAR.Margin = new System.Windows.Forms.Padding(2);
+            this.TAREASASIGNAR.Name = "TAREASASIGNAR";
+            this.TAREASASIGNAR.Size = new System.Drawing.Size(127, 33);
+            this.TAREASASIGNAR.TabIndex = 29;
+            this.TAREASASIGNAR.Text = "TAREAS A ASIGNAR";
+            this.TAREASASIGNAR.UseVisualStyleBackColor = true;
+            this.TAREASASIGNAR.Click += new System.EventHandler(this.TAREASASIGNAR_Click);
+            // 
+            // ASIGNACIONTAREAS
+            // 
+            this.ASIGNACIONTAREAS.Location = new System.Drawing.Point(503, 343);
+            this.ASIGNACIONTAREAS.Name = "ASIGNACIONTAREAS";
+            this.ASIGNACIONTAREAS.Size = new System.Drawing.Size(198, 32);
+            this.ASIGNACIONTAREAS.TabIndex = 30;
+            this.ASIGNACIONTAREAS.Text = "ASIGNACION DE TAREAS";
+            this.ASIGNACIONTAREAS.UseVisualStyleBackColor = true;
+            this.ASIGNACIONTAREAS.Click += new System.EventHandler(this.ASIGNACIONTAREAS_Click);
+            // 
+            // FOTOTARJETA
+            // 
+            this.FOTOTARJETA.Location = new System.Drawing.Point(888, 241);
+            this.FOTOTARJETA.Name = "FOTOTARJETA";
+            this.FOTOTARJETA.Size = new System.Drawing.Size(161, 35);
+            this.FOTOTARJETA.TabIndex = 31;
+            this.FOTOTARJETA.Text = "FOTO TARJETA";
+            this.FOTOTARJETA.UseVisualStyleBackColor = true;
+            this.FOTOTARJETA.Click += new System.EventHandler(this.FOTOTARJETA_Click);
+            // 
             // FORMULARIOPRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1162, 633);
+            this.ClientSize = new System.Drawing.Size(1171, 573);
+            this.Controls.Add(this.FOTOTARJETA);
+            this.Controls.Add(this.ASIGNACIONTAREAS);
+            this.Controls.Add(this.TAREASASIGNAR);
             this.Controls.Add(this.CORREGIRERRORES);
             this.Controls.Add(this.BOTONBAJA);
             this.Controls.Add(this.btnpedidos);
@@ -287,7 +322,7 @@
             this.Controls.Add(this.AGENTE);
             this.Controls.Add(this.BOTONCARGAFAMILIA);
             this.Controls.Add(this.CARGADAMICILIO);
-            this.Controls.Add(this.Button1);
+            this.Controls.Add(this.FORMULARIODESIGNACION);
             this.Controls.Add(this.CARGARFAMILIA);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FORMULARIOPRINCIPAL";
@@ -308,7 +343,7 @@
         internal System.Windows.Forms.ComboBox AGENTE;
         internal System.Windows.Forms.Button BOTONCARGAFAMILIA;
         internal System.Windows.Forms.Button CARGADAMICILIO;
-        internal System.Windows.Forms.Button Button1;
+        internal System.Windows.Forms.Button FORMULARIODESIGNACION;
         internal System.Windows.Forms.Button CARGARFAMILIA;
         internal System.Windows.Forms.TextBox DNI;
         internal System.Windows.Forms.Label Label1;
@@ -317,11 +352,14 @@
         private System.Windows.Forms.Button GESTIONRRHH;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox apellido1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton PORDNI;
+        private System.Windows.Forms.RadioButton PORAPELLIDO;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnpedidos;
         private System.Windows.Forms.Button BOTONBAJA;
         private System.Windows.Forms.Button CORREGIRERRORES;
+        private System.Windows.Forms.Button TAREASASIGNAR;
+        private System.Windows.Forms.Button ASIGNACIONTAREAS;
+        private System.Windows.Forms.Button FOTOTARJETA;
     }
 }

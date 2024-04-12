@@ -9,7 +9,7 @@ namespace WindowsFormsApp1
 {
         public class CargarComboBoxes
     {
-        private ConexionMySQL conexion = new ConexionMySQL();
+        private readonly ConexionMySQL conexion = new ConexionMySQL();
         public void PCIA(ComboBox combo)
         {
             MySqlCommand cmd = new MySqlCommand("SELECT DISTINCT provincia, provincia_id FROM localidades1", conexion.conexion);
@@ -75,9 +75,9 @@ namespace WindowsFormsApp1
                 conexion.Dispose();
             }
         }
-        public void ministerios(ComboBox combo)
+        public void Ministerios(ComboBox combo)
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT ministerios.ID, ministerios.MINISTERIO FROM ministerios", conexion.conexion);
+            MySqlCommand cmd = new MySqlCommand("SELECT Ministerios.ID, Ministerios.MINISTERIO FROM Ministerios", conexion.conexion);
             try
             {
                 conexion.Conectar();
@@ -90,7 +90,7 @@ namespace WindowsFormsApp1
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Error al cargar ministerios: " + ex.Message);
+                MessageBox.Show("Error al cargar Ministerios: " + ex.Message);
             }
             finally
             {
@@ -99,17 +99,17 @@ namespace WindowsFormsApp1
 
 
         }
-        public void regimenhorario(ComboBox combo)
+        public void Regimenhorario(ComboBox combo)
         {
 
-            MySqlCommand cmd = new MySqlCommand("SELECT regimenhorario.ID, regimenhorario.REGIMENHORARIO FROM regimenhorario", conexion.conexion); try
+            MySqlCommand cmd = new MySqlCommand("SELECT Regimenhorario.ID, Regimenhorario.`REGIMEN HORARIO` FROM Regimenhorario", conexion.conexion); try
                 {
                     conexion.Conectar();
                     DataTable dt = new DataTable();
                     dt.Load(cmd.ExecuteReader());
                 dt.Columns["ID"].DataType = typeof(int);
                 combo.DataSource = dt;
-                combo.DisplayMember = "REGIMENHORARIO";
+                combo.DisplayMember = "Regimenhorario";
                 combo.ValueMember = "ID";
                 }
                 catch (MySqlException ex)
@@ -145,9 +145,9 @@ namespace WindowsFormsApp1
 
 
         }
-        public void nomenclador(ComboBox combo)
+        public void Nomenclador(ComboBox combo)
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT nomenclador.id, nomenclador.cargo, nomenclador.tareas FROM nomenclador", conexion.conexion);
+            MySqlCommand cmd = new MySqlCommand("SELECT Nomenclador.id, Nomenclador.cargo, Nomenclador.tareas FROM Nomenclador", conexion.conexion);
             try
             {
                 conexion.Conectar();
@@ -160,7 +160,7 @@ namespace WindowsFormsApp1
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Error al cargar nomenclador: " + ex.Message);
+                MessageBox.Show("Error al cargar Nomenclador: " + ex.Message);
             }
             finally
             {

@@ -10,22 +10,22 @@ namespace WindowsFormsApp1
 {
     public partial class CORREGIRERRORES : Form
     {
-        public static Int64 _dnis { get; set; }
+        public static Int64 Dnis_ { get; set; }
         public CORREGIRERRORES()
         {
             InitializeComponent();
             // Manejar el evento SelectedIndexChanged para el ComboBox principal
             cmbColumna.SelectedIndexChanged += CmbColumna_SelectedIndexChanged;
         }
-        private void radioButton1_Click(object sender, EventArgs e)
+        private void RadioButton1_Click(object sender, EventArgs e)
         {
             DNI.Text = "";  // Limpiar el campo DNI al hacer clic en radioButton1
             LimpiarCampos();
         }
-        private void radioButton2_Click(object sender, EventArgs e)
+        private void RadioButton2_Click(object sender, EventArgs e)
         {
             DNI.Text = "";  // Limpiar el campo DNI al hacer clic en radioButton2
-            _dnis = 0;
+            Dnis_ = 0;
             LimpiarCampos();
         }
         private void DNI_TextChanged(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
         {
             ProcesarEntradaUsuario();
         }
-        private void apellido1_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void Apellido1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             ProcesarSeleccionApellido();
         }
@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
             // Verificar si el DNI ingresado es numérico
             if (long.TryParse(dniIngresado, out long dniNumber))
             {
-                _dnis = dniNumber;
+                Dnis_ = dniNumber;
                 BuscarApellidoPorDNI();
             }
             else
@@ -75,7 +75,7 @@ namespace WindowsFormsApp1
                     string dni = conexion.EjecutarConsulta(consultaDNI, "dni").FirstOrDefault();
 
                     DNI.Text = dni;
-                    _dnis = Convert.ToInt64(DNI.Text);
+                    Dnis_ = Convert.ToInt64(DNI.Text);
                     ConstruirConsulta();
                 }
             }
@@ -84,18 +84,17 @@ namespace WindowsFormsApp1
                 MostrarError("Debe seleccionar un apellido");
             }
         }
-       
         private void LimpiarCampos()
         {
             DNI.Text = "0";
-            _dnis = 0;
+            Dnis_ = 0;
             apellido1.Text = "";
         }
         private void MostrarError(string mensaje)
         {
             MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        private void apellido1_SelectedValueChanged(object sender, EventArgs e)
+        private void Apellido1_SelectedValueChanged(object sender, EventArgs e)
         {
             ProcesarEntradaUsuario();
         }
@@ -357,27 +356,25 @@ namespace WindowsFormsApp1
                 Console.WriteLine("StackTrace: " + ex.StackTrace);
             }
         }
-        private void cambio_Click(object sender, EventArgs e)
+        private void Cambio_Click(object sender, EventArgs e)
         {
             var conexion = new ConexionMySQL();
             string columna = cmbColumna.SelectedItem.ToString();
             string valorSeleccionado = cmbColumna.SelectedItem.ToString();
             // Evaluar el valor seleccionado y ejecutar el código correspondiente
-            if (valorSeleccionado == "Sexo")
+            if (valorSeleccionado == "SEXO")
             {
                 string nuevoValor = ""; // Declarar la variable fuera de los bloques if
-
-                if (SEXO.ValueMember == "F")
+                if (SEXO.SelectedItem.ToString() == "F")
                 {
                     nuevoValor = "1";
                 }
-                else if (SEXO.ValueMember == "M")
+                else if (SEXO.SelectedItem.ToString() == "M")
                 {
                     nuevoValor = "2";
                 }
-
                 // Llamada al método de la clase ManejadorModificacion
-                conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(_dnis));
+                conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(Dnis_));
             }
             else if (valorSeleccionado == "Ley")
             {
@@ -388,22 +385,21 @@ namespace WindowsFormsApp1
                 if (!string.IsNullOrEmpty(valorSeleccionado1))
                 {
                     // Obtener el diccionario del Tag
-                    Dictionary<string, string> diccionarioLEY = LEY.Tag as Dictionary<string, string>;
 
                     // Verificar si el valor seleccionado existe en el diccionario
-                    if (diccionarioLEY != null && diccionarioLEY.ContainsValue(valorSeleccionado1))
+                    if (LEY.Tag is Dictionary<string, string> diccionarioLEY && diccionarioLEY.ContainsValue(valorSeleccionado1))
                     {
-                        // Obtener la clave (IDESPECIALIDAD) asociada al valor seleccionado (Ocupacion)
+                        // Obtener la clave (IDley) asociada al valor seleccionado (Ocupacion)
                         string idLEY = diccionarioLEY.FirstOrDefault(x => x.Value == valorSeleccionado1).Key;
 
                         // Imprimir en la consola el valor de idEspecialidad
-                        Console.WriteLine("Valor de IDOCUPACION obtenido del diccionario: " + idLEY);
+                        Console.WriteLine("Valor de IDLEY obtenido del diccionario: " + idLEY);
 
                         string nuevoValor = idLEY;
 
                         // Llamada al método de la clase ManejadorModificacion
-                        conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(_dnis)); // Cambia 'TuTabla' y el valor de id según tus necesidades
-                        Console.WriteLine("Valor Seleccionado en idEspecialidad: " + nuevoValor);
+                        conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(Dnis_)); // Cambia 'TuTabla' y el valor de id según tus necesidades
+                        Console.WriteLine("Valor Seleccionado en iley: " + nuevoValor);
                     }
                     else
                     {
@@ -417,9 +413,9 @@ namespace WindowsFormsApp1
             }
             else if (valorSeleccionado == "Regimen Horario")
             {
-                string nuevoValor = REGIMENHORARIO.ValueMember;
+                string nuevoValor = Regimenhorario.SelectedItem.ToString();
                 // Llamada al método de la clase ManejadorModificacion
-                conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(_dnis)); // Cambia 'TuTabla' y el valor de id según tus necesidades
+                conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(Dnis_)); // Cambia 'TuTabla' y el valor de id según tus necesidades
             }
             else if (valorSeleccionado == "ocupacion")
             {
@@ -427,9 +423,8 @@ namespace WindowsFormsApp1
                 if (!string.IsNullOrEmpty(valorSeleccionado1))
                 {
                     // Obtener el diccionario del Tag
-                    Dictionary<string, string> diccionarioOCUPACION = OCUPACION.Tag as Dictionary<string, string>;
                     // Verificar si el valor seleccionado existe en el diccionario
-                    if (diccionarioOCUPACION != null && diccionarioOCUPACION.ContainsValue(valorSeleccionado1))
+                    if (OCUPACION.Tag is Dictionary<string, string> diccionarioOCUPACION && diccionarioOCUPACION.ContainsValue(valorSeleccionado1))
                     {
                         // Obtener la clave (IDESPECIALIDAD) asociada al valor seleccionado (Ocupacion)
                         string idEspecialidad = diccionarioOCUPACION.FirstOrDefault(x => x.Value == valorSeleccionado1).Key;
@@ -437,7 +432,7 @@ namespace WindowsFormsApp1
                         Console.WriteLine("Valor de IDOCUPACION obtenido del diccionario: " + idEspecialidad);
                         string nuevoValor = idEspecialidad;
                         // Llamada al método de la clase ManejadorModificacion
-                        conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(_dnis)); // Cambia 'TuTabla' y el valor de id según tus necesidades
+                        conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(Dnis_)); // Cambia 'TuTabla' y el valor de id según tus necesidades
                         Console.WriteLine("Valor Seleccionado en IDOCUPACION: " + nuevoValor);
                     }
                     else
@@ -454,26 +449,26 @@ namespace WindowsFormsApp1
             {
                 string nuevoValor = PCIAS.ValueMember;
                 // Llamada al método de la clase ManejadorModificacion
-                conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(_dnis)); // Cambia 'TuTabla' y el valor de id según tus necesidades
+                conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(Dnis_)); // Cambia 'TuTabla' y el valor de id según tus necesidades
 
             }
             else if (valorSeleccionado == "Partido")
             {
                 string nuevoValor = PARTIDOS.ValueMember;
                 // Llamada al método de la clase ManejadorModificacion
-                conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(_dnis)); // Cambia 'TuTabla' y el valor de id según tus necesidades
+                conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(Dnis_)); // Cambia 'TuTabla' y el valor de id según tus necesidades
             }
             else if (valorSeleccionado == "Localidad")
             {
                 string nuevoValor = LOCALIDADES.ValueMember;
                 // Llamada al método de la clase ManejadorModificacion
-                conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(_dnis)); // Cambia 'TuTabla' y el valor de id según tus necesidades
+                conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(Dnis_)); // Cambia 'TuTabla' y el valor de id según tus necesidades
             }
             else
             {
                 string nuevoValor = txtNuevoValor.Text;
                 // Llamada al método de la clase ManejadorModificacion
-                conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(_dnis)); // Cambia 'TuTabla' y el valor de id según tus necesidades
+                conexion.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(Dnis_)); // Cambia 'TuTabla' y el valor de id según tus necesidades
             }
             ConstruirConsulta();
         }
@@ -511,7 +506,7 @@ namespace WindowsFormsApp1
                     PARTIDOS.Enabled = true;
                     break;
                 case "regimen horario":
-                    REGIMENHORARIO.Enabled = true;
+                    Regimenhorario.Enabled = true;
                     break;
                 case "ley":
                     LEY.Enabled = true;
@@ -525,7 +520,7 @@ namespace WindowsFormsApp1
         private void DeshabilitarComboBox()
         {
             SEXO.Enabled = false;
-            REGIMENHORARIO.Enabled = false;
+            Regimenhorario.Enabled = false;
             LEY.Enabled = false;
             PCIAS.Enabled = false;
             PARTIDOS.Enabled = false;
@@ -609,8 +604,7 @@ namespace WindowsFormsApp1
         private string ConstruirConsultaSegunTipo(string nombreColumna, string dni)
         {
             string parametroDnis = $"@Dnis";
-            string consulta = "";
-
+            string consulta;
             switch (nombreColumna.ToLower())
             {
                 case "sexo":
@@ -641,7 +635,7 @@ namespace WindowsFormsApp1
         private void BuscarApellidoPorDNI()
         {
             var conexion = new ConexionMySQL();
-            string consultaApellido = $"SELECT personal.`APELLDO Y NOMBRE` as 'apellido' FROM personal WHERE dni = '{_dnis}'";
+            string consultaApellido = $"SELECT personal.`APELLDO Y NOMBRE` as 'apellido' FROM personal WHERE dni = '{Dnis_}'";
             string apellidoEncontrado = conexion.EjecutarConsulta(consultaApellido, "apellido").FirstOrDefault();
 
             if (!string.IsNullOrEmpty(apellidoEncontrado))
@@ -652,6 +646,10 @@ namespace WindowsFormsApp1
             {
                 apellido1.Text = "";
             }
+        }
+        private void SEXO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

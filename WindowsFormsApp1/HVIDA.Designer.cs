@@ -83,6 +83,7 @@
             this.Label4 = new System.Windows.Forms.Label();
             this.Label3 = new System.Windows.Forms.Label();
             this.hdevida = new System.Windows.Forms.ListView();
+            this.label26 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // PAISNACIMIENTO
@@ -129,7 +130,7 @@
             this.Button2.Name = "Button2";
             this.Button2.Size = new System.Drawing.Size(184, 65);
             this.Button2.TabIndex = 164;
-            this.Button2.Text = "Button2";
+            this.Button2.Text = "NO APRETAR ROMPE LA BASE";
             this.Button2.UseVisualStyleBackColor = true;
             this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
@@ -220,7 +221,7 @@
             // CAUSALEXCEPCION
             // 
             this.CAUSALEXCEPCION.AccessibleName = "CAUSAL EXCEPCION";
-            this.CAUSALEXCEPCION.Location = new System.Drawing.Point(1256, 369);
+            this.CAUSALEXCEPCION.Location = new System.Drawing.Point(1309, 369);
             this.CAUSALEXCEPCION.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CAUSALEXCEPCION.Name = "CAUSALEXCEPCION";
             this.CAUSALEXCEPCION.Size = new System.Drawing.Size(272, 26);
@@ -229,7 +230,7 @@
             // Label23
             // 
             this.Label23.AutoSize = true;
-            this.Label23.Location = new System.Drawing.Point(1286, 345);
+            this.Label23.Location = new System.Drawing.Point(1339, 345);
             this.Label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label23.Name = "Label23";
             this.Label23.Size = new System.Drawing.Size(171, 20);
@@ -239,7 +240,7 @@
             // DESTINO
             // 
             this.DESTINO.AccessibleName = "DESTINO";
-            this.DESTINO.Location = new System.Drawing.Point(923, 369);
+            this.DESTINO.Location = new System.Drawing.Point(976, 369);
             this.DESTINO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DESTINO.Name = "DESTINO";
             this.DESTINO.Size = new System.Drawing.Size(322, 26);
@@ -248,7 +249,7 @@
             // Label22
             // 
             this.Label22.AutoSize = true;
-            this.Label22.Location = new System.Drawing.Point(983, 345);
+            this.Label22.Location = new System.Drawing.Point(1036, 345);
             this.Label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label22.Name = "Label22";
             this.Label22.Size = new System.Drawing.Size(80, 20);
@@ -258,7 +259,7 @@
             // GRADO
             // 
             this.GRADO.AccessibleName = "GRADO";
-            this.GRADO.Location = new System.Drawing.Point(651, 369);
+            this.GRADO.Location = new System.Drawing.Point(704, 369);
             this.GRADO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GRADO.Name = "GRADO";
             this.GRADO.Size = new System.Drawing.Size(268, 26);
@@ -267,7 +268,7 @@
             // Label21
             // 
             this.Label21.AutoSize = true;
-            this.Label21.Location = new System.Drawing.Point(709, 342);
+            this.Label21.Location = new System.Drawing.Point(762, 342);
             this.Label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label21.Name = "Label21";
             this.Label21.Size = new System.Drawing.Size(69, 20);
@@ -277,7 +278,7 @@
             // ESPECIALIDAD
             // 
             this.ESPECIALIDAD.AccessibleName = "ESPECIALIDAD MILITAR";
-            this.ESPECIALIDAD.Location = new System.Drawing.Point(439, 371);
+            this.ESPECIALIDAD.Location = new System.Drawing.Point(492, 371);
             this.ESPECIALIDAD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ESPECIALIDAD.Name = "ESPECIALIDAD";
             this.ESPECIALIDAD.Size = new System.Drawing.Size(206, 26);
@@ -286,7 +287,7 @@
             // Label20
             // 
             this.Label20.AutoSize = true;
-            this.Label20.Location = new System.Drawing.Point(467, 343);
+            this.Label20.Location = new System.Drawing.Point(520, 343);
             this.Label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label20.Name = "Label20";
             this.Label20.Size = new System.Drawing.Size(128, 20);
@@ -315,7 +316,7 @@
             this.ARMA.Location = new System.Drawing.Point(303, 369);
             this.ARMA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ARMA.Name = "ARMA";
-            this.ARMA.Size = new System.Drawing.Size(124, 28);
+            this.ARMA.Size = new System.Drawing.Size(181, 28);
             this.ARMA.TabIndex = 145;
             // 
             // Label18
@@ -646,11 +647,22 @@
             this.hdevida.DoubleClick += new System.EventHandler(this.Hdevida_DoubleClick);
             this.hdevida.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Hdevida_MouseDoubleClick);
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(1226, 135);
+            this.label26.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(26, 20);
+            this.label26.TabIndex = 175;
+            this.label26.Text = "ID";
+            // 
             // HVIDA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1695, 852);
+            this.Controls.Add(this.label26);
             this.Controls.Add(this.hdevida);
             this.Controls.Add(this.Label7);
             this.Controls.Add(this.Label6);
@@ -772,5 +784,6 @@
         internal System.Windows.Forms.Label Label4;
         internal System.Windows.Forms.Label Label3;
         private System.Windows.Forms.ListView hdevida;
+        internal System.Windows.Forms.Label label26;
     }
 }

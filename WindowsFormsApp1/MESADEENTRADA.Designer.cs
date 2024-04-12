@@ -43,7 +43,7 @@
             this.PEDIDONUMERODEEXPEDIENTE = new System.Windows.Forms.CheckBox();
             this.IOMA = new System.Windows.Forms.CheckBox();
             this.RESETCONTRASEÑAS = new System.Windows.Forms.CheckBox();
-            this.CERTIFICADODETRABAJO = new System.Windows.Forms.CheckBox();
+            this.Certificadodetrabajo = new System.Windows.Forms.CheckBox();
             this.CERTIFICADODEROTACION = new System.Windows.Forms.CheckBox();
             this.CERTITRABAJOCONHORARIOS = new System.Windows.Forms.CheckBox();
             this.REALIZODOMICILIO = new System.Windows.Forms.CheckBox();
@@ -154,10 +154,10 @@
             this.toolcitaciones.SetToolTip(this.citaciones, "CITACIONES");
             this.citaciones.UseCompatibleStateImageBehavior = false;
             this.citaciones.View = System.Windows.Forms.View.Details;
-            this.citaciones.DoubleClick += new System.EventHandler(this.citaciones_DoubleClick);
-            this.citaciones.MouseClick += new System.Windows.Forms.MouseEventHandler(this.citaciones_MouseClick);
-            this.citaciones.MouseLeave += new System.EventHandler(this.citaciones_MouseLeave);
-            this.citaciones.MouseMove += new System.Windows.Forms.MouseEventHandler(this.citaciones_MouseMove);
+            this.citaciones.DoubleClick += new System.EventHandler(this.Citaciones_DoubleClick);
+            this.citaciones.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Citaciones_MouseClick);
+            this.citaciones.MouseLeave += new System.EventHandler(this.Citaciones_MouseLeave);
+            this.citaciones.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Citaciones_MouseMove);
             // 
             // GroupBox1
             // 
@@ -167,7 +167,7 @@
             this.GroupBox1.Controls.Add(this.PEDIDONUMERODEEXPEDIENTE);
             this.GroupBox1.Controls.Add(this.IOMA);
             this.GroupBox1.Controls.Add(this.RESETCONTRASEÑAS);
-            this.GroupBox1.Controls.Add(this.CERTIFICADODETRABAJO);
+            this.GroupBox1.Controls.Add(this.Certificadodetrabajo);
             this.GroupBox1.Controls.Add(this.CERTIFICADODEROTACION);
             this.GroupBox1.Controls.Add(this.CERTITRABAJOCONHORARIOS);
             this.GroupBox1.Location = new System.Drawing.Point(6, 455);
@@ -235,15 +235,15 @@
             this.RESETCONTRASEÑAS.Text = "RESETEO DE CONTRASEÑA";
             this.RESETCONTRASEÑAS.UseVisualStyleBackColor = true;
             // 
-            // CERTIFICADODETRABAJO
+            // Certificadodetrabajo
             // 
-            this.CERTIFICADODETRABAJO.AutoSize = true;
-            this.CERTIFICADODETRABAJO.Location = new System.Drawing.Point(118, 45);
-            this.CERTIFICADODETRABAJO.Name = "CERTIFICADODETRABAJO";
-            this.CERTIFICADODETRABAJO.Size = new System.Drawing.Size(249, 24);
-            this.CERTIFICADODETRABAJO.TabIndex = 13;
-            this.CERTIFICADODETRABAJO.Text = "CERTIFICADO DE TRABAJO";
-            this.CERTIFICADODETRABAJO.UseVisualStyleBackColor = true;
+            this.Certificadodetrabajo.AutoSize = true;
+            this.Certificadodetrabajo.Location = new System.Drawing.Point(118, 45);
+            this.Certificadodetrabajo.Name = "Certificadodetrabajo";
+            this.Certificadodetrabajo.Size = new System.Drawing.Size(249, 24);
+            this.Certificadodetrabajo.TabIndex = 13;
+            this.Certificadodetrabajo.Text = "CERTIFICADO DE TRABAJO";
+            this.Certificadodetrabajo.UseVisualStyleBackColor = true;
             // 
             // CERTIFICADODEROTACION
             // 
@@ -425,7 +425,7 @@
         internal System.Windows.Forms.CheckBox PEDIDONUMERODEEXPEDIENTE;
         internal System.Windows.Forms.CheckBox IOMA;
         internal System.Windows.Forms.CheckBox RESETCONTRASEÑAS;
-        internal System.Windows.Forms.CheckBox CERTIFICADODETRABAJO;
+        internal System.Windows.Forms.CheckBox Certificadodetrabajo;
         internal System.Windows.Forms.CheckBox CERTIFICADODEROTACION;
         internal System.Windows.Forms.CheckBox CERTITRABAJOCONHORARIOS;
         internal System.Windows.Forms.CheckBox REALIZODOMICILIO;

@@ -41,24 +41,33 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.REGIMENHORARIO = new System.Windows.Forms.ComboBox();
+            this.Regimenhorario = new System.Windows.Forms.ComboBox();
             this.CATEGORIA = new System.Windows.Forms.ComboBox();
             this.CARGOS = new System.Windows.Forms.ComboBox();
-            this.MINISTERIOS = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Ministerios = new System.Windows.Forms.ComboBox();
+            this.IFGRA = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.TextBox();
             this.DESIGNACIONESSS = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.EDITARDATOS = new System.Windows.Forms.Button();
             this.CARGARDATOS = new System.Windows.Forms.Button();
             this.INGRESO = new System.Windows.Forms.DateTimePicker();
             this.CARGARPDF = new System.Windows.Forms.Button();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.ALTACARGOS = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.EDITARBAJA = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            this.ALTACARGOS.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // RESOLUCION
@@ -79,7 +88,7 @@
             // 
             this.BAJA.CustomFormat = "dd/mm/yyyy";
             this.BAJA.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.BAJA.Location = new System.Drawing.Point(1399, 79);
+            this.BAJA.Location = new System.Drawing.Point(54, 127);
             this.BAJA.Name = "BAJA";
             this.BAJA.Size = new System.Drawing.Size(200, 26);
             this.BAJA.TabIndex = 6;
@@ -87,7 +96,7 @@
             // 
             // MOTIVODEBAJA
             // 
-            this.MOTIVODEBAJA.Location = new System.Drawing.Point(1616, 79);
+            this.MOTIVODEBAJA.Location = new System.Drawing.Point(54, 50);
             this.MOTIVODEBAJA.Name = "MOTIVODEBAJA";
             this.MOTIVODEBAJA.Size = new System.Drawing.Size(217, 26);
             this.MOTIVODEBAJA.TabIndex = 7;
@@ -149,7 +158,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1432, 56);
+            this.label7.Location = new System.Drawing.Point(75, 99);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(140, 20);
             this.label7.TabIndex = 14;
@@ -158,7 +167,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1637, 54);
+            this.label8.Location = new System.Drawing.Point(89, 27);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(143, 20);
             this.label8.TabIndex = 15;
@@ -173,13 +182,13 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "REGIMEN HORARIO";
             // 
-            // REGIMENHORARIO
+            // Regimenhorario
             // 
-            this.REGIMENHORARIO.FormattingEnabled = true;
-            this.REGIMENHORARIO.Location = new System.Drawing.Point(1232, 81);
-            this.REGIMENHORARIO.Name = "REGIMENHORARIO";
-            this.REGIMENHORARIO.Size = new System.Drawing.Size(161, 28);
-            this.REGIMENHORARIO.TabIndex = 17;
+            this.Regimenhorario.FormattingEnabled = true;
+            this.Regimenhorario.Location = new System.Drawing.Point(1232, 81);
+            this.Regimenhorario.Name = "Regimenhorario";
+            this.Regimenhorario.Size = new System.Drawing.Size(161, 28);
+            this.Regimenhorario.TabIndex = 17;
             // 
             // CATEGORIA
             // 
@@ -197,20 +206,20 @@
             this.CARGOS.Size = new System.Drawing.Size(234, 28);
             this.CARGOS.TabIndex = 19;
             // 
-            // MINISTERIOS
+            // Ministerios
             // 
-            this.MINISTERIOS.FormattingEnabled = true;
-            this.MINISTERIOS.Location = new System.Drawing.Point(430, 79);
-            this.MINISTERIOS.Name = "MINISTERIOS";
-            this.MINISTERIOS.Size = new System.Drawing.Size(235, 28);
-            this.MINISTERIOS.TabIndex = 20;
+            this.Ministerios.FormattingEnabled = true;
+            this.Ministerios.Location = new System.Drawing.Point(430, 79);
+            this.Ministerios.Name = "Ministerios";
+            this.Ministerios.Size = new System.Drawing.Size(235, 28);
+            this.Ministerios.TabIndex = 20;
             // 
-            // textBox1
+            // IFGRA
             // 
-            this.textBox1.Location = new System.Drawing.Point(569, 156);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(402, 26);
-            this.textBox1.TabIndex = 21;
+            this.IFGRA.Location = new System.Drawing.Point(569, 156);
+            this.IFGRA.Name = "IFGRA";
+            this.IFGRA.Size = new System.Drawing.Size(402, 26);
+            this.IFGRA.TabIndex = 21;
             // 
             // label10
             // 
@@ -239,25 +248,25 @@
             // DESIGNACIONESSS
             // 
             this.DESIGNACIONESSS.HideSelection = false;
-            this.DESIGNACIONESSS.Location = new System.Drawing.Point(3, 225);
+            this.DESIGNACIONESSS.Location = new System.Drawing.Point(6, 21);
             this.DESIGNACIONESSS.Name = "DESIGNACIONESSS";
-            this.DESIGNACIONESSS.Size = new System.Drawing.Size(1795, 229);
+            this.DESIGNACIONESSS.Size = new System.Drawing.Size(1865, 384);
             this.DESIGNACIONESSS.TabIndex = 25;
             this.DESIGNACIONESSS.UseCompatibleStateImageBehavior = false;
             this.DESIGNACIONESSS.View = System.Windows.Forms.View.Details;
-            this.DESIGNACIONESSS.SelectedIndexChanged += new System.EventHandler(this.DESIGNACIONESSS_SelectedIndexChanged);
+        
             this.DESIGNACIONESSS.DoubleClick += new System.EventHandler(this.DESIGNACIONESSS_DoubleClick);
             this.DESIGNACIONESSS.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DESIGNACIONESSS_MouseDoubleClick);
             // 
-            // button1
+            // EDITARDATOS
             // 
-            this.button1.Location = new System.Drawing.Point(1256, 140);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 42);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "EDITARDATOS";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.EDITARDATOS.Location = new System.Drawing.Point(1256, 140);
+            this.EDITARDATOS.Name = "EDITARDATOS";
+            this.EDITARDATOS.Size = new System.Drawing.Size(153, 42);
+            this.EDITARDATOS.TabIndex = 26;
+            this.EDITARDATOS.Text = "EDITARDATOS";
+            this.EDITARDATOS.UseVisualStyleBackColor = true;
+            this.EDITARDATOS.Click += new System.EventHandler(this.EDITARDATOS_Click);
             // 
             // CARGARDATOS
             // 
@@ -298,14 +307,6 @@
             this.trackBar2.Size = new System.Drawing.Size(175, 69);
             this.trackBar2.TabIndex = 129;
             // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(3, 460);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1878, 354);
-            this.webBrowser1.TabIndex = 130;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -326,39 +327,98 @@
             this.label13.TabIndex = 132;
             this.label13.Text = "FORMULARIO DE AGRUPAMIENTO";
             // 
+            // ALTACARGOS
+            // 
+            this.ALTACARGOS.Controls.Add(this.tabPage1);
+            this.ALTACARGOS.Controls.Add(this.tabPage2);
+            this.ALTACARGOS.Location = new System.Drawing.Point(12, 188);
+            this.ALTACARGOS.Name = "ALTACARGOS";
+            this.ALTACARGOS.SelectedIndex = 0;
+            this.ALTACARGOS.Size = new System.Drawing.Size(1900, 643);
+            this.ALTACARGOS.TabIndex = 133;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.DESIGNACIONESSS);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1892, 610);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "ALTA DE CARGO";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.EDITARBAJA);
+            this.tabPage2.Controls.Add(this.panel1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1892, 610);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "BAJA DE CARGO";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.MOTIVODEBAJA);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.BAJA);
+            this.panel1.Location = new System.Drawing.Point(572, 86);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(310, 178);
+            this.panel1.TabIndex = 16;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(1020, 130);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(30, 20);
+            this.label15.TabIndex = 135;
+            this.label15.Text = "ID ";
+            // 
+            // EDITARBAJA
+            // 
+            this.EDITARBAJA.Location = new System.Drawing.Point(933, 160);
+            this.EDITARBAJA.Name = "EDITARBAJA";
+            this.EDITARBAJA.Size = new System.Drawing.Size(138, 45);
+            this.EDITARBAJA.TabIndex = 17;
+            this.EDITARBAJA.Text = "EDITAR BAJA ";
+            this.EDITARBAJA.UseVisualStyleBackColor = true;
+            this.EDITARBAJA.Click += new System.EventHandler(this.EDITARBAJA_Click);
+            // 
             // FORMULARIODESIGNACION
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 823);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.ALTACARGOS);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.CARGARPDF);
             this.Controls.Add(this.INGRESO);
             this.Controls.Add(this.CARGARDATOS);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.DESIGNACIONESSS);
+            this.Controls.Add(this.EDITARDATOS);
             this.Controls.Add(this.ID);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.MINISTERIOS);
+            this.Controls.Add(this.IFGRA);
+            this.Controls.Add(this.Ministerios);
             this.Controls.Add(this.CARGOS);
             this.Controls.Add(this.CATEGORIA);
-            this.Controls.Add(this.REGIMENHORARIO);
+            this.Controls.Add(this.Regimenhorario);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.MOTIVODEBAJA);
-            this.Controls.Add(this.BAJA);
             this.Controls.Add(this.DEPENDENCIA);
             this.Controls.Add(this.RESOLUCION);
             this.Name = "FORMULARIODESIGNACION";
@@ -366,6 +426,11 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FORMULARIODESIGNACION_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            this.ALTACARGOS.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,22 +451,27 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox REGIMENHORARIO;
+        private System.Windows.Forms.ComboBox Regimenhorario;
         private System.Windows.Forms.ComboBox CATEGORIA;
         private System.Windows.Forms.ComboBox CARGOS;
-        private System.Windows.Forms.ComboBox MINISTERIOS;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox Ministerios;
+        private System.Windows.Forms.TextBox IFGRA;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox ID;
         private System.Windows.Forms.ListView DESIGNACIONESSS;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button EDITARDATOS;
         private System.Windows.Forms.Button CARGARDATOS;
         internal System.Windows.Forms.DateTimePicker INGRESO;
         private System.Windows.Forms.Button CARGARPDF;
         private System.Windows.Forms.TrackBar trackBar2;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TabControl ALTACARGOS;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button EDITARBAJA;
     }
 }

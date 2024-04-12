@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
         {
             nombreCarpetaAdicional = nombreCarpeta;
         }
-        public void FillPdfForm(string _dnis)
+        public void FillPdfForm(string Dnis_)
         {
             PdfDocument pdfDoc = null;
             string rutaOrigen = "C:/FORMULARIOS/FAMILIA.pdf";
@@ -43,7 +43,7 @@ namespace WindowsFormsApp1
                 conexion.Conectar();
                 using (var da = new MySqlDataAdapter("SELECT form1.DNIAGENTE, form1.PARENTESCO, form1.NOMBREYAPELLIDO, form1.SEXO, form1.VIVE, form1.FECHA, form1.CAJAJUBILACION, form1.PROFESION, DAY(form1.FECHA) AS DayOfMonth, MONTH(form1.FECHA) AS MonthOfYear, YEAR(form1.FECHA) AS YearValue, form1.JUB FROM form1 HAVING form1.DNIAGENTE = @DNIAGENTE LIMIT 20", conexion.GetConnection()))
                 {
-                    da.SelectCommand.Parameters.AddWithValue("@DNIAGENTE", _dnis);
+                    da.SelectCommand.Parameters.AddWithValue("@DNIAGENTE", Dnis_);
                     var dt = new DataTable();
                     da.Fill(dt);
                     var ds = new DataSet("Dataset1");

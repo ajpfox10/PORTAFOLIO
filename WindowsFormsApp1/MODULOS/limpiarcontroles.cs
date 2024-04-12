@@ -24,34 +24,34 @@ public static class ControlHelper
                 }
 
                 // Si el control es un TextBox, limpiar su contenido
-                if (control is TextBox)
+                if (control is TextBox box)
                 {
-                    ((TextBox)control).Text = "";
+                    box.Text = "";
                 }
                 // Si el control es un ComboBox, limpiar su selección
-                else if (control is ComboBox)
+                else if (control is ComboBox box1)
                 {
-                    ((ComboBox)control).SelectedIndex = -1;
+                    box1.SelectedIndex = -1;
                 }
                 // Si el control es un NumericUpDown, establecer su valor en cero
-                else if (control is NumericUpDown)
+                else if (control is NumericUpDown down)
                 {
-                    ((NumericUpDown)control).Value = 0;
+                    down.Value = 0;
                 }
                 // Si el control es un DateTimePicker, establecer su valor en la fecha y hora actual
-                else if (control is DateTimePicker)
+                else if (control is DateTimePicker picker)
                 {
-                    ((DateTimePicker)control).Value = DateTime.Now;
+                    picker.Value = DateTime.Now;
                 }
                 // Si el control es un CheckBox, desmarcarlo
-                else if (control is CheckBox)
+                else if (control is CheckBox box2)
                 {
-                    ((CheckBox)control).Checked = false;
+                    box2.Checked = false;
                 }
                 // Si el control es un RadioButton, desmarcarlo
-                else if (control is RadioButton)
+                else if (control is RadioButton button)
                 {
-                    ((RadioButton)control).Checked = false;
+                    button.Checked = false;
                 }
                 // Agrega otras condiciones para cada tipo de control que desees limpiar
             }

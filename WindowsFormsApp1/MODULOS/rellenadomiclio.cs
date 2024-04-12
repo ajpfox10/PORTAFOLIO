@@ -13,7 +13,7 @@ public class PdfFormFiller
     {
         nombreCarpetaAdicional = nombreCarpeta;
     }
-    public void FillPdfForm(string _dnis)
+    public void FillPdfForm(string Dnis_)
     {
         PdfDocument pdfDoc = null;
         string rutaOrigen = "c:/FORMULARIOS/domicilio.pdf";
@@ -24,9 +24,9 @@ public class PdfFormFiller
         using (var conexion = new ConexionMySQL())
         {
             conexion.Conectar();
-            using (var da = new MySqlDataAdapter("SELECT form3.Id, form3.CALLE, form3.NUMERO, form3.PISO, form3.DEPTO, localidades1.Provincia AS PROVINCIA, localidades1.municipio AS MUNICIPIO, localidades1.nombre AS NOMBRE, localidades1.provincia_id AS PCIA, form3.PARTIDO, form3.LOCALIDAD, form3.DNIAGENTE AS DNI, form3.fechadecarga FROM form3 INNER JOIN localidades1 ON (form3.LOCALIDAD = localidades1.idlocalidad) AND (form3.PARTIDO = localidades1.municipio_id) WHERE form3.DNIAGENTE = @DNIAGENTE LIMIT 20", conexion.GetConnection()))           //" SELECT form3.Id, form3.CALLE, form3.NUMERO, form3.PISO, form3.DEPTO, localidades1.Provincia AS PROVINCIA, localidades1.municipio AS MUNICIPIO, localidades1.nombre AS NOMBRE, localidades1.provincia_id AS PCIA, form3.PARTIDO, form3.LOCALIDAD form3.DNIAGENTE AS DNI FROM form3 INNER JOIN localidades1 ON(form3.LOCALIDAD = localidades1.idlocalidad) AND(form3.PARTIDO = localidades1.municipio_id) WHERE form3.DNIAGENTE = '" + _dnis + "'";
+            using (var da = new MySqlDataAdapter("SELECT form3.Id, form3.CALLE, form3.NUMERO, form3.PISO, form3.DEPTO, localidades1.Provincia AS PROVINCIA, localidades1.municipio AS MUNICIPIO, localidades1.nombre AS NOMBRE, localidades1.provincia_id AS PCIA, form3.PARTIDO, form3.LOCALIDAD, form3.DNIAGENTE AS DNI, form3.fechadecarga FROM form3 INNER JOIN localidades1 ON (form3.LOCALIDAD = localidades1.idlocalidad) AND (form3.PARTIDO = localidades1.municipio_id) WHERE form3.DNIAGENTE = @DNIAGENTE LIMIT 20", conexion.GetConnection()))           //" SELECT form3.Id, form3.CALLE, form3.NUMERO, form3.PISO, form3.DEPTO, localidades1.Provincia AS PROVINCIA, localidades1.municipio AS MUNICIPIO, localidades1.nombre AS NOMBRE, localidades1.provincia_id AS PCIA, form3.PARTIDO, form3.LOCALIDAD form3.DNIAGENTE AS DNI FROM form3 INNER JOIN localidades1 ON(form3.LOCALIDAD = localidades1.idlocalidad) AND(form3.PARTIDO = localidades1.municipio_id) WHERE form3.DNIAGENTE = '" + Dnis_ + "'";
             {
-                da.SelectCommand.Parameters.AddWithValue("@DNIAGENTE", _dnis);
+                da.SelectCommand.Parameters.AddWithValue("@DNIAGENTE", Dnis_);
 
                 var dt = new DataTable();
                 da.Fill(dt);
