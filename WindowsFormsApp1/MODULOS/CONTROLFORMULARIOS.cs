@@ -1,12 +1,30 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
-using System;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
     public class VERIFICARCONTR
     {
-        public bool VerificarControles(Control.ControlCollection controls)
+        public static void AnalyzeControls(Form form)
+        {
+            // Obtener todos los campos (controles) del formulario
+            FieldInfo[] fields = form.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+
+            foreach (FieldInfo field in fields)
+            {
+                // Verificar si el campo es de tipo Control
+                if (typeof(Control).IsAssignableFrom(field.FieldType))
+                {
+                    Console.WriteLine("Control encontrado: " + field.Name);
+                    // Aquí puedes realizar más análisis o acciones según lo necesites
+                }
+            }
+        }
+
+        public static bool VerificarControles(Control.ControlCollection controls)
         {
             bool todosCompletos = true;
 
@@ -46,6 +64,32 @@ namespace WindowsFormsApp1
             }
             return todosCompletos;
         }
-    }
+        public static List<string> VerificarControlesObligatorios(Form form, string nombreControlNoVerificar)
+        {
+            List<string> controlesIncompletos = new List<string>();
 
+            // Obtener la colección de controles del formulario
+            Control.ControlCollection controles = form.Controls;
+
+            foreach (Control control in controles)
+            {
+                // Verificar si el control no es el que se especificó para no verificar
+                if (control.Name != nombreControlNoVerificar)
+                {
+                    // Verificar si el control está vacío
+                    if (string.IsNullOrEmpty(control.Text))
+                    {
+                        control.BackColor = Color.LightBlue;
+                        controlesIncompletos.Add(control.Name); // Agregar el nombre del control a la lista de controles incompletos
+                    }
+                    else
+                    {
+                        control.BackColor = Color.White;
+                    }
+                }
+            }
+
+            return controlesIncompletos;
+        }
+    }
 }

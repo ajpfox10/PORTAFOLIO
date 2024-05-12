@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Papa\\Desktop\\repo\\WindowsFormsApp1 - copia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{292633E3-84D0-4759-BF46-47C0EB0DB38A}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\papa\\desktop\\repo\\windowsformsapp1 - copia\\windowsformsapp1\\corregirerrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{292633E3-84D0-4759-BF46-47C0EB0DB38A}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\corregirerrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{292633E3-84D0-4759-BF46-47C0EB0DB38A}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\papa\\desktop\\repo\\windowsformsapp1 - copia\\windowsformsapp1\\formularios\\gestionrr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292633E3-84D0-4759-BF46-47C0EB0DB38A}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\formularios\\gestionrr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{292633E3-84D0-4759-BF46-47C0EB0DB38A}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\Papa\\Desktop\\repo\\WindowsFormsApp1 - copia\\windowsformsapp1\\corregirerrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{292633E3-84D0-4759-BF46-47C0EB0DB38A}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\corregirerrores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{292633E3-84D0-4759-BF46-47C0EB0DB38A}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\papa\\desktop\\repo\\windowsformsapp1 - copia\\windowsformsapp1\\formularios\\gestionrr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{292633E3-84D0-4759-BF46-47C0EB0DB38A}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\formularios\\gestionrr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,26 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CORREGIRERRORES.cs",
-              "DocumentMoniker": "C:\\Users\\Papa\\Desktop\\repo\\WindowsFormsApp1 - copia\\WindowsFormsApp1\\CORREGIRERRORES.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\CORREGIRERRORES.cs",
-              "ToolTip": "C:\\Users\\Papa\\Desktop\\repo\\WindowsFormsApp1 - copia\\WindowsFormsApp1\\CORREGIRERRORES.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\CORREGIRERRORES.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGYBAAAAAAAA",
+              "Title": "Gestionrr.cs",
+              "DocumentMoniker": "C:\\Users\\Papa\\Desktop\\repo\\WindowsFormsApp1 - copia\\WindowsFormsApp1\\FORMULARIOS\\Gestionrr.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\FORMULARIOS\\Gestionrr.cs",
+              "ToolTip": "C:\\Users\\Papa\\Desktop\\repo\\WindowsFormsApp1 - copia\\WindowsFormsApp1\\FORMULARIOS\\Gestionrr.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\FORMULARIOS\\Gestionrr.cs",
+              "ViewState": "AQIAAJQCAAAAAAAAAAA/wEADAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T23:35:19.699Z",
+              "WhenOpened": "2024-05-12T05:52:14.142Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CORREGIRERRORES.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Papa\\Desktop\\repo\\WindowsFormsApp1 - copia\\WindowsFormsApp1\\CORREGIRERRORES.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\CORREGIRERRORES.cs",
-              "ToolTip": "C:\\Users\\Papa\\Desktop\\repo\\WindowsFormsApp1 - copia\\WindowsFormsApp1\\CORREGIRERRORES.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WindowsFormsApp1\\CORREGIRERRORES.cs [Dise\u00F1o]",
+              "Title": "Gestionrr.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Papa\\Desktop\\repo\\WindowsFormsApp1 - copia\\WindowsFormsApp1\\FORMULARIOS\\Gestionrr.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\FORMULARIOS\\Gestionrr.cs",
+              "ToolTip": "C:\\Users\\Papa\\Desktop\\repo\\WindowsFormsApp1 - copia\\WindowsFormsApp1\\FORMULARIOS\\Gestionrr.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WindowsFormsApp1\\FORMULARIOS\\Gestionrr.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T23:35:15.527Z"
+              "WhenOpened": "2024-05-12T05:50:21.567Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

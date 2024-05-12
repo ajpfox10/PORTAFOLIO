@@ -1380,6 +1380,7 @@ C:\Users\Papa\Desktop\repo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\W
 C:\Users\Papa\Desktop\repo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CORREGIRERRORES.resources
 C:\Users\Papa\Desktop\repo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
 C:\Users\Papa\Desktop\repo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CUMPLESS.resources
+C:\Users\Papa\Desktop\repo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIODECARGA.resources
 C:\Users\Papa\Desktop\repo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIODESIGNACION.resources
 C:\Users\Papa\Desktop\repo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FORMULARIOPRINCIPAL.resources
 C:\Users\Papa\Desktop\repo\WindowsFormsApp1 - copia\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FOTOS.resources

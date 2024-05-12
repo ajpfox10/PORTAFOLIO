@@ -4,6 +4,7 @@ using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
@@ -1066,9 +1067,6 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No se pudo agregar la consulta.", "Error al agregar");
             }
         }
-
-
-
         public string SeleccionarRegistros(string tabla, string columna, int id)
         {
             string str = (string)null;
@@ -1089,6 +1087,93 @@ namespace WindowsFormsApp1
             }
             return str;
         }
+        public void InsertarAgente(string apellidoNombre, string dni, DateTime fechaNacimiento, string cantidadHijos, string domicilio, string localidad, string partido, string telefono, string observacion, string estado, string ocupacion, string ley, string sexo, string regimenHorario, string matricula, string cuil, string numero, string departamento, string piso, string codigoPostal, string nacionalidad, string estadoCivil, string provincia, string codigoSucursal, string email, string especialidad, string disciplina, string rangoHorario, string dependencia)
+        {
+            string query = "INSERT INTO personal (personal.`apelldo y nombre`, personal.dni, personal.`Fecha de Nacimento`, personal.`Cantidad de Hijos`, personal.Domicilio, personal.Localidad, personal.Partido, personal.Telefono, personal.Observacion, personal.estado, personal.ocupacion, personal.Ley, personal.SEXO, personal.`Regimen Horario`, personal.MATRICULA, personal.CUIL, personal.numero, personal.departamento, personal.piso, personal.codigopostal, personal.Nacionalidad, personal.estadocivil, personal.provincia, personal.`CODIGO SUCURSAL`, personal.email, personal.especialidad, personal.disciplina, personal.RANGOHORARIO, personal.DEPENDENCIA) " +
+                            "VALUES (@apellidoNombre, @dni, @fechaNacimiento, @cantidadHijos, @domicilio, @localidad, @partido, @telefono, @observacion, @estado, @ocupacion, @ley, @sexo, @regimenHorario, @matricula, @cuil, @numero, @departamento, @piso, @codigoPostal, @nacionalidad, @estadoCivil, @provincia, @codigoSucursal, @email, @especialidad, @disciplina, @rangoHorario, @dependencia)";
+            using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+            {
+                cmd.Parameters.AddWithValue("@apellidoNombre", apellidoNombre);
+                cmd.Parameters.AddWithValue("@dni", dni);
+                cmd.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento.ToString("dd/MM/yyyy")); // Formato yyyy-MM-dd
+                cmd.Parameters.AddWithValue("@cantidadHijos", cantidadHijos);
+                cmd.Parameters.AddWithValue("@domicilio", domicilio);
+                cmd.Parameters.AddWithValue("@localidad", localidad);
+                cmd.Parameters.AddWithValue("@partido", partido);
+                cmd.Parameters.AddWithValue("@telefono", telefono);
+                cmd.Parameters.AddWithValue("@observacion", observacion);
+                cmd.Parameters.AddWithValue("@estado", estado);
+                cmd.Parameters.AddWithValue("@ocupacion", ocupacion);
+                cmd.Parameters.AddWithValue("@ley", ley);
+                cmd.Parameters.AddWithValue("@sexo", sexo);
+                cmd.Parameters.AddWithValue("@regimenHorario", regimenHorario);
+                cmd.Parameters.AddWithValue("@matricula", matricula);
+                cmd.Parameters.AddWithValue("@cuil", cuil);
+                cmd.Parameters.AddWithValue("@numero", numero);
+                cmd.Parameters.AddWithValue("@departamento", departamento);
+                cmd.Parameters.AddWithValue("@piso", piso);
+                cmd.Parameters.AddWithValue("@codigoPostal", codigoPostal);
+                cmd.Parameters.AddWithValue("@nacionalidad", nacionalidad);
+                cmd.Parameters.AddWithValue("@estadoCivil", estadoCivil);
+                cmd.Parameters.AddWithValue("@provincia", provincia);
+                cmd.Parameters.AddWithValue("@codigoSucursal", codigoSucursal);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@especialidad", especialidad);
+                cmd.Parameters.AddWithValue("@disciplina", disciplina);
+                cmd.Parameters.AddWithValue("@rangoHorario", rangoHorario);
+                cmd.Parameters.AddWithValue("@dependencia", dependencia);
+
+                // Abrir la conexión a la base de datos
+                Conectar();
+                // Ejecutar la consulta SQL
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                // Cerrar la conexión a la base de datos
+                Dispose();
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("Los datos han sido actualizados con éxito.", "Actualización exitosa");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo actualizar los datos.", "Error al actualizar");
+                }
+            }
+        }
+
+        public void InsertarEDUCACION(string ESCUELAPRIMARIA, int AÑOEGRESOESCUELAPRIMARIA, string escuelasecundaria, int añoegresoescuelasecundaria, string escuelaterciaria, int AÑOEGRESOESCULATERCIARIA, string ESCUELAUNIVERSITARIA, int AÑOEGRESOUNIVERSIDAD, int DNI)
+        {
+            string query = "INSERT INTO estudios (estudios.estudioprimario, estudios.añoegresoprimario, estudios.estudiosecundario, estudios.añoegresosecundario, estudios.estudioterciario, estudios.añoegresoterciario, estudios.estudiouniversitario, estudios.añoegresouniversitario, estudios.DNI) " +
+                            "VALUES (@ESCUELAPRIMARIA, @AÑOEGRESOESCUELAPRIMARIA, @escuelasecundaria, @añoegresoescuelasecundaria, @escuelaterciaria, @AÑOEGRESOESCULATERCIARIA, @ESCUELAUNIVERSITARIA, @AÑOEGRESOUNIVERSIDAD, @DNI)";
+            using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+            {
+                cmd.Parameters.AddWithValue("@ESCUELAPRIMARIA", ESCUELAPRIMARIA);
+                cmd.Parameters.AddWithValue("@AÑOEGRESOESCUELAPRIMARIA", AÑOEGRESOESCUELAPRIMARIA);
+                cmd.Parameters.AddWithValue("@escuelasecundaria", escuelasecundaria); 
+                cmd.Parameters.AddWithValue("@añoegresoescuelasecundaria", añoegresoescuelasecundaria);
+                cmd.Parameters.AddWithValue("@escuelaterciaria", escuelaterciaria);
+                cmd.Parameters.AddWithValue("@AÑOEGRESOESCULATERCIARIA", AÑOEGRESOESCULATERCIARIA);
+                cmd.Parameters.AddWithValue("@ESCUELAUNIVERSITARIA", ESCUELAUNIVERSITARIA);
+                cmd.Parameters.AddWithValue("@DNI", DNI);
+                // Abrir la conexión a la base de datos
+                Conectar();
+                // Ejecutar la consulta SQL
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                // Cerrar la conexión a la base de datos
+                Dispose();
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("Los datos han sido actualizados con éxito.", "Actualización exitosa");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo actualizar los datos de estudios.", "Error al actualizar");
+                }
+            }
+        }
+
+
+
+
 
     }
 }
