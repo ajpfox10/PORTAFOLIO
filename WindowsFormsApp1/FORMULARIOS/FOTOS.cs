@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +22,7 @@ namespace WindowsFormsApp1
         private Timer timerActualizarRuta;
         private PersonaLEVENTOS personaLEVENTOS;
         public FOTOS()
-        {           
+        {
             this.InitializeComponent();
             VisorArbol.FullRowSelect = true;
             this.personaLEVENTOS = new PersonaLEVENTOS(this.apellido1, this.DNI, this.PORDNI, this.PORAPELLIDO, "AGENTE", FOTOS.Dnis_);
@@ -29,6 +30,8 @@ namespace WindowsFormsApp1
             FOTOS.Dnis_ = Convert.ToInt64(this.DNI.Text);
             this.apellido1.DropDownStyle = ComboBoxStyle.DropDown;
             this.VisorArbol.AfterSelect += new TreeViewEventHandler(this.VisorArbol_AfterSelect);
+            this.VisorArbol.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler(this.VisorArbol_NodeMouseDoubleClick);
+
             this.timerActualizarRuta = new Timer();
             this.timerActualizarRuta.Interval = 50000;
             this.timerActualizarRuta.Start();
@@ -37,13 +40,25 @@ namespace WindowsFormsApp1
 
             ContextMenuStrip menuContextual = new ContextMenuStrip();
             this.Visor.ContextMenuStrip = menuContextual;
-            // Crear el elemento de menú
             ToolStripMenuItem copiarDireccionMenuItem = new ToolStripMenuItem("Copiar dirección de archivo");
             copiarDireccionMenuItem.Click += CopiarDireccionMenuItem_Click;
-
-            // Agregar el elemento de menú al ContextMenuStrip
             menuContextual.Items.Add(copiarDireccionMenuItem);
-            //this.apellido1.SelectedIndexChanged += new EventHandler(apellido1_SelectedIndexChanged);
+
+            // Crear ListView
+            listViewFaltantes.View = View.Details;
+            listViewFaltantes.Columns.Add("DNI", 150, HorizontalAlignment.Left);
+            listViewFaltantes.Columns.Add("Apellido", 190, HorizontalAlignment.Left);
+            listViewFaltantes.Columns.Add("DEPENDENCIA", 170, HorizontalAlignment.Left);
+
+            upa4sinfoto.View = View.Details;
+            upa4sinfoto.Columns.Add("DNI", 150, HorizontalAlignment.Left);
+            upa4sinfoto.Columns.Add("Apellido", 190, HorizontalAlignment.Left);
+            upa4sinfoto.Columns.Add("Dependencia", 170, HorizontalAlignment.Left);
+
+            UPA18SINFOTO.View = View.Details;
+            UPA18SINFOTO.Columns.Add("DNI", 150, HorizontalAlignment.Left);
+            UPA18SINFOTO.Columns.Add("Apellido", 190, HorizontalAlignment.Left);
+            UPA18SINFOTO.Columns.Add("Dependencia", 170, HorizontalAlignment.Left);
         }
         private void Fotoss_Load(object sender, EventArgs e)
         {
@@ -78,69 +93,99 @@ namespace WindowsFormsApp1
             {
                 Console.WriteLine("Error al cargar los valores en el ComboBox: " + ex.Message);
             }
+
+            VerificarCarpetasSinCredencial("\\\\192.168.0.21\\g\\DOCU");
         }
         private void AgregarNodosAlArbol(string ruta, TreeNodeCollection nodos)
         {
-            foreach (string directory in Directory.GetDirectories(ruta))
+            var archivos = Directory.GetFiles(ruta, "*.*", SearchOption.TopDirectoryOnly)
+                .Where(s => s.EndsWith(".bmp", StringComparison.OrdinalIgnoreCase) ||
+                            s.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                            s.EndsWith(".png", StringComparison.OrdinalIgnoreCase));
+
+            foreach (string archivo in archivos)
             {
-                TreeNode node = new TreeNode(Path.GetFileName(directory));
+                TreeNode node = new TreeNode(Path.GetFileName(archivo));
+                node.Tag = archivo;
                 nodos.Add(node);
-                this.AgregarNodosAlArbol(directory, node.Nodes);
-            }
-            foreach (string path in ((IEnumerable<string>)((IEnumerable<string>)Directory.GetFiles(ruta, "*.bmp", SearchOption.TopDirectoryOnly)).Concat<string>((IEnumerable<string>)Directory.GetFiles(ruta, "*.jpg", SearchOption.TopDirectoryOnly)).ToArray<string>()).Concat<string>((IEnumerable<string>)Directory.GetFiles(ruta, "*.PNG", SearchOption.TopDirectoryOnly)).ToArray<string>())
-            {
-                TreeNode node = new TreeNode(Path.GetFileName(path));
-                nodos.Add(node);
             }
         }
-        private void Apellido1_SelectedIndexChanged_1(object sender, EventArgs e)
+        public class ListViewItemComparer : IComparer
         {
-            if (this.apellido1.SelectedItem == null)
-                return;
-            this.DNI.Text = new ConexionMySQL().EjecutarConsulta("SELECT dni FROM personal WHERE `apelldo y nombre` = '" + this.apellido1.SelectedItem.ToString() + "'", "dni").FirstOrDefault<string>();
-            FOTOS.Dnis_ = Convert.ToInt64(this.DNI.Text);
-            this.VisorArbol.Nodes.Clear();
-            this.ActualizarRutaYArchivos();
-            Console.WriteLine("Actualización de ruta y archivos llamada desde DNI_Validating");
-        }
-        private void Apellido1_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (this.apellido1.SelectedItem == null)
-                return;
-            this.DNI.Text = new ConexionMySQL().EjecutarConsulta("SELECT dni FROM personal WHERE `apelldo y nombre` = '" + this.apellido1.SelectedItem.ToString() + "'", "dni").FirstOrDefault<string>();
-            FOTOS.Dnis_ = Convert.ToInt64(this.DNI.Text);
-            this.VisorArbol.Nodes.Clear();
-            this.ActualizarRutaYArchivos();
-            Console.WriteLine("Actualización de ruta y archivos llamada desde DNI_Validating");
-        }
-        private void DNI_Validating(object sender, CancelEventArgs e)
-        {
-            if (!this.PORDNI.Checked)
-                return;
-            long result;
-            if (!string.IsNullOrWhiteSpace(this.DNI.Text) && long.TryParse(this.DNI.Text, out result))
+            private int column;
+            private SortOrder sortOrder;
+            public ListViewItemComparer(int column, SortOrder sortOrder)
             {
-                FOTOS.Dnis_ = result;
-                if (this.apellido1.Tag is Dictionary<string, string> tag)
+                this.column = column;
+                this.sortOrder = sortOrder;
+            }
+            public int Compare(object x, object y)
+            {
+                // Comparar los subítems por apellido en orden ascendente
+                int compareResult = string.Compare(((ListViewItem)x).SubItems[column].Text, ((ListViewItem)y).SubItems[column].Text);
+                return sortOrder == SortOrder.Ascending ? compareResult : -compareResult;
+            }
+        }
+        private void VerificarCarpetasSinCredencial(string rutaBase)
+        {
+            upa4sinfoto.Items.Clear();
+            UPA18SINFOTO.Items.Clear();
+            listViewFaltantes.Items.Clear(); // Limpiar ListView para dependencias no clasificadas
+
+            try
+            {
+                string consulta = "SELECT personal.`apelldo y nombre` AS APELLIDO, personal.dni, personal.DEPENDENCIA FROM personal WHERE personal.activo = -1";
+                DataTable dataTable = new ConexionMySQL().EjecutarConsulta(consulta);
+
+                foreach (DataRow row in dataTable.Rows)
                 {
-                    string key = result.ToString();
-                    if (tag.ContainsKey(key))
+                    string dni = row["dni"].ToString();
+                    string apellido = row["APELLIDO"].ToString();
+                    string dependencia = row["DEPENDENCIA"].ToString();
+                    string archivoCredencial = Path.Combine(rutaBase, dni, "CREDENCIAL DE EMPLEADO FINAL");
+                    if (!File.Exists(archivoCredencial))
                     {
-                        this.apellido1.SelectedItem = (object)tag[key];
-                        FOTOS.Dnis_ = Convert.ToInt64(this.DNI.Text);
-                        this.ActualizarRutaYArchivos();
-                        Console.WriteLine("Actualización de ruta y archivos llamada desde DNI_Validating");
+                        // Actualizar el campo 'foto' a 1 en la tabla 'personal' para este DNI
+                        ActualizarCampoFoto(dni);
+                    }
+                    ListViewItem item = new ListViewItem(dni);
+                    item.SubItems.Add(apellido);
+                    item.SubItems.Add(dependencia);
+                    // Verificar la dependencia y agregar el elemento al ListView correspondiente
+                    if (dependencia.IndexOf("UPA 4", StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        upa4sinfoto.Items.Add(item);
+                    }
+                    else if (dependencia.IndexOf("UPA 18", StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        UPA18SINFOTO.Items.Add(item);
                     }
                     else
                     {
-                        this.apellido1.SelectedIndex = -1;
-                        int num = (int)MessageBox.Show("No se encontró un APELLIDO Y NOMBRE correspondiente al DNI ingresado.");
+                        // Agregar el item al ListView correspondiente para otras dependencias
+                        listViewFaltantes.Items.Add(item);
                     }
                 }
+                // Ordenar ListViews por apellido de forma descendente
+                OrdenarListViewPorApellidoDescendente(upa4sinfoto);
+                OrdenarListViewPorApellidoDescendente(UPA18SINFOTO);
+                OrdenarListViewPorApellidoDescendente(listViewFaltantes);
             }
-            else
+            catch (Exception ex)
             {
-                int num1 = (int)MessageBox.Show("El campo DNI no es válido. Debe ingresar un número válido.");
+                Console.WriteLine("Error al verificar carpetas sin credencial: " + ex.Message);
+            }
+        }
+        private void OrdenarListViewPorApellidoDescendente(ListView listView)
+        {
+            listView.ListViewItemSorter = (IComparer)new ListViewItemComparer(1, SortOrder.Ascending);
+            listView.Sort();
+        }
+        private void CopiarDireccionMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Visor.Image != null)
+            {
+                Clipboard.SetText(Visor.ImageLocation);
             }
         }
         private void DNI_TextChanged(object sender, EventArgs e)
@@ -157,43 +202,32 @@ namespace WindowsFormsApp1
             else
                 FOTOS.Dnis_ = 0L;
         }
-        private void CARGARFOTO_Click(object sender, EventArgs e)
-        {
-            ConexionMySQL conexionMySql = new ConexionMySQL();
-            string columna = "foto";
-            string nuevoValor = "1";
-            string str = conexionMySql.SeleccionarRegistros("personal", columna, Convert.ToInt32(FOTOS.Dnis_));
-            if (string.IsNullOrEmpty(str))
-            {
-                conexionMySql.ModificarRegistro("personal", columna, nuevoValor, Convert.ToInt32(FOTOS.Dnis_));
-                int num = (int)MessageBox.Show("La foto se ha actualizado correctamente.", "Actualización exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-            else if (str == "1")
-            {
-                int num1 = (int)MessageBox.Show("La foto ya tiene el valor no se requiere actualización.", "Sin cambios", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-            else
-            {
-                int num2 = (int)MessageBox.Show("No se pudo determinar el estado de la foto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-            }
-        }
         private void VisorArbol_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            this.Visor.Image = null;
-            if (!File.Exists(string.Format("\\\\192.168.0.21\\G\\DOCU\\{0}\\{1}", (object)FOTOS.Dnis_, (object)e.Node.FullPath)))
-                return;
-         //   this.Visor.Image = Image.FromFile(Path.Combine(string.Format("\\\\192.168.0.21\\G\\DOCU\\{0}\\", (object)FOTOS.Dnis_), e.Node.FullPath));
-            Image imagen = Image.FromFile(Path.Combine(string.Format("\\\\192.168.0.21\\G\\DOCU\\{0}\\", (object)FOTOS.Dnis_), e.Node.FullPath));
-            this.Visor.SizeMode = PictureBoxSizeMode.Zoom;
-            this.Visor.Image = imagen;
-            Console.WriteLine("Método VisorArbol_AfterSelect llamado correctamente.");
+            string selectedPath = e.Node.FullPath;
+            if (File.Exists(selectedPath))
+            {
+                Visor.Image = Image.FromFile(selectedPath);
+                Visor.SizeMode = PictureBoxSizeMode.Zoom;
+                Console.WriteLine("Imagen cargada: " + selectedPath);
+            }
+        }
+        private void VisorArbol_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Tag is string filePath && File.Exists(filePath))
+            {
+                this.Visor.Image = Image.FromFile(filePath);
+                this.Visor.SizeMode = PictureBoxSizeMode.Zoom;
+                Console.WriteLine("Imagen cargada: " + filePath);
+            }
         }
         private void TimerActualizarRuta_Tick(object sender, EventArgs e)
         {
-            this.timerActualizarRuta.Stop();
-            if (string.IsNullOrWhiteSpace(this.DNI.Text) || !long.TryParse(this.DNI.Text, out long _))
-                return;
-            this.ActualizarRutaYArchivos();
+            if (this.DniAnterior != FOTOS.Dnis_)
+            {
+                this.DniAnterior = FOTOS.Dnis_;
+                this.ActualizarRutaYArchivos();
+            }
         }
         private void ActualizarRutaYArchivos()
         {
@@ -202,40 +236,29 @@ namespace WindowsFormsApp1
                 return;
             this.VisorArbol.Nodes.Clear();
             this.AgregarNodosAlArbol(str, this.VisorArbol.Nodes);
-
+            VerificarCarpetasSinCredencial("\\\\192.168.0.21\\g\\DOCU");
         }
-        private void CopiarDireccionMenuItem_Click(object sender, EventArgs e)
+        private void ActualizarCampoFoto(string dni)
         {
-            // Verificar si hay una imagen cargada en el visor
-            if (this.Visor.Image != null)
+            try
             {
-                // Copiar la dirección del archivo al portapapeles
-                string direccionArchivo = ObtenerDireccionArchivoCargado();
-                Clipboard.SetText(direccionArchivo);
+                // Conexión a la base de datos
+                ConexionMySQL conexionMySQL = new ConexionMySQL();
 
-                // Opcional: Mostrar un mensaje indicando que la dirección se ha copiado al portapapeles
-                MessageBox.Show("La dirección del archivo se ha copiado al portapapeles.", "Copiado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Consulta SQL para actualizar el campo 'foto' a 1
+                string consulta = "UPDATE personal SET foto = 1 WHERE dni = @dni";
+
+                // Parámetros para la consulta
+                Dictionary<string, object> parametros = new Dictionary<string, object>();
+                parametros.Add("@dni", dni);
+
+                // Ejecutar la consulta
+                conexionMySQL.EjecutarNonQuery(consulta, parametros);
+                Console.WriteLine("Campo 'foto' actualizado para el DNI: " + dni);
             }
-        }
-        // Método para obtener la dirección del archivo cargado en el visor
-        private string ObtenerDireccionArchivoCargado()
-        {
-            // Verificar si hay una imagen cargada en el visor
-            if (this.Visor.Image != null)
+            catch (Exception ex)
             {
-                // Obtener la ruta completa del archivo cargado
-                string rutaCompleta = this.VisorArbol.SelectedNode.FullPath;
-
-                // Obtener el nombre del archivo de la ruta completa
-                string nombreArchivo = Path.GetFileName(rutaCompleta);
-
-                // Construir y devolver la dirección completa del archivo
-                return string.Format("\\\\192.168.0.21\\G\\DOCU\\{0}\\{1}", (object)FOTOS.Dnis_, (object)nombreArchivo);
-            }
-            else
-            {
-                // En caso de que no haya una imagen cargada, devolver una cadena vacía
-                return "";
+                Console.WriteLine("Error al actualizar campo 'foto' para el DNI " + dni + ": " + ex.Message);
             }
         }
     }

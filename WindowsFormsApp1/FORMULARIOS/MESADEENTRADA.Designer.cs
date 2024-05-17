@@ -60,15 +60,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.PORDNI = new System.Windows.Forms.RadioButton();
+            this.apellido1 = new System.Windows.Forms.ComboBox();
+            this.PORAPELLIDO = new System.Windows.Forms.RadioButton();
+            this.DNI1 = new System.Windows.Forms.TextBox();
+            this.JURADASALRIO = new System.Windows.Forms.CheckBox();
             this.GroupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Button1
             // 
-            this.Button1.Location = new System.Drawing.Point(12, 26);
-            this.Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button1.Location = new System.Drawing.Point(14, 32);
+            this.Button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(167, 34);
+            this.Button1.Size = new System.Drawing.Size(188, 42);
             this.Button1.TabIndex = 54;
             this.Button1.Text = "CARGAR CONSULTA";
             this.Button1.UseVisualStyleBackColor = true;
@@ -76,10 +83,10 @@
             // 
             // DATOSANALIZAR
             // 
-            this.DATOSANALIZAR.Location = new System.Drawing.Point(597, 574);
+            this.DATOSANALIZAR.Location = new System.Drawing.Point(672, 726);
             this.DATOSANALIZAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DATOSANALIZAR.Name = "DATOSANALIZAR";
-            this.DATOSANALIZAR.Size = new System.Drawing.Size(631, 78);
+            this.DATOSANALIZAR.Size = new System.Drawing.Size(709, 96);
             this.DATOSANALIZAR.TabIndex = 53;
             this.DATOSANALIZAR.Text = "";
             // 
@@ -87,11 +94,11 @@
             // 
             this.CONSULTASVIEJAS.FullRowSelect = true;
             this.CONSULTASVIEJAS.HideSelection = false;
-            this.CONSULTASVIEJAS.Location = new System.Drawing.Point(597, 430);
-            this.CONSULTASVIEJAS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CONSULTASVIEJAS.Location = new System.Drawing.Point(672, 573);
+            this.CONSULTASVIEJAS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CONSULTASVIEJAS.Name = "CONSULTASVIEJAS";
             this.CONSULTASVIEJAS.ShowItemToolTips = true;
-            this.CONSULTASVIEJAS.Size = new System.Drawing.Size(1766, 118);
+            this.CONSULTASVIEJAS.Size = new System.Drawing.Size(1986, 146);
             this.CONSULTASVIEJAS.TabIndex = 52;
             this.CONSULTASVIEJAS.UseCompatibleStateImageBehavior = false;
             this.CONSULTASVIEJAS.View = System.Windows.Forms.View.Details;
@@ -103,11 +110,11 @@
             // 
             this.RESOLUCIONES.FullRowSelect = true;
             this.RESOLUCIONES.HideSelection = false;
-            this.RESOLUCIONES.Location = new System.Drawing.Point(597, 348);
+            this.RESOLUCIONES.Location = new System.Drawing.Point(672, 470);
             this.RESOLUCIONES.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RESOLUCIONES.Name = "RESOLUCIONES";
             this.RESOLUCIONES.ShowItemToolTips = true;
-            this.RESOLUCIONES.Size = new System.Drawing.Size(1766, 78);
+            this.RESOLUCIONES.Size = new System.Drawing.Size(1986, 96);
             this.RESOLUCIONES.TabIndex = 51;
             this.toolcitaciones.SetToolTip(this.RESOLUCIONES, "CITACIONES");
             this.RESOLUCIONES.UseCompatibleStateImageBehavior = false;
@@ -119,11 +126,11 @@
             // 
             this.EXPEDIENTES.FullRowSelect = true;
             this.EXPEDIENTES.HideSelection = false;
-            this.EXPEDIENTES.Location = new System.Drawing.Point(597, 262);
+            this.EXPEDIENTES.Location = new System.Drawing.Point(672, 367);
             this.EXPEDIENTES.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EXPEDIENTES.Name = "EXPEDIENTES";
             this.EXPEDIENTES.ShowItemToolTips = true;
-            this.EXPEDIENTES.Size = new System.Drawing.Size(1766, 80);
+            this.EXPEDIENTES.Size = new System.Drawing.Size(1986, 99);
             this.EXPEDIENTES.TabIndex = 50;
             this.EXPEDIENTES.UseCompatibleStateImageBehavior = false;
             this.EXPEDIENTES.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EXPEDIENTES_MouseClick);
@@ -134,11 +141,11 @@
             // 
             this.PEDIDOS.FullRowSelect = true;
             this.PEDIDOS.HideSelection = false;
-            this.PEDIDOS.Location = new System.Drawing.Point(597, 170);
+            this.PEDIDOS.Location = new System.Drawing.Point(672, 253);
             this.PEDIDOS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PEDIDOS.Name = "PEDIDOS";
             this.PEDIDOS.ShowItemToolTips = true;
-            this.PEDIDOS.Size = new System.Drawing.Size(1766, 89);
+            this.PEDIDOS.Size = new System.Drawing.Size(1986, 110);
             this.PEDIDOS.TabIndex = 49;
             this.PEDIDOS.UseCompatibleStateImageBehavior = false;
             this.PEDIDOS.DoubleClick += new System.EventHandler(this.PEDIDOS_DoubleClick);
@@ -150,19 +157,15 @@
             // 
             this.citaciones.FullRowSelect = true;
             this.citaciones.HideSelection = false;
-            this.citaciones.Location = new System.Drawing.Point(597, 68);
+            this.citaciones.Location = new System.Drawing.Point(672, 118);
             this.citaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.citaciones.Name = "citaciones";
             this.citaciones.ShowItemToolTips = true;
-            this.citaciones.Size = new System.Drawing.Size(1766, 98);
+            this.citaciones.Size = new System.Drawing.Size(1986, 122);
             this.citaciones.TabIndex = 48;
             this.toolcitaciones.SetToolTip(this.citaciones, "CITACIONES");
             this.citaciones.UseCompatibleStateImageBehavior = false;
             this.citaciones.View = System.Windows.Forms.View.Details;
-            this.citaciones.DoubleClick += new System.EventHandler(this.Citaciones_DoubleClick);
-            this.citaciones.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Citaciones_MouseClick);
-            this.citaciones.MouseLeave += new System.EventHandler(this.Citaciones_MouseLeave);
-            this.citaciones.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Citaciones_MouseMove);
             // 
             // GroupBox1
             // 
@@ -175,41 +178,41 @@
             this.GroupBox1.Controls.Add(this.Certificadodetrabajo);
             this.GroupBox1.Controls.Add(this.CERTIFICADODEROTACION);
             this.GroupBox1.Controls.Add(this.CERTITRABAJOCONHORARIOS);
-            this.GroupBox1.Location = new System.Drawing.Point(5, 364);
+            this.GroupBox1.Location = new System.Drawing.Point(6, 455);
             this.GroupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.GroupBox1.Size = new System.Drawing.Size(588, 185);
+            this.GroupBox1.Size = new System.Drawing.Size(662, 231);
             this.GroupBox1.TabIndex = 47;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "PEDIDOS";
             // 
             // textoadjuntars
             // 
-            this.textoadjuntars.Location = new System.Drawing.Point(460, 84);
+            this.textoadjuntars.Location = new System.Drawing.Point(518, 105);
             this.textoadjuntars.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textoadjuntars.Name = "textoadjuntars";
-            this.textoadjuntars.Size = new System.Drawing.Size(89, 78);
+            this.textoadjuntars.Size = new System.Drawing.Size(100, 96);
             this.textoadjuntars.TabIndex = 19;
             this.textoadjuntars.Text = "";
             // 
             // PEDIDORESOLUCIONES
             // 
             this.PEDIDORESOLUCIONES.AutoSize = true;
-            this.PEDIDORESOLUCIONES.Location = new System.Drawing.Point(105, 155);
+            this.PEDIDORESOLUCIONES.Location = new System.Drawing.Point(118, 194);
             this.PEDIDORESOLUCIONES.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PEDIDORESOLUCIONES.Name = "PEDIDORESOLUCIONES";
-            this.PEDIDORESOLUCIONES.Size = new System.Drawing.Size(210, 20);
+            this.PEDIDORESOLUCIONES.Size = new System.Drawing.Size(256, 24);
             this.PEDIDORESOLUCIONES.TabIndex = 18;
             this.PEDIDORESOLUCIONES.Text = "PEDIDO DE RESOLUCIONES";
             this.PEDIDORESOLUCIONES.UseVisualStyleBackColor = true;
             // 
             // CARGARPEDIDO
             // 
-            this.CARGARPEDIDO.Location = new System.Drawing.Point(0, 60);
+            this.CARGARPEDIDO.Location = new System.Drawing.Point(0, 75);
             this.CARGARPEDIDO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CARGARPEDIDO.Name = "CARGARPEDIDO";
-            this.CARGARPEDIDO.Size = new System.Drawing.Size(100, 54);
+            this.CARGARPEDIDO.Size = new System.Drawing.Size(112, 68);
             this.CARGARPEDIDO.TabIndex = 11;
             this.CARGARPEDIDO.Text = "CARGAR PEDIDO";
             this.CARGARPEDIDO.UseVisualStyleBackColor = true;
@@ -218,10 +221,10 @@
             // PEDIDONUMERODEEXPEDIENTE
             // 
             this.PEDIDONUMERODEEXPEDIENTE.AutoSize = true;
-            this.PEDIDONUMERODEEXPEDIENTE.Location = new System.Drawing.Point(105, 132);
+            this.PEDIDONUMERODEEXPEDIENTE.Location = new System.Drawing.Point(118, 165);
             this.PEDIDONUMERODEEXPEDIENTE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PEDIDONUMERODEEXPEDIENTE.Name = "PEDIDONUMERODEEXPEDIENTE";
-            this.PEDIDONUMERODEEXPEDIENTE.Size = new System.Drawing.Size(275, 20);
+            this.PEDIDONUMERODEEXPEDIENTE.Size = new System.Drawing.Size(332, 24);
             this.PEDIDONUMERODEEXPEDIENTE.TabIndex = 17;
             this.PEDIDONUMERODEEXPEDIENTE.Text = "PEDIDO DE NUMERO DE EXPEDIENTE";
             this.PEDIDONUMERODEEXPEDIENTE.UseVisualStyleBackColor = true;
@@ -229,10 +232,10 @@
             // IOMA
             // 
             this.IOMA.AutoSize = true;
-            this.IOMA.Location = new System.Drawing.Point(105, 14);
+            this.IOMA.Location = new System.Drawing.Point(118, 18);
             this.IOMA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IOMA.Name = "IOMA";
-            this.IOMA.Size = new System.Drawing.Size(62, 20);
+            this.IOMA.Size = new System.Drawing.Size(76, 24);
             this.IOMA.TabIndex = 12;
             this.IOMA.Text = "IOMA";
             this.IOMA.UseVisualStyleBackColor = true;
@@ -240,10 +243,10 @@
             // RESETCONTRASEÑAS
             // 
             this.RESETCONTRASEÑAS.AutoSize = true;
-            this.RESETCONTRASEÑAS.Location = new System.Drawing.Point(105, 107);
+            this.RESETCONTRASEÑAS.Location = new System.Drawing.Point(118, 134);
             this.RESETCONTRASEÑAS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RESETCONTRASEÑAS.Name = "RESETCONTRASEÑAS";
-            this.RESETCONTRASEÑAS.Size = new System.Drawing.Size(213, 20);
+            this.RESETCONTRASEÑAS.Size = new System.Drawing.Size(253, 24);
             this.RESETCONTRASEÑAS.TabIndex = 16;
             this.RESETCONTRASEÑAS.Text = "RESETEO DE CONTRASEÑA";
             this.RESETCONTRASEÑAS.UseVisualStyleBackColor = true;
@@ -251,10 +254,10 @@
             // Certificadodetrabajo
             // 
             this.Certificadodetrabajo.AutoSize = true;
-            this.Certificadodetrabajo.Location = new System.Drawing.Point(105, 36);
+            this.Certificadodetrabajo.Location = new System.Drawing.Point(118, 45);
             this.Certificadodetrabajo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Certificadodetrabajo.Name = "Certificadodetrabajo";
-            this.Certificadodetrabajo.Size = new System.Drawing.Size(206, 20);
+            this.Certificadodetrabajo.Size = new System.Drawing.Size(249, 24);
             this.Certificadodetrabajo.TabIndex = 13;
             this.Certificadodetrabajo.Text = "CERTIFICADO DE TRABAJO";
             this.Certificadodetrabajo.UseVisualStyleBackColor = true;
@@ -262,10 +265,10 @@
             // CERTIFICADODEROTACION
             // 
             this.CERTIFICADODEROTACION.AutoSize = true;
-            this.CERTIFICADODEROTACION.Location = new System.Drawing.Point(105, 84);
+            this.CERTIFICADODEROTACION.Location = new System.Drawing.Point(118, 105);
             this.CERTIFICADODEROTACION.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CERTIFICADODEROTACION.Name = "CERTIFICADODEROTACION";
-            this.CERTIFICADODEROTACION.Size = new System.Drawing.Size(213, 20);
+            this.CERTIFICADODEROTACION.Size = new System.Drawing.Size(258, 24);
             this.CERTIFICADODEROTACION.TabIndex = 15;
             this.CERTIFICADODEROTACION.Text = "CERTIFICADO DE ROTACION";
             this.CERTIFICADODEROTACION.UseVisualStyleBackColor = true;
@@ -273,10 +276,10 @@
             // CERTITRABAJOCONHORARIOS
             // 
             this.CERTITRABAJOCONHORARIOS.AutoSize = true;
-            this.CERTITRABAJOCONHORARIOS.Location = new System.Drawing.Point(105, 60);
+            this.CERTITRABAJOCONHORARIOS.Location = new System.Drawing.Point(118, 75);
             this.CERTITRABAJOCONHORARIOS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CERTITRABAJOCONHORARIOS.Name = "CERTITRABAJOCONHORARIOS";
-            this.CERTITRABAJOCONHORARIOS.Size = new System.Drawing.Size(324, 20);
+            this.CERTITRABAJOCONHORARIOS.Size = new System.Drawing.Size(393, 24);
             this.CERTITRABAJOCONHORARIOS.TabIndex = 14;
             this.CERTITRABAJOCONHORARIOS.Text = "CERTIFICACION DE TRABAJO CON HORARIOS";
             this.CERTITRABAJOCONHORARIOS.UseVisualStyleBackColor = true;
@@ -284,10 +287,10 @@
             // REALIZODOMICILIO
             // 
             this.REALIZODOMICILIO.AutoSize = true;
-            this.REALIZODOMICILIO.Location = new System.Drawing.Point(603, 43);
+            this.REALIZODOMICILIO.Location = new System.Drawing.Point(567, 10);
             this.REALIZODOMICILIO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.REALIZODOMICILIO.Name = "REALIZODOMICILIO";
-            this.REALIZODOMICILIO.Size = new System.Drawing.Size(171, 20);
+            this.REALIZODOMICILIO.Size = new System.Drawing.Size(213, 24);
             this.REALIZODOMICILIO.TabIndex = 46;
             this.REALIZODOMICILIO.Text = "CAMBIO DE DOMICILIO";
             this.REALIZODOMICILIO.UseVisualStyleBackColor = true;
@@ -295,39 +298,39 @@
             // legajohecho
             // 
             this.legajohecho.AutoSize = true;
-            this.legajohecho.Location = new System.Drawing.Point(466, 43);
+            this.legajohecho.Location = new System.Drawing.Point(782, 10);
             this.legajohecho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.legajohecho.Name = "legajohecho";
-            this.legajohecho.Size = new System.Drawing.Size(122, 20);
+            this.legajohecho.Size = new System.Drawing.Size(149, 24);
             this.legajohecho.TabIndex = 45;
             this.legajohecho.Text = "LEGAJO ECHO";
             this.legajohecho.UseVisualStyleBackColor = true;
             // 
             // scaners
             // 
-            this.scaners.Location = new System.Drawing.Point(5, 306);
+            this.scaners.Location = new System.Drawing.Point(6, 382);
             this.scaners.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.scaners.Name = "scaners";
-            this.scaners.Size = new System.Drawing.Size(151, 44);
+            this.scaners.Size = new System.Drawing.Size(170, 55);
             this.scaners.TabIndex = 44;
             this.scaners.Text = "SCANNEAR DOCUMENTACION";
             this.scaners.UseVisualStyleBackColor = true;
             // 
             // EXPLICACIONDADA
             // 
-            this.EXPLICACIONDADA.Location = new System.Drawing.Point(297, 66);
+            this.EXPLICACIONDADA.Location = new System.Drawing.Point(334, 82);
             this.EXPLICACIONDADA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EXPLICACIONDADA.Name = "EXPLICACIONDADA";
-            this.EXPLICACIONDADA.Size = new System.Drawing.Size(296, 230);
+            this.EXPLICACIONDADA.Size = new System.Drawing.Size(332, 286);
             this.EXPLICACIONDADA.TabIndex = 42;
             this.EXPLICACIONDADA.Text = "";
             // 
             // MOTIVODECONSULTA
             // 
-            this.MOTIVODECONSULTA.Location = new System.Drawing.Point(5, 66);
+            this.MOTIVODECONSULTA.Location = new System.Drawing.Point(6, 82);
             this.MOTIVODECONSULTA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MOTIVODECONSULTA.Name = "MOTIVODECONSULTA";
-            this.MOTIVODECONSULTA.Size = new System.Drawing.Size(288, 230);
+            this.MOTIVODECONSULTA.Size = new System.Drawing.Size(324, 286);
             this.MOTIVODECONSULTA.TabIndex = 41;
             this.MOTIVODECONSULTA.Text = "";
             // 
@@ -342,73 +345,145 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(11, 670);
+            this.webBrowser1.Location = new System.Drawing.Point(12, 838);
             this.webBrowser1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(18, 16);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(2350, 500);
+            this.webBrowser1.Size = new System.Drawing.Size(2644, 625);
             this.webBrowser1.TabIndex = 55;
             // 
             // apellynombre
             // 
-            this.apellynombre.Location = new System.Drawing.Point(360, 10);
+            this.apellynombre.Location = new System.Drawing.Point(301, 11);
             this.apellynombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.apellynombre.Name = "apellynombre";
-            this.apellynombre.Size = new System.Drawing.Size(232, 22);
+            this.apellynombre.Size = new System.Drawing.Size(260, 26);
             this.apellynombre.TabIndex = 56;
             // 
             // legajo
             // 
-            this.legajo.Location = new System.Drawing.Point(360, 39);
+            this.legajo.Location = new System.Drawing.Point(301, 49);
             this.legajo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.legajo.Name = "legajo";
-            this.legajo.Size = new System.Drawing.Size(89, 22);
+            this.legajo.Size = new System.Drawing.Size(100, 26);
             this.legajo.TabIndex = 57;
             // 
             // dni
             // 
-            this.dni.Location = new System.Drawing.Point(663, 10);
+            this.dni.Location = new System.Drawing.Point(668, 20);
             this.dni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dni.Name = "dni";
-            this.dni.Size = new System.Drawing.Size(89, 22);
+            this.dni.Size = new System.Drawing.Size(100, 26);
             this.dni.TabIndex = 58;
+            this.dni.DoubleClick += new System.EventHandler(this.dni_DoubleClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(251, 10);
+            this.label1.Location = new System.Drawing.Point(220, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.Size = new System.Drawing.Size(75, 20);
             this.label1.TabIndex = 59;
             this.label1.Text = "AGENTE";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(597, 7);
+            this.label2.Location = new System.Drawing.Point(625, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 16);
+            this.label2.Size = new System.Drawing.Size(37, 20);
             this.label2.TabIndex = 60;
             this.label2.Text = "DNI";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(254, 42);
+            this.label3.Location = new System.Drawing.Point(220, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.Size = new System.Drawing.Size(73, 20);
             this.label3.TabIndex = 61;
             this.label3.Text = "LEGAJO";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.PORDNI);
+            this.groupBox2.Controls.Add(this.apellido1);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.PORAPELLIDO);
+            this.groupBox2.Controls.Add(this.DNI1);
+            this.groupBox2.Controls.Add(this.dni);
+            this.groupBox2.Location = new System.Drawing.Point(927, 12);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(780, 97);
+            this.groupBox2.TabIndex = 62;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "SETS";
+            // 
+            // PORDNI
+            // 
+            this.PORDNI.AutoSize = true;
+            this.PORDNI.Location = new System.Drawing.Point(11, 18);
+            this.PORDNI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PORDNI.Name = "PORDNI";
+            this.PORDNI.Size = new System.Drawing.Size(486, 24);
+            this.PORDNI.TabIndex = 23;
+            this.PORDNI.TabStop = true;
+            this.PORDNI.Text = "BUSQUEDA POR DNI Y HAGA DOBLE CLIK PARA CAMBIAR";
+            this.PORDNI.UseVisualStyleBackColor = true;
+            // 
+            // apellido1
+            // 
+            this.apellido1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.apellido1.FormattingEnabled = true;
+            this.apellido1.Location = new System.Drawing.Point(266, 56);
+            this.apellido1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.apellido1.Name = "apellido1";
+            this.apellido1.Size = new System.Drawing.Size(422, 28);
+            this.apellido1.TabIndex = 22;
+            // 
+            // PORAPELLIDO
+            // 
+            this.PORAPELLIDO.AutoSize = true;
+            this.PORAPELLIDO.Location = new System.Drawing.Point(11, 56);
+            this.PORAPELLIDO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PORAPELLIDO.Name = "PORAPELLIDO";
+            this.PORAPELLIDO.Size = new System.Drawing.Size(247, 24);
+            this.PORAPELLIDO.TabIndex = 24;
+            this.PORAPELLIDO.TabStop = true;
+            this.PORAPELLIDO.Text = "BUSQUEDA POR APELLIDO";
+            this.PORAPELLIDO.UseVisualStyleBackColor = true;
+            // 
+            // DNI1
+            // 
+            this.DNI1.Location = new System.Drawing.Point(504, 18);
+            this.DNI1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DNI1.Name = "DNI1";
+            this.DNI1.Size = new System.Drawing.Size(115, 26);
+            this.DNI1.TabIndex = 10;
+            this.DNI1.Text = "0";
+            this.DNI1.DoubleClick += new System.EventHandler(this.DNI1_DoubleClick);
+            // 
+            // JURADASALRIO
+            // 
+            this.JURADASALRIO.AutoSize = true;
+            this.JURADASALRIO.Location = new System.Drawing.Point(407, 50);
+            this.JURADASALRIO.Name = "JURADASALRIO";
+            this.JURADASALRIO.Size = new System.Drawing.Size(285, 24);
+            this.JURADASALRIO.TabIndex = 63;
+            this.JURADASALRIO.Text = "DECLARACION JURADA SALRIO";
+            this.JURADASALRIO.UseVisualStyleBackColor = true;
+            // 
             // MESADEENTRADA
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1539, 765);
+            this.ClientSize = new System.Drawing.Size(1731, 956);
+            this.Controls.Add(this.JURADASALRIO);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dni);
             this.Controls.Add(this.legajo);
             this.Controls.Add(this.apellynombre);
             this.Controls.Add(this.webBrowser1);
@@ -432,6 +507,8 @@
             this.Load += new System.EventHandler(this.MESADEENTRADA_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,5 +546,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton PORDNI;
+        private System.Windows.Forms.ComboBox apellido1;
+        private System.Windows.Forms.RadioButton PORAPELLIDO;
+        internal System.Windows.Forms.TextBox DNI1;
+        internal System.Windows.Forms.CheckBox JURADASALRIO;
     }
 }

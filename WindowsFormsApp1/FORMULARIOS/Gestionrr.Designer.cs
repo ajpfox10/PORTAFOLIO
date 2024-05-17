@@ -71,6 +71,8 @@ namespace WindowsFormsApp1
             this.notasss = new System.Windows.Forms.TabPage();
             this.GDEBANOTAS = new System.Windows.Forms.ListView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CARGADATODOMICILIO = new System.Windows.Forms.Button();
+            this.DOMICILIOS = new System.Windows.Forms.ListView();
             this.DATSPERSONALES = new System.Windows.Forms.ListView();
             this.CARGADATSPERSONALES = new System.Windows.Forms.Button();
             this.DATS = new System.Windows.Forms.ListView();
@@ -107,8 +109,7 @@ namespace WindowsFormsApp1
             this.apellido1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.DNI = new System.Windows.Forms.TextBox();
-            this.DOMICILIOS = new System.Windows.Forms.ListView();
-            this.CARGADATODOMICILIO = new System.Windows.Forms.Button();
+            this.JURADASALARIO = new System.Windows.Forms.CheckBox();
             this.controlpesta.SuspendLayout();
             this.CONSULTAS.SuspendLayout();
             this.RESOLUCIONESS.SuspendLayout();
@@ -618,6 +619,26 @@ namespace WindowsFormsApp1
             this.tabPage2.Text = "DATOS ";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // CARGADATODOMICILIO
+            // 
+            this.CARGADATODOMICILIO.Location = new System.Drawing.Point(9, 495);
+            this.CARGADATODOMICILIO.Name = "CARGADATODOMICILIO";
+            this.CARGADATODOMICILIO.Size = new System.Drawing.Size(201, 40);
+            this.CARGADATODOMICILIO.TabIndex = 5;
+            this.CARGADATODOMICILIO.Text = "CARGAR DOMICILIO";
+            this.CARGADATODOMICILIO.UseVisualStyleBackColor = true;
+            this.CARGADATODOMICILIO.Click += new System.EventHandler(this.CARGADATODOMICILIO_Click);
+            // 
+            // DOMICILIOS
+            // 
+            this.DOMICILIOS.HideSelection = false;
+            this.DOMICILIOS.Location = new System.Drawing.Point(9, 566);
+            this.DOMICILIOS.Name = "DOMICILIOS";
+            this.DOMICILIOS.Size = new System.Drawing.Size(1967, 169);
+            this.DOMICILIOS.TabIndex = 4;
+            this.DOMICILIOS.UseCompatibleStateImageBehavior = false;
+            this.DOMICILIOS.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DOMICILIOS_MouseClick);
+            // 
             // DATSPERSONALES
             // 
             this.DATSPERSONALES.HideSelection = false;
@@ -1047,31 +1068,22 @@ namespace WindowsFormsApp1
             this.DNI.Size = new System.Drawing.Size(202, 26);
             this.DNI.TabIndex = 1;
             // 
-            // DOMICILIOS
+            // JURADASALARIO
             // 
-            this.DOMICILIOS.HideSelection = false;
-            this.DOMICILIOS.Location = new System.Drawing.Point(9, 566);
-            this.DOMICILIOS.Name = "DOMICILIOS";
-            this.DOMICILIOS.Size = new System.Drawing.Size(1967, 169);
-            this.DOMICILIOS.TabIndex = 4;
-            this.DOMICILIOS.UseCompatibleStateImageBehavior = false;
-            this.DOMICILIOS.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DOMICILIOS_MouseClick);
-            // 
-            // CARGADATODOMICILIO
-            // 
-            this.CARGADATODOMICILIO.Location = new System.Drawing.Point(9, 495);
-            this.CARGADATODOMICILIO.Name = "CARGADATODOMICILIO";
-            this.CARGADATODOMICILIO.Size = new System.Drawing.Size(201, 40);
-            this.CARGADATODOMICILIO.TabIndex = 5;
-            this.CARGADATODOMICILIO.Text = "CARGAR DOMICILIO";
-            this.CARGADATODOMICILIO.UseVisualStyleBackColor = true;
-            this.CARGADATODOMICILIO.Click += new System.EventHandler(this.CARGADATODOMICILIO_Click);
+            this.JURADASALARIO.AutoSize = true;
+            this.JURADASALARIO.Location = new System.Drawing.Point(496, 159);
+            this.JURADASALARIO.Name = "JURADASALARIO";
+            this.JURADASALARIO.Size = new System.Drawing.Size(323, 24);
+            this.JURADASALARIO.TabIndex = 10;
+            this.JURADASALARIO.Text = "DECLARACION JURADA DE SALARIO";
+            this.JURADASALARIO.UseVisualStyleBackColor = true;
             // 
             // Gestionrr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.Controls.Add(this.JURADASALARIO);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.REALIZODOMICILIO);
             this.Controls.Add(this.controlpesta);
@@ -1192,5 +1204,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button CARGADATODOMICILIO;
         private System.Windows.Forms.ListView DOMICILIOS;
+        private System.Windows.Forms.CheckBox JURADASALARIO;
     }
 }

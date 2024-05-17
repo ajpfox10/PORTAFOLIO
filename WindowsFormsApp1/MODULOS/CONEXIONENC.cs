@@ -1139,7 +1139,6 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
         public void InsertarEDUCACION(string ESCUELAPRIMARIA, int AÑOEGRESOESCUELAPRIMARIA, string escuelasecundaria, int añoegresoescuelasecundaria, string escuelaterciaria, int AÑOEGRESOESCULATERCIARIA, string ESCUELAUNIVERSITARIA, int AÑOEGRESOUNIVERSIDAD, int DNI)
         {
             string query = "INSERT INTO estudios (estudios.estudioprimario, estudios.añoegresoprimario, estudios.estudiosecundario, estudios.añoegresosecundario, estudios.estudioterciario, estudios.añoegresoterciario, estudios.estudiouniversitario, estudios.añoegresouniversitario, estudios.DNI) " +
@@ -1170,10 +1169,33 @@ namespace WindowsFormsApp1
                 }
             }
         }
+        public void EjecutarNonQuery(string consulta, Dictionary<string, object> parametros = null)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand comando = new MySqlCommand(consulta, conexion);
 
+                // Agregar parámetros si los hay
+                if (parametros != null)
+                {
+                    foreach (var parametro in parametros)
+                    {
+                        comando.Parameters.AddWithValue(parametro.Key, parametro.Value);
+                    }
+                }
 
-
-
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al ejecutar consulta: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
 
     }
 }

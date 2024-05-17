@@ -58,22 +58,18 @@ namespace WindowsFormsApp1
                 cargador.CargarDatos(TAREASASIGNADAS, consultaTAREAS, columnasTAREAS);
             }
         }
-
         private void TAREASASIGNADAS_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                // Limpiar el contenido existente en el RichTextBox
-                TAREASASIGNADAS.Clear();
-
-                // Obtener el índice de la fila seleccionada
-                int selectedIndex = TAREASASIGNADAS.SelectedIndices[0];
-
-                // Iterar sobre todas las subítems de la fila seleccionada
-                foreach (ListViewItem.ListViewSubItem subItem in TAREASASIGNADAS.Items[selectedIndex].SubItems)
+                if (e.Button == MouseButtons.Right)
                 {
-                    // Agregar el texto de la subítem al RichTextBox
-                    TAREASAREALIZAR.AppendText(subItem.Text + Environment.NewLine);
+                    if (TAREASASIGNADAS.SelectedItems.Count > 0) // Verificar si hay elementos seleccionados
+                    {
+                        int selectedIndex = TAREASASIGNADAS.SelectedItems[0].Index;
+                        string columnaDos = TAREASASIGNADAS.Items[selectedIndex].SubItems[1].Text;
+                        TAREASAREALIZAR.Text = columnaDos;
+                    }
                 }
             }
         }

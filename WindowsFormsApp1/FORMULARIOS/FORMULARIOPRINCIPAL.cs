@@ -52,15 +52,17 @@ namespace WindowsFormsApp1
             if (AGENTE.SelectedItem != null)
             {
                 VERIFICARCONTR verificador = new VERIFICARCONTR();
-               
+
                 bool todosCompletos = VERIFICARCONTR.VerificarControles(this.Controls);
 
                 if (todosCompletos)
                 {
-                    // Continúa con el resto del código si todos los controles se han completado correctamente
-                    MESADEENTRADA _MESADEENTRADA = new MESADEENTRADA(Dnis_, Agentedeatencions_);
+                    // Establece los valores de Dnis_ y Agentedeatencions_ antes de instanciar MESADEENTRADA
                     Dnis_ = Convert.ToInt64(DNI.Text);
                     Agentedeatencions_ = Convert.ToString(AGENTE.SelectedItem.ToString());
+
+                    // Continúa con el resto del código si todos los controles se han completado correctamente
+                    MESADEENTRADA _MESADEENTRADA = new MESADEENTRADA(Dnis_, Agentedeatencions_);
                     _MESADEENTRADA.ShowDialog();
                 }
                 else
@@ -73,6 +75,8 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Selecciona un agente antes de continuar.");
             }
         }
+
+
         private void CARGADAMICILIO_Click(object sender, EventArgs e)
         {
             VERIFICARCONTR verificador = new VERIFICARCONTR();

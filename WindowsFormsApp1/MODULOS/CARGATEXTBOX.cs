@@ -30,7 +30,13 @@ namespace WindowsFormsApp1
                 {
                     if (reader.Read())
                     {
-                        for (int i = 0; i < controles.Count; i++)
+                        List<string> nombresColumnas = new List<string>();
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            nombresColumnas.Add(reader.GetName(i));
+                        }
+
+                        for (int i = 0; i < reader.FieldCount; i++)
                         {
                             if (reader.IsDBNull(i))
                             {
@@ -58,6 +64,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
 
         public void Dispose()
         {
