@@ -40,6 +40,13 @@ namespace WindowsFormsApp1
             this.datosaanalizar = new System.Windows.Forms.RichTextBox();
             this.consultasechas = new System.Windows.Forms.ListView();
             this.RESOLUCIONESS = new System.Windows.Forms.TabPage();
+            this.NRORESOLUCION = new System.Windows.Forms.TextBox();
+            this.CARGARRESOL = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.FECHADENOTIFICACION = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ACTOTIPO = new System.Windows.Forms.ComboBox();
             this.TIPORESOLUCION = new System.Windows.Forms.ComboBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.RESOLUCIONES = new System.Windows.Forms.ListView();
@@ -112,6 +119,9 @@ namespace WindowsFormsApp1
             this.DNI = new System.Windows.Forms.TextBox();
             this.JURADASALARIO = new System.Windows.Forms.CheckBox();
             this.foto = new System.Windows.Forms.CheckBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.ANIO = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.controlpesta.SuspendLayout();
             this.CONSULTAS.SuspendLayout();
             this.RESOLUCIONESS.SuspendLayout();
@@ -239,6 +249,16 @@ namespace WindowsFormsApp1
             // 
             // RESOLUCIONESS
             // 
+            this.RESOLUCIONESS.Controls.Add(this.label22);
+            this.RESOLUCIONESS.Controls.Add(this.ANIO);
+            this.RESOLUCIONESS.Controls.Add(this.label21);
+            this.RESOLUCIONESS.Controls.Add(this.NRORESOLUCION);
+            this.RESOLUCIONESS.Controls.Add(this.CARGARRESOL);
+            this.RESOLUCIONESS.Controls.Add(this.label20);
+            this.RESOLUCIONESS.Controls.Add(this.label19);
+            this.RESOLUCIONESS.Controls.Add(this.FECHADENOTIFICACION);
+            this.RESOLUCIONESS.Controls.Add(this.label10);
+            this.RESOLUCIONESS.Controls.Add(this.ACTOTIPO);
             this.RESOLUCIONESS.Controls.Add(this.TIPORESOLUCION);
             this.RESOLUCIONESS.Controls.Add(this.webBrowser1);
             this.RESOLUCIONESS.Controls.Add(this.RESOLUCIONES);
@@ -251,10 +271,70 @@ namespace WindowsFormsApp1
             this.RESOLUCIONESS.Text = "RESOLUCIONES";
             this.RESOLUCIONESS.UseVisualStyleBackColor = true;
             // 
+            // NRORESOLUCION
+            // 
+            this.NRORESOLUCION.Location = new System.Drawing.Point(1368, 132);
+            this.NRORESOLUCION.Name = "NRORESOLUCION";
+            this.NRORESOLUCION.Size = new System.Drawing.Size(155, 26);
+            this.NRORESOLUCION.TabIndex = 8;
+            // 
+            // CARGARRESOL
+            // 
+            this.CARGARRESOL.Location = new System.Drawing.Point(1638, 182);
+            this.CARGARRESOL.Name = "CARGARRESOL";
+            this.CARGARRESOL.Size = new System.Drawing.Size(101, 43);
+            this.CARGARRESOL.TabIndex = 7;
+            this.CARGARRESOL.Text = "CARGAR RESOLUCION";
+            this.CARGARRESOL.UseVisualStyleBackColor = true;
+            this.CARGARRESOL.Click += new System.EventHandler(this.CARGARRESOL_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(1540, 107);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(208, 20);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "FECHA DE NOTIFICACION";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(1425, 27);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(45, 20);
+            this.label19.TabIndex = 5;
+            this.label19.Text = "TIPO";
+            // 
+            // FECHADENOTIFICACION
+            // 
+            this.FECHADENOTIFICACION.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FECHADENOTIFICACION.Location = new System.Drawing.Point(1544, 130);
+            this.FECHADENOTIFICACION.Name = "FECHADENOTIFICACION";
+            this.FECHADENOTIFICACION.Size = new System.Drawing.Size(204, 26);
+            this.FECHADENOTIFICACION.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1600, 27);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 20);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "ACTO DE :";
+            // 
+            // ACTOTIPO
+            // 
+            this.ACTOTIPO.FormattingEnabled = true;
+            this.ACTOTIPO.Location = new System.Drawing.Point(1368, 50);
+            this.ACTOTIPO.Name = "ACTOTIPO";
+            this.ACTOTIPO.Size = new System.Drawing.Size(155, 28);
+            this.ACTOTIPO.TabIndex = 2;
+            // 
             // TIPORESOLUCION
             // 
             this.TIPORESOLUCION.FormattingEnabled = true;
-            this.TIPORESOLUCION.Location = new System.Drawing.Point(1382, 41);
+            this.TIPORESOLUCION.Location = new System.Drawing.Point(1544, 50);
             this.TIPORESOLUCION.Name = "TIPORESOLUCION";
             this.TIPORESOLUCION.Size = new System.Drawing.Size(223, 28);
             this.TIPORESOLUCION.TabIndex = 1;
@@ -1099,6 +1179,61 @@ namespace WindowsFormsApp1
             this.foto.Text = "FOTO";
             this.foto.UseVisualStyleBackColor = true;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(1410, 109);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(80, 20);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "NUMERO";
+            // 
+            // ANIO
+            // 
+            this.ANIO.FormattingEnabled = true;
+            this.ANIO.Items.AddRange(new object[] {
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"});
+            this.ANIO.Location = new System.Drawing.Point(1368, 197);
+            this.ANIO.Name = "ANIO";
+            this.ANIO.Size = new System.Drawing.Size(80, 28);
+            this.ANIO.TabIndex = 10;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(1376, 174);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(43, 20);
+            this.label22.TabIndex = 11;
+            this.label22.Text = "AÑO";
+            // 
             // Gestionrr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1123,6 +1258,7 @@ namespace WindowsFormsApp1
             this.controlpesta.ResumeLayout(false);
             this.CONSULTAS.ResumeLayout(false);
             this.RESOLUCIONESS.ResumeLayout(false);
+            this.RESOLUCIONESS.PerformLayout();
             this.EXPEDIENTE.ResumeLayout(false);
             this.PEDIDOSS.ResumeLayout(false);
             this.CITACIONESS.ResumeLayout(false);
@@ -1229,5 +1365,15 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.CheckBox JURADASALARIO;
         private System.Windows.Forms.CheckBox foto;
         private System.Windows.Forms.ComboBox TIPORESOLUCION;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DateTimePicker FECHADENOTIFICACION;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox ACTOTIPO;
+        private System.Windows.Forms.Button CARGARRESOL;
+        private System.Windows.Forms.TextBox NRORESOLUCION;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox ANIO;
     }
 }

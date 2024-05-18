@@ -50,10 +50,8 @@ namespace WindowsFormsApp1
             string consultaExpedientes = "SELECT id, AGENTE, expedientenumero AS 'EXPEDIENTE NUMERO', MEMO, archivo FROM expedientes WHERE AGENTE='" + Dnis_ + "' ORDER BY id DESC";
             string[] columnasExpedientes = new string[] { "ID:75", "AGENTE:0", "EXPEDIENTE NUMERO:300", "MEMO:375", "ARCHIVO:325" };
             loader.CargarDatosYAcciones(EXPEDIENTES, consultaExpedientes, columnasExpedientes);
-
-            string consultaResoluciones = "SELECT RESOLUCIONES.id, resoluciones.resolucion AS 'RESOLUCION', resoluciones.FECHADERESOLUCION AS 'FECHA DE RESOLUCIO', resoluciones.FECHADENOTIFICACION AS 'FECHA DE NOTIFICACION', tipoderesolucion.resolucion AS 'RESOLUCION DE' FROM tipoderesolucion INNER JOIN resoluciones ON tipoderesolucion.id = resoluciones.tipoderesolucion WHERE dni = '" + Dnis_ + "' ORDER BY id DESC";
-            string[] columnasResoluciones = new string[] { "ID:20", "RESOLUCION:135", "FECHA DE RESOLUCION:155", "FECHA DE NOTIFICACION:155", "RESOLUCION DE:145" };
-
+            string consultaResoluciones = "SELECT RESOLUCIONES.id, resoluciones.resolucion AS 'RESOLUCION', resoluciones.FECHADERESOLUCION AS 'FECHA DE RESOLUCION', resoluciones.FECHADENOTIFICACION AS 'FECHA DE NOTIFICACION', tipoderesolucion.resolucion AS 'RESOLUCION DE' FROM tipoderesolucion INNER JOIN resoluciones ON tipoderesolucion.id = resoluciones.tipoderesolucion WHERE dni = '" + Dnis_ + "' ORDER BY id DESC";
+            string[] columnasResoluciones = new string[] { "ID:30", "RESOLUCION:135", "FECHA DE RESOLUCION:155", "FECHA DE NOTIFICACION:155", "RESOLUCION DE:145" };
             loader.CargarDatosYAcciones(RESOLUCIONES, consultaResoluciones, columnasResoluciones);
             string consultaViejas = "SELECT IDDECONSULTA AS 'ID', DNI, MOTIVODECONSULTA AS 'MOTIVO DE CONSULTA', EXPLICACIONDADA AS 'EXPLICACION DADA', ATENDIDOPOR AS 'ATENDIDO POR', HORADEATENCION AS 'HORA DE ATENCION' FROM consultas WHERE DNI='" + Dnis_ + "' ORDER BY IDDECONSULTA DESC";
             string[] columnasViejas = new string[] { "ID:75", "DNI:0", "MOTIVO DE CONSULTA:300", "EXPLICACION DADA:175", "ATENDIDO POR:125", "HORA DE ATENCION:125" };
@@ -109,6 +107,20 @@ namespace WindowsFormsApp1
             string consultaTIPORESO = @"SELECT tipoderesolucion.resolucion, tipoderesolucion.id FROM tipoderesolucion";
             // Llenar el ComboBox con los resultados de la consulta
             conexionMySQL.LlenarComboBox(consultaTIPORESO, TIPORESOLUCION, "resolucion", "id");
+            ComboBoxItem itemDecreto = new ComboBoxItem { DisplayMember = "DECRETO", ValueMember = 0 };
+            ComboBoxItem itemResolucion = new ComboBoxItem { DisplayMember = "RESOLUCION", ValueMember = 11112 };
+
+            // Limpiar ítems existentes (opcional)
+            ACTOTIPO.Items.Clear();
+
+            // Agregar los ítems al ComboBox
+            ACTOTIPO.Items.Add(itemDecreto);
+            ACTOTIPO.Items.Add(itemResolucion);
+
+            // Configurar DisplayMember y ValueMember
+            ACTOTIPO.DisplayMember = "DisplayMember";
+            ACTOTIPO.ValueMember = "ValueMember";
+
         }
         private void CITA_MouseClick(object sender, MouseEventArgs e)
         {
@@ -884,6 +896,59 @@ namespace WindowsFormsApp1
 
             Clipboard.SetText(datosCopiados.ToString());
         }
+        public class ComboBoxItem
+        {
+            public string DisplayMember { get; set; }
+            public int ValueMember { get; set; }
 
+            public override string ToString()
+            {
+                return DisplayMember;
+            }
+        }// SEPARARLA EN UNA CLASE DIFERENTE O INTEGRARLA
+
+        private void CARGARRESOL_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GestionResoluciones gestionResoluciones = new GestionResoluciones();
+                // Valores de ejemplo obtenidos de controles del formulario
+                int dni = (int)Dnis_;
+                string numeroResolucion = NRORESOLUCION.Text;
+                string tipoResolucionValueMember = TIPORESOLUCION.SelectedValue.ToString();
+                DateTime fechaResolucion = FECHADENOTIFICACION.Value;
+                
+                int anio = int.Parse(ANIO.SelectedItem.ToString());
+                string resultado = "";
+                if (tipoResolucionValueMember == "0")
+                {
+                    // Si el tipo de resolución es 0, colocar "DECT"
+                    resultado = "DECT";
+                }
+                else if (tipoResolucionValueMember == "11112")
+                {
+                    // Si el tipo de resolución es 11112, dejar "1112"
+                    resultado = "1112";
+                }
+                // Añadir el guion
+                resultado += "-";
+                // Concatenar el número de resolución
+                resultado += numeroResolucion;
+                // Añadir otro guion
+                resultado += "-";
+                // Concatenar el año
+                resultado += anio.ToString();
+                // Añadir un punto
+                resultado += ".";
+                // Añadir "PDF"
+                resultado += "PDF";
+                // Insertar resolución
+                gestionResoluciones.InsertarResolucion(dni, resultado, tipoResolucionValueMember, fechaResolucion,  anio);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

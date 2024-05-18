@@ -286,6 +286,7 @@
     <Compile Include="MODULOS\crearuntickets.cs" />
     <Compile Include="MODULOS\CuilCalculator.cs" />
     <Compile Include="MODULOS\generarcertificadodetrabajo.cs" />
+    <Compile Include="MODULOS\insertarresoluciones.cs" />
     <Compile Include="MODULOS\IOMA.cs" />
     <Compile Include="MODULOS\limpiarcontroles.cs" />
     <Compile Include="MODULOS\rellenadomiclio.cs" />

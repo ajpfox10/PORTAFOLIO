@@ -290,7 +290,7 @@
             // 
             // ASIGNACIONTAREAS
             // 
-            this.ASIGNACIONTAREAS.Location = new System.Drawing.Point(199, 544);
+            this.ASIGNACIONTAREAS.Location = new System.Drawing.Point(199, 454);
             this.ASIGNACIONTAREAS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ASIGNACIONTAREAS.Name = "ASIGNACIONTAREAS";
             this.ASIGNACIONTAREAS.Size = new System.Drawing.Size(297, 49);
