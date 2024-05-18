@@ -50,8 +50,10 @@ namespace WindowsFormsApp1
             string consultaExpedientes = "SELECT id, AGENTE, expedientenumero AS 'EXPEDIENTE NUMERO', MEMO, archivo FROM expedientes WHERE AGENTE='" + Dnis_ + "' ORDER BY id DESC";
             string[] columnasExpedientes = new string[] { "ID:75", "AGENTE:0", "EXPEDIENTE NUMERO:300", "MEMO:375", "ARCHIVO:325" };
             loader.CargarDatosYAcciones(EXPEDIENTES, consultaExpedientes, columnasExpedientes);
-            string consultaResoluciones = "SELECT RESOLUCIONES.id, resoluciones.dni, resoluciones.resolucion, tiporesolucion.resolucion as TIPO_RESOLUCION, resoluciones.FECHADERESOLUCION AS 'FECHA DE RESOLUCION', resoluciones.FECHADENOTIFICACION AS 'FECHA DE NOTIFICACION', resoluciones.COMBINACION FROM resoluciones INNER JOIN tipoderesolucion AS tiporesolucion ON resoluciones.tipoderesolucion = tiporesolucion.id WHERE dni='" + Dnis_ + "' ORDER BY id DESC";
-            string[] columnasResoluciones = new string[] { "ID:75", "DNI:0", "RESOLUCION:135", "TIPO_RESOLUCION:300", "FECHA DE RESOLUCION:155", "FECHA DE NOTIFICACION:155", "COMBINACION:145" };
+
+            string consultaResoluciones = "SELECT RESOLUCIONES.id, resoluciones.resolucion AS 'RESOLUCION', resoluciones.FECHADERESOLUCION AS 'FECHA DE RESOLUCIO', resoluciones.FECHADENOTIFICACION AS 'FECHA DE NOTIFICACION', tipoderesolucion.resolucion AS 'RESOLUCION DE' FROM tipoderesolucion INNER JOIN resoluciones ON tipoderesolucion.id = resoluciones.tipoderesolucion WHERE dni = '" + Dnis_ + "' ORDER BY id DESC";
+            string[] columnasResoluciones = new string[] { "ID:20", "RESOLUCION:135", "FECHA DE RESOLUCION:155", "FECHA DE NOTIFICACION:155", "RESOLUCION DE:145" };
+
             loader.CargarDatosYAcciones(RESOLUCIONES, consultaResoluciones, columnasResoluciones);
             string consultaViejas = "SELECT IDDECONSULTA AS 'ID', DNI, MOTIVODECONSULTA AS 'MOTIVO DE CONSULTA', EXPLICACIONDADA AS 'EXPLICACION DADA', ATENDIDOPOR AS 'ATENDIDO POR', HORADEATENCION AS 'HORA DE ATENCION' FROM consultas WHERE DNI='" + Dnis_ + "' ORDER BY IDDECONSULTA DESC";
             string[] columnasViejas = new string[] { "ID:75", "DNI:0", "MOTIVO DE CONSULTA:300", "EXPLICACION DADA:175", "ATENDIDO POR:125", "HORA DE ATENCION:125" };
@@ -104,6 +106,9 @@ namespace WindowsFormsApp1
                 REPARTICION.Tag = diccionarioDEPENDENCIAS;
             } 
             catch (Exception ex) { Console.WriteLine("Error al cargar los valores en el ComboBox: " + ex.Message); }
+            string consultaTIPORESO = @"SELECT tipoderesolucion.resolucion, tipoderesolucion.id FROM tipoderesolucion";
+            // Llenar el ComboBox con los resultados de la consulta
+            conexionMySQL.LlenarComboBox(consultaTIPORESO, TIPORESOLUCION, "resolucion", "id");
         }
         private void CITA_MouseClick(object sender, MouseEventArgs e)
         {
@@ -223,7 +228,6 @@ namespace WindowsFormsApp1
                 string consultaPedidos = "SELECT dni, id, PEDIDO, AGENTE, fechadepedido AS 'FECHA DE PEDIDO', fechaderetiro AS 'FECHA DE RETIRO', agenteqretiro AS 'AGENTE QUE RETIRO', activa FROM pedidos WHERE activa IS NULL AND dni='" + Dnis_ + "' ORDER BY id DESC";
                 string[] columnasPedidos = new string[] { "DNI:0", "ID:75", "PEDIDO:300", "AGENTE:175", "FECHA DE PEDIDO:125", "FECHA DE RETIRO:125", "AGENTE QUE RETIRO:0" };
                 loader.CargarDatosYAcciones(PEDIDOS, consultaPedidos, columnasPedidos);
-
              }
          }
         private void CARGAREXPEDIENTES_Click(object sender, EventArgs e)
@@ -340,15 +344,16 @@ namespace WindowsFormsApp1
             string consultaExpedientes = "SELECT id, AGENTE, expedientenumero AS 'EXPEDIENTE NUMERO', MEMO, archivo FROM expedientes WHERE AGENTE='" + Dnis_ + "' ORDER BY id DESC";
             string[] columnasExpedientes = new string[] { "ID:75", "AGENTE:0", "EXPEDIENTE NUMERO:300", "MEMO:175", "ARCHIVO:125" };
             loader.CargarDatosYAcciones(EXPEDIENTES, consultaExpedientes, columnasExpedientes);
-            string consultaResoluciones = "SELECT RESOLUCIONES.id, resoluciones.dni, resoluciones.resolucion, tiporesolucion.resolucion as TIPO_RESOLUCION, resoluciones.FECHADERESOLUCION AS 'FECHA DE RESOLUCION', resoluciones.FECHADENOTIFICACION AS 'FECHA DE NOTIFICACION', resoluciones.COMBINACION FROM resoluciones INNER JOIN tipoderesolucion AS tiporesolucion ON resoluciones.tipoderesolucion = tiporesolucion.id WHERE dni='" + Dnis_ + "' ORDER BY id DESC";
-            string[] columnasResoluciones = new string[] { "ID:75", "DNI:0", "RESOLUCION:135", "TIPO_RESOLUCION:300", "FECHA DE RESOLUCION:155", "FECHA DE NOTIFICACION:155", "COMBINACION:145" };
+            string consultaResoluciones = "SELECT SELECT RESOLUCIONES.id, resoluciones.resolucion AS 'RESOLUCION', resoluciones.FECHADERESOLUCION AS 'FECHA DE RESOLUCION', resoluciones.FECHADENOTIFICACION AS 'FECHA DE NOTIFICACION', tipoderesolucion.resolucion AS 'RESOLUCION DE' FROM tipoderesolucion INNER JOIN resoluciones ON tipoderesolucion.id = resoluciones.tipoderesolucion WHERE dni = '" + Dnis_ + "' ORDER BY id DESC";
+            string[] columnasResoluciones = new string[] { "ID:20", "RESOLUCION:135", "FECHA DE RESOLUCION:155", "FECHA DE NOTIFICACION:155", "RESOLUCION DE:145" };
+            //SELECT SELECT RESOLUCIONES.id, resoluciones.resolucion, resoluciones.FECHADERESOLUCION, resoluciones.FECHADENOTIFICACION, tipoderesolucion.resolucion FROM tipoderesolucion INNER JOIN resoluciones ON tipoderesolucion.id = resoluciones.tipoderesolucion WHERE dni = '" + Dnis_ + "' ORDER BY id DESC;
             loader.CargarDatosYAcciones(RESOLUCIONES, consultaResoluciones, columnasResoluciones);
             string consultaViejas = "SELECT IDDECONSULTA AS 'ID', DNI, MOTIVODECONSULTA AS 'MOTIVO DE CONSULTA', EXPLICACIONDADA AS 'EXPLICACION DADA', ATENDIDOPOR AS 'ATENDIDO POR', HORADEATENCION AS 'HORA DE ATENCION' FROM consultas WHERE DNI='" + Dnis_ + "' ORDER BY IDDECONSULTA DESC";
             string[] columnasViejas = new string[] { "ID:75", "DNI:0", "MOTIVO DE CONSULTA:300", "EXPLICACION DADA:175", "ATENDIDO POR:125", "HORA DE ATENCION:125" };
             loader.CargarDatosYAcciones(consultasechas, consultaViejas, columnasViejas);
-            List<Control> controles = new List<Control> { apellynombre, legajo, DNI, legajohecho, REALIZODOMICILIO, JURADASALARIO };
-            List<string> nombresColumnas = new List<string> { "apellynombre", "legajo", "dni", "LEGAJO ECHO", "REALIZO CAMBIO DE DOMICILIO", "JURADASALRIO" };
-            ConsultaMySQL consulta = new ConsultaMySQL("SELECT personal.`apelldo y nombre`, personal.Legajo, personal.dni, personal.`Legajo Hecho`, personal.realizodomicilio, personal.JURADASALARIO FROM personal WHERE personal.dni = '" + Dnis_ + "'", controles, nombresColumnas);
+            List<Control> controles = new List<Control> { apellynombre, legajo, DNI, legajohecho, REALIZODOMICILIO, JURADASALARIO, foto };
+            List<string> nombresColumnas = new List<string> { "apellynombre", "legajo", "dni", "LEGAJO ECHO", "REALIZO CAMBIO DE DOMICILIO", "JURADASALRIO", "foto" };
+            ConsultaMySQL consulta = new ConsultaMySQL("SELECT personal.`apelldo y nombre`, personal.Legajo, personal.dni, personal.`Legajo Hecho`, personal.realizodomicilio, personal.JURADASALARIO, personal.foto FROM personal WHERE personal.dni = '" + Dnis_ + "'", controles, nombresColumnas);
             consulta.EjecutarConsulta();
             consulta.Dispose();
         }
@@ -368,7 +373,6 @@ namespace WindowsFormsApp1
         }
         private void CARGARPEDIDO_Click(object sender, EventArgs e)
         {
-
             string nombresSeleccionados = "";
             foreach (Control control in groupBox2.Controls)
             {
@@ -395,9 +399,6 @@ namespace WindowsFormsApp1
                 Explicaciondada = "RECORDA QUE IOMA SE RETIRA EN 48 HORAS SI LO SOLICITASTE EL RESTO SE AVISA POR EL TEL",
                 Agente = Dnis_.ToString()
             };
-            // Calcular el ancho máximo en píxeles
-     
-
             miCrearTicket.Imprimir();
             DatosYAccionesLoader loader = new DatosYAccionesLoader(Dnis_);
             string consultaPedidos = "SELECT dni, id, PEDIDO, AGENTE, fechadepedido AS 'FECHA DE PEDIDO', fechaderetiro AS 'FECHA DE RETIRO', agenteqretiro AS 'AGENTE QUE RETIRO', activa FROM pedidos WHERE activa IS NULL AND dni='" + Dnis_ + "' ORDER BY id DESC";
@@ -415,7 +416,6 @@ namespace WindowsFormsApp1
         private void CARGAR_Click(object sender, EventArgs e)
         {
             // Aquí obtén los valores necesarios y llama al método
-
             long dni = Dnis_; // Reemplaza con el valor adecuado
             string atendidoPor = Agentedeatencions_; // Reemplaza con el valor adecuado
             string notanumero = NUMERO.Text; // Reemplaza con el valor adecuado
@@ -448,7 +448,6 @@ namespace WindowsFormsApp1
             string CARGAACTOS = "SELECT ccoodegdeba.id, ccoodegdeba.agente, ccoodegdeba.agentequetramito AS 'AGENTE QUE TRAMITO', ccoodegdeba.notanumero AS 'NUMERO', ccoodegdeba.año, ccoodegdeba.reparticion, ccoodegdeba.memo, ccoodegdeba.save FROM ccoodegdeba WHERE AGENTE='" + Dnis_ + "' ORDER BY ccoodegdeba.save DESC";
             string[] CARGAACTOS2 = new string[] { "ID:75", "AGENTE:0", "AGENTE QUE TRAMITO:300", "NUMERO:175", "AÑO:125", "REPARTICION:125", "MEMO:125", "SAVE:190" };
             loader.CargarDatosYAcciones(EXPDIRECCION, CARGAACTOS, CARGAACTOS2);
-
             string consultaExpedientes2 = "SELECT id, AGENTE, expedientenumero AS 'EXPEDIENTE NUMERO', MEMO, archivo FROM expedientes WHERE AGENTE='" + Dnis_ + "' ORDER BY id DESC";
             string[] columnasExpedientes2 = new string[] { "ID:75", "AGENTE:0", "EXPEDIENTE NUMERO:300", "MEMO:175", "ARCHIVO:125" };
             loader.CargarDatosYAcciones(ACTOS2, consultaExpedientes2, columnasExpedientes2);
@@ -459,7 +458,6 @@ namespace WindowsFormsApp1
             {
                 // Convertir las coordenadas del clic del ratón a coordenadas locales del ListView
                 Point localPoint = DATS.PointToClient(new Point(e.X, e.Y));
-
                 // Determinar la columna en la que se hizo clic
                 int columnIndex = -1;
                 int currentPosition = 0;
@@ -472,7 +470,6 @@ namespace WindowsFormsApp1
                     }
                     currentPosition += DATS.Columns[i].Width;
                 }
-
                 // Si se hizo clic en una columna, mostrar el menú contextual
                 if (columnIndex != -1)
                 {
@@ -520,7 +517,6 @@ namespace WindowsFormsApp1
             {
                 // Crea una cadena para almacenar los datos copiados
                 string datosCopiados = "";
-
                 // Itera a través de los elementos seleccionados en el ListView
                 foreach (ListViewItem item in DATS.SelectedItems)
                 {
@@ -543,7 +539,6 @@ namespace WindowsFormsApp1
             {
                 // Convertir las coordenadas del clic del ratón a coordenadas locales del ListView
                 Point localPoint = DATSPERSONALES.PointToClient(new Point(e.X, e.Y));
-
                 // Determinar la columna en la que se hizo clic
                 int columnIndex = -1;
                 int currentPosition = 0;
@@ -556,16 +551,13 @@ namespace WindowsFormsApp1
                     }
                     currentPosition += DATSPERSONALES.Columns[i].Width;
                 }
-
                 // Si se hizo clic en una columna, mostrar el menú contextual
                 if (columnIndex != -1)
                 {
                     int mouseX = e.X;
                     int mouseY = e.Y;
                     Point screenPoint = DATSPERSONALES.PointToScreen(new Point(mouseX, mouseY));
-
                     ContextMenuStrip menu = new ContextMenuStrip();
-
                     // Iterar sobre cada columna y agregar un elemento de menú para copiarla
                     for (int i = 0; i < DATSPERSONALES.Columns.Count; i++)
                     {
@@ -574,7 +566,6 @@ namespace WindowsFormsApp1
                         itemCopiarColumna.Click += (senderObj, args) => ItemCopiarColumna_Click(senderObj, args, index, DATSPERSONALES);
                         menu.Items.Add(itemCopiarColumna);
                     }
-
                     menu.Show(screenPoint);
                 }
             }

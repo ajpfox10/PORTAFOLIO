@@ -1196,6 +1196,20 @@ namespace WindowsFormsApp1
                 conexion.Close();
             }
         }
+        public void LlenarComboBox(string consulta, ComboBox comboBox, string displayMember, string valueMember)
+        {
+            try
+            {
+                DataTable dataTable = EjecutarConsulta(consulta);
+                comboBox.DataSource = dataTable;
+                comboBox.DisplayMember = displayMember;
+                comboBox.ValueMember = valueMember;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al llenar ComboBox: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
     }
 }

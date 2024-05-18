@@ -11,7 +11,6 @@ namespace WindowsFormsApp1
         private readonly string consulta;
         private readonly List<Control> controles;
         private readonly List<string> nombresColumnas;
-
         public ConsultaMySQL(string consulta, List<Control> controles, List<string> nombresColumnas)
         {
             this.conexion = new ConexionMySQL();
@@ -38,7 +37,10 @@ namespace WindowsFormsApp1
 
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
-                            if (reader.IsDBNull(i))
+                            Console.WriteLine("Nombre de columna: " + nombresColumnas[i]);
+                            Console.WriteLine("Valor: " + reader.GetValue(i).ToString());
+                            Console.WriteLine("Tipo de dato de 'foto': " + reader.GetValue(i).GetType().ToString());
+                            if (reader.IsDBNull(i) || (reader.GetValue(i) is int && Convert.ToInt32(reader.GetValue(i)) == 0))
                             {
                                 string nombreColumna = nombresColumnas[i];
                                 if (controles[i] is CheckBox)
@@ -64,6 +66,11 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+
+
+
+
 
 
         public void Dispose()

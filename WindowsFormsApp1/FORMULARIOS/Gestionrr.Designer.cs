@@ -40,6 +40,7 @@ namespace WindowsFormsApp1
             this.datosaanalizar = new System.Windows.Forms.RichTextBox();
             this.consultasechas = new System.Windows.Forms.ListView();
             this.RESOLUCIONESS = new System.Windows.Forms.TabPage();
+            this.TIPORESOLUCION = new System.Windows.Forms.ComboBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.RESOLUCIONES = new System.Windows.Forms.ListView();
             this.EXPEDIENTE = new System.Windows.Forms.TabPage();
@@ -110,6 +111,7 @@ namespace WindowsFormsApp1
             this.label9 = new System.Windows.Forms.Label();
             this.DNI = new System.Windows.Forms.TextBox();
             this.JURADASALARIO = new System.Windows.Forms.CheckBox();
+            this.foto = new System.Windows.Forms.CheckBox();
             this.controlpesta.SuspendLayout();
             this.CONSULTAS.SuspendLayout();
             this.RESOLUCIONESS.SuspendLayout();
@@ -128,7 +130,7 @@ namespace WindowsFormsApp1
             // 
             // apellynombre
             // 
-            this.apellynombre.Location = new System.Drawing.Point(36, 114);
+            this.apellynombre.Location = new System.Drawing.Point(101, 39);
             this.apellynombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.apellynombre.Name = "apellynombre";
             this.apellynombre.Size = new System.Drawing.Size(291, 26);
@@ -136,7 +138,7 @@ namespace WindowsFormsApp1
             // 
             // legajo
             // 
-            this.legajo.Location = new System.Drawing.Point(345, 114);
+            this.legajo.Location = new System.Drawing.Point(410, 39);
             this.legajo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.legajo.Name = "legajo";
             this.legajo.Size = new System.Drawing.Size(112, 26);
@@ -145,7 +147,7 @@ namespace WindowsFormsApp1
             // legajohecho
             // 
             this.legajohecho.AutoSize = true;
-            this.legajohecho.Location = new System.Drawing.Point(496, 121);
+            this.legajohecho.Location = new System.Drawing.Point(556, 23);
             this.legajohecho.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.legajohecho.Name = "legajohecho";
             this.legajohecho.Size = new System.Drawing.Size(153, 24);
@@ -156,7 +158,7 @@ namespace WindowsFormsApp1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(98, 89);
+            this.label1.Location = new System.Drawing.Point(163, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 20);
@@ -166,7 +168,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(327, 89);
+            this.label2.Location = new System.Drawing.Point(392, 14);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 20);
@@ -175,7 +177,7 @@ namespace WindowsFormsApp1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(363, 90);
+            this.label4.Location = new System.Drawing.Point(428, 15);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 20);
@@ -194,11 +196,11 @@ namespace WindowsFormsApp1
             this.controlpesta.Controls.Add(this.tabPage2);
             this.controlpesta.Controls.Add(this.tabPage3);
             this.controlpesta.Controls.Add(this.tabPage4);
-            this.controlpesta.Location = new System.Drawing.Point(1, 221);
+            this.controlpesta.Location = new System.Drawing.Point(13, 128);
             this.controlpesta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.controlpesta.Name = "controlpesta";
             this.controlpesta.SelectedIndex = 0;
-            this.controlpesta.Size = new System.Drawing.Size(2099, 868);
+            this.controlpesta.Size = new System.Drawing.Size(2099, 924);
             this.controlpesta.TabIndex = 2;
             // 
             // CONSULTAS
@@ -209,14 +211,14 @@ namespace WindowsFormsApp1
             this.CONSULTAS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CONSULTAS.Name = "CONSULTAS";
             this.CONSULTAS.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.CONSULTAS.Size = new System.Drawing.Size(2091, 835);
+            this.CONSULTAS.Size = new System.Drawing.Size(2091, 891);
             this.CONSULTAS.TabIndex = 0;
             this.CONSULTAS.Text = "CONSULTAS";
             this.CONSULTAS.UseVisualStyleBackColor = true;
             // 
             // datosaanalizar
             // 
-            this.datosaanalizar.Location = new System.Drawing.Point(206, 332);
+            this.datosaanalizar.Location = new System.Drawing.Point(9, 297);
             this.datosaanalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.datosaanalizar.Name = "datosaanalizar";
             this.datosaanalizar.Size = new System.Drawing.Size(1333, 244);
@@ -237,16 +239,25 @@ namespace WindowsFormsApp1
             // 
             // RESOLUCIONESS
             // 
+            this.RESOLUCIONESS.Controls.Add(this.TIPORESOLUCION);
             this.RESOLUCIONESS.Controls.Add(this.webBrowser1);
             this.RESOLUCIONESS.Controls.Add(this.RESOLUCIONES);
             this.RESOLUCIONESS.Location = new System.Drawing.Point(4, 29);
             this.RESOLUCIONESS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RESOLUCIONESS.Name = "RESOLUCIONESS";
             this.RESOLUCIONESS.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.RESOLUCIONESS.Size = new System.Drawing.Size(2091, 835);
+            this.RESOLUCIONESS.Size = new System.Drawing.Size(2091, 891);
             this.RESOLUCIONESS.TabIndex = 1;
             this.RESOLUCIONESS.Text = "RESOLUCIONES";
             this.RESOLUCIONESS.UseVisualStyleBackColor = true;
+            // 
+            // TIPORESOLUCION
+            // 
+            this.TIPORESOLUCION.FormattingEnabled = true;
+            this.TIPORESOLUCION.Location = new System.Drawing.Point(1382, 41);
+            this.TIPORESOLUCION.Name = "TIPORESOLUCION";
+            this.TIPORESOLUCION.Size = new System.Drawing.Size(223, 28);
+            this.TIPORESOLUCION.TabIndex = 1;
             // 
             // webBrowser1
             // 
@@ -254,16 +265,16 @@ namespace WindowsFormsApp1
             this.webBrowser1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(19, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1560, 249);
+            this.webBrowser1.Size = new System.Drawing.Size(1249, 323);
             this.webBrowser1.TabIndex = 0;
             // 
             // RESOLUCIONES
             // 
             this.RESOLUCIONES.HideSelection = false;
-            this.RESOLUCIONES.Location = new System.Drawing.Point(-4, 22);
+            this.RESOLUCIONES.Location = new System.Drawing.Point(-4, 35);
             this.RESOLUCIONES.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RESOLUCIONES.Name = "RESOLUCIONES";
-            this.RESOLUCIONES.Size = new System.Drawing.Size(1742, 406);
+            this.RESOLUCIONES.Size = new System.Drawing.Size(1349, 406);
             this.RESOLUCIONES.TabIndex = 0;
             this.RESOLUCIONES.UseCompatibleStateImageBehavior = false;
             this.RESOLUCIONES.DoubleClick += new System.EventHandler(this.RESOLUCIONES_DoubleClick);
@@ -276,7 +287,7 @@ namespace WindowsFormsApp1
             this.EXPEDIENTE.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EXPEDIENTE.Name = "EXPEDIENTE";
             this.EXPEDIENTE.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.EXPEDIENTE.Size = new System.Drawing.Size(2091, 835);
+            this.EXPEDIENTE.Size = new System.Drawing.Size(2091, 891);
             this.EXPEDIENTE.TabIndex = 2;
             this.EXPEDIENTE.Text = "EXPEDIENTES";
             this.EXPEDIENTE.UseVisualStyleBackColor = true;
@@ -300,7 +311,7 @@ namespace WindowsFormsApp1
             this.PEDIDOSS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PEDIDOSS.Name = "PEDIDOSS";
             this.PEDIDOSS.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PEDIDOSS.Size = new System.Drawing.Size(2091, 835);
+            this.PEDIDOSS.Size = new System.Drawing.Size(2091, 891);
             this.PEDIDOSS.TabIndex = 3;
             this.PEDIDOSS.Text = "PEDIDOS";
             this.PEDIDOSS.UseVisualStyleBackColor = true;
@@ -328,7 +339,7 @@ namespace WindowsFormsApp1
             this.CITACIONESS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CITACIONESS.Name = "CITACIONESS";
             this.CITACIONESS.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.CITACIONESS.Size = new System.Drawing.Size(2091, 835);
+            this.CITACIONESS.Size = new System.Drawing.Size(2091, 891);
             this.CITACIONESS.TabIndex = 4;
             this.CITACIONESS.Text = "CITACIONES";
             this.CITACIONESS.UseVisualStyleBackColor = true;
@@ -420,7 +431,7 @@ namespace WindowsFormsApp1
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage1.Size = new System.Drawing.Size(2091, 835);
+            this.tabPage1.Size = new System.Drawing.Size(2091, 891);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "CARGAR EXPEDIENTES,NOTAS ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -586,7 +597,7 @@ namespace WindowsFormsApp1
             this.notasss.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.notasss.Name = "notasss";
             this.notasss.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.notasss.Size = new System.Drawing.Size(2091, 835);
+            this.notasss.Size = new System.Drawing.Size(2091, 891);
             this.notasss.TabIndex = 6;
             this.notasss.Text = "NOTAS POR GDEBA";
             this.notasss.UseVisualStyleBackColor = true;
@@ -614,7 +625,7 @@ namespace WindowsFormsApp1
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage2.Size = new System.Drawing.Size(2091, 835);
+            this.tabPage2.Size = new System.Drawing.Size(2091, 891);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.Text = "DATOS ";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -690,7 +701,7 @@ namespace WindowsFormsApp1
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(2091, 835);
+            this.tabPage3.Size = new System.Drawing.Size(2091, 891);
             this.tabPage3.TabIndex = 8;
             this.tabPage3.Text = "CARGAR PEDIDOS";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -830,7 +841,7 @@ namespace WindowsFormsApp1
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage4.Size = new System.Drawing.Size(2091, 835);
+            this.tabPage4.Size = new System.Drawing.Size(2091, 891);
             this.tabPage4.TabIndex = 9;
             this.tabPage4.Text = "CARGAR EXPEDIENTES PARA CONTROL DE LA DIRECCION";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -981,7 +992,7 @@ namespace WindowsFormsApp1
             // REALIZODOMICILIO
             // 
             this.REALIZODOMICILIO.AutoSize = true;
-            this.REALIZODOMICILIO.Location = new System.Drawing.Point(657, 121);
+            this.REALIZODOMICILIO.Location = new System.Drawing.Point(716, 26);
             this.REALIZODOMICILIO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.REALIZODOMICILIO.Name = "REALIZODOMICILIO";
             this.REALIZODOMICILIO.Size = new System.Drawing.Size(193, 24);
@@ -997,11 +1008,11 @@ namespace WindowsFormsApp1
             this.groupBox1.Controls.Add(this.apellido1);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.DNI);
-            this.groupBox1.Location = new System.Drawing.Point(1084, 22);
+            this.groupBox1.Location = new System.Drawing.Point(1084, 12);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(935, 188);
+            this.groupBox1.Size = new System.Drawing.Size(935, 114);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SELECCION";
@@ -1009,7 +1020,7 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 140);
+            this.label3.Location = new System.Drawing.Point(13, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(478, 20);
             this.label3.TabIndex = 36;
@@ -1018,7 +1029,7 @@ namespace WindowsFormsApp1
             // PORDNI
             // 
             this.PORDNI.AutoSize = true;
-            this.PORDNI.Location = new System.Drawing.Point(14, 26);
+            this.PORDNI.Location = new System.Drawing.Point(18, 15);
             this.PORDNI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PORDNI.Name = "PORDNI";
             this.PORDNI.Size = new System.Drawing.Size(336, 24);
@@ -1031,7 +1042,7 @@ namespace WindowsFormsApp1
             // PORAPELLIDO
             // 
             this.PORAPELLIDO.AutoSize = true;
-            this.PORAPELLIDO.Location = new System.Drawing.Point(14, 101);
+            this.PORAPELLIDO.Location = new System.Drawing.Point(17, 44);
             this.PORAPELLIDO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PORAPELLIDO.Name = "PORAPELLIDO";
             this.PORAPELLIDO.Size = new System.Drawing.Size(313, 24);
@@ -1044,7 +1055,7 @@ namespace WindowsFormsApp1
             // 
             this.apellido1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.apellido1.FormattingEnabled = true;
-            this.apellido1.Location = new System.Drawing.Point(359, 99);
+            this.apellido1.Location = new System.Drawing.Point(362, 42);
             this.apellido1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.apellido1.Name = "apellido1";
             this.apellido1.Size = new System.Drawing.Size(338, 28);
@@ -1053,7 +1064,7 @@ namespace WindowsFormsApp1
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(440, 72);
+            this.label9.Location = new System.Drawing.Point(443, 15);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(177, 20);
@@ -1062,7 +1073,7 @@ namespace WindowsFormsApp1
             // 
             // DNI
             // 
-            this.DNI.Location = new System.Drawing.Point(495, 137);
+            this.DNI.Location = new System.Drawing.Point(498, 80);
             this.DNI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DNI.Name = "DNI";
             this.DNI.Size = new System.Drawing.Size(202, 26);
@@ -1071,18 +1082,29 @@ namespace WindowsFormsApp1
             // JURADASALARIO
             // 
             this.JURADASALARIO.AutoSize = true;
-            this.JURADASALARIO.Location = new System.Drawing.Point(496, 159);
+            this.JURADASALARIO.Location = new System.Drawing.Point(716, 55);
             this.JURADASALARIO.Name = "JURADASALARIO";
             this.JURADASALARIO.Size = new System.Drawing.Size(323, 24);
             this.JURADASALARIO.TabIndex = 10;
             this.JURADASALARIO.Text = "DECLARACION JURADA DE SALARIO";
             this.JURADASALARIO.UseVisualStyleBackColor = true;
             // 
+            // foto
+            // 
+            this.foto.AutoSize = true;
+            this.foto.Location = new System.Drawing.Point(556, 57);
+            this.foto.Name = "foto";
+            this.foto.Size = new System.Drawing.Size(78, 24);
+            this.foto.TabIndex = 11;
+            this.foto.Text = "FOTO";
+            this.foto.UseVisualStyleBackColor = true;
+            // 
             // Gestionrr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.Controls.Add(this.foto);
             this.Controls.Add(this.JURADASALARIO);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.REALIZODOMICILIO);
@@ -1205,5 +1227,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button CARGADATODOMICILIO;
         private System.Windows.Forms.ListView DOMICILIOS;
         private System.Windows.Forms.CheckBox JURADASALARIO;
+        private System.Windows.Forms.CheckBox foto;
+        private System.Windows.Forms.ComboBox TIPORESOLUCION;
     }
 }

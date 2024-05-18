@@ -66,6 +66,7 @@
             this.PORAPELLIDO = new System.Windows.Forms.RadioButton();
             this.DNI1 = new System.Windows.Forms.TextBox();
             this.JURADASALRIO = new System.Windows.Forms.CheckBox();
+            this.foto = new System.Windows.Forms.CheckBox();
             this.GroupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -475,11 +476,22 @@
             this.JURADASALRIO.Text = "DECLARACION JURADA SALRIO";
             this.JURADASALRIO.UseVisualStyleBackColor = true;
             // 
+            // foto
+            // 
+            this.foto.AutoSize = true;
+            this.foto.Location = new System.Drawing.Point(698, 51);
+            this.foto.Name = "foto";
+            this.foto.Size = new System.Drawing.Size(78, 24);
+            this.foto.TabIndex = 64;
+            this.foto.Text = "FOTO";
+            this.foto.UseVisualStyleBackColor = true;
+            // 
             // MESADEENTRADA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1731, 956);
+            this.Controls.Add(this.foto);
             this.Controls.Add(this.JURADASALRIO);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label3);
@@ -552,5 +564,6 @@
         private System.Windows.Forms.RadioButton PORAPELLIDO;
         internal System.Windows.Forms.TextBox DNI1;
         internal System.Windows.Forms.CheckBox JURADASALRIO;
+        private System.Windows.Forms.CheckBox foto;
     }
 }
