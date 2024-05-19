@@ -13,23 +13,8 @@ namespace WindowsFormsApp1
             conexionMySQL = new ConexionMySQL();
         }
 
-        public void InsertarResolucion(int dni, string numeroResolucion, string tipoResolucionValueMember, DateTime fechaResolucion, int numeroDecreto, int anio)
+        public void InsertarResolucion(int dni, string numeroResolucion, string tipoResolucionValueMember, DateTime fechaResolucion, string combinacion)
         {
-            string combinacion;
-
-            if (tipoResolucionValueMember == "11112")
-            {
-                combinacion = "11112";
-            }
-            else if (tipoResolucionValueMember == "0")
-            {
-                combinacion = $"DECT-{numeroDecreto}-{anio}.pdf";
-            }
-            else
-            {
-                throw new ArgumentException("Valor de tipo de resolución no válido");
-            }
-
             try
             {
                 conexionMySQL.Conectar();
