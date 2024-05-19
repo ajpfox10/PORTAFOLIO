@@ -22,7 +22,6 @@ namespace WindowsFormsApp1.FORMULARIOS
             apellido1.Enter += (s, ev) => ((System.Windows.Forms.ComboBox)s).SelectAll();
             Dnis_ = DNI;
         }
-
         private void CARGARRESOLUCIONES_Load(object sender, EventArgs e)
         {
             try
