@@ -372,23 +372,24 @@ namespace WindowsFormsApp1
             // Verifica si hay un elemento seleccionado en el ComboBox "AGENTE"
             if (AGENTE.SelectedItem != null)
             {
-                VERIFICARCONTR verificador = new VERIFICARCONTR();
-                bool todosCompletos = VERIFICARCONTR.VerificarControles(this.Controls);
+            VERIFICARCONTR verificador = new VERIFICARCONTR();
+            bool todosCompletos = VERIFICARCONTR.VerificarControles(this.Controls);
 
-                if (todosCompletos)
+            if (todosCompletos)
+            {
+                Dnis_ = Convert.ToInt64(DNI.Text);
+                if (AGENTE.SelectedItem != null)
                 {
-                    FORMULARIOS.CARGARRESOLUCIONES _CARGARRESOLUCIONES = new FORMULARIOS.CARGARRESOLUCIONES();
+                    Agentedeatencions_ = Convert.ToString(AGENTE.SelectedItem.ToString());
+                    FORMULARIOS.CARGARRESOLUCIONES _CARGARRESOLUCIONES = new FORMULARIOS.CARGARRESOLUCIONES(Dnis_, Agentedeatencions_);
                     _CARGARRESOLUCIONES.ShowDialog();
                 }
                 else
                 {
-                    // No continúa si aún faltan controles por completar
+                    MessageBox.Show("Por favor, selecciona un agente de atención.");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Selecciona un agente antes de continuar.");
             }
         }
     }
+}
 }

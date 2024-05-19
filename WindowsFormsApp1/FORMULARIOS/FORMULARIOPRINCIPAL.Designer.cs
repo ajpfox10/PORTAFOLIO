@@ -74,7 +74,7 @@
             this.Label2.AutoSize = true;
             this.Label2.Location = new System.Drawing.Point(861, 106);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(187, 20);
+            this.Label2.Size = new System.Drawing.Size(127, 13);
             this.Label2.TabIndex = 16;
             this.Label2.Text = "AGENTE DE ATENCION";
             // 
@@ -138,7 +138,7 @@
             this.DNI.Location = new System.Drawing.Point(310, 60);
             this.DNI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DNI.Name = "DNI";
-            this.DNI.Size = new System.Drawing.Size(424, 26);
+            this.DNI.Size = new System.Drawing.Size(424, 20);
             this.DNI.TabIndex = 10;
             this.DNI.Text = "0";
             // 
@@ -147,7 +147,7 @@
             this.Label1.AutoSize = true;
             this.Label1.Location = new System.Drawing.Point(422, 26);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(183, 20);
+            this.Label1.Size = new System.Drawing.Size(122, 13);
             this.Label1.TabIndex = 9;
             this.Label1.Text = "INGRESE AQUI EL DNI";
             // 
@@ -190,7 +190,7 @@
             this.label3.Location = new System.Drawing.Point(426, 99);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(177, 20);
+            this.label3.Size = new System.Drawing.Size(119, 13);
             this.label3.TabIndex = 21;
             this.label3.Text = "APELLIDO Y NOMBRE";
             // 
@@ -210,7 +210,7 @@
             this.PORDNI.Location = new System.Drawing.Point(32, 68);
             this.PORDNI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PORDNI.Name = "PORDNI";
-            this.PORDNI.Size = new System.Drawing.Size(196, 24);
+            this.PORDNI.Size = new System.Drawing.Size(140, 20);
             this.PORDNI.TabIndex = 23;
             this.PORDNI.TabStop = true;
             this.PORDNI.Text = "BUSQUEDA POR DNI";
@@ -222,7 +222,7 @@
             this.PORAPELLIDO.Location = new System.Drawing.Point(32, 102);
             this.PORAPELLIDO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PORAPELLIDO.Name = "PORAPELLIDO";
-            this.PORAPELLIDO.Size = new System.Drawing.Size(247, 24);
+            this.PORAPELLIDO.Size = new System.Drawing.Size(173, 20);
             this.PORAPELLIDO.TabIndex = 24;
             this.PORAPELLIDO.TabStop = true;
             this.PORAPELLIDO.Text = "BUSQUEDA POR APELLIDO";
@@ -294,10 +294,11 @@
             this.ASIGNACIONTAREAS.Location = new System.Drawing.Point(199, 454);
             this.ASIGNACIONTAREAS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ASIGNACIONTAREAS.Name = "ASIGNACIONTAREAS";
-            this.ASIGNACIONTAREAS.Size = new System.Drawing.Size(297, 49);
+            this.ASIGNACIONTAREAS.Size = new System.Drawing.Size(152, 49);
             this.ASIGNACIONTAREAS.TabIndex = 30;
             this.ASIGNACIONTAREAS.Text = "ASIGNACION DE TAREAS";
             this.ASIGNACIONTAREAS.UseVisualStyleBackColor = true;
+            this.ASIGNACIONTAREAS.Visible = false;
             this.ASIGNACIONTAREAS.Click += new System.EventHandler(this.ASIGNACIONTAREAS_Click);
             // 
             // FOTOTARJETA
@@ -324,9 +325,9 @@
             // 
             // cargaresoluciones1
             // 
-            this.cargaresoluciones1.Location = new System.Drawing.Point(544, 454);
+            this.cargaresoluciones1.Location = new System.Drawing.Point(1011, 452);
             this.cargaresoluciones1.Name = "cargaresoluciones1";
-            this.cargaresoluciones1.Size = new System.Drawing.Size(228, 49);
+            this.cargaresoluciones1.Size = new System.Drawing.Size(298, 49);
             this.cargaresoluciones1.TabIndex = 33;
             this.cargaresoluciones1.Text = "UNIR RESOLUCIONES";
             this.cargaresoluciones1.UseVisualStyleBackColor = true;
