@@ -54,6 +54,7 @@
             this.FOTOTARJETA = new System.Windows.Forms.Button();
             this.CPOSTULANTES = new System.Windows.Forms.Button();
             this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.cargaresoluciones1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -321,12 +322,23 @@
             this.CPOSTULANTES.UseVisualStyleBackColor = true;
             this.CPOSTULANTES.Click += new System.EventHandler(this.CPOSTULANTES_Click);
             // 
+            // cargaresoluciones1
+            // 
+            this.cargaresoluciones1.Location = new System.Drawing.Point(544, 454);
+            this.cargaresoluciones1.Name = "cargaresoluciones1";
+            this.cargaresoluciones1.Size = new System.Drawing.Size(228, 49);
+            this.cargaresoluciones1.TabIndex = 33;
+            this.cargaresoluciones1.Text = "UNIR RESOLUCIONES";
+            this.cargaresoluciones1.UseVisualStyleBackColor = true;
+            this.cargaresoluciones1.Click += new System.EventHandler(this.cargaresoluciones_Click);
+            // 
             // FORMULARIOPRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1756, 881);
+            this.Controls.Add(this.cargaresoluciones1);
             this.Controls.Add(this.CPOSTULANTES);
             this.Controls.Add(this.FOTOTARJETA);
             this.Controls.Add(this.ASIGNACIONTAREAS);
@@ -384,5 +396,6 @@
         private System.Windows.Forms.Button FOTOTARJETA;
         private System.Windows.Forms.Button CPOSTULANTES;
         private System.Windows.Forms.Timer Timer;
+        private System.Windows.Forms.Button cargaresoluciones1;
     }
 }

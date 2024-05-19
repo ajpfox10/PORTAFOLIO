@@ -109,18 +109,21 @@ namespace WindowsFormsApp1
             conexionMySQL.LlenarComboBox(consultaTIPORESO, TIPORESOLUCION, "resolucion", "id");
             ComboBoxItem itemDecreto = new ComboBoxItem { DisplayMember = "DECRETO", ValueMember = 0 };
             ComboBoxItem itemResolucion = new ComboBoxItem { DisplayMember = "RESOLUCION", ValueMember = 11112 };
-
+            ComboBoxItem iteexpediediente = new ComboBoxItem { DisplayMember = "EXPEDIENTE", ValueMember = 2910 };
+            ComboBoxItem iteDISPOSCION = new ComboBoxItem { DisplayMember = "DISPOSICION", ValueMember = 2};
+            ComboBoxItem iteDISPOSCIONGDEBA = new ComboBoxItem { DisplayMember = "DISPOSICION GDEBA", ValueMember = 3 };
+            ComboBoxItem RESOGDEBANGDEBA = new ComboBoxItem { DisplayMember = "RESOLUCION GDEBA SALUD", ValueMember = 4 };
+            ComboBoxItem RESOGDEBANGDEBAS = new ComboBoxItem { DisplayMember = "RESOLUCION GDEBA GOBIERNO", ValueMember = 5 };
+            ComboBoxItem RESOLGDEBANGDEBAS = new ComboBoxItem { DisplayMember = "RESOL", ValueMember = 6 };
+            ComboBoxItem RESOLNU = new ComboBoxItem { DisplayMember = "RS", ValueMember = 7};
             // Limpiar ítems existentes (opcional)
             ACTOTIPO.Items.Clear();
-
             // Agregar los ítems al ComboBox
             ACTOTIPO.Items.Add(itemDecreto);
             ACTOTIPO.Items.Add(itemResolucion);
-
             // Configurar DisplayMember y ValueMember
             ACTOTIPO.DisplayMember = "DisplayMember";
             ACTOTIPO.ValueMember = "ValueMember";
-
         }
         private void CITA_MouseClick(object sender, MouseEventArgs e)
         {
@@ -929,6 +932,30 @@ namespace WindowsFormsApp1
                     else if (selectedItem.ValueMember == 0)
                     {
                         combinacion = $"DECT-{numeroResolucion}-{anio}.pdf";
+                    }
+                    else if (selectedItem.ValueMember == 2)
+                    {
+                        combinacion = $"DI-{numeroResolucion}-{anio}.pdf";
+                    }
+                    else if (selectedItem.ValueMember == 3)
+                    {
+                        combinacion = $"DI-{numeroResolucion}-{anio}-GDEBA.pdf";
+                    }
+                    else if (selectedItem.ValueMember == 4)
+                    {
+                        combinacion = $"RESO-{numeroResolucion}-{anio}-GDEBA.pdf";
+                    }
+                    else if (selectedItem.ValueMember == 5)
+                    {
+                        combinacion = $"RESO-{numeroResolucion}-{anio}-GOB-GDEBA.pdf";
+                    }
+                    else if (selectedItem.ValueMember == 6)
+                    {
+                        combinacion = $"RESOL-{numeroResolucion}-{anio}-GOB-GDEBA.pdf";
+                    }
+                    else if (selectedItem.ValueMember == 7)
+                    {
+                        combinacion = $"RS-20{anio}-{numeroResolucion}-GDEBA-MSALGP.pdf";
                     }
                     else
                     {

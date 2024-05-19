@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
                     command.Parameters.AddWithValue("@DNI", dni);
                     command.Parameters.AddWithValue("@Resolucion", numeroResolucion);
                     command.Parameters.AddWithValue("@TipoDeResolucion", tipoResolucionValueMember);
-                    command.Parameters.AddWithValue("@FechaDeResolucion", fechaResolucion);
+                    command.Parameters.AddWithValue("@FechaDeResolucion", fechaResolucion.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@Combinacion", combinacion);
 
                     command.ExecuteNonQuery();

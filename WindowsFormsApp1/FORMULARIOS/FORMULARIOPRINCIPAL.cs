@@ -366,5 +366,29 @@ namespace WindowsFormsApp1
             }
 
         }
+
+        private void cargaresoluciones_Click(object sender, EventArgs e)
+        {
+            // Verifica si hay un elemento seleccionado en el ComboBox "AGENTE"
+            if (AGENTE.SelectedItem != null)
+            {
+                VERIFICARCONTR verificador = new VERIFICARCONTR();
+                bool todosCompletos = VERIFICARCONTR.VerificarControles(this.Controls);
+
+                if (todosCompletos)
+                {
+                    FORMULARIOS.CARGARRESOLUCIONES _CARGARRESOLUCIONES = new FORMULARIOS.CARGARRESOLUCIONES();
+                    _CARGARRESOLUCIONES.ShowDialog();
+                }
+                else
+                {
+                    // No continúa si aún faltan controles por completar
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un agente antes de continuar.");
+            }
+        }
     }
 }
