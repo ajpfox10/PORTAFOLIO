@@ -41,6 +41,12 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.label9 = new System.Windows.Forms.Label();
             this.DNI = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.VISORRESO = new System.Windows.Forms.WebBrowser();
+            this.FECHADERESOLUCION = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TIPORESOLUCION = new System.Windows.Forms.ComboBox();
+            this.CARGARESO = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,11 +172,68 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 17;
             // 
+            // VISORRESO
+            // 
+            this.VISORRESO.Location = new System.Drawing.Point(12, 198);
+            this.VISORRESO.MinimumSize = new System.Drawing.Size(20, 20);
+            this.VISORRESO.Name = "VISORRESO";
+            this.VISORRESO.Size = new System.Drawing.Size(936, 680);
+            this.VISORRESO.TabIndex = 18;
+            // 
+            // FECHADERESOLUCION
+            // 
+            this.FECHADERESOLUCION.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FECHADERESOLUCION.Location = new System.Drawing.Point(229, 150);
+            this.FECHADERESOLUCION.Name = "FECHADERESOLUCION";
+            this.FECHADERESOLUCION.Size = new System.Drawing.Size(128, 20);
+            this.FECHADERESOLUCION.TabIndex = 19;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 150);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "FECHA DE RESOLUCION";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(394, 156);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 13);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "ACTO DE :";
+            // 
+            // TIPORESOLUCION
+            // 
+            this.TIPORESOLUCION.FormattingEnabled = true;
+            this.TIPORESOLUCION.Location = new System.Drawing.Point(517, 147);
+            this.TIPORESOLUCION.Name = "TIPORESOLUCION";
+            this.TIPORESOLUCION.Size = new System.Drawing.Size(318, 28);
+            this.TIPORESOLUCION.TabIndex = 21;
+            // 
+            // CARGARESO
+            // 
+            this.CARGARESO.Location = new System.Drawing.Point(864, 136);
+            this.CARGARESO.Name = "CARGARESO";
+            this.CARGARESO.Size = new System.Drawing.Size(99, 37);
+            this.CARGARESO.TabIndex = 23;
+            this.CARGARESO.Text = "CARGAR";
+            this.CARGARESO.UseVisualStyleBackColor = true;
+            // 
             // CARGARRESOLUCIONES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1884, 859);
+            this.Controls.Add(this.CARGARESO);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.TIPORESOLUCION);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.FECHADERESOLUCION);
+            this.Controls.Add(this.VISORRESO);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CANTIDADS);
@@ -202,5 +265,11 @@ namespace WindowsFormsApp1.FORMULARIOS
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox DNI;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.WebBrowser VISORRESO;
+        private System.Windows.Forms.DateTimePicker FECHADERESOLUCION;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox TIPORESOLUCION;
+        private System.Windows.Forms.Button CARGARESO;
     }
 }

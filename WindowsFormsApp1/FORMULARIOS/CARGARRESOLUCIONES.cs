@@ -38,6 +38,19 @@ namespace WindowsFormsApp1.FORMULARIOS
                 ComparadorArchivos comparador = new ComparadorArchivos(carpetaArchivos, resolucionesd, CANTIDADS);
                 comparador.ListarArchivosYComparar();
                 Console.WriteLine("Comparación completada correctamente.");
+                string consultaTIPORESO = @"SELECT tipoderesolucion.resolucion, tipoderesolucion.id FROM tipoderesolucion";
+                // Llenar el ComboBox con los resultados de la consulta
+                conexionMySQL.LlenarComboBox(consultaTIPORESO, TIPORESOLUCION, "resolucion", "id");
+                Gestionrr.ComboBoxItem itemDecreto = new Gestionrr.ComboBoxItem { DisplayMember = "DECRETO", ValueMember = 0 };
+                Gestionrr.ComboBoxItem itemResolucion = new Gestionrr.ComboBoxItem { DisplayMember = "RESOLUCION", ValueMember = 11112 };
+                Gestionrr.ComboBoxItem iteexpediediente = new Gestionrr.ComboBoxItem { DisplayMember = "EXPEDIENTE", ValueMember = 2910 };
+                Gestionrr.ComboBoxItem iteDISPOSCION = new Gestionrr.ComboBoxItem { DisplayMember = "DISPOSICION", ValueMember = 2 };
+                Gestionrr.ComboBoxItem iteDISPOSCIONGDEBA = new Gestionrr.ComboBoxItem { DisplayMember = "DISPOSICION GDEBA", ValueMember = 3 };
+                Gestionrr.ComboBoxItem RESOGDEBANGDEBA = new Gestionrr.ComboBoxItem { DisplayMember = "RESOLUCION GDEBA SALUD", ValueMember = 4 };
+                Gestionrr.ComboBoxItem RESOGDEBANGDEBAS = new Gestionrr.ComboBoxItem { DisplayMember = "RESOLUCION GDEBA GOBIERNO", ValueMember = 5 };
+                Gestionrr.ComboBoxItem RESOLGDEBANGDEBAS = new Gestionrr.ComboBoxItem { DisplayMember = "RESOL", ValueMember = 6 };
+                Gestionrr.ComboBoxItem RESOLNU = new Gestionrr.ComboBoxItem { DisplayMember = "RS", ValueMember = 7 };
+
             }
             catch (Exception ex)
             {

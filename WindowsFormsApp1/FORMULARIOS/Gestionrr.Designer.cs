@@ -40,6 +40,9 @@ namespace WindowsFormsApp1
             this.datosaanalizar = new System.Windows.Forms.RichTextBox();
             this.consultasechas = new System.Windows.Forms.ListView();
             this.RESOLUCIONESS = new System.Windows.Forms.TabPage();
+            this.label22 = new System.Windows.Forms.Label();
+            this.ANIO = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.NRORESOLUCION = new System.Windows.Forms.TextBox();
             this.CARGARRESOL = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
@@ -119,9 +122,6 @@ namespace WindowsFormsApp1
             this.DNI = new System.Windows.Forms.TextBox();
             this.JURADASALARIO = new System.Windows.Forms.CheckBox();
             this.foto = new System.Windows.Forms.CheckBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.ANIO = new System.Windows.Forms.ComboBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.controlpesta.SuspendLayout();
             this.CONSULTAS.SuspendLayout();
             this.RESOLUCIONESS.SuspendLayout();
@@ -143,7 +143,7 @@ namespace WindowsFormsApp1
             this.apellynombre.Location = new System.Drawing.Point(101, 39);
             this.apellynombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.apellynombre.Name = "apellynombre";
-            this.apellynombre.Size = new System.Drawing.Size(291, 26);
+            this.apellynombre.Size = new System.Drawing.Size(291, 20);
             this.apellynombre.TabIndex = 0;
             // 
             // legajo
@@ -151,7 +151,7 @@ namespace WindowsFormsApp1
             this.legajo.Location = new System.Drawing.Point(410, 39);
             this.legajo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.legajo.Name = "legajo";
-            this.legajo.Size = new System.Drawing.Size(112, 26);
+            this.legajo.Size = new System.Drawing.Size(112, 20);
             this.legajo.TabIndex = 2;
             // 
             // legajohecho
@@ -160,7 +160,7 @@ namespace WindowsFormsApp1
             this.legajohecho.Location = new System.Drawing.Point(556, 23);
             this.legajohecho.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.legajohecho.Name = "legajohecho";
-            this.legajohecho.Size = new System.Drawing.Size(153, 24);
+            this.legajohecho.Size = new System.Drawing.Size(110, 21);
             this.legajohecho.TabIndex = 3;
             this.legajohecho.Text = "LEGAJO ECHO ";
             this.legajohecho.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@ namespace WindowsFormsApp1
             this.label1.Location = new System.Drawing.Point(163, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 20);
+            this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "APELLIDO Y NOMBRE";
             // 
@@ -181,7 +181,7 @@ namespace WindowsFormsApp1
             this.label2.Location = new System.Drawing.Point(392, 14);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 20);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 5;
             // 
             // label4
@@ -190,7 +190,7 @@ namespace WindowsFormsApp1
             this.label4.Location = new System.Drawing.Point(428, 15);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 20);
+            this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "LEGAJO";
             // 
@@ -271,11 +271,66 @@ namespace WindowsFormsApp1
             this.RESOLUCIONESS.Text = "RESOLUCIONES";
             this.RESOLUCIONESS.UseVisualStyleBackColor = true;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(1376, 174);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(30, 13);
+            this.label22.TabIndex = 11;
+            this.label22.Text = "AÑO";
+            // 
+            // ANIO
+            // 
+            this.ANIO.FormattingEnabled = true;
+            this.ANIO.Items.AddRange(new object[] {
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"});
+            this.ANIO.Location = new System.Drawing.Point(1368, 197);
+            this.ANIO.Name = "ANIO";
+            this.ANIO.Size = new System.Drawing.Size(80, 28);
+            this.ANIO.TabIndex = 10;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(1410, 109);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(55, 13);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "NUMERO";
+            // 
             // NRORESOLUCION
             // 
             this.NRORESOLUCION.Location = new System.Drawing.Point(1368, 132);
             this.NRORESOLUCION.Name = "NRORESOLUCION";
-            this.NRORESOLUCION.Size = new System.Drawing.Size(155, 26);
+            this.NRORESOLUCION.Size = new System.Drawing.Size(155, 20);
             this.NRORESOLUCION.TabIndex = 8;
             // 
             // CARGARRESOL
@@ -293,7 +348,7 @@ namespace WindowsFormsApp1
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(1540, 107);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(208, 20);
+            this.label20.Size = new System.Drawing.Size(138, 13);
             this.label20.TabIndex = 6;
             this.label20.Text = "FECHA DE NOTIFICACION";
             // 
@@ -302,7 +357,7 @@ namespace WindowsFormsApp1
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(1425, 27);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(45, 20);
+            this.label19.Size = new System.Drawing.Size(32, 13);
             this.label19.TabIndex = 5;
             this.label19.Text = "TIPO";
             // 
@@ -311,15 +366,15 @@ namespace WindowsFormsApp1
             this.FECHADENOTIFICACION.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.FECHADENOTIFICACION.Location = new System.Drawing.Point(1544, 130);
             this.FECHADENOTIFICACION.Name = "FECHADENOTIFICACION";
-            this.FECHADENOTIFICACION.Size = new System.Drawing.Size(204, 26);
+            this.FECHADENOTIFICACION.Size = new System.Drawing.Size(204, 20);
             this.FECHADENOTIFICACION.TabIndex = 4;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1600, 27);
+            this.label10.Location = new System.Drawing.Point(1618, 27);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 20);
+            this.label10.Size = new System.Drawing.Size(60, 13);
             this.label10.TabIndex = 3;
             this.label10.Text = "ACTO DE :";
             // 
@@ -429,7 +484,7 @@ namespace WindowsFormsApp1
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(323, 479);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(201, 20);
+            this.label18.Size = new System.Drawing.Size(136, 13);
             this.label18.TabIndex = 7;
             this.label18.Text = "MOTIVO DE LA CITACION";
             // 
@@ -438,7 +493,7 @@ namespace WindowsFormsApp1
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(828, 429);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(308, 20);
+            this.label17.Size = new System.Drawing.Size(204, 13);
             this.label17.TabIndex = 6;
             this.label17.Text = "SISTEMAS DE CARGA DE CITACIONES";
             // 
@@ -477,7 +532,7 @@ namespace WindowsFormsApp1
             this.DATOSANALIZAR.Location = new System.Drawing.Point(32, 488);
             this.DATOSANALIZAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DATOSANALIZAR.Name = "DATOSANALIZAR";
-            this.DATOSANALIZAR.Size = new System.Drawing.Size(741, 26);
+            this.DATOSANALIZAR.Size = new System.Drawing.Size(741, 20);
             this.DATOSANALIZAR.TabIndex = 4;
             // 
             // CITA
@@ -543,7 +598,7 @@ namespace WindowsFormsApp1
             this.label11.Location = new System.Drawing.Point(1044, 22);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 20);
+            this.label11.Size = new System.Drawing.Size(40, 13);
             this.label11.TabIndex = 10;
             this.label11.Text = "MEMO";
             // 
@@ -562,7 +617,7 @@ namespace WindowsFormsApp1
             this.label8.Location = new System.Drawing.Point(702, 22);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 20);
+            this.label8.Size = new System.Drawing.Size(80, 13);
             this.label8.TabIndex = 8;
             this.label8.Text = "REPARTICION";
             // 
@@ -584,7 +639,7 @@ namespace WindowsFormsApp1
             this.label7.Location = new System.Drawing.Point(514, 22);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 20);
+            this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "NUMERO";
             // 
@@ -593,7 +648,7 @@ namespace WindowsFormsApp1
             this.NUMEROS.Location = new System.Drawing.Point(480, 49);
             this.NUMEROS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NUMEROS.Name = "NUMEROS";
-            this.NUMEROS.Size = new System.Drawing.Size(148, 26);
+            this.NUMEROS.Size = new System.Drawing.Size(148, 20);
             this.NUMEROS.TabIndex = 5;
             // 
             // label6
@@ -602,7 +657,7 @@ namespace WindowsFormsApp1
             this.label6.Location = new System.Drawing.Point(404, 22);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 20);
+            this.label6.Size = new System.Drawing.Size(30, 13);
             this.label6.TabIndex = 4;
             this.label6.Text = "AÑO";
             // 
@@ -635,7 +690,7 @@ namespace WindowsFormsApp1
             this.label5.Location = new System.Drawing.Point(278, 22);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 20);
+            this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 2;
             this.label5.Text = "TIPO";
             // 
@@ -821,7 +876,7 @@ namespace WindowsFormsApp1
             this.PEDIDORESOLUCIONES.Location = new System.Drawing.Point(118, 194);
             this.PEDIDORESOLUCIONES.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PEDIDORESOLUCIONES.Name = "PEDIDORESOLUCIONES";
-            this.PEDIDORESOLUCIONES.Size = new System.Drawing.Size(256, 24);
+            this.PEDIDORESOLUCIONES.Size = new System.Drawing.Size(179, 21);
             this.PEDIDORESOLUCIONES.TabIndex = 18;
             this.PEDIDORESOLUCIONES.Text = "PEDIDO DE RESOLUCIONES";
             this.PEDIDORESOLUCIONES.UseVisualStyleBackColor = true;
@@ -843,7 +898,7 @@ namespace WindowsFormsApp1
             this.PEDIDONUMERODEEXPEDIENTE.Location = new System.Drawing.Point(118, 165);
             this.PEDIDONUMERODEEXPEDIENTE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PEDIDONUMERODEEXPEDIENTE.Name = "PEDIDONUMERODEEXPEDIENTE";
-            this.PEDIDONUMERODEEXPEDIENTE.Size = new System.Drawing.Size(332, 24);
+            this.PEDIDONUMERODEEXPEDIENTE.Size = new System.Drawing.Size(232, 21);
             this.PEDIDONUMERODEEXPEDIENTE.TabIndex = 17;
             this.PEDIDONUMERODEEXPEDIENTE.Text = "PEDIDO DE NUMERO DE EXPEDIENTE";
             this.PEDIDONUMERODEEXPEDIENTE.UseVisualStyleBackColor = true;
@@ -854,7 +909,7 @@ namespace WindowsFormsApp1
             this.IOMA.Location = new System.Drawing.Point(118, 18);
             this.IOMA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IOMA.Name = "IOMA";
-            this.IOMA.Size = new System.Drawing.Size(76, 24);
+            this.IOMA.Size = new System.Drawing.Size(60, 21);
             this.IOMA.TabIndex = 12;
             this.IOMA.Text = "IOMA";
             this.IOMA.UseVisualStyleBackColor = true;
@@ -865,7 +920,7 @@ namespace WindowsFormsApp1
             this.RESETCONTRASEÑAS.Location = new System.Drawing.Point(118, 134);
             this.RESETCONTRASEÑAS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RESETCONTRASEÑAS.Name = "RESETCONTRASEÑAS";
-            this.RESETCONTRASEÑAS.Size = new System.Drawing.Size(253, 24);
+            this.RESETCONTRASEÑAS.Size = new System.Drawing.Size(179, 21);
             this.RESETCONTRASEÑAS.TabIndex = 16;
             this.RESETCONTRASEÑAS.Text = "RESETEO DE CONTRASEÑA";
             this.RESETCONTRASEÑAS.UseVisualStyleBackColor = true;
@@ -876,7 +931,7 @@ namespace WindowsFormsApp1
             this.Certificadodetrabajo.Location = new System.Drawing.Point(118, 45);
             this.Certificadodetrabajo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Certificadodetrabajo.Name = "Certificadodetrabajo";
-            this.Certificadodetrabajo.Size = new System.Drawing.Size(249, 24);
+            this.Certificadodetrabajo.Size = new System.Drawing.Size(174, 21);
             this.Certificadodetrabajo.TabIndex = 13;
             this.Certificadodetrabajo.Text = "CERTIFICADO DE TRABAJO";
             this.Certificadodetrabajo.UseVisualStyleBackColor = true;
@@ -887,7 +942,7 @@ namespace WindowsFormsApp1
             this.CERTIFICADODEROTACION.Location = new System.Drawing.Point(118, 105);
             this.CERTIFICADODEROTACION.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CERTIFICADODEROTACION.Name = "CERTIFICADODEROTACION";
-            this.CERTIFICADODEROTACION.Size = new System.Drawing.Size(258, 24);
+            this.CERTIFICADODEROTACION.Size = new System.Drawing.Size(181, 21);
             this.CERTIFICADODEROTACION.TabIndex = 15;
             this.CERTIFICADODEROTACION.Text = "CERTIFICADO DE ROTACION";
             this.CERTIFICADODEROTACION.UseVisualStyleBackColor = true;
@@ -898,7 +953,7 @@ namespace WindowsFormsApp1
             this.CERTITRABAJOCONHORARIOS.Location = new System.Drawing.Point(118, 75);
             this.CERTITRABAJOCONHORARIOS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CERTITRABAJOCONHORARIOS.Name = "CERTITRABAJOCONHORARIOS";
-            this.CERTITRABAJOCONHORARIOS.Size = new System.Drawing.Size(393, 24);
+            this.CERTITRABAJOCONHORARIOS.Size = new System.Drawing.Size(270, 21);
             this.CERTITRABAJOCONHORARIOS.TabIndex = 14;
             this.CERTITRABAJOCONHORARIOS.Text = "CERTIFICACION DE TRABAJO CON HORARIOS";
             this.CERTITRABAJOCONHORARIOS.UseVisualStyleBackColor = true;
@@ -942,7 +997,7 @@ namespace WindowsFormsApp1
             this.label12.Location = new System.Drawing.Point(980, 42);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 20);
+            this.label12.Size = new System.Drawing.Size(40, 13);
             this.label12.TabIndex = 22;
             this.label12.Text = "MEMO";
             // 
@@ -961,7 +1016,7 @@ namespace WindowsFormsApp1
             this.label13.Location = new System.Drawing.Point(638, 42);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(118, 20);
+            this.label13.Size = new System.Drawing.Size(80, 13);
             this.label13.TabIndex = 20;
             this.label13.Text = "REPARTICION";
             // 
@@ -983,7 +1038,7 @@ namespace WindowsFormsApp1
             this.label14.Location = new System.Drawing.Point(451, 42);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(80, 20);
+            this.label14.Size = new System.Drawing.Size(55, 13);
             this.label14.TabIndex = 18;
             this.label14.Text = "NUMERO";
             // 
@@ -992,7 +1047,7 @@ namespace WindowsFormsApp1
             this.NUMERO.Location = new System.Drawing.Point(415, 69);
             this.NUMERO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NUMERO.Name = "NUMERO";
-            this.NUMERO.Size = new System.Drawing.Size(148, 26);
+            this.NUMERO.Size = new System.Drawing.Size(148, 20);
             this.NUMERO.TabIndex = 17;
             // 
             // label15
@@ -1001,7 +1056,7 @@ namespace WindowsFormsApp1
             this.label15.Location = new System.Drawing.Point(339, 42);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(43, 20);
+            this.label15.Size = new System.Drawing.Size(30, 13);
             this.label15.TabIndex = 16;
             this.label15.Text = "AÑO";
             // 
@@ -1034,7 +1089,7 @@ namespace WindowsFormsApp1
             this.label16.Location = new System.Drawing.Point(215, 42);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(45, 20);
+            this.label16.Size = new System.Drawing.Size(32, 13);
             this.label16.TabIndex = 14;
             this.label16.Text = "TIPO";
             // 
@@ -1075,7 +1130,7 @@ namespace WindowsFormsApp1
             this.REALIZODOMICILIO.Location = new System.Drawing.Point(716, 26);
             this.REALIZODOMICILIO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.REALIZODOMICILIO.Name = "REALIZODOMICILIO";
-            this.REALIZODOMICILIO.Size = new System.Drawing.Size(193, 24);
+            this.REALIZODOMICILIO.Size = new System.Drawing.Size(137, 21);
             this.REALIZODOMICILIO.TabIndex = 9;
             this.REALIZODOMICILIO.Text = "REALIZO DOMICILIO";
             this.REALIZODOMICILIO.UseVisualStyleBackColor = true;
@@ -1102,7 +1157,7 @@ namespace WindowsFormsApp1
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(478, 20);
+            this.label3.Size = new System.Drawing.Size(319, 13);
             this.label3.TabIndex = 36;
             this.label3.Text = "HAGA DOBLE CLIK EN ESTE DNI PARA CAMBIAR EL AGENTE";
             // 
@@ -1112,7 +1167,7 @@ namespace WindowsFormsApp1
             this.PORDNI.Location = new System.Drawing.Point(18, 15);
             this.PORDNI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PORDNI.Name = "PORDNI";
-            this.PORDNI.Size = new System.Drawing.Size(336, 24);
+            this.PORDNI.Size = new System.Drawing.Size(233, 20);
             this.PORDNI.TabIndex = 35;
             this.PORDNI.TabStop = true;
             this.PORDNI.Text = "BUSQUEDA POR APELLIDO Y NOMBRE";
@@ -1125,7 +1180,7 @@ namespace WindowsFormsApp1
             this.PORAPELLIDO.Location = new System.Drawing.Point(17, 44);
             this.PORAPELLIDO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PORAPELLIDO.Name = "PORAPELLIDO";
-            this.PORAPELLIDO.Size = new System.Drawing.Size(313, 24);
+            this.PORAPELLIDO.Size = new System.Drawing.Size(218, 20);
             this.PORAPELLIDO.TabIndex = 34;
             this.PORAPELLIDO.TabStop = true;
             this.PORAPELLIDO.Text = "BUSQUE POR APELLIDO Y NOMBRE";
@@ -1147,7 +1202,7 @@ namespace WindowsFormsApp1
             this.label9.Location = new System.Drawing.Point(443, 15);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(177, 20);
+            this.label9.Size = new System.Drawing.Size(119, 13);
             this.label9.TabIndex = 31;
             this.label9.Text = "APELLIDO Y NOMBRE";
             // 
@@ -1156,7 +1211,7 @@ namespace WindowsFormsApp1
             this.DNI.Location = new System.Drawing.Point(498, 80);
             this.DNI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DNI.Name = "DNI";
-            this.DNI.Size = new System.Drawing.Size(202, 26);
+            this.DNI.Size = new System.Drawing.Size(202, 20);
             this.DNI.TabIndex = 1;
             // 
             // JURADASALARIO
@@ -1164,7 +1219,7 @@ namespace WindowsFormsApp1
             this.JURADASALARIO.AutoSize = true;
             this.JURADASALARIO.Location = new System.Drawing.Point(716, 55);
             this.JURADASALARIO.Name = "JURADASALARIO";
-            this.JURADASALARIO.Size = new System.Drawing.Size(323, 24);
+            this.JURADASALARIO.Size = new System.Drawing.Size(222, 21);
             this.JURADASALARIO.TabIndex = 10;
             this.JURADASALARIO.Text = "DECLARACION JURADA DE SALARIO";
             this.JURADASALARIO.UseVisualStyleBackColor = true;
@@ -1174,65 +1229,10 @@ namespace WindowsFormsApp1
             this.foto.AutoSize = true;
             this.foto.Location = new System.Drawing.Point(556, 57);
             this.foto.Name = "foto";
-            this.foto.Size = new System.Drawing.Size(78, 24);
+            this.foto.Size = new System.Drawing.Size(62, 21);
             this.foto.TabIndex = 11;
             this.foto.Text = "FOTO";
             this.foto.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(1410, 109);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(80, 20);
-            this.label21.TabIndex = 9;
-            this.label21.Text = "NUMERO";
-            // 
-            // ANIO
-            // 
-            this.ANIO.FormattingEnabled = true;
-            this.ANIO.Items.AddRange(new object[] {
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
-            this.ANIO.Location = new System.Drawing.Point(1368, 197);
-            this.ANIO.Name = "ANIO";
-            this.ANIO.Size = new System.Drawing.Size(80, 28);
-            this.ANIO.TabIndex = 10;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(1376, 174);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(43, 20);
-            this.label22.TabIndex = 11;
-            this.label22.Text = "AÑO";
             // 
             // Gestionrr
             // 
