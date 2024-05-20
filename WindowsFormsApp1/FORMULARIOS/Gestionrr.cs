@@ -198,7 +198,7 @@ namespace WindowsFormsApp1
                 int columnIndex = -1;
                 foreach (ColumnHeader column in RESOLUCIONES.Columns)
                 {
-                    if (column.Text == "COMBINACION") // Reemplaza "NombreDeLaColumna" con el nombre real de la columna
+                    if (column.Text == "RESOLUCION") // Reemplaza "NombreDeLaColumna" con el nombre real de la columna
                     {
                         columnIndex = column.Index;
                         break;
@@ -837,7 +837,6 @@ namespace WindowsFormsApp1
             string DATOSDOMI = "SELECT personal.DOMICILIO, personal.NUMERO, personal.DEPARTAMENTO, personal.PISO, localidades1.NOMBRE, localidades1.MUNICIPIO, localidades1.PROVINCIA, personal.OBSERVACION FROM personal INNER JOIN localidades1 ON (personal.PROVINCIA = localidades1.PROVINCIA_ID) AND (personal.LOCALIDAD = localidades1.IDLOCALIDAD) AND (personal.PARTIDO = localidades1.MUNICIPIO_ID) AND personal.DNI = '" + Dnis_ + "'";
             string[] CARGADATOSDOMICILIO = new string[] { "DOMICILIO:250", "NUMERO:100", "DEPARTAMENTO:75", "PISO:100", "NOMBRE:175", "MUNICIPIO:175", "PROVINCIA:125", "OBSERVACION:325" };
             loader.CargarDatosYAcciones(DOMICILIOS, DATOSDOMI, CARGADATOSDOMICILIO);
-
         }
         private void DOMICILIOS_MouseClick(object sender, MouseEventArgs e)
         {
@@ -876,7 +875,6 @@ namespace WindowsFormsApp1
                     ToolStripMenuItem itemCopiarTodos = new ToolStripMenuItem("Copiar todos los datos (separados por espacio)");
                     itemCopiarTodos.Click += (senderObj, args) => ItemCopiarTodos_Click(senderObj, args, DOMICILIOS);
                     menu.Items.Add(itemCopiarTodos);
-
                     menu.Show(screenPoint);
                 }
             }
@@ -884,7 +882,6 @@ namespace WindowsFormsApp1
         private void ItemCopiarTodos_Click(object sender, EventArgs e, ListView listView)
         {
             StringBuilder datosCopiados = new StringBuilder();
-
             // Iterar a través de los elementos en el ListView
             foreach (ListViewItem item in listView.Items)
             {
@@ -895,14 +892,12 @@ namespace WindowsFormsApp1
                     datosCopiados.Append(subItem.Text).Append(" "); // Agrega un espacio entre cada dato
                 }
             }
-
             Clipboard.SetText(datosCopiados.ToString());
         }
         public class ComboBoxItem
         {
             public string DisplayMember { get; set; }
             public int ValueMember { get; set; }
-
             public override string ToString()
             {
                 return DisplayMember;
@@ -912,74 +907,62 @@ namespace WindowsFormsApp1
         {
             try
             {
+                // Verificar si los campos están llenos
+                if (Dnis_ == null || string.IsNullOrEmpty(NRORESOLUCION.Text) || TIPORESOLUCION.SelectedValue == null || FECHADERESOLUCION.Value == null || ANIO.SelectedItem == null || ACTOTIPO.SelectedItem == null)
+                {
+                    throw new ArgumentException("Debe completar todos los campos.");
+                }
                 GestionResoluciones gestionResoluciones = new GestionResoluciones();
-                // Valores de ejemplo obtenidos de controles del formulario
-                int dni = (int)Dnis_; // Asegúrate de que Dnis_ es un control que devuelve un texto representando un entero
+                // Obtener valores de los controles del formulario
+                int dni = (int)Dnis_;
                 string numeroResolucion = NRORESOLUCION.Text;
                 string tipoResolucionValueMember = TIPORESOLUCION.SelectedValue.ToString();
                 DateTime fechaResolucion = FECHADERESOLUCION.Value.Date;
                 int anio = int.Parse(ANIO.SelectedItem.ToString());
                 string combinacion;
-
-                // Asegúrate de que ACTOTIPO.SelectedItem no sea nulo y comparar correctamente los valores
-                if (ACTOTIPO.SelectedItem != null)
+                ComboBoxItem selectedItem = (ComboBoxItem)ACTOTIPO.SelectedItem;
+                // Evaluar el valor seleccionado del tipo de acto y establecer la combinación adecuada
+                switch ((int)selectedItem.ValueMember)
                 {
-                    ComboBoxItem selectedItem = (ComboBoxItem)ACTOTIPO.SelectedItem;
-                    if (selectedItem.ValueMember == 11112)
-                    {
+                    case 11112:
                         combinacion = $"11112-{numeroResolucion}-{anio}.pdf";
-                    }
-                    else if (selectedItem.ValueMember == 0)
-                    {
+                        break;
+                    case 0:
                         combinacion = $"DECT-{numeroResolucion}-{anio}.pdf";
-                    }
-                    else if (selectedItem.ValueMember == 2)
-                    {
+                        break;
+                    case 2:
                         combinacion = $"DI-{numeroResolucion}-{anio}.pdf";
-                    }
-                    else if (selectedItem.ValueMember == 3)
-                    {
+                        break;
+                    case 3:
                         combinacion = $"DI-{numeroResolucion}-{anio}-GDEBA.pdf";
-                    }
-                    else if (selectedItem.ValueMember == 4)
-                    {
+                        break;
+                    case 4:
                         combinacion = $"RESO-{numeroResolucion}-{anio}-GDEBA.pdf";
-                    }
-                    else if (selectedItem.ValueMember == 5)
-                    {
+                        break;
+                    case 5:
                         combinacion = $"RESO-{numeroResolucion}-{anio}-GOB-GDEBA.pdf";
-                    }
-                    else if (selectedItem.ValueMember == 6)
-                    {
+                        break;
+                    case 6:
                         combinacion = $"RESOL-{numeroResolucion}-{anio}-GOB-GDEBA.pdf";
-                    }
-                    else if (selectedItem.ValueMember == 7)
-                    {
+                        break;
+                    case 7:
                         combinacion = $"RS-20{anio}-{numeroResolucion}-GDEBA-MSALGP.pdf";
-                    }
-                    else
-                    {
+                        break;
+                    default:
                         throw new ArgumentException("Valor de tipo de resolución no válido");
-                    }
-
-                    // Imprimir valores por consola (o en la ventana de salida del depurador)
-                
-
-                    // Insertar resolución
-                    gestionResoluciones.InsertarResolucion(dni, combinacion, tipoResolucionValueMember, fechaResolucion, combinacion);
                 }
-                else
-                {
-                    throw new ArgumentException("Debe seleccionar un tipo de acto.");
-                }
+                // Insertar la resolución
+                gestionResoluciones.InsertarResolucion(dni, combinacion, tipoResolucionValueMember, fechaResolucion, combinacion);
+                // Limpiar los campos después de la carga exitosa          
+                NRORESOLUCION.Clear();
+                FECHADERESOLUCION.Value = DateTime.Today;
+                ANIO.SelectedIndex = -1;
+                ACTOTIPO.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
     }
 }
