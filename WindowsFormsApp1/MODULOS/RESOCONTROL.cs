@@ -14,6 +14,7 @@ namespace WindowsFormsApp1.FORMULARIOS
         private readonly ContextMenuStrip contextMenuStrip;
         private string datoSeleccionado;  // Variable para almacenar el dato seleccionado
         public string DatoSeleccionado; // Propiedad pública para acceder al dato seleccionado
+
         public ComparadorArchivos(string carpetaArchivos, ListView listView, TextBox textBoxCantidadArchivos)
         {
             this.carpetaArchivos = carpetaArchivos;
@@ -27,6 +28,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             listView.ContextMenuStrip = contextMenuStrip;
             listView.MouseUp += ListView_MouseUp;
         }
+
         private void ConfigurarListView()
         {
             // Limpiar cualquier configuración previa de columnas
@@ -36,6 +38,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             listView.Columns.Add("Nombre Archivo", 150);
             listView.Columns.Add("Estado", 100);
         }
+
         private void ListView_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -45,10 +48,18 @@ namespace WindowsFormsApp1.FORMULARIOS
                 {
                     listView.SelectedItems.Clear();
                     hitTest.Item.Selected = true;
+                    // Pintar de amarillo el ítem seleccionado
+                    PintarItemSeleccionado(hitTest.Item);
                     contextMenuStrip.Show(listView, e.Location);
                 }
             }
         }
+
+        private void PintarItemSeleccionado(ListViewItem item)
+        {
+            item.BackColor = System.Drawing.Color.Yellow;
+        }
+
         private void CopiarResolucionMenuItem_Click(object sender, EventArgs e)
         {
             if (listView.SelectedItems.Count > 0)
@@ -57,8 +68,12 @@ namespace WindowsFormsApp1.FORMULARIOS
                 var resolucion = item.SubItems[1].Text; // Asumiendo que la resolución está en la segunda columna
                 Clipboard.SetText(resolucion);
                 MessageBox.Show("Resolución copiada al portapapeles: " + resolucion, "Copiar Resolución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Cambiar el color de fondo del ítem seleccionado a amarillo
+                PintarItemSeleccionado(item);
             }
         }
+
         private DataTable ObtenerNombresDesdeBaseDeDatos()
         {
             // Consulta SQL para obtener las resoluciones desde la base de datos
@@ -71,6 +86,7 @@ namespace WindowsFormsApp1.FORMULARIOS
                 return conexionMySQL.EjecutarConsulta(consulta);
             }
         }
+
         public void ListarArchivosYComparar()
         {
             try
@@ -125,11 +141,13 @@ namespace WindowsFormsApp1.FORMULARIOS
                 MessageBox.Show("Se produjo un error durante la comparación de archivos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private string CleanString(string input)
         {
             // Eliminar caracteres no deseados como espacios en blanco y caracteres especiales
             return new string(input.Where(char.IsLetterOrDigit).ToArray());
         }
+
         public string ObtenerDatoSeleccionado()
         {
             if (listView.SelectedItems.Count > 0)
@@ -151,9 +169,11 @@ namespace WindowsFormsApp1.FORMULARIOS
                 return null;
             }
         }
+
         public ListView GetListView()
         {
             return listView;
         }
     }
 }
+

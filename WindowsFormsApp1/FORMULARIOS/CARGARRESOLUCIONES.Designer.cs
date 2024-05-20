@@ -47,6 +47,8 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.label10 = new System.Windows.Forms.Label();
             this.TIPORESOLUCION = new System.Windows.Forms.ComboBox();
             this.CARGARESO = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.RESOTRABAJAR = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,14 +60,15 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.resolucionesd.Size = new System.Drawing.Size(584, 628);
             this.resolucionesd.TabIndex = 0;
             this.resolucionesd.UseCompatibleStateImageBehavior = false;
-            this.resolucionesd.Click += new System.EventHandler(this.resolucionesd_Click);
+            this.resolucionesd.DoubleClick += new System.EventHandler(this.resolucionesd_DoubleClick);
+            this.resolucionesd.MouseClick += new System.Windows.Forms.MouseEventHandler(this.resolucionesd_MouseClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(1038, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 13);
+            this.label1.Size = new System.Drawing.Size(239, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "RESOLUCIONES SIN ANEXAR";
             // 
@@ -74,7 +77,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(1038, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(235, 13);
+            this.label2.Size = new System.Drawing.Size(352, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "CANTIDAD DE RESOLUCIONES SIN ANEXAR";
             // 
@@ -82,7 +85,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             // 
             this.CANTIDADS.Location = new System.Drawing.Point(1409, 50);
             this.CANTIDADS.Name = "CANTIDADS";
-            this.CANTIDADS.Size = new System.Drawing.Size(58, 20);
+            this.CANTIDADS.Size = new System.Drawing.Size(58, 26);
             this.CANTIDADS.TabIndex = 3;
             // 
             // groupBox1
@@ -107,7 +110,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(319, 13);
+            this.label3.Size = new System.Drawing.Size(478, 20);
             this.label3.TabIndex = 36;
             this.label3.Text = "HAGA DOBLE CLIK EN ESTE DNI PARA CAMBIAR EL AGENTE";
             // 
@@ -117,7 +120,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.PORDNI.Location = new System.Drawing.Point(18, 15);
             this.PORDNI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PORDNI.Name = "PORDNI";
-            this.PORDNI.Size = new System.Drawing.Size(233, 20);
+            this.PORDNI.Size = new System.Drawing.Size(336, 24);
             this.PORDNI.TabIndex = 35;
             this.PORDNI.TabStop = true;
             this.PORDNI.Text = "BUSQUEDA POR APELLIDO Y NOMBRE";
@@ -130,7 +133,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.PORAPELLIDO.Location = new System.Drawing.Point(17, 44);
             this.PORAPELLIDO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PORAPELLIDO.Name = "PORAPELLIDO";
-            this.PORAPELLIDO.Size = new System.Drawing.Size(218, 20);
+            this.PORAPELLIDO.Size = new System.Drawing.Size(313, 24);
             this.PORAPELLIDO.TabIndex = 34;
             this.PORAPELLIDO.TabStop = true;
             this.PORAPELLIDO.Text = "BUSQUE POR APELLIDO Y NOMBRE";
@@ -152,7 +155,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.label9.Location = new System.Drawing.Point(443, 15);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 13);
+            this.label9.Size = new System.Drawing.Size(177, 20);
             this.label9.TabIndex = 31;
             this.label9.Text = "APELLIDO Y NOMBRE";
             // 
@@ -161,7 +164,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.DNI.Location = new System.Drawing.Point(498, 80);
             this.DNI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DNI.Name = "DNI";
-            this.DNI.Size = new System.Drawing.Size(202, 20);
+            this.DNI.Size = new System.Drawing.Size(202, 26);
             this.DNI.TabIndex = 1;
             this.DNI.DoubleClick += new System.EventHandler(this.DNI_DoubleClick);
             // 
@@ -171,7 +174,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.label5.Location = new System.Drawing.Point(226, 273);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.Size = new System.Drawing.Size(0, 20);
             this.label5.TabIndex = 17;
             // 
             // VISORRESO
@@ -187,7 +190,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.FECHADERESOLUCION.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.FECHADERESOLUCION.Location = new System.Drawing.Point(229, 150);
             this.FECHADERESOLUCION.Name = "FECHADERESOLUCION";
-            this.FECHADERESOLUCION.Size = new System.Drawing.Size(128, 20);
+            this.FECHADERESOLUCION.Size = new System.Drawing.Size(128, 26);
             this.FECHADERESOLUCION.TabIndex = 19;
             // 
             // label4
@@ -195,7 +198,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 13);
+            this.label4.Size = new System.Drawing.Size(201, 20);
             this.label4.TabIndex = 20;
             this.label4.Text = "FECHA DE RESOLUCION";
             // 
@@ -204,7 +207,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(394, 156);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 13);
+            this.label10.Size = new System.Drawing.Size(87, 20);
             this.label10.TabIndex = 22;
             this.label10.Text = "ACTO DE :";
             // 
@@ -226,11 +229,29 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.CARGARESO.UseVisualStyleBackColor = true;
             this.CARGARESO.Click += new System.EventHandler(this.CARGARESO_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1038, 759);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(219, 20);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "RESOLUCION A TRABAJAR";
+            // 
+            // RESOTRABAJAR
+            // 
+            this.RESOTRABAJAR.Location = new System.Drawing.Point(1041, 790);
+            this.RESOTRABAJAR.Name = "RESOTRABAJAR";
+            this.RESOTRABAJAR.Size = new System.Drawing.Size(216, 26);
+            this.RESOTRABAJAR.TabIndex = 25;
+            // 
             // CARGARRESOLUCIONES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1884, 859);
+            this.Controls.Add(this.RESOTRABAJAR);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.CARGARESO);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.TIPORESOLUCION);
@@ -274,5 +295,7 @@ namespace WindowsFormsApp1.FORMULARIOS
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox TIPORESOLUCION;
         private System.Windows.Forms.Button CARGARESO;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox RESOTRABAJAR;
     }
 }
