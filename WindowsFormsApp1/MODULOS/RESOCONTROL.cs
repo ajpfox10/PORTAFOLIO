@@ -75,11 +75,11 @@ namespace WindowsFormsApp1.FORMULARIOS
         {
             try
             {
-                // Obtener archivos PDF en la carpeta
-                var archivosPdf = Directory.GetFiles(carpetaArchivos, "*.pdf")
-                                           .Select(Path.GetFileNameWithoutExtension)
-                                           .ToList();
-                Console.WriteLine("Archivos PDF encontrados: " + archivosPdf.Count);
+                // Obtener archivos en la carpeta
+                var archivos = Directory.GetFiles(carpetaArchivos)
+                                        .Select(Path.GetFileName)
+                                        .ToList();
+                Console.WriteLine("Archivos encontrados: " + archivos.Count);
 
                 // Consultar los nombres en la base de datos
                 var dataTable = ObtenerNombresDesdeBaseDeDatos();
@@ -98,27 +98,18 @@ namespace WindowsFormsApp1.FORMULARIOS
                 int noAsociados = 0;
 
                 // Comparar y llenar el ListView
-                foreach (var archivoPdf in archivosPdf)
+                foreach (var archivo in archivos)
                 {
-                    // Convertir el nombre del archivo a minúsculas y eliminar caracteres no deseados
-                    var archivoPdfCleaned = CleanString(archivoPdf.ToLower());
+                    var archivoCleaned = CleanString(Path.GetFileNameWithoutExtension(archivo).ToLower());
+                    var extension = Path.GetExtension(archivo); // Obtener la extensión del archivo
 
                     // Verificar si el nombre del archivo coincide con alguna resolución de la base de datos
-                    bool encontrado = false;
-                    foreach (var resolucion in resolucionesBD)
-                    {
-                        var resolucionCleaned = CleanString(resolucion.ToLower());
-                        if (archivoPdfCleaned == resolucionCleaned)
-                        {
-                            encontrado = true;
-                            break;
-                        }
-                    }
+                    bool encontrado = resolucionesBD.Any(resolucion => CleanString(resolucion.ToLower()) == archivoCleaned);
 
                     if (!encontrado)
                     {
                         var item = new ListViewItem((noAsociados + 1).ToString());
-                        item.SubItems.Add(archivoPdf);
+                        item.SubItems.Add(archivo);
                         item.SubItems.Add("NO ASOCIADO");
                         listView.Items.Add(item);
                         noAsociados++;

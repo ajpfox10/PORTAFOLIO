@@ -29,7 +29,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             {
                 MessageBox.Show("Has elegido el dato: " + datoSeleccionado, "Dato Seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // Aquí estás creando una nueva variable local llamada resolucion
-                string resolucion = datoSeleccionado + ".pdf";
+                string resolucion = datoSeleccionado;
                 // Debes asignar el valor a la variable de la clase CARGARRESOLUCIONES
                 this.resolucion = resolucion;
             }
