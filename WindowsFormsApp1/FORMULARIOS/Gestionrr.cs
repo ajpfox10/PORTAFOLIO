@@ -917,7 +917,7 @@ namespace WindowsFormsApp1
                 int dni = (int)Dnis_; // Asegúrate de que Dnis_ es un control que devuelve un texto representando un entero
                 string numeroResolucion = NRORESOLUCION.Text;
                 string tipoResolucionValueMember = TIPORESOLUCION.SelectedValue.ToString();
-                DateTime fechaResolucion = FECHADENOTIFICACION.Value.Date;
+                DateTime fechaResolucion = FECHADERESOLUCION.Value.Date;
                 int anio = int.Parse(ANIO.SelectedItem.ToString());
                 string combinacion;
 

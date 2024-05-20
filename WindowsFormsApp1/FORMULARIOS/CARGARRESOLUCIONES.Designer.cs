@@ -58,6 +58,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.resolucionesd.Size = new System.Drawing.Size(584, 628);
             this.resolucionesd.TabIndex = 0;
             this.resolucionesd.UseCompatibleStateImageBehavior = false;
+            this.resolucionesd.Click += new System.EventHandler(this.resolucionesd_Click);
             // 
             // label1
             // 
@@ -162,6 +163,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.DNI.Name = "DNI";
             this.DNI.Size = new System.Drawing.Size(202, 20);
             this.DNI.TabIndex = 1;
+            this.DNI.DoubleClick += new System.EventHandler(this.DNI_DoubleClick);
             // 
             // label5
             // 
@@ -222,6 +224,7 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.CARGARESO.TabIndex = 23;
             this.CARGARESO.Text = "CARGAR";
             this.CARGARESO.UseVisualStyleBackColor = true;
+            this.CARGARESO.Click += new System.EventHandler(this.CARGARESO_Click);
             // 
             // CARGARRESOLUCIONES
             // 

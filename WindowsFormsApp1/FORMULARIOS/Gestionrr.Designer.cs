@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
             this.CARGARRESOL = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.FECHADENOTIFICACION = new System.Windows.Forms.DateTimePicker();
+            this.FECHADERESOLUCION = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.ACTOTIPO = new System.Windows.Forms.ComboBox();
             this.TIPORESOLUCION = new System.Windows.Forms.ComboBox();
@@ -256,7 +256,7 @@ namespace WindowsFormsApp1
             this.RESOLUCIONESS.Controls.Add(this.CARGARRESOL);
             this.RESOLUCIONESS.Controls.Add(this.label20);
             this.RESOLUCIONESS.Controls.Add(this.label19);
-            this.RESOLUCIONESS.Controls.Add(this.FECHADENOTIFICACION);
+            this.RESOLUCIONESS.Controls.Add(this.FECHADERESOLUCION);
             this.RESOLUCIONESS.Controls.Add(this.label10);
             this.RESOLUCIONESS.Controls.Add(this.ACTOTIPO);
             this.RESOLUCIONESS.Controls.Add(this.TIPORESOLUCION);
@@ -346,11 +346,11 @@ namespace WindowsFormsApp1
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(1540, 107);
+            this.label20.Location = new System.Drawing.Point(1545, 109);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(138, 13);
+            this.label20.Size = new System.Drawing.Size(133, 13);
             this.label20.TabIndex = 6;
-            this.label20.Text = "FECHA DE NOTIFICACION";
+            this.label20.Text = "FECHA DE RESOLUCION";
             // 
             // label19
             // 
@@ -361,13 +361,13 @@ namespace WindowsFormsApp1
             this.label19.TabIndex = 5;
             this.label19.Text = "TIPO";
             // 
-            // FECHADENOTIFICACION
+            // FECHADERESOLUCION
             // 
-            this.FECHADENOTIFICACION.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FECHADENOTIFICACION.Location = new System.Drawing.Point(1544, 130);
-            this.FECHADENOTIFICACION.Name = "FECHADENOTIFICACION";
-            this.FECHADENOTIFICACION.Size = new System.Drawing.Size(204, 20);
-            this.FECHADENOTIFICACION.TabIndex = 4;
+            this.FECHADERESOLUCION.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FECHADERESOLUCION.Location = new System.Drawing.Point(1544, 130);
+            this.FECHADERESOLUCION.Name = "FECHADERESOLUCION";
+            this.FECHADERESOLUCION.Size = new System.Drawing.Size(204, 20);
+            this.FECHADERESOLUCION.TabIndex = 4;
             // 
             // label10
             // 
@@ -1367,7 +1367,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox TIPORESOLUCION;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.DateTimePicker FECHADENOTIFICACION;
+        private System.Windows.Forms.DateTimePicker FECHADERESOLUCION;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox ACTOTIPO;
         private System.Windows.Forms.Button CARGARRESOL;
