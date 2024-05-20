@@ -16,11 +16,12 @@ namespace WindowsFormsApp1.FORMULARIOS
         private PersonaLEVENTOS personaLEVENTOS;
         public CARGARRESOLUCIONES(Int64 DNI, string agenteDeAtencion)
         {
-            InitializeComponent();          
+            InitializeComponent();
+            Dnis_ = DNI;
             Agentedeatencions_ = agenteDeAtencion;
             personaLEVENTOS = new PersonaLEVENTOS(apellido1, this.DNI, PORDNI, PORAPELLIDO, Agentedeatencions_, Dnis_); apellido1.Enter += (s, ev) => ((System.Windows.Forms.ComboBox)s).SelectAll();
             apellido1.Enter += (s, ev) => ((System.Windows.Forms.ComboBox)s).SelectAll();
-            Dnis_ = DNI;
+
         }
         private void CARGARRESOLUCIONES_Load(object sender, EventArgs e)
         {
