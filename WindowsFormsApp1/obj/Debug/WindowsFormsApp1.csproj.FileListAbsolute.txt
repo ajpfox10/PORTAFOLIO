@@ -1575,7 +1575,6 @@ D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\bin\
 D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
-D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
 D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.ResolveComReference.cache
 D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ASIGNARTAREAS.resources
 D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.BAJAFORMULARIO.resources
