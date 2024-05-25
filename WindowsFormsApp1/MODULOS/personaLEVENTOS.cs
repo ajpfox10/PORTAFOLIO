@@ -85,7 +85,7 @@ namespace WindowsFormsApp1.MODULOS
         private void InitializeTimer()
         {
             searchTimer = new Timer();
-            searchTimer.Interval = 4000;
+            searchTimer.Interval = 10000; 
             searchTimer.Tick += SearchTimer_Tick;
         }
         private void LoadDataIntoDictionary()

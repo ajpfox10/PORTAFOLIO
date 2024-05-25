@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
      
         public ConexionMySQL()
             {
-                connectionString = "Server=10.115.31.28;port=3306;username=superusuario;password=tronador101110;database=personalv3;";
+                connectionString = "Server=192.168.0.21;port=3306;username=superusuario;password=tronador101110;database=personalv3;";
                 conexion = new MySqlConnection(connectionString);
             }
         public DataTable EjecutarConsulta(string consulta)

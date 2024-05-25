@@ -116,11 +116,14 @@ namespace WindowsFormsApp1.FORMULARIOS
                 // Comparar y llenar el ListView
                 foreach (var archivo in archivos)
                 {
-                    var archivoCleaned = CleanString(Path.GetFileNameWithoutExtension(archivo).ToLower());
-                    var extension = Path.GetExtension(archivo); // Obtener la extensión del archivo
+                    // Comparar el nombre del archivo incluyendo su extensión
+                    var archivoCompleto = archivo.ToLower();
 
-                    // Verificar si el nombre del archivo coincide con alguna resolución de la base de datos
-                    bool encontrado = resolucionesBD.Any(resolucion => CleanString(resolucion.ToLower()) == archivoCleaned);
+                    // Verificar si el nombre del archivo (con extensión) coincide con alguna resolución de la base de datos
+                    bool encontrado = resolucionesBD.Any(resolucion => CleanString(resolucion.ToLower()) == CleanString(archivoCompleto));
+
+                    // Imprimir para depuración
+                    Console.WriteLine($"Archivo: {archivoCompleto}, Encontrado: {encontrado}");
 
                     if (!encontrado)
                     {
@@ -176,4 +179,3 @@ namespace WindowsFormsApp1.FORMULARIOS
         }
     }
 }
-
