@@ -190,11 +190,11 @@
     <Compile Include="FORMULARIOS\ASIGNARTAREAS.Designer.cs">
       <DependentUpon>ASIGNARTAREAS.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMULARIOS\BAJAFORMULARIO.cs">
+    <Compile Include="FORMULARIOS\VISORDOCUMENTOS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMULARIOS\BAJAFORMULARIO.Designer.cs">
-      <DependentUpon>BAJAFORMULARIO.cs</DependentUpon>
+    <Compile Include="FORMULARIOS\VISORDOCUMENTOS.Designer.cs">
+      <DependentUpon>VISORDOCUMENTOS.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMULARIOS\BONIFICACIONES.cs">
       <SubType>Form</SubType>
@@ -320,8 +320,8 @@
     <EmbeddedResource Include="FORMULARIOS\ASIGNARTAREAS.resx">
       <DependentUpon>ASIGNARTAREAS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMULARIOS\BAJAFORMULARIO.resx">
-      <DependentUpon>BAJAFORMULARIO.cs</DependentUpon>
+    <EmbeddedResource Include="FORMULARIOS\VISORDOCUMENTOS.resx">
+      <DependentUpon>VISORDOCUMENTOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\BONIFICACIONES.resx">
       <DependentUpon>BONIFICACIONES.cs</DependentUpon>

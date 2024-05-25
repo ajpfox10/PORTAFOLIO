@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using WindowsFormsApp1.MODULOS;
-
+using Microsoft.VisualBasic;
 namespace WindowsFormsApp1
 {
     public partial class FORMULARIOPRINCIPAL : Form
@@ -252,7 +252,8 @@ namespace WindowsFormsApp1
             bool todosCompletos = VERIFICARCONTR.VerificarControles(this.Controls);
             if (todosCompletos)
             {
-                BAJAFORMULARIO _BAJAFAMILIA = new BAJAFORMULARIO();  
+                Agentedeatencions_ = Convert.ToString(AGENTE.SelectedItem.ToString());
+                BAJAFORMULARIO _BAJAFAMILIA = new BAJAFORMULARIO(Dnis_, Agentedeatencions_);  
                 _BAJAFAMILIA.ShowDialog();
             }
             else
@@ -262,16 +263,30 @@ namespace WindowsFormsApp1
         }
         private void CORREGIRERRORES_Click(object sender, EventArgs e)
         {
-            VERIFICARCONTR verificador = new VERIFICARCONTR();
-            bool todosCompletos = VERIFICARCONTR.VerificarControles(this.Controls);
-            if (todosCompletos)
+            // Mostrar el cuadro de diálogo de entrada
+            string codigoIngresado = BAJAFORMULARIO.InputDialog.Show("Ingrese el código:", "Verificación de código");
+
+            // Verificar si el código ingresado es correcto
+            if (codigoIngresado == "28305607")
             {
-                CORREGIRERRORES _CORREGIRERRORES = new CORREGIRERRORES();
-                _CORREGIRERRORES.ShowDialog();
+                VERIFICARCONTR verificador = new VERIFICARCONTR();
+                bool todosCompletos = VERIFICARCONTR.VerificarControles(this.Controls);
+
+                if (todosCompletos)
+                {
+                    CORREGIRERRORES _CORREGIRERRORES = new CORREGIRERRORES();
+                    _CORREGIRERRORES.ShowDialog();
+                }
+                else
+                {
+                    // No continúa si aún faltan controles por completar
+                    MessageBox.Show("Faltan controles por completar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                // No continúa si aún faltan controles por completar
+                // Mostrar mensaje de error si el código es incorrecto
+                MessageBox.Show("Código incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void TAREASASIGNAR_Click(object sender, EventArgs e)

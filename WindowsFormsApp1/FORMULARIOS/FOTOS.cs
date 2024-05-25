@@ -124,102 +124,6 @@ namespace WindowsFormsApp1
         }
 
 
-
-        private void VerificarCarpetasSinCredencial1(string rutaBase)
-        {
-            // Limpiar los ListView antes de empezar
-            upa4sinfoto.Items.Clear();
-            UPA18SINFOTO.Items.Clear();
-            listViewFaltantes.Items.Clear();
-
-            try
-            {
-                // Consulta para obtener los datos del personal activo
-                string consulta = "SELECT personal.`apelldo y nombre` AS APELLIDO, personal.dni, personal.DEPENDENCIA FROM personal WHERE personal.activo = -1";
-                DataTable dataTable = new ConexionMySQL().EjecutarConsulta(consulta);
-
-                // Iterar sobre las filas obtenidas de la consulta
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    string dni = row["dni"].ToString();
-                    string apellido = row["APELLIDO"].ToString();
-                    string dependencia = row["DEPENDENCIA"].ToString();
-                    string directorio = Path.Combine(rutaBase, dni);
-
-                    if (dni.StartsWith("31912148"))
-                    {
-                        // Mensaje para mostrar la verificación de la carpeta
-                        MessageBox.Show("Verificando carpeta para DNI " + dni + ": " + directorio);
-
-                        if (!Directory.Exists(directorio))
-                        {
-                            // Mensaje para indicar que el directorio no se encontró
-                            MessageBox.Show("Directorio no encontrado: " + directorio);
-                            continue; // Saltar a la siguiente iteración si el directorio no existe
-                        }
-
-                        // Comprobar si el archivo "CREDENCIAL EMPLEADO FINAL" existe en la carpeta
-                        string nombreArchivoCredencial = "CREDENCIAL EMPLEADO FINAL.PNG";
-                        string archivoCredencial = Path.Combine(directorio, nombreArchivoCredencial);
-
-                        if (File.Exists(archivoCredencial))
-                        {
-                            // Abrir el archivo "CREDENCIAL EMPLEADO FINAL"
-                            try
-                            {
-                                Process.Start("explorer.exe", archivoCredencial);
-
-                                // Mensaje para indicar que el archivo se encontró y se abrió
-                                MessageBox.Show("Archivo encontrado y abierto: " + archivoCredencial);
-                            }
-                            catch (Exception ex)
-                            {
-                                // Mensaje para mostrar el error al abrir el archivo
-                                MessageBox.Show("Error al abrir el archivo: " + ex.Message);
-                            }
-                        }
-                        else
-                        {
-                            // Mensaje para indicar que el archivo no se encontró
-                            MessageBox.Show("Archivo 'CREDENCIAL EMPLEADO FINAL' no encontrado en: " + directorio);
-
-                            // Actualizar el campo 'foto' a 1 en la tabla 'personal' para este DNI
-                            ActualizarCampoFoto(dni);
-
-                            // Crear un nuevo elemento para el ListView
-                            ListViewItem item = new ListViewItem(dni);
-                            item.SubItems.Add(apellido);
-                            item.SubItems.Add(dependencia);
-
-                            // Agregar el elemento al ListView correspondiente según la dependencia
-                            if (dependencia.IndexOf("UPA 4", StringComparison.OrdinalIgnoreCase) >= 0)
-                            {
-                                upa4sinfoto.Items.Add(item);
-                            }
-                            else if (dependencia.IndexOf("UPA 18", StringComparison.OrdinalIgnoreCase) >= 0)
-                            {
-                                UPA18SINFOTO.Items.Add(item);
-                            }
-                            else
-                            {
-                                listViewFaltantes.Items.Add(item);
-                            }
-                        }
-                    }
-                }
-
-                // Ordenar ListViews por apellido de forma descendente
-                OrdenarListViewPorApellidoDescendente(upa4sinfoto);
-                OrdenarListViewPorApellidoDescendente(UPA18SINFOTO);
-                OrdenarListViewPorApellidoDescendente(listViewFaltantes);
-            }
-            catch (Exception ex)
-            {
-                // Mensaje para mostrar el error general al verificar carpetas sin credencial
-                MessageBox.Show("Error al verificar carpetas sin credencial: " + ex.Message);
-            }
-        }
-
         private void VerificarCarpetasSinCredencial(string rutaBase)
         {
             // Limpiar los ListView antes de empezar
@@ -301,16 +205,6 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Error al verificar carpetas sin credencial: " + ex.Message);
             }
         }
-
-
-
-
-
-
-
-
-
-
 
 
         private void OrdenarListViewPorApellidoDescendente(ListView listView)

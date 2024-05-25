@@ -281,10 +281,6 @@ namespace WindowsFormsApp1
             string CARGAACTOS = "SELECT ccoodegdeba.id, ccoodegdeba.agente, ccoodegdeba.agentequetramito AS 'AGENTE QUE TRAMITO', ccoodegdeba.notanumero AS 'NUMERO', ccoodegdeba.año, ccoodegdeba.reparticion, ccoodegdeba.memo, ccoodegdeba.save FROM ccoodegdeba WHERE AGENTE='" + Dnis_ + "' ORDER BY ccoodegdeba.save DESC";
             string[] CARGAACTOS2 = new string[] { "ID:75", "AGENTE:0", "AGENTE QUE TRAMITO:300", "NUMERO:175", "AÑO:125", "REPARTICION:125", "MEMO:125", "SAVE:190" };
             loader.CargarDatosYAcciones(EXP2, CARGAACTOS, CARGAACTOS2);
-
-            string consultaExpedientes2 = "SELECT id, AGENTE, expedientenumero AS 'EXPEDIENTE NUMERO', MEMO, archivo FROM expedientes WHERE AGENTE='" + Dnis_ + "' ORDER BY id DESC";
-            string[] columnasExpedientes2 = new string[] { "ID:75", "AGENTE:0", "EXPEDIENTE NUMERO:300", "MEMO:175", "ARCHIVO:125" };
-            loader.CargarDatosYAcciones(ACTOS2, consultaExpedientes2, columnasExpedientes2);
         }
         private void Cargacita_Click(object sender, EventArgs e)
         {
@@ -462,9 +458,6 @@ namespace WindowsFormsApp1
             string CARGAACTOS = "SELECT ccoodegdeba.id, ccoodegdeba.agente, ccoodegdeba.agentequetramito AS 'AGENTE QUE TRAMITO', ccoodegdeba.notanumero AS 'NUMERO', ccoodegdeba.año, ccoodegdeba.reparticion, ccoodegdeba.memo, ccoodegdeba.save FROM ccoodegdeba WHERE AGENTE='" + Dnis_ + "' ORDER BY ccoodegdeba.save DESC";
             string[] CARGAACTOS2 = new string[] { "ID:75", "AGENTE:0", "AGENTE QUE TRAMITO:300", "NUMERO:175", "AÑO:125", "REPARTICION:125", "MEMO:125", "SAVE:190" };
             loader.CargarDatosYAcciones(EXPDIRECCION, CARGAACTOS, CARGAACTOS2);
-            string consultaExpedientes2 = "SELECT id, AGENTE, expedientenumero AS 'EXPEDIENTE NUMERO', MEMO, archivo FROM expedientes WHERE AGENTE='" + Dnis_ + "' ORDER BY id DESC";
-            string[] columnasExpedientes2 = new string[] { "ID:75", "AGENTE:0", "EXPEDIENTE NUMERO:300", "MEMO:175", "ARCHIVO:125" };
-            loader.CargarDatosYAcciones(ACTOS2, consultaExpedientes2, columnasExpedientes2);
         }
         private void DATS_MouseClick(object sender, MouseEventArgs e)
         {
