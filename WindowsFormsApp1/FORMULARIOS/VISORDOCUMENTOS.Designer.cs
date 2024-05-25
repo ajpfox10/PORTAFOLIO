@@ -146,6 +146,7 @@
             this.Name = "BAJAFORMULARIO";
             this.Text = "FORMULARIO DE DOCUMENTOS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+   
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Visor)).EndInit();

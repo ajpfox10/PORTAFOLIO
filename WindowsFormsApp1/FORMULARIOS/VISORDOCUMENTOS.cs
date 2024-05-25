@@ -50,13 +50,7 @@ namespace WindowsFormsApp1
             this.DNI.TextChanged += DNI_TextChanged;
         }
 
-        protected override void OnFormClosed(FormClosedEventArgs e)
-        {
-            timerActualizarRuta.Stop();
-            timerActualizarRuta.Dispose();
-            base.OnFormClosed(e);
-        }
-
+ 
         public static class InputDialog
         {
             public static string Show(string prompt, string title)
@@ -185,5 +179,13 @@ namespace WindowsFormsApp1
                 MessageBox.Show("DNI no válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            timerActualizarRuta.Stop();
+            timerActualizarRuta.Dispose();
+            base.OnFormClosed(e);
+        }
+
+
     }
 }
