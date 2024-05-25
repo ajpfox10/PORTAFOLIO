@@ -27,30 +27,34 @@ namespace WindowsFormsApp1
             InitializeComponent();
             Agentedeatencions_ = agenteDeAtencion;
             Dnis_ = DNI;
-
             // Initialize PersonaLEVENTOS once
             personaLEVENTOS = new PersonaLEVENTOS(apellido1, this.DNI, PORDNI, PORAPELLIDO, Agentedeatencions_, Dnis_);
-
             // Event for selecting all text on entering the ComboBox
             apellido1.Enter += (s, ev) => ((ComboBox)s).SelectAll();
-
             // Configure TreeView
             VisorArbol.FullRowSelect = true;
             VisorArbol.AfterSelect += VisorArbol_AfterSelect;
             VisorArbol.NodeMouseDoubleClick += VisorArbol_NodeMouseDoubleClick;
-
             // Initialize and start the timer
             timerActualizarRuta = new Timer();
-            timerActualizarRuta.Interval = 50000;
+            timerActualizarRuta.Interval = 500;
             timerActualizarRuta.Tick += TimerActualizarRuta_Tick;
             timerActualizarRuta.Start();
-
             // Context menu for copying file path
             ContextMenuStrip menuContextual = new ContextMenuStrip();
             ToolStripMenuItem copiarDireccionMenuItem = new ToolStripMenuItem("Copiar dirección de archivo");
             copiarDireccionMenuItem.Click += CopiarDireccionMenuItem_Click;
             menuContextual.Items.Add(copiarDireccionMenuItem);
             Visor.ContextMenuStrip = menuContextual;
+            // Subscribe to the TextChanged event for the DNI textbox
+            this.DNI.TextChanged += DNI_TextChanged;
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            timerActualizarRuta.Stop();
+            timerActualizarRuta.Dispose();
+            base.OnFormClosed(e);
         }
 
         public static class InputDialog
@@ -93,59 +97,73 @@ namespace WindowsFormsApp1
 
         private void CopiarDireccionMenuItem_Click(object sender, EventArgs e)
         {
-            if (Visor.Image != null)
+            if (Visor.ImageLocation != null)
             {
                 Clipboard.SetText(Visor.ImageLocation);
             }
+            else
+            {
+                MessageBox.Show("No hay una imagen cargada para copiar la dirección.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
         private void VisorArbol_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            string selectedPath = e.Node.FullPath;
-            if (File.Exists(selectedPath))
+            string selectedPath = e.Node.Tag as string;
+            try
             {
-                Visor.Image = Image.FromFile(selectedPath);
-                Visor.SizeMode = PictureBoxSizeMode.Zoom;
-                Console.WriteLine("Imagen cargada: " + selectedPath);
+                if (File.Exists(selectedPath))
+                {
+                    Visor.ImageLocation = selectedPath; // Actualizar ImageLocation
+                    Visor.SizeMode = PictureBoxSizeMode.Zoom;
+                    Console.WriteLine("Imagen cargada: " + selectedPath);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void VisorArbol_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            if (e.Node.Tag is string filePath && File.Exists(filePath))
+            string selectedPath = e.Node.Tag as string;
+            try
             {
-                Visor.Image = Image.FromFile(filePath);
-                Visor.SizeMode = PictureBoxSizeMode.Zoom;
-                Console.WriteLine("Imagen cargada: " + filePath);
+                if (File.Exists(selectedPath))
+                {
+                    Visor.ImageLocation = selectedPath; // Actualizar ImageLocation
+                    Visor.SizeMode = PictureBoxSizeMode.Zoom;
+                    Console.WriteLine("Imagen cargada: " + selectedPath);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void TimerActualizarRuta_Tick(object sender, EventArgs e)
         {
-            if (DniAnterior != FOTOS.Dnis_)
+            if (DniAnterior != Dnis_)
             {
-                DniAnterior = FOTOS.Dnis_;
+                DniAnterior = Dnis_;
                 ActualizarRutaYArchivos();
             }
         }
-
         private void ActualizarRutaYArchivos()
         {
-            string ruta = $"\\\\192.168.0.21\\g\\DOCU\\{FOTOS.Dnis_}";
+            string ruta = $"\\\\192.168.0.21\\g\\DOCU\\{Dnis_}";
             if (Directory.Exists(ruta))
             {
                 VisorArbol.Nodes.Clear();
                 AgregarNodosAlArbol(ruta, VisorArbol.Nodes);
             }
         }
-
         private void AgregarNodosAlArbol(string ruta, TreeNodeCollection nodos)
         {
             var archivos = Directory.GetFiles(ruta, "*.*", SearchOption.TopDirectoryOnly)
                 .Where(s => s.EndsWith(".bmp", StringComparison.OrdinalIgnoreCase) ||
                             s.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                            s.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase) ||
                             s.EndsWith(".png", StringComparison.OrdinalIgnoreCase));
-
             foreach (string archivo in archivos)
             {
                 TreeNode node = new TreeNode(Path.GetFileName(archivo))
@@ -153,6 +171,18 @@ namespace WindowsFormsApp1
                     Tag = archivo
                 };
                 nodos.Add(node);
+            }
+        }
+        private void DNI_TextChanged(object sender, EventArgs e)
+        {
+            if (long.TryParse(DNI.Text, out long nuevoDni))
+            {
+                Dnis_ = nuevoDni;
+                ActualizarRutaYArchivos();
+            }
+            else
+            {
+                MessageBox.Show("DNI no válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
