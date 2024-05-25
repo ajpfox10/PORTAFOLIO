@@ -1,17 +1,8 @@
-﻿using Mysqlx.Cursor;
-using OpenXmlPowerTools;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.MODULOS;
 
@@ -66,7 +57,6 @@ namespace WindowsFormsApp1
                     {
                         string consultaSQL = "SELECT personal.`apelldo y nombre` AS 'APELLIDOYNOMBRE', personal.dni, personal.dependencia, personal.Decreto, personal.legajo, personal.`Fecha de Ingreso` AS 'FECHAP' FROM personal WHERE dni = '" + Dnis_ + "'";
                         var dataTable = conexionMySQL.EjecutarConsulta(consultaSQL);
-
                         foreach (DataRow row in dataTable.Rows)
                         {
                             string cadenaReemplazo = row["APELLIDOYNOMBRE"].ToString();
@@ -81,13 +71,8 @@ namespace WindowsFormsApp1
                             documentProcessor.ProcesarDocumentoEnMemoria(memoryStream, "FECHASS", cadenaReemplazo);
                             cadenaReemplazo = row["legajo"].ToString();
                             documentProcessor.ProcesarDocumentoEnMemoria(memoryStream, "LEGAJOS", cadenaReemplazo);
-
                             string cadenaReemplazoFecha = DateTime.Now.ToString("dd/MM/yyyy");
                             documentProcessor.ProcesarDocumentoEnMemoria(memoryStream, "FFFFFFFFFFFFFFFFF", cadenaReemplazoFecha);
-
-
-
-
                         }
                       
                     }
@@ -126,7 +111,6 @@ namespace WindowsFormsApp1
                 string consultaPedidos = "SELECT pedidos.ID, personal.DNI, personal.`apelldo y nombre` AS 'APELLIDO Y NOMBRE', pedidos.PEDIDO, pedidos.agente FROM pedidos INNER JOIN personal ON pedidos.dni = personal.dni WHERE activa IS NULL  ORDER BY id DESC";
                 string[] columnasPedidos = new string[] { "ID:0", "DNI:0", "APELLIDO Y NOMBRE:250", "PEDIDO:500", "AGENTE:175" };
                 loader.CargarDatosYAcciones(PEDIDOSSS, consultaPedidos, columnasPedidos);
-
             }
         }
         private void PEDIDOSSS_Click(object sender, EventArgs e)
@@ -136,9 +120,6 @@ namespace WindowsFormsApp1
             string pedido = selectedItem.SubItems[3].Text;
             string textoDnis = selectedItem.SubItems[1].Text;
             long.TryParse(textoDnis, out Dnis_);
-
-
-
             // Llama a tu método para cargar datos en TextBox
             CargarDatosEnTextBox(dni, pedido);
         }
