@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -16,6 +17,8 @@ namespace WindowsFormsApp1.FORMULARIOS
         string carpetaArchivos = @"\\192.168.0.21\g\RESOLUCIONES Y VARIOS\";
         private MODULOS.PersonaLEVENTOS personaLEVENTOS;
 
+        private bool isDoubleClick = false;
+
         public CARGARRESOLUCIONES(Int64 DNI, string agenteDeAtencion)
         {
             InitializeComponent();
@@ -23,55 +26,49 @@ namespace WindowsFormsApp1.FORMULARIOS
             Agentedeatencions_ = agenteDeAtencion;
             personaLEVENTOS = new PersonaLEVENTOS(apellido1, this.DNI, PORDNI, PORAPELLIDO, Agentedeatencions_, Dnis_);
             apellido1.Enter += Apellido1_Enter;
-            resolucionesd.ItemSelectionChanged += resolucionesd_ItemSelectionChanged;
+
+        }
+
+
+
+        private void resolucionesd_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+                ListViewItem item = resolucionesd.GetItemAt(e.X, e.Y);
+                if (item != null)
+                {
+                    string nombreArchivo = item.SubItems[1].Text;
+                    string rutaCompleta = Path.Combine(carpetaArchivos, nombreArchivo);
+
+                    try
+                    {
+                        if (File.Exists(rutaCompleta))
+                        {
+                            // Cargar el archivo en el WebBrowser
+                            VISORRESO.Url = new Uri(rutaCompleta);
+
+
+                            // Copiar el nombre del archivo al TextBox
+                            RESOTRABAJAR.Text = nombreArchivo;
+                        }
+                        else
+                        {
+                            MessageBox.Show("El archivo seleccionado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        ListViewItem filaSeleccionada1 = item;
+                        filaSeleccionada1.ForeColor = Color.Yellow;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al abrir el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                
+            }
         }
 
         private void Apellido1_Enter(object sender, EventArgs e)
         {
             ((System.Windows.Forms.ComboBox)sender).SelectAll();
-        }
-
-        private void resolucionesd_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
-            if (e.IsSelected)
-            {
-                e.Item.BackColor = System.Drawing.Color.Yellow;
-            }
-            else
-            {
-                e.Item.BackColor = System.Drawing.Color.White; // o el color predeterminado de fondo
-            }
-        }
-
-        private void resolucionesd_DoubleClick(object sender, EventArgs e)
-        {
-            // Verifica si hay elementos seleccionados en el ListView
-            if (resolucionesd.SelectedItems.Count > 0)
-            {
-                // Obtén el nombre del archivo seleccionado
-                string nombreArchivo = resolucionesd.SelectedItems[0].SubItems[1].Text;
-
-                // Construir la ruta completa del archivo
-                string rutaCompleta = Path.Combine(carpetaArchivos, nombreArchivo);
-
-                try
-                {
-                    // Verificar si el archivo existe
-                    if (File.Exists(rutaCompleta))
-                    {
-                        // Abrir el archivo en el WebBrowser
-                        VISORRESO.Url = new Uri(rutaCompleta);
-                    }
-                    else
-                    {
-                        MessageBox.Show("El archivo seleccionado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al abrir el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
         }
 
         private void DNI_DoubleClick(object sender, EventArgs e)
@@ -82,6 +79,7 @@ namespace WindowsFormsApp1.FORMULARIOS
                 {
                     Dnis_ = nuevoDnisValor;
                     DNI.BackColor = System.Drawing.Color.Yellow; // Cambia el color de fondo a amarillo
+                    Console.WriteLine("Color de fondo cambiado a amarillo.");
                 }
                 else
                 {
@@ -98,6 +96,7 @@ namespace WindowsFormsApp1.FORMULARIOS
                 if (string.IsNullOrEmpty(DNI.Text))
                 {
                     DNI.BackColor = Color.Yellow; // Pintar de amarillo si el campo está vacío
+                    Console.WriteLine("DNI no puede estar vacío.");
                     return; // Salir del método sin ejecutar el procedimiento
                 }
                 else
@@ -108,6 +107,7 @@ namespace WindowsFormsApp1.FORMULARIOS
                 if (FECHADERESOLUCION.Value == DateTime.MinValue)
                 {
                     FECHADERESOLUCION.BackColor = Color.Yellow; // Pintar de amarillo si la fecha no está seleccionada
+                    Console.WriteLine("Fecha de resolución no seleccionada.");
                     return; // Salir del método sin ejecutar el procedimiento
                 }
                 else
@@ -118,6 +118,7 @@ namespace WindowsFormsApp1.FORMULARIOS
                 if (string.IsNullOrEmpty(RESOTRABAJAR.Text))
                 {
                     RESOTRABAJAR.BackColor = Color.Yellow; // Pintar de amarillo si el campo está vacío
+                    Console.WriteLine("El campo de resolución a trabajar está vacío.");
                     return; // Salir del método sin ejecutar el procedimiento
                 }
                 else
@@ -132,17 +133,19 @@ namespace WindowsFormsApp1.FORMULARIOS
                 DateTime fechaResolucion = FECHADERESOLUCION.Value.Date;
                 string resolucion = RESOTRABAJAR.Text;
                 gestionResoluciones.InsertarResolucion(dni, resolucion, tipoResolucionValueMember, fechaResolucion, resolucion);
+                resolucionesd.Items.Clear();
 
                 // Vaciar los TextBox después de ejecutar el procedimiento
                 DNI.Clear();
                 FECHADERESOLUCION.Value = DateTime.Today; // Establecer la fecha actual
                 RESOTRABAJAR.Clear();
+                comparador = new ComparadorArchivos(carpetaArchivos, resolucionesd, CANTIDADS);
+                comparador.ListarArchivosYComparar();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void CARGARRESOLUCIONES_Load(object sender, EventArgs e)
@@ -161,41 +164,34 @@ namespace WindowsFormsApp1.FORMULARIOS
                 Console.WriteLine("Error durante la carga del formulario: " + ex.Message);
                 MessageBox.Show("Error durante la carga del formulario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
+
+            // Llamar al método que carga los datos en el TextBox
+            CargarDatosEnTextBox();
         }
 
-        private void resolucionesd_MouseClick(object sender, MouseEventArgs e)
-        {
-            // Verificar si se hizo clic con el botón derecho del ratón
-            if (e.Button == MouseButtons.Right)
-            {
-                string datoSeleccionado = comparador.ObtenerDatoSeleccionado();
-                if (datoSeleccionado != null)
-                {
-                    this.resolucion = datoSeleccionado;
-                    resolucion = RESOTRABAJAR.Text;
-                    // Obtener el ListView del comparador
-                    ListView listView = comparador.GetListView();
 
-                    // Buscar el ítem seleccionado en el ListView y seleccionarlo
-                    foreach (ListViewItem item in listView.Items)
-                    {
-                        if (item.SubItems[1].Text == datoSeleccionado)
-                        {
-                            listView.SelectedItems.Clear();
-                            item.Selected = true;
-                            item.Focused = true;
-                            item.EnsureVisible();
-                            break;
-                        }
-                    }
-                }
-                else
+
+
+
+
+        private void CargarDatosEnTextBox()
+        {
+          
+
+            // Cambiar el color del texto del elemento correspondiente en el ListView
+            foreach (ListViewItem item in resolucionesd.Items)
+            {
+                if (item.SubItems[0].Text == RESOTRABAJAR.Text)
                 {
-                    MessageBox.Show("No se ha seleccionado ningún dato.", "Dato Nulo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    item.ForeColor = Color.Blue;
+                    break; // Detener la búsqueda una vez que se encuentra el elemento
                 }
             }
         }
 
+
+
     }
 }
-
