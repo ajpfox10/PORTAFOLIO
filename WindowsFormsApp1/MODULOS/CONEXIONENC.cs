@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 
@@ -1211,8 +1212,50 @@ namespace WindowsFormsApp1
             }
         }
 
+
+
+
+
+        public async Task<List<Dictionary<string, string>>> EjecutarConsultaAsync(string consulta)
+        {
+            var resultado = new List<Dictionary<string, string>>();
+
+            try
+            {
+                using (var connection = new MySqlConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    using (var command = new MySqlCommand(consulta, connection))
+                    {
+                        using (var reader = await command.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                var fila = new Dictionary<string, string>();
+
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    fila[reader.GetName(i)] = reader.GetValue(i).ToString();
+                                }
+
+                                resultado.Add(fila);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al ejecutar la consulta: " + ex.Message);
+            }
+
+            return resultado;
+        }
     }
+
 }
+
 
 
 

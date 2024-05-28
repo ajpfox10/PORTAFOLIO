@@ -1,9 +1,10 @@
-﻿using Microsoft.Office.Interop.Word;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace WindowsFormsApp1.MODULOS
 {
@@ -13,14 +14,17 @@ namespace WindowsFormsApp1.MODULOS
         private TextBox DNI;
         private RadioButton PORDNI;
         private RadioButton PORAPELLIDO;
-        private Timer searchTimer;
         private bool searchingByDNI = false;
-        private string AGENTE; // Nuevo campo para almacenar el agente
+        private string AGENTE;
         private long Dnis_;
+        private Dictionary<string, string> dictionary;
+        private SemaphoreSlim semaphore = new SemaphoreSlim(1, 1);
+
         private bool searchingByApellido = false;
         private bool isSearching = false;
         private string lastSearchedApellido = "";
-        private Dictionary<string, string> dictionary; // Declarar dictionary aquí
+
+
         public PersonaLEVENTOS(ComboBox apellido1, TextBox DNI, RadioButton PORDNI, RadioButton PORAPELLIDO, string AGENTE, long Dnis_)
         {
             this.apellido1 = apellido1;
@@ -30,135 +34,98 @@ namespace WindowsFormsApp1.MODULOS
             this.AGENTE = AGENTE;
             this.Dnis_ = Dnis_;
             InitializeEventHandlers();
-            InitializeTimer();
             this.dictionary = new Dictionary<string, string>();
-            LoadDataIntoDictionary();
+            LoadDataIntoDictionaryAsync().Wait();
+            DisableInputControls();
+
         }
+
         private void InitializeEventHandlers()
         {
             apellido1.SelectedIndexChanged += Apellido1_SelectedIndexChanged;
-            DNI.TextChanged += DNI_TextChanged;
-            PORDNI.CheckedChanged += (sender, e) => { searchingByDNI = PORDNI.Checked; };
+         
+            DNI.KeyPress += DNI_KeyPress;
+            DNI.Leave += DNI_Leave;
+            DNI.KeyDown += DNI_KeyDown; // Agregamos el evento KeyDown aquí
+            apellido1.KeyDown += Apellido1_KeyDown;
+            apellido1.Leave += Apellido1_Leave;
+            PORDNI.CheckedChanged += (sender, e) =>
+            {
+                searchingByDNI = PORDNI.Checked;
+                SetInputControlState();
+
+                // Si cambiamos a buscar por DNI, establecemos searchingByApellido en false
+                if (searchingByDNI)
+                {
+                    searchingByApellido = false;
+                }
+            };
             PORAPELLIDO.CheckedChanged += (sender, e) =>
             {
                 if (PORAPELLIDO.Checked)
                 {
                     searchingByDNI = false;
                     DNI.Text = "0";
-
-                    // Desactivar temporalmente el manejo de eventos del ComboBox
-                    apellido1.SelectedIndexChanged -= Apellido1_SelectedIndexChanged;
-                    apellido1.Text = "";
-                    apellido1.SelectedIndexChanged += Apellido1_SelectedIndexChanged;
+                    SetInputControlState();
                 }
                 else if (PORDNI.Checked)
                 {
                     searchingByDNI = true;
                     DNI.Text = "0";
                     apellido1.Text = "";
+                    SetInputControlState();
                 }
-
             };
-
-            // Agregar evento KeyUp al ComboBox
-               apellido1.KeyUp += Apellido1_KeyUp;
-           // apellido1.TextChanged += Apellido1_TextChanged;
         }
-        private void Apellido1_TextChanged(object sender, EventArgs e)
-        {
-            // Obtener el texto ingresado por el usuario
-            string searchText = this.apellido1.Text;
-
-            // Filtrar los elementos del ComboBox basados en el texto ingresado
-            this.apellido1.Items.Clear();
-            foreach (string item in dictionary.Values)
-            {
-                if (item.StartsWith(searchText, StringComparison.OrdinalIgnoreCase))
-                {
-                    this.apellido1.Items.Add(item);
-                }
-            }
-
-            // Seleccionar el texto ingresado para facilitar la escritura
-            this.apellido1.Select(searchText.Length, 0);
-        }
-        private void InitializeTimer()
-        {
-            searchTimer = new Timer();
-            searchTimer.Interval = 10000; 
-            searchTimer.Tick += SearchTimer_Tick;
-        }
-        private void LoadDataIntoDictionary()
+        private async Task LoadDataIntoDictionaryAsync()
         {
             try
             {
-                // Cargar datos desde la base de datos y llenar el diccionario
-                string consulta = "SELECT personal.`apelldo y nombre` AS APELLIDO, personal.dni FROM personal ORDER BY APELLIDO DESC";
-                List<string> apellidoList = new ConexionMySQL().EjecutarConsulta(consulta, "APELLIDO");
-                List<string> dniList = new ConexionMySQL().EjecutarConsulta(consulta, "DNI");
+                string consulta = "SELECT `apelldo y nombre` AS APELLIDO, dni FROM personal ORDER BY APELLIDO DESC";
+                var resultados = await new ConexionMySQL().EjecutarConsultaAsync(consulta);
 
-                for (int i = 0; i < apellidoList.Count; i++)
-                {
-                    dictionary[dniList[i]] = apellidoList[i];
-                }
-
-                // Agregar datos al ComboBox
-                apellido1.Items.AddRange(apellidoList.ToArray());
-                apellido1.Tag = dictionary;
+                dictionary = resultados.ToDictionary(row => row["dni"], row => row["APELLIDO"]);
+                apellido1.Items.AddRange(dictionary.Values.ToArray());
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error al cargar los valores en el ComboBox: " + ex.Message);
             }
         }
-        private void Apellido1_KeyUp(object sender, KeyEventArgs e)
+        private void Apellido1_KeyDown(object sender, KeyEventArgs e)
         {
-            // Obtener el texto ingresado por el usuario
-            string searchText = this.apellido1.Text;
-
-            // Filtrar los elementos del ComboBox basados en el texto ingresado
-            this.apellido1.Items.Clear();
-            foreach (string item in dictionary.Values)
+            if (e.KeyCode == Keys.Enter)
             {
-                if (item.StartsWith(searchText, StringComparison.OrdinalIgnoreCase))
+                PerformSearch();
+            }
+        }
+        private void Apellido1_Leave(object sender, EventArgs e)
+        {
+            PerformSearch();
+        }
+        private async Task PerformSearchAsync()
+        {
+            await semaphore.WaitAsync();
+            try
+            {
+                if (DNI.Text.Length > 0)
                 {
-                    this.apellido1.Items.Add(item);
+                    await Task.Delay(500); // Debounce delay
+                    if (DNI.Text.Length > 0)
+                    {
+                        SearchByDNI();
+                    }
                 }
             }
-
-            // Seleccionar el texto ingresado para facilitar la escritura
-            this.apellido1.Select(searchText.Length, 0);
-        }
-        private void SearchTimer_Tick(object sender, EventArgs e)
-        {
-            searchTimer.Stop(); // Detener el temporizador
-
-            // Realizar la búsqueda si no se está buscando actualmente
-            if (!isSearching)
+            finally
             {
-                if (searchingByDNI)
-                    SearchByDNI();
-                else
-                    SearchByApellido();
-            }
-
-            // Volver a iniciar el temporizador después de completar la búsqueda
-            searchTimer.Start();
-
-            // Restablecer el estado de búsqueda
-            isSearching = false;
-        }
-        private void DNI_TextChanged(object sender, EventArgs e)
-        {
-            if (!searchTimer.Enabled) // Solo si el temporizador no está activo
-            {
-                searchTimer.Stop();
-                searchTimer.Start();
+                semaphore.Release();
             }
         }
-        private void SearchByDNI()
+ 
+      
+        private async void SearchByDNI()
         {
-            isSearching = true;
             Console.WriteLine("Método SearchByDNI() llamado.");
             if (DNI.Text == "0")
             {
@@ -166,9 +133,9 @@ namespace WindowsFormsApp1.MODULOS
             }
             if (DNI.Text == Dnis_.ToString())
             {
-                isSearching = false;
-                return; // Si el DNI no ha cambiado, salir del método
+                return;
             }
+
             MessageBox.Show("Iniciando búsqueda por DNI...");
 
             if (!long.TryParse(DNI.Text, out long dni))
@@ -176,92 +143,84 @@ namespace WindowsFormsApp1.MODULOS
                 MessageBox.Show("Búsqueda infructuosa: DNI no válido");
                 return;
             }
-            string apellido = new ConexionMySQL().EjecutarConsulta($"SELECT `apelldo y nombre` FROM personal WHERE dni = '{dni}'", "apelldo y nombre").FirstOrDefault<string>();
+
+            var resultado = await new ConexionMySQL().EjecutarConsultaAsync($"SELECT `apelldo y nombre` FROM personal WHERE dni = '{dni}'");
+            string apellido = resultado.FirstOrDefault()?["apelldo y nombre"];
+
             if (apellido != null)
             {
                 apellido1.Text = apellido;
-                Dnis_ = dni; // Asignar el valor de DNI a Dnis_
+                Dnis_ = dni;
                 MessageBox.Show("Búsqueda exitosa: Se ha encontrado el apellido");
             }
             else
             {
                 MessageBox.Show("Búsqueda infructuosa: No se encontró ningún resultado");
             }
-            isSearching = false;
         }
-        private void SearchByApellido()
+        private async void SearchByApellido()
         {
-            isSearching = true;
+            Console.WriteLine("Método SearchByApellido() llamado.");
+            MessageBox.Show("Iniciando búsqueda por Apellido...");
 
-            // Desactivar temporalmente el manejo de eventos del ComboBox
-            apellido1.SelectedIndexChanged -= Apellido1_SelectedIndexChanged;
-
-            if (apellido1.Text != lastSearchedApellido)
+            if (apellido1.SelectedItem == null)
             {
-                Console.WriteLine("Método SearchByApellido() llamado.");
-
-                MessageBox.Show("Iniciando búsqueda por Apellido...");
-
-                // Desactivar temporalmente el manejo de eventos del TextBox de DNI
-                DNI.TextChanged -= DNI_TextChanged;
-
-                // Realizar la búsqueda por apellido
-                if (apellido1.SelectedItem == null)
-                {
-                    MessageBox.Show("Búsqueda infructuosa: Apellido no seleccionado");
-
-                    // Reactivar el manejo de eventos del TextBox de DNI
-                    DNI.TextChanged += DNI_TextChanged;
-
-                    // Reactivar el manejo de eventos del ComboBox
-                    apellido1.SelectedIndexChanged += Apellido1_SelectedIndexChanged;
-                    isSearching = false;
-                    return;
-                }
-
-                string dni = new ConexionMySQL().EjecutarConsulta($"SELECT dni FROM personal WHERE `apelldo y nombre` = '{apellido1.SelectedItem.ToString()}'", "dni").FirstOrDefault<string>();
-                if (dni != null)
-                {
-                    DNI.Text = dni;
-                    Dnis_ = Convert.ToInt64(dni); // Asigna el valor de DNI a Dnis_
-                    MessageBox.Show("Búsqueda exitosa: Se ha encontrado el DNI");
-                }
-                else
-                {
-                    MessageBox.Show("Búsqueda infructuosa: No se encontró ningún resultado");
-                }
-
-                // Reactivar el manejo de eventos del TextBox de DNI
-                DNI.TextChanged += DNI_TextChanged;
-                lastSearchedApellido = apellido1.Text;
+                MessageBox.Show("Búsqueda infructuosa: Apellido no seleccionado");
+                return;
             }
 
-            // Reactivar el manejo de eventos del ComboBox
-            apellido1.SelectedIndexChanged += Apellido1_SelectedIndexChanged;
+            var resultado = await new ConexionMySQL().EjecutarConsultaAsync($"SELECT dni FROM personal WHERE `apelldo y nombre` = '{apellido1.SelectedItem.ToString()}'");
+            string dni = resultado.FirstOrDefault()?["dni"];
 
-            isSearching = false;
+            if (dni != null)
+            {
+                DNI.Text = dni;
+                Dnis_ = Convert.ToInt64(dni);
+                MessageBox.Show("Búsqueda exitosa: Se ha encontrado el DNI");
+            }
+            else
+            {
+                MessageBox.Show("Búsqueda infructuosa: No se encontró ningún resultado");
+            }
+        }
+        private void DisableInputControls()
+        {
+            DNI.Enabled = false;
+            apellido1.Enabled = false;
+        }
+        private void SetInputControlState()
+        {
+            DNI.Enabled = searchingByDNI;
+            apellido1.Enabled = !searchingByDNI;
+
+            if (searchingByDNI)
+            {
+                apellido1.Text = "";
+            }
+            else
+            {
+                DNI.Text = "0";
+            }
+        }
+        private void DNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!PORDNI.Checked)
+            {
+                e.Handled = true;
+                MessageBox.Show("Debe seleccionar la opción 'Buscar por DNI' para escribir en este campo.");
+            }
         }
         private void Apellido1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Verificar si hay un apellido seleccionado y si es diferente al DNI actual
-            if (!searchingByDNI && apellido1.SelectedItem != null && apellido1.SelectedItem.ToString() != DNI.Text)
+            if (searchingByApellido && apellido1.SelectedItem != null && apellido1.SelectedItem.ToString() != DNI.Text)
             {
-                // Limpiar el TextBox de DNI y establecerlo en 0 solo si no estamos buscando por DNI
+                DNI.Text = "0";
+
+                // Solo inicia la búsqueda si no está buscando por DNI
                 if (!searchingByDNI)
                 {
-                    DNI.Text = "0";
-                }
-
-                // Verificar si ya estamos buscando por apellido
-                if (!searchingByApellido)
-                {
-                    searchingByApellido = true; // Marcar que estamos realizando una búsqueda por apellido
-
                     Console.WriteLine("Iniciando búsqueda por Apellido...");
-                    // Realizar la búsqueda por apellido
                     SearchByApellido();
-
-                    searchingByApellido = false; // Restablecer la bandera después de completar la búsqueda
                 }
             }
         }
@@ -273,6 +232,30 @@ namespace WindowsFormsApp1.MODULOS
         {
             Dnis_ = nuevoDnis;
         }
+        private void DNI_Leave(object sender, EventArgs e)
+        {
+            PerformSearch();
+        }
+        private void DNI_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PerformSearch();
+            }
+        }
+        private void PerformSearch()
+        {
+            if (searchingByDNI)
+            {
+                SearchByDNI();
+            }
+            else
+            {
+                SearchByApellido();
+            }
+        }
+
+
 
     }
 }

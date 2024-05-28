@@ -268,6 +268,7 @@
     <Compile Include="FORMULARIOS\Gestionrr.Designer.cs">
       <DependentUpon>Gestionrr.cs</DependentUpon>
     </Compile>
+    <Compile Include="MODULOS\Class1.cs" />
     <Compile Include="MODULOS\GlobalSuppressions.cs" />
     <Compile Include="FORMULARIOS\HVIDA.cs">
       <SubType>Form</SubType>
