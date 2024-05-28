@@ -148,6 +148,7 @@ namespace WindowsFormsApp1
             if (Directory.Exists(ruta))
             {
                 VisorArbol.Nodes.Clear();
+                Visor.Image = null;
                 AgregarNodosAlArbol(ruta, VisorArbol.Nodes);
             }
         }

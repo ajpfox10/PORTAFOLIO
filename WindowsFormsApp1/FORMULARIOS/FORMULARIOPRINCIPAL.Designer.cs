@@ -60,10 +60,10 @@
             // 
             // MESAENTRADA
             // 
-            this.MESAENTRADA.Location = new System.Drawing.Point(596, 368);
+            this.MESAENTRADA.Location = new System.Drawing.Point(596, 371);
             this.MESAENTRADA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MESAENTRADA.Name = "MESAENTRADA";
-            this.MESAENTRADA.Size = new System.Drawing.Size(177, 58);
+            this.MESAENTRADA.Size = new System.Drawing.Size(177, 55);
             this.MESAENTRADA.TabIndex = 17;
             this.MESAENTRADA.Text = "MESA DE ENTRADA";
             this.MESAENTRADA.UseVisualStyleBackColor = true;
@@ -113,10 +113,10 @@
             // 
             // FORMULARIODESIGNACION
             // 
-            this.FORMULARIODESIGNACION.Location = new System.Drawing.Point(386, 368);
+            this.FORMULARIODESIGNACION.Location = new System.Drawing.Point(386, 371);
             this.FORMULARIODESIGNACION.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FORMULARIODESIGNACION.Name = "FORMULARIODESIGNACION";
-            this.FORMULARIODESIGNACION.Size = new System.Drawing.Size(180, 58);
+            this.FORMULARIODESIGNACION.Size = new System.Drawing.Size(180, 55);
             this.FORMULARIODESIGNACION.TabIndex = 12;
             this.FORMULARIODESIGNACION.Text = "FORMULARIO DE DESIGNACION";
             this.FORMULARIODESIGNACION.UseVisualStyleBackColor = true;
@@ -164,10 +164,10 @@
             // 
             // CUMPLEAÑOSS
             // 
-            this.CUMPLEAÑOSS.Location = new System.Drawing.Point(201, 369);
+            this.CUMPLEAÑOSS.Location = new System.Drawing.Point(201, 371);
             this.CUMPLEAÑOSS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CUMPLEAÑOSS.Name = "CUMPLEAÑOSS";
-            this.CUMPLEAÑOSS.Size = new System.Drawing.Size(150, 55);
+            this.CUMPLEAÑOSS.Size = new System.Drawing.Size(150, 53);
             this.CUMPLEAÑOSS.TabIndex = 19;
             this.CUMPLEAÑOSS.Text = "CUMPLEAÑOS";
             this.CUMPLEAÑOSS.UseVisualStyleBackColor = true;
@@ -247,10 +247,10 @@
             // 
             // btnpedidos
             // 
-            this.btnpedidos.Location = new System.Drawing.Point(796, 368);
+            this.btnpedidos.Location = new System.Drawing.Point(796, 371);
             this.btnpedidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnpedidos.Name = "btnpedidos";
-            this.btnpedidos.Size = new System.Drawing.Size(190, 58);
+            this.btnpedidos.Size = new System.Drawing.Size(190, 55);
             this.btnpedidos.TabIndex = 26;
             this.btnpedidos.Text = "PEDIDOS";
             this.btnpedidos.UseVisualStyleBackColor = true;
