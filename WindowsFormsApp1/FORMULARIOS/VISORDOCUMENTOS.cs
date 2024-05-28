@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -48,9 +49,30 @@ namespace WindowsFormsApp1
             Visor.ContextMenuStrip = menuContextual;
             // Subscribe to the TextChanged event for the DNI textbox
             this.DNI.TextChanged += DNI_TextChanged;
-        }
+            // Elemento de menú para imprimir el archivo
+            ToolStripMenuItem imprimirMenuItem = new ToolStripMenuItem("Imprimir archivo");
+            imprimirMenuItem.Click += ImprimirMenuItem_Click;
+            menuContextual.Items.Add(imprimirMenuItem);
 
- 
+            // Elemento de menú para abrir el archivo
+            ToolStripMenuItem abrirMenuItem = new ToolStripMenuItem("Abrir archivo");
+            abrirMenuItem.Click += AbrirMenuItem_Click;
+            menuContextual.Items.Add(abrirMenuItem);
+
+            // Elemento de menú para copiar en memoria el archivo
+            ToolStripMenuItem copiarArchivoMenuItem = new ToolStripMenuItem("Copiar archivo en memoria con copia");
+            copiarArchivoMenuItem.Click += CopiarArchivoMenuItem_Click;
+            menuContextual.Items.Add(copiarArchivoMenuItem);
+
+
+            // Elemento de menú para pegar en el escritorio
+            ToolStripMenuItem pegarEnEscritorioMenuItem = new ToolStripMenuItem("Pegar en Escritorio");
+            pegarEnEscritorioMenuItem.Click += PegarEnEscritorioMenuItem_Click;
+            menuContextual.Items.Add(pegarEnEscritorioMenuItem);
+
+            // Asignar el menú contextual al PictureBox
+            Visor.ContextMenuStrip = menuContextual;
+        }
         public static class InputDialog
         {
             public static string Show(string prompt, string title)
@@ -89,6 +111,9 @@ namespace WindowsFormsApp1
             }
         }
 
+
+
+
         private void CopiarDireccionMenuItem_Click(object sender, EventArgs e)
         {
             if (Visor.ImageLocation != null)
@@ -100,6 +125,149 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No hay una imagen cargada para copiar la dirección.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ImprimirMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Visor.ImageLocation != null)
+            {
+                try
+                {
+                    // Configura el diálogo de impresión
+                    PrintDialog printDialog = new PrintDialog();
+                    printDialog.Document = new PrintDocument();
+                    printDialog.UseEXDialog = true;
+
+                    // Muestra el diálogo de impresión y si el usuario elige una impresora, imprime el archivo
+                    if (printDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        System.Drawing.Printing.PrintDocument pd = new System.Drawing.Printing.PrintDocument();
+                        pd.PrintPage += delegate (object sender2, System.Drawing.Printing.PrintPageEventArgs e2)
+                        {
+                            e2.Graphics.DrawImage(Visor.Image, 0, 0);
+                        };
+
+                        pd.Print();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al imprimir el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay una imagen cargada para imprimir.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void AbrirMenuItem_Click(object sender, EventArgs e)
+        {
+            // Implementa la lógica para abrir el archivo aquí
+            // Puedes usar la ruta de la imagen cargada: Visor.ImageLocation
+            // Por ejemplo:
+            if (Visor.ImageLocation != null)
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(Visor.ImageLocation);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al abrir el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay una imagen cargada para abrir.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+        private void CopiarArchivoMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Visor.ImageLocation != null)
+            {
+                try
+                {
+                    string fileName = Path.GetFileName(Visor.ImageLocation);
+                    string directory = Path.GetDirectoryName(Visor.ImageLocation);
+                    string extension = Path.GetExtension(Visor.ImageLocation);
+
+                    string newFileName = Path.Combine(directory, fileName.Replace(extension, "_copia" + extension));
+
+                    File.Copy(Visor.ImageLocation, newFileName, true); // Sobrescribe si existe
+
+                    MessageBox.Show("Archivo copiado en memoria como " + newFileName + ". Puedes pegar la ruta manualmente usando Ctrl + V.", "Archivo copiado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (UnauthorizedAccessException ex)
+                {
+                    MessageBox.Show("Error de acceso no autorizado al copiar el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (IOException ex)
+                {
+                    MessageBox.Show("Error de E/S al copiar el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al copiar el archivo en memoria: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay una imagen cargada para copiar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void PegarEnEscritorioMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Visor.ImageLocation != null)
+            {
+                try
+                {
+                    string fileName = Path.GetFileName(Visor.ImageLocation);
+                    string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    string newFilePath = Path.Combine(desktopPath, fileName);
+
+                    File.Copy(Visor.ImageLocation, newFilePath);
+
+                    MessageBox.Show("Archivo pegado en el escritorio como " + newFilePath, "Archivo pegado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al pegar el archivo en el escritorio: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay una imagen cargada para pegar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void VisorArbol_AfterSelect(object sender, TreeViewEventArgs e)
         {
             string selectedPath = e.Node.Tag as string;
@@ -186,7 +354,6 @@ namespace WindowsFormsApp1
             timerActualizarRuta.Dispose();
             base.OnFormClosed(e);
         }
-
 
     }
 }

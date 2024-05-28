@@ -8,6 +8,10 @@ using System.Linq;
 using System.Windows.Forms;
 using WindowsFormsApp1.MODULOS;
 using System.Diagnostics; // Necesario para Process.Start
+using Microsoft.Office.Interop.Excel;
+using System.Text;
+using DataTable = System.Data.DataTable;
+
 namespace WindowsFormsApp1
 {
     public partial class FOTOS : Form
@@ -55,6 +59,17 @@ namespace WindowsFormsApp1
             UPA18SINFOTO.Columns.Add("DNI", 150, HorizontalAlignment.Left);
             UPA18SINFOTO.Columns.Add("Apellido", 190, HorizontalAlignment.Left);
             UPA18SINFOTO.Columns.Add("Dependencia", 170, HorizontalAlignment.Left);
+
+
+
+            ConfigurarMenuContextual(listViewFaltantes);
+            ConfigurarMenuContextual(upa4sinfoto);
+            ConfigurarMenuContextual(UPA18SINFOTO);
+
+
+
+
+
         }
         private void Fotoss_Load(object sender, EventArgs e)
         {
@@ -92,6 +107,102 @@ namespace WindowsFormsApp1
 
             VerificarCarpetasSinCredencial("\\\\192.168.0.21\\g\\DOCU");
         }
+
+
+
+
+
+        // Método para configurar el menú contextual para un ListView dado
+        private void ConfigurarMenuContextual(ListView listView)
+        {
+            ContextMenuStrip menuContextual = new ContextMenuStrip();
+            menuContextual.Opening += (sender, e) =>
+            {
+                e.Cancel = (listView.SelectedItems.Count == 0);
+            };
+
+            ToolStripMenuItem copiarTodosMenuItem = new ToolStripMenuItem("Copiar Todos los Datos");
+            copiarTodosMenuItem.Click += (sender, e) =>
+            {
+                CopiarTodosLosDatos(listView);
+            };
+            menuContextual.Items.Add(copiarTodosMenuItem);
+
+            ToolStripMenuItem exportarExcelMenuItem = new ToolStripMenuItem("Exportar a Excel");
+            exportarExcelMenuItem.Click += (sender, e) =>
+            {
+                ExportarAExcel(listView);
+            };
+            menuContextual.Items.Add(exportarExcelMenuItem);
+
+            listView.ContextMenuStrip = menuContextual;
+        }
+
+        // Método para copiar todos los datos de un ListView dado al portapapeles
+        private void CopiarTodosLosDatos(ListView listView)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (ListViewItem item in listView.Items)
+            {
+                stringBuilder.AppendLine(string.Join("\t", item.SubItems.Cast<ListViewItem.ListViewSubItem>().Select(subItem => subItem.Text)));
+            }
+            Clipboard.SetText(stringBuilder.ToString());
+        }
+
+        // Método para exportar los datos de un ListView dado a un archivo de Excel
+        private void ExportarAExcel(ListView listView)
+        {
+            try
+            {
+                // Crear un nuevo libro de Excel
+                Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+                excelApp.Visible = true;
+                Workbook workbook = excelApp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
+                Worksheet worksheet = (Worksheet)workbook.Worksheets[1];
+
+                // Agregar encabezados
+                for (int col = 0; col < listView.Columns.Count; col++)
+                {
+                    worksheet.Cells[1, col + 1] = listView.Columns[col].Text;
+                }
+
+                // Agregar datos
+                for (int row = 0; row < listView.Items.Count; row++)
+                {
+                    for (int col = 0; col < listView.Columns.Count; col++)
+                    {
+                        worksheet.Cells[row + 2, col + 1] = listView.Items[row].SubItems[col].Text;
+                    }
+                }
+
+                // Ajustar el ancho de las columnas
+                worksheet.Columns.AutoFit();
+
+                // Guardar el archivo Excel
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Archivos de Excel|*.xlsx";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    workbook.SaveAs(saveFileDialog.FileName);
+                    MessageBox.Show("Datos exportados a Excel correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al exportar a Excel: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
         private void AgregarNodosAlArbol(string ruta, TreeNodeCollection nodos)
         {
             var archivos = Directory.GetFiles(ruta, "*.*", SearchOption.TopDirectoryOnly)

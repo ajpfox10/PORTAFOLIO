@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
             this.BackColor = Color.MediumPurple;
             DatosYAccionesLoader loader = new DatosYAccionesLoader(Dnis_);
             string consultaPedidos = "SELECT pedidos.ID, personal.DNI, personal.`apelldo y nombre` AS 'APELLIDO Y NOMBRE', pedidos.PEDIDO, pedidos.agente FROM pedidos INNER JOIN personal ON pedidos.dni = personal.dni WHERE activa IS NULL  ORDER BY id DESC";
-            string[] columnasPedidos = new string[] { "ID:0", "DNI:0", "APELLIDO Y NOMBRE:250", "PEDIDO:500", "AGENTE:175"};
+            string[] columnasPedidos = new string[] { "ID:0", "DNI:0", "APELLIDO Y NOMBRE:250", "PEDIDO:500", "AGENTE:175" };
             loader.CargarDatosYAcciones(PEDIDOSSS, consultaPedidos, columnasPedidos);
             PEDIDOSSS.MultiSelect = true;
         }
@@ -43,16 +43,18 @@ namespace WindowsFormsApp1
         {
             try
             {
-                //F:\\LALA\\1.docx
+                // F:\\LALA\\1.docx
                 string rutaDocumento = "F:\\LALA\\1.docx";
-                string tempFilePath = Path.GetTempFileName() + ".docx";
+                string tempFilePath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".docx");
                 IOMA documentProcessor = new IOMA();
+
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
                     using (FileStream fileStream = new FileStream(rutaDocumento, FileMode.Open, FileAccess.Read))
                     {
                         fileStream.CopyTo(memoryStream);
                     }
+
                     using (ConexionMySQL conexionMySQL = new ConexionMySQL())
                     {
                         string consultaSQL = "SELECT personal.`apelldo y nombre` AS 'APELLIDOYNOMBRE', personal.dni, personal.dependencia, personal.Decreto, personal.legajo, personal.`Fecha de Ingreso` AS 'FECHAP' FROM personal WHERE dni = '" + Dnis_ + "'";
@@ -74,22 +76,27 @@ namespace WindowsFormsApp1
                             string cadenaReemplazoFecha = DateTime.Now.ToString("dd/MM/yyyy");
                             documentProcessor.ProcesarDocumentoEnMemoria(memoryStream, "FFFFFFFFFFFFFFFFF", cadenaReemplazoFecha);
                         }
-                      
-                    }
-                    using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.ReadWrite))
-                    {
-                        memoryStream.Position = 0; 
-                        memoryStream.CopyTo(fileStream);
                     }
 
-                    Process.Start("WINWORD.EXE", tempFilePath);
+                    using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
+                    {
+                        memoryStream.Position = 0;
+                        memoryStream.CopyTo(fileStream);
+                    }
+                }
+
+                Process wordProcess = Process.Start("WINWORD.EXE", tempFilePath);
+                if (wordProcess != null)
+                {
+                    wordProcess.EnableRaisingEvents = true;
+                    wordProcess.Exited += (s, ev) => File.Delete(tempFilePath); // Eliminar archivo temporal cuando se cierra Word
                 }
 
                 MessageBox.Show("Reemplazo completado");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
         private void PEDIDOSSS_DoubleClick(object sender, EventArgs e)

@@ -243,13 +243,12 @@ namespace WindowsFormsApp1.FORMULARIOS
             this.RESOTRABAJAR.Name = "RESOTRABAJAR";
             this.RESOTRABAJAR.Size = new System.Drawing.Size(216, 26);
             this.RESOTRABAJAR.TabIndex = 25;
-  
             // 
             // CARGARRESOLUCIONES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 872);
+            this.ClientSize = new System.Drawing.Size(1738, 872);
             this.Controls.Add(this.RESOTRABAJAR);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.CARGARESO);
