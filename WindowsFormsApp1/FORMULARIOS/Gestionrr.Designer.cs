@@ -117,10 +117,11 @@ namespace WindowsFormsApp1
             this.PORDNI = new System.Windows.Forms.RadioButton();
             this.PORAPELLIDO = new System.Windows.Forms.RadioButton();
             this.apellido1 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.DNI = new System.Windows.Forms.TextBox();
             this.JURADASALARIO = new System.Windows.Forms.CheckBox();
             this.foto = new System.Windows.Forms.CheckBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.DNI1 = new System.Windows.Forms.TextBox();
             this.controlpesta.SuspendLayout();
             this.CONSULTAS.SuspendLayout();
             this.RESOLUCIONESS.SuspendLayout();
@@ -154,9 +155,9 @@ namespace WindowsFormsApp1
             // legajohecho
             // 
             this.legajohecho.AutoSize = true;
-            this.legajohecho.Location = new System.Drawing.Point(371, 15);
+            this.legajohecho.Location = new System.Drawing.Point(134, 54);
             this.legajohecho.Name = "legajohecho";
-            this.legajohecho.Size = new System.Drawing.Size(103, 17);
+            this.legajohecho.Size = new System.Drawing.Size(110, 21);
             this.legajohecho.TabIndex = 3;
             this.legajohecho.Text = "LEGAJO ECHO ";
             this.legajohecho.UseVisualStyleBackColor = true;
@@ -222,7 +223,7 @@ namespace WindowsFormsApp1
             this.datosaanalizar.Location = new System.Drawing.Point(6, 193);
             this.datosaanalizar.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.datosaanalizar.Name = "datosaanalizar";
-            this.datosaanalizar.Size = new System.Drawing.Size(890, 514);
+            this.datosaanalizar.Size = new System.Drawing.Size(1175, 514);
             this.datosaanalizar.TabIndex = 1;
             this.datosaanalizar.Text = "";
             // 
@@ -460,10 +461,8 @@ namespace WindowsFormsApp1
             // 
             // CITACIONESS
             // 
-            this.CITACIONESS.Controls.Add(this.label18);
             this.CITACIONESS.Controls.Add(this.label17);
             this.CITACIONESS.Controls.Add(this.panel1);
-            this.CITACIONESS.Controls.Add(this.DATOSANALIZAR);
             this.CITACIONESS.Controls.Add(this.CITA);
             this.CITACIONESS.Location = new System.Drawing.Point(4, 22);
             this.CITACIONESS.Name = "CITACIONESS";
@@ -476,7 +475,7 @@ namespace WindowsFormsApp1
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(215, 311);
+            this.label18.Location = new System.Drawing.Point(208, 74);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(136, 13);
@@ -486,7 +485,7 @@ namespace WindowsFormsApp1
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(552, 279);
+            this.label17.Location = new System.Drawing.Point(735, 280);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(204, 13);
@@ -495,17 +494,20 @@ namespace WindowsFormsApp1
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label23);
+            this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.txtcargadecitacion);
             this.panel1.Controls.Add(this.cargacita);
+            this.panel1.Controls.Add(this.DATOSANALIZAR);
             this.panel1.Location = new System.Drawing.Point(545, 294);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(579, 198);
+            this.panel1.Size = new System.Drawing.Size(579, 371);
             this.panel1.TabIndex = 5;
             // 
             // txtcargadecitacion
             // 
-            this.txtcargadecitacion.Location = new System.Drawing.Point(51, 43);
+            this.txtcargadecitacion.Location = new System.Drawing.Point(37, 148);
             this.txtcargadecitacion.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtcargadecitacion.Name = "txtcargadecitacion";
             this.txtcargadecitacion.Size = new System.Drawing.Size(479, 135);
@@ -514,7 +516,7 @@ namespace WindowsFormsApp1
             // 
             // cargacita
             // 
-            this.cargacita.Location = new System.Drawing.Point(225, 8);
+            this.cargacita.Location = new System.Drawing.Point(207, 18);
             this.cargacita.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cargacita.Name = "cargacita";
             this.cargacita.Size = new System.Drawing.Size(137, 31);
@@ -525,7 +527,7 @@ namespace WindowsFormsApp1
             // 
             // DATOSANALIZAR
             // 
-            this.DATOSANALIZAR.Location = new System.Drawing.Point(21, 317);
+            this.DATOSANALIZAR.Location = new System.Drawing.Point(37, 100);
             this.DATOSANALIZAR.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.DATOSANALIZAR.Name = "DATOSANALIZAR";
             this.DATOSANALIZAR.Size = new System.Drawing.Size(495, 20);
@@ -844,7 +846,7 @@ namespace WindowsFormsApp1
             this.PEDIDORESOLUCIONES.Location = new System.Drawing.Point(79, 126);
             this.PEDIDORESOLUCIONES.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.PEDIDORESOLUCIONES.Name = "PEDIDORESOLUCIONES";
-            this.PEDIDORESOLUCIONES.Size = new System.Drawing.Size(172, 17);
+            this.PEDIDORESOLUCIONES.Size = new System.Drawing.Size(179, 21);
             this.PEDIDORESOLUCIONES.TabIndex = 18;
             this.PEDIDORESOLUCIONES.Text = "PEDIDO DE RESOLUCIONES";
             this.PEDIDORESOLUCIONES.UseVisualStyleBackColor = true;
@@ -866,7 +868,7 @@ namespace WindowsFormsApp1
             this.PEDIDONUMERODEEXPEDIENTE.Location = new System.Drawing.Point(79, 107);
             this.PEDIDONUMERODEEXPEDIENTE.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.PEDIDONUMERODEEXPEDIENTE.Name = "PEDIDONUMERODEEXPEDIENTE";
-            this.PEDIDONUMERODEEXPEDIENTE.Size = new System.Drawing.Size(225, 17);
+            this.PEDIDONUMERODEEXPEDIENTE.Size = new System.Drawing.Size(232, 21);
             this.PEDIDONUMERODEEXPEDIENTE.TabIndex = 17;
             this.PEDIDONUMERODEEXPEDIENTE.Text = "PEDIDO DE NUMERO DE EXPEDIENTE";
             this.PEDIDONUMERODEEXPEDIENTE.UseVisualStyleBackColor = true;
@@ -877,7 +879,7 @@ namespace WindowsFormsApp1
             this.IOMA.Location = new System.Drawing.Point(79, 12);
             this.IOMA.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.IOMA.Name = "IOMA";
-            this.IOMA.Size = new System.Drawing.Size(53, 17);
+            this.IOMA.Size = new System.Drawing.Size(60, 21);
             this.IOMA.TabIndex = 12;
             this.IOMA.Text = "IOMA";
             this.IOMA.UseVisualStyleBackColor = true;
@@ -888,7 +890,7 @@ namespace WindowsFormsApp1
             this.RESETCONTRASEÑAS.Location = new System.Drawing.Point(79, 87);
             this.RESETCONTRASEÑAS.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RESETCONTRASEÑAS.Name = "RESETCONTRASEÑAS";
-            this.RESETCONTRASEÑAS.Size = new System.Drawing.Size(172, 17);
+            this.RESETCONTRASEÑAS.Size = new System.Drawing.Size(179, 21);
             this.RESETCONTRASEÑAS.TabIndex = 16;
             this.RESETCONTRASEÑAS.Text = "RESETEO DE CONTRASEÑA";
             this.RESETCONTRASEÑAS.UseVisualStyleBackColor = true;
@@ -899,7 +901,7 @@ namespace WindowsFormsApp1
             this.Certificadodetrabajo.Location = new System.Drawing.Point(79, 29);
             this.Certificadodetrabajo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Certificadodetrabajo.Name = "Certificadodetrabajo";
-            this.Certificadodetrabajo.Size = new System.Drawing.Size(167, 17);
+            this.Certificadodetrabajo.Size = new System.Drawing.Size(174, 21);
             this.Certificadodetrabajo.TabIndex = 13;
             this.Certificadodetrabajo.Text = "CERTIFICADO DE TRABAJO";
             this.Certificadodetrabajo.UseVisualStyleBackColor = true;
@@ -910,7 +912,7 @@ namespace WindowsFormsApp1
             this.CERTIFICADODEROTACION.Location = new System.Drawing.Point(79, 68);
             this.CERTIFICADODEROTACION.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.CERTIFICADODEROTACION.Name = "CERTIFICADODEROTACION";
-            this.CERTIFICADODEROTACION.Size = new System.Drawing.Size(174, 17);
+            this.CERTIFICADODEROTACION.Size = new System.Drawing.Size(181, 21);
             this.CERTIFICADODEROTACION.TabIndex = 15;
             this.CERTIFICADODEROTACION.Text = "CERTIFICADO DE ROTACION";
             this.CERTIFICADODEROTACION.UseVisualStyleBackColor = true;
@@ -921,7 +923,7 @@ namespace WindowsFormsApp1
             this.CERTITRABAJOCONHORARIOS.Location = new System.Drawing.Point(79, 49);
             this.CERTITRABAJOCONHORARIOS.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.CERTITRABAJOCONHORARIOS.Name = "CERTITRABAJOCONHORARIOS";
-            this.CERTITRABAJOCONHORARIOS.Size = new System.Drawing.Size(263, 17);
+            this.CERTITRABAJOCONHORARIOS.Size = new System.Drawing.Size(270, 21);
             this.CERTITRABAJOCONHORARIOS.TabIndex = 14;
             this.CERTITRABAJOCONHORARIOS.Text = "CERTIFICACION DE TRABAJO CON HORARIOS";
             this.CERTITRABAJOCONHORARIOS.UseVisualStyleBackColor = true;
@@ -1083,25 +1085,25 @@ namespace WindowsFormsApp1
             // REALIZODOMICILIO
             // 
             this.REALIZODOMICILIO.AutoSize = true;
-            this.REALIZODOMICILIO.Location = new System.Drawing.Point(477, 17);
+            this.REALIZODOMICILIO.Location = new System.Drawing.Point(249, 54);
             this.REALIZODOMICILIO.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.REALIZODOMICILIO.Name = "REALIZODOMICILIO";
-            this.REALIZODOMICILIO.Size = new System.Drawing.Size(130, 17);
+            this.REALIZODOMICILIO.Size = new System.Drawing.Size(137, 21);
             this.REALIZODOMICILIO.TabIndex = 9;
             this.REALIZODOMICILIO.Text = "REALIZO DOMICILIO";
             this.REALIZODOMICILIO.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.DNI1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.PORDNI);
             this.groupBox1.Controls.Add(this.PORAPELLIDO);
             this.groupBox1.Controls.Add(this.apellido1);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.DNI);
-            this.groupBox1.Location = new System.Drawing.Point(723, 8);
+            this.groupBox1.Location = new System.Drawing.Point(617, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(623, 74);
+            this.groupBox1.Size = new System.Drawing.Size(729, 74);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SELECCION";
@@ -1121,7 +1123,7 @@ namespace WindowsFormsApp1
             this.PORDNI.AutoSize = true;
             this.PORDNI.Location = new System.Drawing.Point(12, 10);
             this.PORDNI.Name = "PORDNI";
-            this.PORDNI.Size = new System.Drawing.Size(226, 17);
+            this.PORDNI.Size = new System.Drawing.Size(233, 20);
             this.PORDNI.TabIndex = 35;
             this.PORDNI.TabStop = true;
             this.PORDNI.Text = "BUSQUEDA POR APELLIDO Y NOMBRE";
@@ -1131,9 +1133,9 @@ namespace WindowsFormsApp1
             // PORAPELLIDO
             // 
             this.PORAPELLIDO.AutoSize = true;
-            this.PORAPELLIDO.Location = new System.Drawing.Point(11, 29);
+            this.PORAPELLIDO.Location = new System.Drawing.Point(12, 19);
             this.PORAPELLIDO.Name = "PORAPELLIDO";
-            this.PORAPELLIDO.Size = new System.Drawing.Size(211, 17);
+            this.PORAPELLIDO.Size = new System.Drawing.Size(218, 20);
             this.PORAPELLIDO.TabIndex = 34;
             this.PORAPELLIDO.TabStop = true;
             this.PORAPELLIDO.Text = "BUSQUE POR APELLIDO Y NOMBRE";
@@ -1143,34 +1145,26 @@ namespace WindowsFormsApp1
             // 
             this.apellido1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.apellido1.FormattingEnabled = true;
-            this.apellido1.Location = new System.Drawing.Point(241, 27);
+            this.apellido1.Location = new System.Drawing.Point(246, 19);
             this.apellido1.Name = "apellido1";
             this.apellido1.Size = new System.Drawing.Size(227, 21);
             this.apellido1.TabIndex = 32;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(295, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 13);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "APELLIDO Y NOMBRE";
-            // 
             // DNI
             // 
-            this.DNI.Location = new System.Drawing.Point(332, 52);
+            this.DNI.Location = new System.Drawing.Point(490, 20);
             this.DNI.Name = "DNI";
             this.DNI.Size = new System.Drawing.Size(136, 20);
             this.DNI.TabIndex = 1;
+            this.DNI.TextChanged += new System.EventHandler(this.DNI_TextChanged);
             // 
             // JURADASALARIO
             // 
             this.JURADASALARIO.AutoSize = true;
-            this.JURADASALARIO.Location = new System.Drawing.Point(477, 36);
+            this.JURADASALARIO.Location = new System.Drawing.Point(390, 24);
             this.JURADASALARIO.Margin = new System.Windows.Forms.Padding(2);
             this.JURADASALARIO.Name = "JURADASALARIO";
-            this.JURADASALARIO.Size = new System.Drawing.Size(215, 17);
+            this.JURADASALARIO.Size = new System.Drawing.Size(222, 21);
             this.JURADASALARIO.TabIndex = 10;
             this.JURADASALARIO.Text = "DECLARACION JURADA DE SALARIO";
             this.JURADASALARIO.UseVisualStyleBackColor = true;
@@ -1178,19 +1172,36 @@ namespace WindowsFormsApp1
             // foto
             // 
             this.foto.AutoSize = true;
-            this.foto.Location = new System.Drawing.Point(371, 37);
+            this.foto.Location = new System.Drawing.Point(67, 54);
             this.foto.Margin = new System.Windows.Forms.Padding(2);
             this.foto.Name = "foto";
-            this.foto.Size = new System.Drawing.Size(55, 17);
+            this.foto.Size = new System.Drawing.Size(62, 21);
             this.foto.TabIndex = 11;
             this.foto.Text = "FOTO";
             this.foto.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(208, 134);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(130, 13);
+            this.label23.TabIndex = 8;
+            this.label23.Text = "TEXTO DE LA CITACION";
+            // 
+            // DNI1
+            // 
+            this.DNI1.Location = new System.Drawing.Point(333, 47);
+            this.DNI1.Name = "DNI1";
+            this.DNI1.Size = new System.Drawing.Size(100, 20);
+            this.DNI1.TabIndex = 37;
+            this.DNI1.DoubleClick += new System.EventHandler(this.DNI1_DoubleClick);
             // 
             // Gestionrr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 701);
+            this.ClientSize = new System.Drawing.Size(1754, 939);
             this.Controls.Add(this.foto);
             this.Controls.Add(this.JURADASALARIO);
             this.Controls.Add(this.groupBox1);
@@ -1215,6 +1226,7 @@ namespace WindowsFormsApp1
             this.CITACIONESS.ResumeLayout(false);
             this.CITACIONESS.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.notasss.ResumeLayout(false);
@@ -1272,7 +1284,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton PORAPELLIDO;
         private System.Windows.Forms.ComboBox apellido1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListView DATS;
         private System.Windows.Forms.Button CARGARDATOS;
@@ -1325,5 +1336,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ComboBox ANIO;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox DNI1;
     }
 }

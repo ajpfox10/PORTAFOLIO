@@ -34,13 +34,22 @@ namespace WindowsFormsApp1.MODULOS
             }
         }
 
-        private void AgregarParrafoConFormato(Word.Document doc, string nombreAgente, string fechaBeca, string fechaNombramiento, string ocupacion, string cargaHoraria, string dni, string legajo,string LEY, string dependencia)
+        private void AgregarParrafoConFormato(Word.Document doc, string nombreAgente, string fechaBeca, string fechaNombramiento, string ocupacion, string cargaHoraria, string dni, string legajo, string LEY, string dependencia)
         {
+            // Convertir la fecha de nombramiento a DateTime
+            DateTime fechaNombramientoDT = DateTime.Parse(fechaNombramiento);
+
+            // Restar un día a la fecha de nombramiento
+            DateTime fechaNombramientoMenosUnDia = fechaNombramientoDT.AddDays(-1);
+
+            // Convertir la fecha modificada de nuevo a cadena
+            string fechaNombramientoMenosUnDiaStr = fechaNombramientoMenosUnDia.ToString("dd/MM/yyyy");
+
             // Agrega el párrafo con formato específico
             Word.Paragraph paragraph = doc.Paragraphs.Add();
 
             // Replace placeholders in the text
-            string textoParrago = $"El agente que se detalla a continuación se desempeña desde la fecha {fechaBeca} hasta el {fechaNombramiento} como becario y desde esa fecha hasta la actualidad como {ocupacion} con una carga horaria de {cargaHoraria} horas semanales.";
+            string textoParrago = $"El agente que se detalla a continuación se desempeña desde la fecha {fechaBeca} hasta el {fechaNombramiento} como becario y desde {fechaNombramientoMenosUnDiaStr} como agente de la {LEY} desempeñandose como {ocupacion} con una carga horaria de {cargaHoraria} horas semanales.";
 
             // Append the completed paragraph to the document
             paragraph.Range.Text = textoParrago;
@@ -60,7 +69,7 @@ namespace WindowsFormsApp1.MODULOS
                                     $"DNI: {dni}\n" +
                                     $"LEGAJO: {legajo}\n" +
                                     $"SERVICIO:\n" +
-                                    $"LEY:{LEY}\n" +
+                                    $"LEY: {LEY}\n" +
                                     $"DEPENDENCIA: {dependencia}";
 
             // Aplica el formato al segundo párrafo
@@ -68,6 +77,9 @@ namespace WindowsFormsApp1.MODULOS
             paragraph2.Range.Font.Size = 12;
             paragraph2.Format.SpaceAfter = 1; // Interlineado de 1
         }
+
+
+
         private void AgregarDatos(Word.Document doc, IQueryable<string> datos)
         {
             // Verifica si hay suficientes datos en la IQueryable

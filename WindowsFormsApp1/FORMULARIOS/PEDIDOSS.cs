@@ -44,7 +44,7 @@ namespace WindowsFormsApp1
             try
             {
                 // F:\\LALA\\1.docx
-                string rutaDocumento = "F:\\LALA\\1.docx";
+                string rutaDocumento = "\\\\192.168.0.21\\g\\LALA\\1.docx"; //"\\\\192.168.0.21\\g\\DOCU\\
                 string tempFilePath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".docx");
                 IOMA documentProcessor = new IOMA();
 

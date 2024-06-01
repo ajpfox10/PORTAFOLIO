@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
     {
         public Int64 Dnis_;
         private readonly string Agentedeatencions_;
-        private readonly CargarComboBoxes cargadorComboBoxes;
+ 
         public CARGADEDOMICILIO(Int64 DNI, string agenteDeAtencion)
         {
             InitializeComponent();

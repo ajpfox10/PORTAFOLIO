@@ -796,58 +796,6 @@ namespace WindowsFormsApp1
 
             return resultados.AsQueryable();
         }
-        public void ActualizarESTADOAGENTE(int activo, long Dnis_s)
-        {
-            // Construir la consulta SQL para actualizar el campo "cierredecitacion"
-            string query = "UPDATE personal SET activo = @activo WHERE dni = @dnis";
-            // Crear el objeto MySqlCommand con la consulta y la conexión a la base de datos
-            MySqlCommand cmd = new MySqlCommand(query, conexion);
-            // Agregar los parámetros a la consulta
-            cmd.Parameters.AddWithValue("@activo", activo);
-            cmd.Parameters.AddWithValue("@dnis", Dnis_s);
-            // Abrir la conexión a la base de datos
-            Conectar();
-            // Ejecutar la consulta SQL
-            int filasAfectadas = cmd.ExecuteNonQuery();
-            // Cerrar la conexión a la base de datos
-            Dispose();
-            if (filasAfectadas > 0)
-            {
-                // Mostrar mensaje de confirmación de actualización
-                MessageBox.Show("El AGENTE HA SI DADO DE BAJA CONTROLE LA BAJA EN SIAPE , SISTEMA DE SUELDO", "Actualización exitosa");
-            }
-            else
-            {
-                // Mostrar mensaje de error si no se actualizó ninguna fila
-                MessageBox.Show("No se pudo actualizar la baja del agente");
-            }
-        }
-        public void ActualizarESTADOAGENTE1(int activo, long Dnis_s)
-        {
-            // Construir la consulta SQL para actualizar el campo "cierredecitacion"
-            string query = "UPDATE personal SET activo = @activo WHERE dni = @dnis";
-            // Crear el objeto MySqlCommand con la consulta y la conexión a la base de datos
-            MySqlCommand cmd = new MySqlCommand(query, conexion);
-            // Agregar los parámetros a la consulta
-            cmd.Parameters.AddWithValue("@activo", activo);
-            cmd.Parameters.AddWithValue("@dnis", Dnis_s);
-            // Abrir la conexión a la base de datos
-            Conectar();
-            // Ejecutar la consulta SQL
-            int filasAfectadas = cmd.ExecuteNonQuery();
-            // Cerrar la conexión a la base de datos
-            Dispose();
-            if (filasAfectadas > 0)
-            {
-                // Mostrar mensaje de confirmación de actualización
-                MessageBox.Show("El AGENTE HA SI DADO DE ALTA CONTROLE EL ALTA EN SIAPE , SISTEMA DE SUELDO", "Actualización exitosa");
-            }
-            else
-            {
-                // Mostrar mensaje de error si no se actualizó ninguna fila
-                MessageBox.Show("No se pudo actualizar la baja del agente");
-            }
-        }
         public void ModificarRegistro(string tabla, string columna, string nuevoValor, int id)
         {
             // Construir la consulta SQL para actualizar el campo "cierredecitacion"
@@ -1170,8 +1118,10 @@ namespace WindowsFormsApp1
                 }
             }
         }
-        public void EjecutarNonQuery(string consulta, Dictionary<string, object> parametros = null)
+
+        public int EjecutarNonQuery(string consulta, Dictionary<string, object> parametros = null)
         {
+            int filasAfectadas = 0;
             try
             {
                 conexion.Open();
@@ -1186,7 +1136,7 @@ namespace WindowsFormsApp1
                     }
                 }
 
-                comando.ExecuteNonQuery();
+                filasAfectadas = comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -1196,7 +1146,10 @@ namespace WindowsFormsApp1
             {
                 conexion.Close();
             }
+            return filasAfectadas;
         }
+
+
         public void LlenarComboBox(string consulta, ComboBox comboBox, string displayMember, string valueMember)
         {
             try
@@ -1211,11 +1164,6 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Error al llenar ComboBox: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-
-
         public async Task<List<Dictionary<string, string>>> EjecutarConsultaAsync(string consulta)
         {
             var resultado = new List<Dictionary<string, string>>();

@@ -21,8 +21,7 @@ namespace WindowsFormsApp1.MODULOS
         private SemaphoreSlim semaphore = new SemaphoreSlim(1, 1);
 
         private bool searchingByApellido = false;
-        private bool isSearching = false;
-        private string lastSearchedApellido = "";
+
 
 
         public PersonaLEVENTOS(ComboBox apellido1, TextBox DNI, RadioButton PORDNI, RadioButton PORAPELLIDO, string AGENTE, long Dnis_)

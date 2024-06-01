@@ -15,9 +15,9 @@ namespace WindowsFormsApp1.FORMULARIOS
         public string Agentedeatencions_;
         private readonly ConexionMySQL conexionMySQL = new ConexionMySQL();
         string carpetaArchivos = @"\\192.168.0.21\g\RESOLUCIONES Y VARIOS\";
-        private MODULOS.PersonaLEVENTOS personaLEVENTOS;
+         MODULOS.PersonaLEVENTOS personaLEVENTOS;
 
-        private bool isDoubleClick = false;
+
 
         public CARGARRESOLUCIONES(Int64 DNI, string agenteDeAtencion)
         {

@@ -17,11 +17,11 @@ namespace WindowsFormsApp1
     public partial class BAJAFORMULARIO : Form
     {
         private long Dnis_;
-        private bool claveVerificada = false;
+    
         private long DniAnterior = 0;
         private Timer timerActualizarRuta;
         public string Agentedeatencions_;
-        private MODULOS.PersonaLEVENTOS personaLEVENTOS;
+        MODULOS.PersonaLEVENTOS personaLEVENTOS;
 
         public BAJAFORMULARIO(Int64 DNI, string agenteDeAtencion)
         {

@@ -167,7 +167,7 @@
             this.CUMPLEAÑOSS.Location = new System.Drawing.Point(201, 371);
             this.CUMPLEAÑOSS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CUMPLEAÑOSS.Name = "CUMPLEAÑOSS";
-            this.CUMPLEAÑOSS.Size = new System.Drawing.Size(150, 53);
+            this.CUMPLEAÑOSS.Size = new System.Drawing.Size(150, 52);
             this.CUMPLEAÑOSS.TabIndex = 19;
             this.CUMPLEAÑOSS.Text = "CUMPLEAÑOS";
             this.CUMPLEAÑOSS.UseVisualStyleBackColor = true;
@@ -178,7 +178,7 @@
             this.GESTIONRRHH.Location = new System.Drawing.Point(1332, 302);
             this.GESTIONRRHH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GESTIONRRHH.Name = "GESTIONRRHH";
-            this.GESTIONRRHH.Size = new System.Drawing.Size(242, 59);
+            this.GESTIONRRHH.Size = new System.Drawing.Size(242, 58);
             this.GESTIONRRHH.TabIndex = 20;
             this.GESTIONRRHH.Text = "GESTION DE RRHH";
             this.GESTIONRRHH.UseVisualStyleBackColor = true;
@@ -298,7 +298,6 @@
             this.ASIGNACIONTAREAS.TabIndex = 30;
             this.ASIGNACIONTAREAS.Text = "ASIGNACION DE TAREAS";
             this.ASIGNACIONTAREAS.UseVisualStyleBackColor = true;
-            this.ASIGNACIONTAREAS.Visible = false;
             this.ASIGNACIONTAREAS.Click += new System.EventHandler(this.ASIGNACIONTAREAS_Click);
             // 
             // FOTOTARJETA

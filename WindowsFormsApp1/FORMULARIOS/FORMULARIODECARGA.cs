@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
 {
     public partial class FORMULARIODECARGA : Form
     {
-        private CargarComboBoxes cargadorComboBoxes;
+
         private List<ListViewItem> itemsOriginales = new List<ListViewItem>();
         private Sexo gestionSexoYEstado;
         public FORMULARIODECARGA()

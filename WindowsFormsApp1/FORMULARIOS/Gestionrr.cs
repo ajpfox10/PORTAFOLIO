@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
     {
         public Int64 Dnis_;
         public string Agentedeatencions_;
-        private readonly List<System.Windows.Forms.TextBox> textBoxes;
+   
         private readonly ConexionMySQL conexionMySQL = new ConexionMySQL();
         private PersonaLEVENTOS personaLEVENTOS;
         public Gestionrr(Int64 DNI, string agenteDeAtencion)
@@ -316,6 +316,11 @@ namespace WindowsFormsApp1
             {
                 conexionMySQL.CARGADECITACION(dni, CITADOPOR, MOTIVACION, fechadecitacion);
             }
+            DatosYAccionesLoader loader = new DatosYAccionesLoader(Dnis_);
+            string consultaCitaciones = "SELECT dni, citadopor AS 'CITADO POR', id, MOTIVODECITACION AS 'MOTIVO DE LA CITACION', CITACIONACTIVA AS 'CITACION ACTIVA', FECHADECITACION AS 'FECHA DE CITACION', CIERREDECITACION AS 'CIERRE DE CITACION' FROM citaciones WHERE CIERREDECITACION IS NULL AND dni='" + Dnis_ + "' ORDER BY id DESC";
+            string[] columnasCitaciones = { "ID:75", "DNI:0", "CITADO POR:100", "MOTIVO DE LA CITACION:450", "CITACION ACTIVA:125", "FECHA DE CITACION:125", "CIERRE DE CITACION:0" };
+            loader.CargarDatosYAcciones(CITA, consultaCitaciones, columnasCitaciones);
+
         }
         private void DNI_DoubleClick(object sender, EventArgs e)
         {
@@ -955,6 +960,31 @@ namespace WindowsFormsApp1
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DNI_TextChanged(object sender, EventArgs e)
+        {
+            DNI1.Text = DNI.Text;
+        }
+
+        private void DNI1_DoubleClick(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(DNI.Text))
+            {
+                // Intenta convertir el valor ingresado a un entero.
+                if (Int64.TryParse(DNI.Text, out Int64 nuevoDnisValor))
+                {
+                    // Actualiza el valor de Dnis_.
+                    Dnis_ = nuevoDnisValor;
+
+                    // Realiza la actualización de los datos en tu formulario con el nuevo valor de Dnis_.
+                    ActualizarDatosConNuevoDnis();
+                }
+                else
+                {
+                    MessageBox.Show("El valor ingresado no es válido. Debe ser un número de DNI.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

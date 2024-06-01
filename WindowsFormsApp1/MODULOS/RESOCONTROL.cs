@@ -12,8 +12,8 @@ namespace WindowsFormsApp1.FORMULARIOS
         private readonly ListView listView;
         private readonly TextBox textBoxCantidadArchivos;
         private readonly ContextMenuStrip contextMenuStrip;
-        private string datoSeleccionado;  // Variable para almacenar el dato seleccionado
-        public string DatoSeleccionado; // Propiedad pública para acceder al dato seleccionado
+  
+     
 
         public ComparadorArchivos(string carpetaArchivos, ListView listView, TextBox textBoxCantidadArchivos)
         {

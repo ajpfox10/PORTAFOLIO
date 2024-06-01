@@ -300,6 +300,7 @@
     <Compile Include="MODULOS\insertarresoluciones.cs" />
     <Compile Include="MODULOS\IOMA.cs" />
     <Compile Include="MODULOS\limpiarcontroles.cs" />
+    <Compile Include="MODULOS\manejalistwievmesadeentrada.cs" />
     <Compile Include="MODULOS\rellenadomiclio.cs" />
     <Compile Include="MODULOS\rellenafamiliares.cs" />
     <Compile Include="MODULOS\rellenahoja1.cs" />
