@@ -151,5 +151,28 @@ namespace WindowsFormsApp1
         {
             ShowDialogIfControlsComplete(() => new FORMULARIOS.CARGARRESOLUCIONES(Dnis_, Agentedeatencions_));
         }
+
+        private void CPIARDNIAGENTE_Click(object sender, EventArgs e)
+        {
+            if (DNI.Text!="")
+            {
+                // Habilitar temporalmente el TextBox
+                DNI.Enabled = true;
+                // Seleccionar todo el texto
+                DNI.SelectAll();
+                // Copiar el texto seleccionado al portapapeles
+                Clipboard.SetText(DNI.SelectedText);
+                // Deshabilitar el TextBox nuevamente
+                DNI.Enabled = false;
+
+                // Mostrar un MessageBox indicando que el DNI fue copiado
+                MessageBox.Show("DNI copiado al portapapeles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+                MessageBox.Show("ERROR.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

@@ -55,6 +55,7 @@
             this.CPOSTULANTES = new System.Windows.Forms.Button();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.cargaresoluciones1 = new System.Windows.Forms.Button();
+            this.CPIARDNIAGENTE = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -230,6 +231,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CPIARDNIAGENTE);
             this.groupBox1.Controls.Add(this.PORDNI);
             this.groupBox1.Controls.Add(this.apellido1);
             this.groupBox1.Controls.Add(this.PORAPELLIDO);
@@ -332,6 +334,16 @@
             this.cargaresoluciones1.UseVisualStyleBackColor = true;
             this.cargaresoluciones1.Click += new System.EventHandler(this.cargaresoluciones_Click);
             // 
+            // CPIARDNIAGENTE
+            // 
+            this.CPIARDNIAGENTE.Location = new System.Drawing.Point(32, 137);
+            this.CPIARDNIAGENTE.Name = "CPIARDNIAGENTE";
+            this.CPIARDNIAGENTE.Size = new System.Drawing.Size(165, 40);
+            this.CPIARDNIAGENTE.TabIndex = 34;
+            this.CPIARDNIAGENTE.Text = "COPIAR DNI";
+            this.CPIARDNIAGENTE.UseVisualStyleBackColor = true;
+            this.CPIARDNIAGENTE.Click += new System.EventHandler(this.CPIARDNIAGENTE_Click);
+            // 
             // FORMULARIOPRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -397,5 +409,6 @@
         private System.Windows.Forms.Button CPOSTULANTES;
         private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.Button cargaresoluciones1;
+        private System.Windows.Forms.Button CPIARDNIAGENTE;
     }
 }

@@ -10,6 +10,7 @@ namespace WindowsFormsApp1.MODULOS
         private long Dnis_;
         private string _Agentedeatencions;
         private WebBrowser webBrowser;
+
         public ListViewManager(ListView listView, RichTextBox datosAnalizarTextBox, long dnis, string Agentedeatencions_, WebBrowser webBrowser)
         {
             this.listView = listView;
@@ -59,17 +60,19 @@ namespace WindowsFormsApp1.MODULOS
                 }
                 else if (listView.Name == "PEDIDOS")
                 {
+                    int id1 = Convert.ToInt32(listView.SelectedItems[0].SubItems[0].Text);
                     string entregada = "ENTREGADO";
                     int dniss = (int)Dnis_;
-                    DialogResult result = MessageBox.Show("¿Está seguro de que desea actualizar la entrega con ID " + id + "?", "Confirmar actualización", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("¿Está seguro de que desea actualizar la entrega con ID " + id1 + "?", "Confirmar actualización", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        conexion.ActualizarCIERREDEPEDIDO(id, dniss, entregada);
+                 
+                        conexion.ActualizarCIERREDEPEDIDO(id1, dniss, entregada);
                         CrearTicket miCrearTicket = new CrearTicket
                         {
                             Agentedeatencion = _Agentedeatencions,
                             Horadeatencion = DateTime.Now.ToString(),
-                            Motivodeconsulta = "ENTREGA DEL " + id,
+                            Motivodeconsulta = "ENTREGA DEL " + id1,
                             Explicaciondada = "ENTREGADO",
                             Agente = Dnis_.ToString()
                         };
@@ -144,7 +147,7 @@ namespace WindowsFormsApp1.MODULOS
         }
         private void ListView_MouseDown(object sender, MouseEventArgs e)
         {
-            // Implement mouse down logic here if needed.
+            // MOVER ACA EL PROCESO DE EL FORMULARIO
         }
         public void LoadData(string query, string[] columns)
         {

@@ -24,6 +24,8 @@ namespace WindowsFormsApp1
         private string _Agentedeatencions;
         private ConexionMySQL conexion = new ConexionMySQL();
         private ListViewManager listViewManager;
+        private DateTime ultimoClick = DateTime.Now;
+        private int intervaloDobleClick = 1000; // Intervalo en milisegundos para considerar un doble clic
         public MESADEENTRADA(Int64 DNI, string Agentedeatencions_)
         {
             InitializeComponent();
@@ -44,12 +46,7 @@ namespace WindowsFormsApp1
             RecargarPedidos = new ListViewManager(PEDIDOS, DATOSANALIZAR, Dnis_, _Agentedeatencions, webBrowser);
             citacionesmanager = new ListViewManager(citaciones, DATOSANALIZAR, Dnis_, _Agentedeatencions, webBrowser);
             listViewManager = new ListViewManager(PEDIDOS, DATOSANALIZAR, Dnis_, _Agentedeatencions, webBrowser);
-            listViewManager.RecargarPedidos();
-            ConfigurarMenuContextual(citaciones);
-            ConfigurarMenuContextual(PEDIDOS);
-            ConfigurarMenuContextual(CONSULTASVIEJAS);
-            ConfigurarMenuContextual(RESOLUCIONES);
-            ConfigurarMenuContextual(EXPEDIENTES);
+            listViewManager.RecargarPedidos(); 
         }
         public void MESADEENTRADA_Load(object sender, EventArgs e)
         {
@@ -58,8 +55,8 @@ namespace WindowsFormsApp1
             string consultaCitaciones = "SELECT dni, citadopor AS 'CITADO POR', id, MOTIVODECITACION AS 'MOTIVO DE LA CITACION', CITACIONACTIVA AS 'CITACION ACTIVA', FECHADECITACION AS 'FECHA DE CITACION', CIERREDECITACION AS 'CIERRE DE CITACION' FROM citaciones WHERE CIERREDECITACION IS NULL AND dni='" + Dnis_ + "' ORDER BY id DESC";
             string[] columnasCitaciones = { "ID:75", "DNI:0", "CITADO POR:100", "MOTIVO DE LA CITACION:450", "CITACION ACTIVA:125", "FECHA DE CITACION:125", "CIERRE DE CITACION:0" };
             loader.CargarDatosYAcciones(citaciones, consultaCitaciones, columnasCitaciones);
-            string consultaPedidos = "SELECT dni, id, PEDIDO, AGENTE, fechadepedido AS 'FECHA DE PEDIDO', fechaderetiro AS 'FECHA DE RETIRO', agenteqretiro AS 'AGENTE QUE RETIRO', activa FROM pedidos WHERE activa IS NULL AND dni='" + Dnis_ + "' ORDER BY id DESC";
-            string[] columnasPedidos = new string[] { "DNI:0", "ID:75", "PEDIDO:300", "AGENTE:175", "FECHA DE PEDIDO:125", "FECHA DE RETIRO:125", "AGENTE QUE RETIRO:0" };
+            string consultaPedidos = "SELECT ID, DNI, PEDIDO, AGENTE, fechadepedido AS 'FECHA DE PEDIDO', fechaderetiro AS 'FECHA DE RETIRO', agenteqretiro AS 'AGENTE QUE RETIRO', activa FROM pedidos WHERE activa IS NULL AND dni='" + Dnis_ + "' ORDER BY id DESC";
+            string[] columnasPedidos = new string[] { "id:75", "DNI:0", "PEDIDO:300", "AGENTE:175", "FECHA DE PEDIDO:125", "FECHA DE RETIRO:125", "AGENTE QUE RETIRO:0" };
             loader.CargarDatosYAcciones(PEDIDOS, consultaPedidos, columnasPedidos);
             string consultaExpedientes = "SELECT id, AGENTE, expedientenumero AS 'EXPEDIENTE NUMERO', MEMO, archivo FROM expedientes WHERE AGENTE='" + Dnis_ + "' ORDER BY id DESC";
             string[] columnasExpedientes = new string[] { "ID:75", "AGENTE:0", "EXPEDIENTE NUMERO:300", "MEMO:175", "ARCHIVO:250" };
@@ -76,37 +73,6 @@ namespace WindowsFormsApp1
             dni.Text = DNI1.Text;
             consulta.EjecutarConsulta();
             consulta.Dispose();
-        }
-        public void ConfigurarMenuContextual(ListView listView)
-        {
-            listView.ContextMenuStrip = new ContextMenuStrip();
-            listView.ContextMenuStrip.Items.Add("Actualizar", null, (sender, e) => ListView_MouseDoubleClick(listView, e));
-        }
-        private void ListView_MouseDoubleClick(object sender, EventArgs e)
-        {
-            if (sender is ListView listView)
-            {
-                if (listView == PEDIDOS)
-                {
-                    pedidosManager.ListView_MouseDoubleClick(sender, (MouseEventArgs)e);
-                }
-                else if (listView == citaciones)
-                {
-                    citacionesmanager.ListView_MouseDoubleClick(sender, (MouseEventArgs)e);
-                }
-                else if (listView == RESOLUCIONES)
-                {
-                    resolucionesManager.ListView_MouseDoubleClick(sender, (MouseEventArgs)e);
-                }
-                else if (listView == CONSULTASVIEJAS)
-                {
-                    consultasViejasManager.ListView_MouseDoubleClick(sender, (MouseEventArgs)e);
-                }
-                else if (listView == EXPEDIENTES)
-                {
-                    expedientesManager.ListView_MouseDoubleClick(sender, (MouseEventArgs)e);
-                }
-            }
         }   
         private void Carga_Click_1(object sender, EventArgs e)
         {
@@ -157,37 +123,43 @@ namespace WindowsFormsApp1
             ConsultaMySQL consulta = new ConsultaMySQL("SELECT personal.`apelldo y nombre`, personal.Legajo, personal.dni, personal.`Legajo Hecho`, personal.realizodomicilio, personal.JURADASALARIO, personal.foto FROM personal WHERE personal.dni = '" + Dnis_ + "'", controles, nombresColumnas);
             consulta.EjecutarConsulta();
             consulta.Dispose();
-        }  
+        }
         // Método para manejar el clic derecho en un ListViewItem
         private void ListView_MouseDown(object sender, MouseEventArgs e)
         {
             ListView listView = sender as ListView;
             if (e.Button == MouseButtons.Right)
             {
-                ListViewItem item = listView.GetItemAt(e.X, e.Y);
-                if (item != null)
+                TimeSpan diferencia = DateTime.Now - ultimoClick;
+                if (diferencia.TotalMilliseconds < intervaloDobleClick)
                 {
-                    // Seleccionar el ítem sobre el que se hizo clic derecho
-                    listView.SelectedItems.Clear();
-                    item.Selected = true;
-                    // Obtener la columna en la que se hizo clic derecho
-                    int columnIndex = -1;
-                    for (int i = 0; i < listView.Columns.Count; i++)
+                    // Es un doble clic derecho
+                    ListViewItem item = listView.GetItemAt(e.X, e.Y);
+                    if (item != null)
                     {
-                        if (listView.Columns[i].Width > e.X)
+                        // Seleccionar el ítem sobre el que se hizo clic derecho
+                        listView.SelectedItems.Clear();
+                        item.Selected = true;
+                        // Obtener la columna en la que se hizo clic derecho
+                        int columnIndex = -1;
+                        for (int i = 0; i < listView.Columns.Count; i++)
                         {
-                            columnIndex = i;
-                            break;
+                            if (listView.Columns[i].Width > e.X)
+                            {
+                                columnIndex = i;
+                                break;
+                            }
+                        }
+                        // Obtener el dato de la columna y fila seleccionada
+                        if (columnIndex != -1)
+                        {
+                            string datoSeleccionado = item.SubItems[columnIndex].Text;
+                            Clipboard.SetText(datoSeleccionado);
+                            MessageBox.Show($"Dato '{datoSeleccionado}' copiado al portapapeles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-                    // Obtener el dato de la columna y fila seleccionada
-                    if (columnIndex != -1)
-                    {
-                        string datoSeleccionado = item.SubItems[columnIndex].Text;
-                        Clipboard.SetText(datoSeleccionado);
-                        MessageBox.Show($"Dato '{datoSeleccionado}' copiado al portapapeles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
                 }
+                ultimoClick = DateTime.Now;
             }
         }
         private void CARGARPEDIDO_Click(object sender, EventArgs e)
@@ -233,78 +205,6 @@ namespace WindowsFormsApp1
             }
         }
         // Método para copiar un dato específico de una columna seleccionada de un ListView dado
-
-
-
-
-
-
-
-
-        private void CopiarTodosLosDatos(ListView listView)
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-            foreach (ListViewItem item in listView.Items)
-            {
-                stringBuilder.AppendLine(string.Join("\t", item.SubItems.Cast<ListViewItem.ListViewSubItem>().Select(subItem => subItem.Text)));
-            }
-            Clipboard.SetText(stringBuilder.ToString());
-        }
-        private void CopiarDatoEspecificoDeColumna(ListView listView)
-        {
-            if (listView.SelectedItems.Count > 0)
-            {
-                ListViewItem selectedItem = listView.SelectedItems[0];
-                if (selectedItem != null)
-                {
-                    // Copiar el texto del subítem seleccionado al portapapeles
-                    string datoSeleccionado = selectedItem.SubItems[0].Text; // Cambia el índice si es necesario
-                    Clipboard.SetText(datoSeleccionado);
-                    MessageBox.Show($"Dato '{datoSeleccionado}' copiado al portapapeles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-        }
-
-
-        private void dni_DoubleClick(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(dni.Text))
-            {
-                // Intenta convertir el valor ingresado a un entero.
-                if (Int64.TryParse(dni.Text, out Int64 nuevoDnisValor))
-                {
-                    // Actualiza el valor de Dnis_.
-                    Dnis_ = nuevoDnisValor;
-
-                    // Realiza la actualización de los datos en tu formulario con el nuevo valor de Dnis_.
-                    ActualizarDatosConNuevoDnis();
-                }
-                else
-                {
-                    MessageBox.Show("El valor ingresado no es válido. Debe ser un número de DNI.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-        private void DNI1_DoubleClick(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(dni.Text))
-            {
-                // Intenta convertir el valor ingresado a un entero.
-                if (Int64.TryParse(DNI1.Text, out Int64 nuevoDnisValor))
-                {
-                    // Actualiza el valor de Dnis_.
-                    Dnis_ = nuevoDnisValor;
-
-                    // Realiza la actualización de los datos en tu formulario con el nuevo valor de Dnis_.
-                    ActualizarDatosConNuevoDnis();
-                }
-                else
-                {
-                    MessageBox.Show("El valor ingresado no es válido. Debe ser un número de DNI.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void dni_TextChanged(object sender, EventArgs e)
         {
            DNI1.Text = dni.Text;

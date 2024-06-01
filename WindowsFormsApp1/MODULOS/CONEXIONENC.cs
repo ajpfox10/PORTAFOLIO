@@ -295,7 +295,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No se pudo insertar los datos.", "Error al insertar");
             }
         }
-        public void ActualizarCIERREDEPEDIDO(int id,int dniss,string entregada)
+        public void ActualizarCIERREDEPEDIDO(int id1,int dniss,string entregada)
         {
             // Obtener la fecha y hora actual en el formato deseado
             string fechaActual = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
@@ -308,7 +308,7 @@ namespace WindowsFormsApp1
 
             // Agregar los parámetros a la consulta
             cmd.Parameters.AddWithValue("@fechaActual", fechaActual);
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@id", id1);
             cmd.Parameters.AddWithValue("@dnis", dniss);
             cmd.Parameters.AddWithValue("@ENTREGADA", entregada);
             // Abrir la conexión a la base de datos
@@ -323,12 +323,12 @@ namespace WindowsFormsApp1
             if (filasAfectadas > 0)
             {
                 // Mostrar mensaje de confirmación de actualización
-                MessageBox.Show("El pedido  con ID " + id + " ha sido actualizado con éxito.", "Actualización exitosa");
+                MessageBox.Show("El pedido  con ID " + id1 + " ha sido actualizado con éxito.", "Actualización exitosa");
             }
             else
             {
                 // Mostrar mensaje de error si no se actualizó ninguna fila
-                MessageBox.Show("No se pudo actualizar el pedido con ID " + id + ".", "Error al actualizar");
+                MessageBox.Show("No se pudo actualizar el pedido con ID " + id1 + ".", "Error al actualizar");
             }
         }
         public void ActualizarDatosFAMILIA(string PARENTESCOSS, string NOMBRESS, string VIVESS, DateTime FECHASSS, string CAJAJUBILACIONS, string PROFESIONS, string SEXOS, string ID1, string JUBS)
