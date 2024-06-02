@@ -12,6 +12,7 @@ namespace WindowsFormsApp1
     {
         private readonly string Agentedeatencions_;
         public Int64 Dnis_;
+        private Process wordProcess;
         public PEDIDOSS(Int64 DNI, string agenteDeAtencion)
         {
             InitializeComponent();
@@ -35,16 +36,28 @@ namespace WindowsFormsApp1
         private void CBTRA_Click(object sender, EventArgs e)
         {
             string dniValue = Dnis_.ToString();
-            // Create an instance of generarCertificadodetrabajo
-            generarCertificadodetrabajo generador = new generarCertificadodetrabajo(dniValue);
+            // Create an instance of GenerarCertificadodetrabajo
+            GenerarCertificadodetrabajo generador = new GenerarCertificadodetrabajo(dniValue);
             generador.GenerateCertificate();
         }
+
+
+
+
+
+
         private void BIOMA_Click(object sender, EventArgs e)
         {
             try
             {
-                // F:\\LALA\\1.docx
-                string rutaDocumento = "\\\\192.168.0.21\\g\\LALA\\1.docx"; //"\\\\192.168.0.21\\g\\DOCU\\
+                if (wordProcess != null && !wordProcess.HasExited)
+                {
+                    MessageBox.Show("Debe cerrar el documento de Word anterior antes de abrir uno nuevo.");
+                    return;
+                }
+
+                // Ruta del documento en la red
+                string rutaDocumento = "\\\\192.168.0.21\\g\\LALA\\1.docx";
                 string tempFilePath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".docx");
                 IOMA documentProcessor = new IOMA();
 
@@ -85,7 +98,7 @@ namespace WindowsFormsApp1
                     }
                 }
 
-                Process wordProcess = Process.Start("WINWORD.EXE", tempFilePath);
+                wordProcess = Process.Start("WINWORD.EXE", tempFilePath);
                 if (wordProcess != null)
                 {
                     wordProcess.EnableRaisingEvents = true;
@@ -98,7 +111,11 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+
         }
+
+
+
         private void PEDIDOSSS_DoubleClick(object sender, EventArgs e)
         {
             var conexion = new ConexionMySQL();

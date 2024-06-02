@@ -254,8 +254,9 @@ namespace WindowsFormsApp1
             string notanumero = NUMEROS.Text; // Reemplaza con el valor adecuado
             string año = AÑOS.SelectedItem.ToString(); // Reemplaza con el valor adecuado
             string reparticion = REPARTICION.SelectedItem.ToString(); // Reemplaza con el valor adecuado
-            string memo = MEMOS.Text; // Reemplaza con el valor adecuado
+            string memo = MEMOS.Text; // Reemplaza con el valor adecuado            
             string save = $"{tipos1.SelectedItem}-{año}-{notanumero}-GDEBA-{reparticion}";  // Reemplaza con el valor adecuado
+            string combinacion = $"{dni}_{save}";
             if (string.IsNullOrEmpty(notanumero) || string.IsNullOrEmpty(año) || string.IsNullOrEmpty(reparticion))
             {
                 MessageBox.Show("Asegúrate de completar todos los campos necesarios antes de ejecutar la consulta.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -265,12 +266,12 @@ namespace WindowsFormsApp1
                 // Verificar el valor de tipos1 y ejecutar la consulta adicional si cumple con la condición
                 if (tipos1.SelectedItem.ToString() == "EX")
                 {
-                    conexionMySQL.Agregarexpedientes(dni, atendidoPor, notanumero, año, memo, save);
+                    conexionMySQL.Agregarexpedientes(dni, atendidoPor, notanumero, año, memo, save, combinacion);
                 }
                 else
                 {
                     // Llamar al método para agregar notas de expedientes solo si tipos1 no es "EX"
-                    conexionMySQL.Agregarnotasexpedientes(dni, atendidoPor, notanumero, año, reparticion, memo, save);
+                    conexionMySQL.Agregarnotasexpedientes(dni, atendidoPor, notanumero, año, reparticion, memo, save, combinacion);
                 }
             }
             this.BackColor = Color.MediumPurple;
@@ -962,12 +963,10 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void DNI_TextChanged(object sender, EventArgs e)
         {
             DNI1.Text = DNI.Text;
         }
-
         private void DNI1_DoubleClick(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(DNI.Text))

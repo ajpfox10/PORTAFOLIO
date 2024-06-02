@@ -179,6 +179,7 @@ namespace WindowsFormsApp1
             string agente = _Agentedeatencions.ToString();
             DateTime fechaPedido = DateTime.Now;
             string pedidoCompleto = nombresSeleccionados + " " + pedido;
+            
             MessageBox.Show("Valor en pedidoCompleto: " + pedidoCompleto);
             CARGARMESADEENTRADA formularioPrincipal = new CARGARMESADEENTRADA();
             formularioPrincipal.AgregarPedido("pedidos", "pedido, dni, agente, fechadepedido", GroupBox1, pedidoCompleto, dni, agente, fechaPedido);

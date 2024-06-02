@@ -22,8 +22,6 @@ namespace WindowsFormsApp1.MODULOS
 
         private bool searchingByApellido = false;
 
-
-
         public PersonaLEVENTOS(ComboBox apellido1, TextBox DNI, RadioButton PORDNI, RadioButton PORAPELLIDO, string AGENTE, long Dnis_)
         {
             this.apellido1 = apellido1;
@@ -36,24 +34,19 @@ namespace WindowsFormsApp1.MODULOS
             this.dictionary = new Dictionary<string, string>();
             LoadDataIntoDictionaryAsync().Wait();
             DisableInputControls();
-
         }
 
         private void InitializeEventHandlers()
         {
             apellido1.SelectedIndexChanged += Apellido1_SelectedIndexChanged;
-         
             DNI.KeyPress += DNI_KeyPress;
-            DNI.Leave += DNI_Leave;
-            DNI.KeyDown += DNI_KeyDown; // Agregamos el evento KeyDown aquí
+            DNI.KeyDown += DNI_KeyDown;
             apellido1.KeyDown += Apellido1_KeyDown;
-            apellido1.Leave += Apellido1_Leave;
             PORDNI.CheckedChanged += (sender, e) =>
             {
                 searchingByDNI = PORDNI.Checked;
                 SetInputControlState();
 
-                // Si cambiamos a buscar por DNI, establecemos searchingByApellido en false
                 if (searchingByDNI)
                 {
                     searchingByApellido = false;
@@ -76,6 +69,7 @@ namespace WindowsFormsApp1.MODULOS
                 }
             };
         }
+
         private async Task LoadDataIntoDictionaryAsync()
         {
             try
@@ -91,6 +85,7 @@ namespace WindowsFormsApp1.MODULOS
                 Console.WriteLine("Error al cargar los valores en el ComboBox: " + ex.Message);
             }
         }
+
         private void Apellido1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -98,10 +93,7 @@ namespace WindowsFormsApp1.MODULOS
                 PerformSearch();
             }
         }
-        private void Apellido1_Leave(object sender, EventArgs e)
-        {
-            PerformSearch();
-        }
+
         private async Task PerformSearchAsync()
         {
             await semaphore.WaitAsync();
@@ -121,8 +113,7 @@ namespace WindowsFormsApp1.MODULOS
                 semaphore.Release();
             }
         }
- 
-      
+
         private async void SearchByDNI()
         {
             Console.WriteLine("Método SearchByDNI() llamado.");
@@ -157,6 +148,7 @@ namespace WindowsFormsApp1.MODULOS
                 MessageBox.Show("Búsqueda infructuosa: No se encontró ningún resultado");
             }
         }
+
         private async void SearchByApellido()
         {
             Console.WriteLine("Método SearchByApellido() llamado.");
@@ -182,11 +174,13 @@ namespace WindowsFormsApp1.MODULOS
                 MessageBox.Show("Búsqueda infructuosa: No se encontró ningún resultado");
             }
         }
+
         private void DisableInputControls()
         {
             DNI.Enabled = false;
             apellido1.Enabled = false;
         }
+
         private void SetInputControlState()
         {
             DNI.Enabled = searchingByDNI;
@@ -201,6 +195,7 @@ namespace WindowsFormsApp1.MODULOS
                 DNI.Text = "0";
             }
         }
+
         private void DNI_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!PORDNI.Checked)
@@ -209,13 +204,13 @@ namespace WindowsFormsApp1.MODULOS
                 MessageBox.Show("Debe seleccionar la opción 'Buscar por DNI' para escribir en este campo.");
             }
         }
+
         private void Apellido1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (searchingByApellido && apellido1.SelectedItem != null && apellido1.SelectedItem.ToString() != DNI.Text)
             {
                 DNI.Text = "0";
 
-                // Solo inicia la búsqueda si no está buscando por DNI
                 if (!searchingByDNI)
                 {
                     Console.WriteLine("Iniciando búsqueda por Apellido...");
@@ -223,18 +218,17 @@ namespace WindowsFormsApp1.MODULOS
                 }
             }
         }
+
         public long GetDnis()
         {
             return Dnis_;
         }
+
         public void ActualizarDnis(long nuevoDnis)
         {
             Dnis_ = nuevoDnis;
         }
-        private void DNI_Leave(object sender, EventArgs e)
-        {
-            PerformSearch();
-        }
+
         private void DNI_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -242,6 +236,7 @@ namespace WindowsFormsApp1.MODULOS
                 PerformSearch();
             }
         }
+
         private void PerformSearch()
         {
             if (searchingByDNI)
@@ -253,8 +248,5 @@ namespace WindowsFormsApp1.MODULOS
                 SearchByApellido();
             }
         }
-
-
-
     }
 }

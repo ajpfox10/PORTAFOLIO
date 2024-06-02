@@ -649,11 +649,11 @@ namespace WindowsFormsApp1
 
                 return valoresColumna;
             }
-        public void Agregarnotasexpedientes(long dni, string atendidoPor, string notanumero, string año, string reparticion, string memo, string save)
+        public void Agregarnotasexpedientes(long dni, string atendidoPor, string notanumero, string año, string reparticion, string memo, string save, string combinacion)
         {
             // Construir la consulta SQL para insertar los datos en la tabla "consulta"
-            string query = "INSERT INTO ccoodegdeba (agente, agentequetramito, notanumero, año, memo, reparticion, save) " +
-                           "VALUES (@dni, @atendidoPor, @notanumero, @año, @memo, @reparticion, @save)";
+            string query = "INSERT INTO ccoodegdeba (agente, agentequetramito, notanumero, año, memo, reparticion, save, LLAVE) " +
+                           "VALUES (@dni, @atendidoPor, @notanumero, @año, @memo, @reparticion, @save, @combinacion)";
 
             // Crear el objeto MySqlCommand con la consulta y la conexión a la base de datos
             MySqlCommand cmd = new MySqlCommand(query, conexion);
@@ -665,7 +665,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("@reparticion", reparticion);
             cmd.Parameters.AddWithValue("@memo", memo);
             cmd.Parameters.AddWithValue("@save", save);
-   
+            cmd.Parameters.AddWithValue("@LLAVE", combinacion);
             // Abrir la conexión a la base de datos
             Conectar();
             // Ejecutar la consulta SQL
@@ -683,11 +683,11 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No se pudo agregar la consulta.", "Error al agregar");
             }
         }
-        public void Agregarexpedientes(long dni, string atendidoPor, string notanumero, string año, string memo, string save)
+        public void Agregarexpedientes(long dni, string atendidoPor, string notanumero, string año, string memo, string save, string combinacion)
         {
             // Construir la consulta SQL para insertar los datos en la tabla "consulta"
-            string query = "INSERT INTO expedientes (agente, agentequetramito, año, expedientenumero, memo, archivo) " +
-                           "VALUES (@dni, @atendidoPor, @año, @notanumero, @memo, @save)";
+            string query = "INSERT INTO expedientes (agente, agentequetramito, año, expedientenumero, memo, archivo, LLAVE) " +
+                           "VALUES (@dni, @atendidoPor, @año, @notanumero, @memo, @save, @combinacion)";
 
             // Crear el objeto MySqlCommand con la consulta y la conexión a la base de datos
             MySqlCommand cmd = new MySqlCommand(query, conexion);
@@ -698,7 +698,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("@año", año);
             cmd.Parameters.AddWithValue("@memo", memo);
             cmd.Parameters.AddWithValue("@save", save);
-
+            cmd.Parameters.AddWithValue("@LLAVE", combinacion);
             // Abrir la conexión a la base de datos
             Conectar();
             // Ejecutar la consulta SQL
@@ -774,6 +774,17 @@ namespace WindowsFormsApp1
                         // Iterar a través de las filas y agregar los resultados a la lista
                         while (reader.Read())
                         {
+                            // Imprime cada resultado en la consola
+                            Console.WriteLine($"Apellido y Nombre: {reader["apelldo y nombre"]}");
+                            Console.WriteLine($"DNI: {reader["dni"]}");
+                            Console.WriteLine($"Ocupación: {reader["Ocupacion"]}");
+                            Console.WriteLine($"Fecha de Ingreso: {reader["Fecha de Ingreso"]}");
+                            Console.WriteLine($"Fecha de Nombramiento: {reader["fechadenom"]}");
+                            Console.WriteLine($"Regimen Horario: {reader["Regimen Horario"]}");
+                            Console.WriteLine($"Ley: {reader["Ley"]}");
+                            Console.WriteLine($"Legajo: {reader["Legajo"]}");
+                            Console.WriteLine($"Dependencia: {reader["Dependencia"]}");
+                            Console.WriteLine();
                             // Puedes ajustar este código según la estructura de tu consulta SQL
                             resultados.Add(reader["apelldo y nombre"].ToString());
                             resultados.Add(reader["dni"].ToString());
@@ -1118,7 +1129,6 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
         public int EjecutarNonQuery(string consulta, Dictionary<string, object> parametros = null)
         {
             int filasAfectadas = 0;
@@ -1148,8 +1158,6 @@ namespace WindowsFormsApp1
             }
             return filasAfectadas;
         }
-
-
         public void LlenarComboBox(string consulta, ComboBox comboBox, string displayMember, string valueMember)
         {
             try

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-  public class CARGARMESADEENTRADA
+    public class CARGARMESADEENTRADA
     {
         public void CargarDatos(ListView listView, string consulta, string[] columnas)
         {
@@ -140,8 +140,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
-        }
- 
- }
-            
-     
+    }
+
+}
+

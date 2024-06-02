@@ -1,15 +1,16 @@
 ﻿using Word = Microsoft.Office.Interop.Word;
 using System.Linq;
 using System;
-using System.Net;
-
+using System.Runtime.InteropServices;
+using System.Threading;
+using System.Windows.Forms;
 namespace WindowsFormsApp1.MODULOS
-{
-    internal class generarCertificadodetrabajo
+{// controlada
+    internal class GenerarCertificadodetrabajo
     {
         private readonly string Dnis_;
 
-        public generarCertificadodetrabajo(string dnis)
+        public GenerarCertificadodetrabajo(string dnis)
         {
             Dnis_ = dnis;
         }
@@ -22,20 +23,42 @@ namespace WindowsFormsApp1.MODULOS
                 // Obtén los datos de la base de datos
                 var datos = conexionMySQL.Certificadodetrabajo(Convert.ToInt64(Dnis_));
 
-                // Crea una instancia de Word
-                Word.Application wordApp = new Word.Application();
-                wordApp.Visible = true;
+                // Mecanismo de reintento
+                int maxRetries = 5;
+                int delay = 1000; // en milisegundos
 
-                // Crea un nuevo documento
-                Word.Document doc = wordApp.Documents.Add();
+                for (int i = 0; i < maxRetries; i++)
+                {
+                    try
+                    {
+                        // Crea una instancia de Word
+                        Word.Application wordApp = new Word.Application();
+                        wordApp.Visible = true;
 
-                // Agrega los datos al documento
-                AgregarDatos(doc, datos);
+                        // Crea un nuevo documento
+                        Word.Document doc = wordApp.Documents.Add();
+
+                        // Agrega los datos al documento
+                        AgregarDatos(doc, datos);
+
+                        MessageBox.Show("Certificado generado con éxito.");
+                        break; // Salir del bucle si la operación es exitosa
+                    }
+                    catch (COMException ex) when (ex.HResult == unchecked((int)0x80010001))
+                    {
+                        if (i == maxRetries - 1)
+                        {
+                            MessageBox.Show("Error: No se pudo abrir Microsoft Word. Inténtelo de nuevo más tarde.");
+                            throw;
+                        }
+                        Thread.Sleep(delay);
+                    }
+                }
             }
         }
 
-        private void AgregarParrafoConFormato(Word.Document doc, string nombreAgente, string fechaBeca, string fechaNombramiento, string ocupacion, string cargaHoraria, string dni, string legajo, string LEY, string dependencia)
-        {
+        private void AgregarParrafoConFormato(Word.Document doc, string nombreAgente, string ocupacion, string fechaBeca, string fechaNombramiento, string cargaHoraria, string LEY, string dni, string legajo,  string dependencia)
+        {                                                       //doc, nombreAgente, ocupacion, fechaBeca, fechaNombramiento, cargaHoraria, LEY, dni, legajo, dependencia                   
             // Convertir la fecha de nombramiento a DateTime
             DateTime fechaNombramientoDT = DateTime.Parse(fechaNombramiento);
 
@@ -77,27 +100,23 @@ namespace WindowsFormsApp1.MODULOS
             paragraph2.Range.Font.Size = 12;
             paragraph2.Format.SpaceAfter = 1; // Interlineado de 1
         }
-
-
-
         private void AgregarDatos(Word.Document doc, IQueryable<string> datos)
         {
             // Verifica si hay suficientes datos en la IQueryable
-            if (datos.Count() >= 5)
+            if (datos.Count() >= 9) // Asegúrate de que el IQueryable contenga al menos 9 elementos
             {
-                // Los primeros cinco elementos son utilizados en el ejemplo; ajusta según sea necesario
+                // Extrae los datos necesarios
                 string nombreAgente = datos.ElementAt(0);
-                string fechaBeca = datos.ElementAt(3);
-                string fechaNombramiento = datos.ElementAt(4);
-                string ocupacion = datos.ElementAt(2);
-                string cargaHoraria = datos.ElementAt(5);
-                string LEY= datos.ElementAt(6);
                 string dni = datos.ElementAt(1);
-                string Legajo= datos.ElementAt(7);
-                string dependencia= datos.ElementAt(8);
-                
+                string ocupacion = datos.ElementAt(2);
+                string fechaBeca = datos.ElementAt(3);
+                string fechaNombramiento = datos.ElementAt(4);                
+                string cargaHoraria = datos.ElementAt(5);
+                string LEY = datos.ElementAt(6);
+                string legajo = datos.ElementAt(7);                
+                string dependencia = datos.ElementAt(8);
                 // Agrega los datos al documento
-                AgregarParrafoConFormato(doc, nombreAgente, fechaBeca, fechaNombramiento, ocupacion, cargaHoraria, dni, Legajo, LEY, dependencia);
+                AgregarParrafoConFormato(doc, nombreAgente, ocupacion, fechaBeca, fechaNombramiento, cargaHoraria, LEY, dni, legajo, dependencia);
             }
             else
             {
