@@ -174,5 +174,10 @@ namespace WindowsFormsApp1
                 MessageBox.Show("ERROR.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void CRGTAREASVENTANILLAS_Click(object sender, EventArgs e)
+        {
+            ShowDialogIfControlsComplete(() => new formulariodetareasadquiridasenventanilla(Dnis_, Agentedeatencions_));
+        }
     }
 }

@@ -46,6 +46,7 @@
             this.PORDNI = new System.Windows.Forms.RadioButton();
             this.PORAPELLIDO = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CPIARDNIAGENTE = new System.Windows.Forms.Button();
             this.btnpedidos = new System.Windows.Forms.Button();
             this.BOTONBAJA = new System.Windows.Forms.Button();
             this.CORREGIRERRORES = new System.Windows.Forms.Button();
@@ -55,7 +56,7 @@
             this.CPOSTULANTES = new System.Windows.Forms.Button();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.cargaresoluciones1 = new System.Windows.Forms.Button();
-            this.CPIARDNIAGENTE = new System.Windows.Forms.Button();
+            this.CRGTAREASVENTANILLAS = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -247,6 +248,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SETS";
             // 
+            // CPIARDNIAGENTE
+            // 
+            this.CPIARDNIAGENTE.Location = new System.Drawing.Point(32, 137);
+            this.CPIARDNIAGENTE.Name = "CPIARDNIAGENTE";
+            this.CPIARDNIAGENTE.Size = new System.Drawing.Size(165, 40);
+            this.CPIARDNIAGENTE.TabIndex = 34;
+            this.CPIARDNIAGENTE.Text = "COPIAR DNI";
+            this.CPIARDNIAGENTE.UseVisualStyleBackColor = true;
+            this.CPIARDNIAGENTE.Click += new System.EventHandler(this.CPIARDNIAGENTE_Click);
+            // 
             // btnpedidos
             // 
             this.btnpedidos.Location = new System.Drawing.Point(796, 371);
@@ -334,15 +345,15 @@
             this.cargaresoluciones1.UseVisualStyleBackColor = true;
             this.cargaresoluciones1.Click += new System.EventHandler(this.cargaresoluciones_Click);
             // 
-            // CPIARDNIAGENTE
+            // CRGTAREASVENTANILLAS
             // 
-            this.CPIARDNIAGENTE.Location = new System.Drawing.Point(32, 137);
-            this.CPIARDNIAGENTE.Name = "CPIARDNIAGENTE";
-            this.CPIARDNIAGENTE.Size = new System.Drawing.Size(165, 40);
-            this.CPIARDNIAGENTE.TabIndex = 34;
-            this.CPIARDNIAGENTE.Text = "COPIAR DNI";
-            this.CPIARDNIAGENTE.UseVisualStyleBackColor = true;
-            this.CPIARDNIAGENTE.Click += new System.EventHandler(this.CPIARDNIAGENTE_Click);
+            this.CRGTAREASVENTANILLAS.Location = new System.Drawing.Point(386, 454);
+            this.CRGTAREASVENTANILLAS.Name = "CRGTAREASVENTANILLAS";
+            this.CRGTAREASVENTANILLAS.Size = new System.Drawing.Size(180, 49);
+            this.CRGTAREASVENTANILLAS.TabIndex = 34;
+            this.CRGTAREASVENTANILLAS.Text = "CARGAR TAREAS DE VENTANILLA";
+            this.CRGTAREASVENTANILLAS.UseVisualStyleBackColor = true;
+            this.CRGTAREASVENTANILLAS.Click += new System.EventHandler(this.CRGTAREASVENTANILLAS_Click);
             // 
             // FORMULARIOPRINCIPAL
             // 
@@ -350,6 +361,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1820, 702);
+            this.Controls.Add(this.CRGTAREASVENTANILLAS);
             this.Controls.Add(this.cargaresoluciones1);
             this.Controls.Add(this.CPOSTULANTES);
             this.Controls.Add(this.FOTOTARJETA);
@@ -410,5 +422,6 @@
         private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.Button cargaresoluciones1;
         private System.Windows.Forms.Button CPIARDNIAGENTE;
+        private System.Windows.Forms.Button CRGTAREASVENTANILLAS;
     }
 }

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.WindowsFormsApp1.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tareasadquiridiasTableAdapter" GeneratorDataComponentClassName="tareasadquiridiasTableAdapter" Name="tareasadquiridias" UserDataComponentName="tareasadquiridiasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT   tareasadquiridias.AGENTE, tareasadquiridias.AGENTEDETRABAJO, tareasadquiridias.ESTADO, tareasadquiridias.FECHADEADQUISICION, tareasadquiridias.id, tareasadquiridias.MEMO, tipotramite.TIPODETRAMITE AS TRAMITE, personal.`Apelldo y Nombre`
+FROM     personal, tareasadquiridias, tipotramite
+WHERE   personal.dni = tareasadquiridias.AGENTE AND tareasadquiridias.TAREAADQUIRIDA = tipotramite.ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="AGENTE" DataSetColumn="AGENTE" />
+              <Mapping SourceColumn="ESTADO" DataSetColumn="ESTADO" />
+              <Mapping SourceColumn="FECHADEADQUISICION" DataSetColumn="FECHADEADQUISICION" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="MEMO" DataSetColumn="MEMO" />
+              <Mapping SourceColumn="TRAMITE" DataSetColumn="TRAMITE" />
+              <Mapping SourceColumn="AGENTEDETRABAJO" DataSetColumn="AGENTEDETRABAJO" />
+              <Mapping SourceColumn="Apelldo y Nombre" DataSetColumn="Apelldo y Nombre" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tareasadquiridias" msprop:Generator_TableClassName="tareasadquiridiasDataTable" msprop:Generator_TableVarName="tabletareasadquiridias" msprop:Generator_RowChangedName="tareasadquiridiasRowChanged" msprop:Generator_TablePropName="tareasadquiridias" msprop:Generator_RowDeletingName="tareasadquiridiasRowDeleting" msprop:Generator_RowChangingName="tareasadquiridiasRowChanging" msprop:Generator_RowEvHandlerName="tareasadquiridiasRowChangeEventHandler" msprop:Generator_RowDeletedName="tareasadquiridiasRowDeleted" msprop:Generator_RowClassName="tareasadquiridiasRow" msprop:Generator_UserTableName="tareasadquiridias" msprop:Generator_RowEvArgName="tareasadquiridiasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AGENTE" msprop:Generator_ColumnVarNameInTable="columnAGENTE" msprop:Generator_ColumnPropNameInRow="AGENTE" msprop:Generator_ColumnPropNameInTable="AGENTEColumn" msprop:Generator_UserColumnName="AGENTE" type="xs:int" minOccurs="0" />
+              <xs:element name="ESTADO" msprop:Generator_ColumnVarNameInTable="columnESTADO" msprop:Generator_ColumnPropNameInRow="ESTADO" msprop:Generator_ColumnPropNameInTable="ESTADOColumn" msprop:Generator_UserColumnName="ESTADO" type="xs:int" minOccurs="0" />
+              <xs:element name="FECHADEADQUISICION" msprop:Generator_ColumnVarNameInTable="columnFECHADEADQUISICION" msprop:Generator_ColumnPropNameInRow="FECHADEADQUISICION" msprop:Generator_ColumnPropNameInTable="FECHADEADQUISICIONColumn" msprop:Generator_UserColumnName="FECHADEADQUISICION" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="MEMO" msprop:Generator_ColumnVarNameInTable="columnMEMO" msprop:Generator_ColumnPropNameInRow="MEMO" msprop:Generator_ColumnPropNameInTable="MEMOColumn" msprop:Generator_UserColumnName="MEMO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TRAMITE" msprop:Generator_ColumnVarNameInTable="columnTRAMITE" msprop:Generator_ColumnPropNameInRow="TRAMITE" msprop:Generator_ColumnPropNameInTable="TRAMITEColumn" msprop:Generator_UserColumnName="TRAMITE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AGENTEDETRABAJO" msprop:Generator_ColumnVarNameInTable="columnAGENTEDETRABAJO" msprop:Generator_ColumnPropNameInRow="AGENTEDETRABAJO" msprop:Generator_ColumnPropNameInTable="AGENTEDETRABAJOColumn" msprop:Generator_UserColumnName="AGENTEDETRABAJO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Apelldo_x0020_y_x0020_Nombre" msprop:Generator_ColumnVarNameInTable="columnApelldo_y_Nombre" msprop:Generator_ColumnPropNameInRow="Apelldo_y_Nombre" msprop:Generator_ColumnPropNameInTable="Apelldo_y_NombreColumn" msprop:Generator_UserColumnName="Apelldo y Nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:tareasadquiridias" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

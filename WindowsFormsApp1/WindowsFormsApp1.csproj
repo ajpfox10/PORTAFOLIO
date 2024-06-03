@@ -188,6 +188,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\formulariodetareasadquiridasenventanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\formulariodetareasadquiridasenventanilla.Designer.cs">
+      <DependentUpon>formulariodetareasadquiridasenventanilla.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMULARIOS\ASIGNARTAREAS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +334,9 @@
     <Compile Include="FORMULARIOS\Tareas.Designer.cs">
       <DependentUpon>Tareas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FORMULARIOS\formulariodetareasadquiridasenventanilla.resx">
+      <DependentUpon>formulariodetareasadquiridasenventanilla.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\ASIGNARTAREAS.resx">
       <DependentUpon>ASIGNARTAREAS.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,7 +406,19 @@
     <None Include="..\.editorconfig">
       <Link>CONF\.editorconfig</Link>
     </None>
+    <None Include="app.config" />
     <None Include="CONF\packages.config" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

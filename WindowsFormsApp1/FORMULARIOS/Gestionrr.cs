@@ -247,8 +247,7 @@ namespace WindowsFormsApp1
          }
         private void CARGAREXPEDIENTES_Click(object sender, EventArgs e)
         {
-            // Aquí obtén los valores necesarios y llama al método
-  
+            // Aquí obtén los valores necesarios y llama al métod
             long dni = Dnis_; // Reemplaza con el valor adecuado
             string atendidoPor = Agentedeatencions_; // Reemplaza con el valor adecuado
             string notanumero = NUMEROS.Text; // Reemplaza con el valor adecuado
@@ -270,7 +269,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    // Llamar al método para agregar notas de expedientes solo si tipos1 no es "EX"
+                    // Llamar al método para agregar notas de expedientes solo si tipos1 no es "EX" y proximamente mudar a otraq tabla
                     conexionMySQL.Agregarnotasexpedientes(dni, atendidoPor, notanumero, año, reparticion, memo, save, combinacion);
                 }
             }
@@ -282,6 +281,7 @@ namespace WindowsFormsApp1
             string CARGAACTOS = "SELECT ccoodegdeba.id, ccoodegdeba.agente, ccoodegdeba.agentequetramito AS 'AGENTE QUE TRAMITO', ccoodegdeba.notanumero AS 'NUMERO', ccoodegdeba.año, ccoodegdeba.reparticion, ccoodegdeba.memo, ccoodegdeba.save FROM ccoodegdeba WHERE AGENTE='" + Dnis_ + "' ORDER BY ccoodegdeba.save DESC";
             string[] CARGAACTOS2 = new string[] { "ID:75", "AGENTE:0", "AGENTE QUE TRAMITO:300", "NUMERO:175", "AÑO:125", "REPARTICION:125", "MEMO:125", "SAVE:190" };
             loader.CargarDatosYAcciones(EXP2, CARGAACTOS, CARGAACTOS2);
+
         }
         private void Cargacita_Click(object sender, EventArgs e)
         {

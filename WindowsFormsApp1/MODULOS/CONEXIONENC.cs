@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 
 namespace WindowsFormsApp1
-    {
+        {
         public class ConexionMySQL : IDisposable
         {
             private readonly string connectionString;
@@ -665,7 +665,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("@reparticion", reparticion);
             cmd.Parameters.AddWithValue("@memo", memo);
             cmd.Parameters.AddWithValue("@save", save);
-            cmd.Parameters.AddWithValue("@LLAVE", combinacion);
+            cmd.Parameters.AddWithValue("@combinacion", combinacion);
             // Abrir la conexión a la base de datos
             Conectar();
             // Ejecutar la consulta SQL
@@ -698,7 +698,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("@año", año);
             cmd.Parameters.AddWithValue("@memo", memo);
             cmd.Parameters.AddWithValue("@save", save);
-            cmd.Parameters.AddWithValue("@LLAVE", combinacion);
+            cmd.Parameters.AddWithValue("@combinacion", combinacion);
             // Abrir la conexión a la base de datos
             Conectar();
             // Ejecutar la consulta SQL
@@ -1103,29 +1103,41 @@ namespace WindowsFormsApp1
         {
             string query = "INSERT INTO estudios (estudios.estudioprimario, estudios.añoegresoprimario, estudios.estudiosecundario, estudios.añoegresosecundario, estudios.estudioterciario, estudios.añoegresoterciario, estudios.estudiouniversitario, estudios.añoegresouniversitario, estudios.DNI) " +
                             "VALUES (@ESCUELAPRIMARIA, @AÑOEGRESOESCUELAPRIMARIA, @escuelasecundaria, @añoegresoescuelasecundaria, @escuelaterciaria, @AÑOEGRESOESCULATERCIARIA, @ESCUELAUNIVERSITARIA, @AÑOEGRESOUNIVERSIDAD, @DNI)";
-            using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+            try
             {
-                cmd.Parameters.AddWithValue("@ESCUELAPRIMARIA", ESCUELAPRIMARIA);
-                cmd.Parameters.AddWithValue("@AÑOEGRESOESCUELAPRIMARIA", AÑOEGRESOESCUELAPRIMARIA);
-                cmd.Parameters.AddWithValue("@escuelasecundaria", escuelasecundaria); 
-                cmd.Parameters.AddWithValue("@añoegresoescuelasecundaria", añoegresoescuelasecundaria);
-                cmd.Parameters.AddWithValue("@escuelaterciaria", escuelaterciaria);
-                cmd.Parameters.AddWithValue("@AÑOEGRESOESCULATERCIARIA", AÑOEGRESOESCULATERCIARIA);
-                cmd.Parameters.AddWithValue("@ESCUELAUNIVERSITARIA", ESCUELAUNIVERSITARIA);
-                cmd.Parameters.AddWithValue("@DNI", DNI);
-                // Abrir la conexión a la base de datos
                 Conectar();
-                // Ejecutar la consulta SQL
-                int filasAfectadas = cmd.ExecuteNonQuery();
-                // Cerrar la conexión a la base de datos
-                Dispose();
-                if (filasAfectadas > 0)
+                using (MySqlCommand cmd = new MySqlCommand(query, conexion))
                 {
-                    MessageBox.Show("Los datos han sido actualizados con éxito.", "Actualización exitosa");
+                    cmd.Parameters.AddWithValue("@ESCUELAPRIMARIA", ESCUELAPRIMARIA);
+                    cmd.Parameters.AddWithValue("@AÑOEGRESOESCUELAPRIMARIA", AÑOEGRESOESCUELAPRIMARIA);
+                    cmd.Parameters.AddWithValue("@escuelasecundaria", escuelasecundaria);
+                    cmd.Parameters.AddWithValue("@añoegresoescuelasecundaria", añoegresoescuelasecundaria);
+                    cmd.Parameters.AddWithValue("@escuelaterciaria", escuelaterciaria);
+                    cmd.Parameters.AddWithValue("@AÑOEGRESOESCULATERCIARIA", AÑOEGRESOESCULATERCIARIA);
+                    cmd.Parameters.AddWithValue("@ESCUELAUNIVERSITARIA", ESCUELAUNIVERSITARIA);
+                    cmd.Parameters.AddWithValue("@AÑOEGRESOUNIVERSIDAD", AÑOEGRESOUNIVERSIDAD);
+                    cmd.Parameters.AddWithValue("@DNI", DNI);
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    if (filasAfectadas > 0)
+                    {
+                        MessageBox.Show("Los datos han sido actualizados con éxito.", "Actualización exitosa");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo actualizar los datos de estudios.", "Error al actualizar");
+                    }
                 }
-                else
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar la consulta: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
                 {
-                    MessageBox.Show("No se pudo actualizar los datos de estudios.", "Error al actualizar");
+                    conexion.Close();
                 }
             }
         }
@@ -1208,8 +1220,86 @@ namespace WindowsFormsApp1
 
             return resultado;
         }
-    }
+        public void Insertar( string AGENTEDETRABAJO, int AGENTE, int TAREAADQUIRIDA, DateTime FECHADEADQUISICION, string MEMO)
+        {
+            string query = "INSERT INTO tareasadquiridias (tareasadquiridias.AGENTEDETRABAJO, tareasadquiridias.AGENTE, tareasadquiridias.TAREAADQUIRIDA, tareasadquiridias.FECHADEADQUISICION, tareasadquiridias.MEMO) " +
+                            "VALUES (@AGENTEDETRABAJO, @AGENTE, @TAREAADQUIRIDA, @FECHADEADQUISICION, @MEMO)";
+            try
+            {
+                Conectar();
+                using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@AGENTEDETRABAJO", AGENTEDETRABAJO);
+                    cmd.Parameters.AddWithValue("@AGENTE", AGENTE);
+                    cmd.Parameters.AddWithValue("@TAREAADQUIRIDA", TAREAADQUIRIDA);
+                    cmd.Parameters.AddWithValue("@FECHADEADQUISICION", FECHADEADQUISICION);
+                    cmd.Parameters.AddWithValue("@MEMO", MEMO);
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    if (filasAfectadas > 0)
+                    {
+                        MessageBox.Show("Los datos han sido actualizados con éxito.", "Actualización exitosa");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo actualizar los datos de estudios.", "Error al actualizar");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar la consulta: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+        public void ActualizarDatosTAREAS(int ID, string ESTADOS, DateTime FECHADEFINALIZACION)
+        {
+            string query = "UPDATE tareasadquiridias SET ESTADO=@ESTADOS, FECHADEFINALIZACION=@FECHADEFINALIZACION WHERE ID=@ID";
+            MySqlCommand cmd = new MySqlCommand(query, conexion);
+            cmd.Parameters.AddWithValue("@ESTADOS", ESTADOS);
+            cmd.Parameters.AddWithValue("@FECHADEFINALIZACION", FECHADEFINALIZACION);
+            cmd.Parameters.AddWithValue("@ID", ID);
 
+            try
+            {
+                // Abrir la conexión a la base de datos
+                Conectar();
+                // Ejecutar la consulta SQL
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                // Cerrar la conexión a la base de datos
+                Dispose();
+
+                if (filasAfectadas > 0)
+                {
+                    // Mostrar mensaje de confirmación de actualización
+                    MessageBox.Show("Los datos han sido actualizados con éxito.", "Actualización exitosa");
+                }
+                else
+                {
+                    // Mostrar mensaje de error si no se pudo actualizar
+                    MessageBox.Show("No se pudo actualizar los datos.", "Error al actualizar");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Mostrar mensaje de error en caso de excepción
+                MessageBox.Show("Se produjo un error: " + ex.Message, "Error");
+            }
+            finally
+            {
+                // Asegurarse de cerrar la conexión en el bloque finally
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+    }
 }
 
 
