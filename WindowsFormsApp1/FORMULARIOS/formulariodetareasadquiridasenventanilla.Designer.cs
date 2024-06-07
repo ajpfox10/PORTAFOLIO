@@ -49,6 +49,14 @@ namespace WindowsFormsApp1
             this.label7 = new System.Windows.Forms.Label();
             this.CARGARTAREA = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apelldoYNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aGENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tRAMITEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eSTADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mEMODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tareasadquiridiasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new WindowsFormsApp1.DataSet1();
             this.tareasadquiridiasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -62,14 +70,10 @@ namespace WindowsFormsApp1
             this.MEMO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRAMITE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AGENTEDETRABAJO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apelldoYNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aGENTEDETRABAJODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aGENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tRAMITEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eSTADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mEMODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fECHADEADQUISICIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.foto = new System.Windows.Forms.CheckBox();
+            this.JURADASALARIO = new System.Windows.Forms.CheckBox();
+            this.REALIZODOMICILIO = new System.Windows.Forms.CheckBox();
+            this.legajohecho = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tareasadquiridiasBindingSource1)).BeginInit();
@@ -101,6 +105,7 @@ namespace WindowsFormsApp1
             this.DNI1.Name = "DNI1";
             this.DNI1.Size = new System.Drawing.Size(148, 26);
             this.DNI1.TabIndex = 37;
+            this.DNI1.TextChanged += new System.EventHandler(this.DNI1_TextChanged);
             // 
             // label3
             // 
@@ -114,7 +119,7 @@ namespace WindowsFormsApp1
             // PORDNI
             // 
             this.PORDNI.AutoSize = true;
-            this.PORDNI.Location = new System.Drawing.Point(18, 15);
+            this.PORDNI.Location = new System.Drawing.Point(18, 29);
             this.PORDNI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PORDNI.Name = "PORDNI";
             this.PORDNI.Size = new System.Drawing.Size(336, 24);
@@ -153,6 +158,7 @@ namespace WindowsFormsApp1
             this.DNI.Name = "DNI";
             this.DNI.Size = new System.Drawing.Size(202, 26);
             this.DNI.TabIndex = 1;
+            this.DNI.TextChanged += new System.EventHandler(this.DNI_TextChanged);
             // 
             // label4
             // 
@@ -202,7 +208,7 @@ namespace WindowsFormsApp1
             // TAREAS
             // 
             this.TAREAS.FormattingEnabled = true;
-            this.TAREAS.Location = new System.Drawing.Point(28, 128);
+            this.TAREAS.Location = new System.Drawing.Point(538, 214);
             this.TAREAS.Name = "TAREAS";
             this.TAREAS.Size = new System.Drawing.Size(241, 28);
             this.TAREAS.TabIndex = 19;
@@ -210,7 +216,7 @@ namespace WindowsFormsApp1
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 105);
+            this.label5.Location = new System.Drawing.Point(568, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 20);
             this.label5.TabIndex = 20;
@@ -236,7 +242,7 @@ namespace WindowsFormsApp1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(802, 332);
+            this.label7.Location = new System.Drawing.Point(706, 377);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(173, 20);
             this.label7.TabIndex = 24;
@@ -244,9 +250,9 @@ namespace WindowsFormsApp1
             // 
             // CARGARTAREA
             // 
-            this.CARGARTAREA.Location = new System.Drawing.Point(842, 182);
+            this.CARGARTAREA.Location = new System.Drawing.Point(806, 214);
             this.CARGARTAREA.Name = "CARGARTAREA";
-            this.CARGARTAREA.Size = new System.Drawing.Size(117, 52);
+            this.CARGARTAREA.Size = new System.Drawing.Size(224, 36);
             this.CARGARTAREA.TabIndex = 25;
             this.CARGARTAREA.Text = "CARGAR TAREA";
             this.CARGARTAREA.UseVisualStyleBackColor = true;
@@ -277,6 +283,78 @@ namespace WindowsFormsApp1
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // apelldoYNombreDataGridViewTextBoxColumn
+            // 
+            this.apelldoYNombreDataGridViewTextBoxColumn.DataPropertyName = "Apelldo y Nombre";
+            this.apelldoYNombreDataGridViewTextBoxColumn.HeaderText = "Apellido y Nombre";
+            this.apelldoYNombreDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.apelldoYNombreDataGridViewTextBoxColumn.Name = "apelldoYNombreDataGridViewTextBoxColumn";
+            this.apelldoYNombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.apelldoYNombreDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // aGENTEDETRABAJODataGridViewTextBoxColumn
+            // 
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn.DataPropertyName = "AGENTEDETRABAJO";
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn.HeaderText = "AGENTE DE TRABAJO";
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn.Name = "aGENTEDETRABAJODataGridViewTextBoxColumn";
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn.ReadOnly = true;
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn.Width = 150;
+            // 
+            // aGENTEDataGridViewTextBoxColumn
+            // 
+            this.aGENTEDataGridViewTextBoxColumn.DataPropertyName = "AGENTE";
+            this.aGENTEDataGridViewTextBoxColumn.HeaderText = "AGENTE";
+            this.aGENTEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.aGENTEDataGridViewTextBoxColumn.Name = "aGENTEDataGridViewTextBoxColumn";
+            this.aGENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.aGENTEDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tRAMITEDataGridViewTextBoxColumn
+            // 
+            this.tRAMITEDataGridViewTextBoxColumn.DataPropertyName = "TRAMITE";
+            this.tRAMITEDataGridViewTextBoxColumn.HeaderText = "TRAMITE";
+            this.tRAMITEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tRAMITEDataGridViewTextBoxColumn.Name = "tRAMITEDataGridViewTextBoxColumn";
+            this.tRAMITEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tRAMITEDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // eSTADODataGridViewTextBoxColumn
+            // 
+            this.eSTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO";
+            this.eSTADODataGridViewTextBoxColumn.HeaderText = "ESTADO";
+            this.eSTADODataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.eSTADODataGridViewTextBoxColumn.Name = "eSTADODataGridViewTextBoxColumn";
+            this.eSTADODataGridViewTextBoxColumn.ReadOnly = true;
+            this.eSTADODataGridViewTextBoxColumn.Width = 150;
+            // 
+            // mEMODataGridViewTextBoxColumn
+            // 
+            this.mEMODataGridViewTextBoxColumn.DataPropertyName = "MEMO";
+            this.mEMODataGridViewTextBoxColumn.HeaderText = "MEMO";
+            this.mEMODataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.mEMODataGridViewTextBoxColumn.Name = "mEMODataGridViewTextBoxColumn";
+            this.mEMODataGridViewTextBoxColumn.ReadOnly = true;
+            this.mEMODataGridViewTextBoxColumn.Width = 150;
+            // 
+            // fECHADEADQUISICIONDataGridViewTextBoxColumn
+            // 
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.DataPropertyName = "FECHADEADQUISICION";
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.HeaderText = "FECHA DE ADQUISICION";
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.Name = "fECHADEADQUISICIONDataGridViewTextBoxColumn";
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.Width = 150;
             // 
             // tareasadquiridiasBindingSource1
             // 
@@ -369,83 +447,57 @@ namespace WindowsFormsApp1
             this.AGENTEDETRABAJO.Name = "AGENTEDETRABAJO";
             this.AGENTEDETRABAJO.Width = 150;
             // 
-            // idDataGridViewTextBoxColumn
+            // foto
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 150;
+            this.foto.AutoSize = true;
+            this.foto.Location = new System.Drawing.Point(38, 72);
+            this.foto.Name = "foto";
+            this.foto.Size = new System.Drawing.Size(78, 24);
+            this.foto.TabIndex = 30;
+            this.foto.Text = "FOTO";
+            this.foto.UseVisualStyleBackColor = true;
             // 
-            // apelldoYNombreDataGridViewTextBoxColumn
+            // JURADASALARIO
             // 
-            this.apelldoYNombreDataGridViewTextBoxColumn.DataPropertyName = "Apelldo y Nombre";
-            this.apelldoYNombreDataGridViewTextBoxColumn.HeaderText = "Apellido y Nombre";
-            this.apelldoYNombreDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.apelldoYNombreDataGridViewTextBoxColumn.Name = "apelldoYNombreDataGridViewTextBoxColumn";
-            this.apelldoYNombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.apelldoYNombreDataGridViewTextBoxColumn.Width = 150;
+            this.JURADASALARIO.AutoSize = true;
+            this.JURADASALARIO.Location = new System.Drawing.Point(157, 72);
+            this.JURADASALARIO.Name = "JURADASALARIO";
+            this.JURADASALARIO.Size = new System.Drawing.Size(323, 24);
+            this.JURADASALARIO.TabIndex = 29;
+            this.JURADASALARIO.Text = "DECLARACION JURADA DE SALARIO";
+            this.JURADASALARIO.UseVisualStyleBackColor = true;
             // 
-            // aGENTEDETRABAJODataGridViewTextBoxColumn
+            // REALIZODOMICILIO
             // 
-            this.aGENTEDETRABAJODataGridViewTextBoxColumn.DataPropertyName = "AGENTEDETRABAJO";
-            this.aGENTEDETRABAJODataGridViewTextBoxColumn.HeaderText = "AGENTE DE TRABAJO";
-            this.aGENTEDETRABAJODataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.aGENTEDETRABAJODataGridViewTextBoxColumn.Name = "aGENTEDETRABAJODataGridViewTextBoxColumn";
-            this.aGENTEDETRABAJODataGridViewTextBoxColumn.ReadOnly = true;
-            this.aGENTEDETRABAJODataGridViewTextBoxColumn.Width = 150;
+            this.REALIZODOMICILIO.AutoSize = true;
+            this.REALIZODOMICILIO.Location = new System.Drawing.Point(214, 105);
+            this.REALIZODOMICILIO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.REALIZODOMICILIO.Name = "REALIZODOMICILIO";
+            this.REALIZODOMICILIO.Size = new System.Drawing.Size(193, 24);
+            this.REALIZODOMICILIO.TabIndex = 28;
+            this.REALIZODOMICILIO.Text = "REALIZO DOMICILIO";
+            this.REALIZODOMICILIO.UseVisualStyleBackColor = true;
             // 
-            // aGENTEDataGridViewTextBoxColumn
+            // legajohecho
             // 
-            this.aGENTEDataGridViewTextBoxColumn.DataPropertyName = "AGENTE";
-            this.aGENTEDataGridViewTextBoxColumn.HeaderText = "AGENTE";
-            this.aGENTEDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.aGENTEDataGridViewTextBoxColumn.Name = "aGENTEDataGridViewTextBoxColumn";
-            this.aGENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.aGENTEDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tRAMITEDataGridViewTextBoxColumn
-            // 
-            this.tRAMITEDataGridViewTextBoxColumn.DataPropertyName = "TRAMITE";
-            this.tRAMITEDataGridViewTextBoxColumn.HeaderText = "TRAMITE";
-            this.tRAMITEDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.tRAMITEDataGridViewTextBoxColumn.Name = "tRAMITEDataGridViewTextBoxColumn";
-            this.tRAMITEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tRAMITEDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // eSTADODataGridViewTextBoxColumn
-            // 
-            this.eSTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO";
-            this.eSTADODataGridViewTextBoxColumn.HeaderText = "ESTADO";
-            this.eSTADODataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.eSTADODataGridViewTextBoxColumn.Name = "eSTADODataGridViewTextBoxColumn";
-            this.eSTADODataGridViewTextBoxColumn.ReadOnly = true;
-            this.eSTADODataGridViewTextBoxColumn.Width = 150;
-            // 
-            // mEMODataGridViewTextBoxColumn
-            // 
-            this.mEMODataGridViewTextBoxColumn.DataPropertyName = "MEMO";
-            this.mEMODataGridViewTextBoxColumn.HeaderText = "MEMO";
-            this.mEMODataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.mEMODataGridViewTextBoxColumn.Name = "mEMODataGridViewTextBoxColumn";
-            this.mEMODataGridViewTextBoxColumn.ReadOnly = true;
-            this.mEMODataGridViewTextBoxColumn.Width = 150;
-            // 
-            // fECHADEADQUISICIONDataGridViewTextBoxColumn
-            // 
-            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.DataPropertyName = "FECHADEADQUISICION";
-            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.HeaderText = "FECHA DE ADQUISICION";
-            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.Name = "fECHADEADQUISICIONDataGridViewTextBoxColumn";
-            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.Width = 150;
+            this.legajohecho.AutoSize = true;
+            this.legajohecho.Location = new System.Drawing.Point(39, 105);
+            this.legajohecho.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.legajohecho.Name = "legajohecho";
+            this.legajohecho.Size = new System.Drawing.Size(153, 24);
+            this.legajohecho.TabIndex = 27;
+            this.legajohecho.Text = "LEGAJO ECHO ";
+            this.legajohecho.UseVisualStyleBackColor = true;
             // 
             // formulariodetareasadquiridasenventanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1778, 725);
+            this.Controls.Add(this.foto);
+            this.Controls.Add(this.JURADASALARIO);
+            this.Controls.Add(this.REALIZODOMICILIO);
+            this.Controls.Add(this.legajohecho);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.CARGARTAREA);
             this.Controls.Add(this.label7);
@@ -519,5 +571,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn eSTADODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mEMODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fECHADEADQUISICIONDataGridViewTextBoxColumn;
+        private System.Windows.Forms.CheckBox foto;
+        private System.Windows.Forms.CheckBox JURADASALARIO;
+        private System.Windows.Forms.CheckBox REALIZODOMICILIO;
+        private System.Windows.Forms.CheckBox legajohecho;
     }
 }

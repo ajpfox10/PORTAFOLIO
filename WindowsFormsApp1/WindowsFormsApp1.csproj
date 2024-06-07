@@ -193,6 +193,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet2.cs">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FORMULARIOS\formulariodetareasadquiridasenventanilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +342,12 @@
     <Compile Include="FORMULARIOS\Tareas.Designer.cs">
       <DependentUpon>Tareas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMULARIOS\Sistemasdenovedadesagente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Sistemasdenovedadesagente.Designer.cs">
+      <DependentUpon>Sistemasdenovedadesagente.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FORMULARIOS\formulariodetareasadquiridasenventanilla.resx">
       <DependentUpon>formulariodetareasadquiridasenventanilla.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,6 +417,9 @@
     <EmbeddedResource Include="FORMULARIOS\Tareas.resx">
       <DependentUpon>Tareas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Sistemasdenovedadesagente.resx">
+      <DependentUpon>Sistemasdenovedadesagente.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>CONF\.editorconfig</Link>
     </None>
@@ -418,6 +435,17 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -8,85 +8,43 @@ using WindowsFormsApp1.MODULOS;
 
 namespace WindowsFormsApp1
 {
-    public partial class formulariodetareasadquiridasenventanilla : Form
+    public partial class Sistemasdenovedadesagente : Form   
     {
         public Int64 Dnis_;
         public string Agentedeatencions_;
         private readonly PersonaLEVENTOS personaLEVENTOS;
         private readonly ConexionMySQL conexionMySQL;
-
-        public formulariodetareasadquiridasenventanilla(Int64 DNI, string agenteDeAtencion)
+        public Sistemasdenovedadesagente(Int64 DNI, string agenteDeAtencion)
         {
             InitializeComponent();
-            Dnis_ = DNI;
+            Dnis_ = DNI;//ActualizarDatosNOVEDADES
             Agentedeatencions_ = agenteDeAtencion;
             conexionMySQL = new ConexionMySQL();
             personaLEVENTOS = new PersonaLEVENTOS(apellido1, this.DNI, PORDNI, PORAPELLIDO, Agentedeatencions_, Dnis_);
-            CargarComboBoxTipoDeTramite();
         }
-        private void CargarComboBoxTipoDeTramite()
+        private void Sistemasdenovedadesagente_Load(object sender, EventArgs e)
         {
-            string consulta = "SELECT ID, TIPODETRAMITE AS `TIPO DE TRAMITE` FROM tipotramite";
-            DataTable dataTable = conexionMySQL.EjecutarConsulta(consulta);
-            TAREAS.DataSource = dataTable;
-            TAREAS.DisplayMember = "TIPO DE TRAMITE";
-            TAREAS.ValueMember = "ID";
-        }
-        private void buttonObtenerValor_Click(object sender, EventArgs e)
-        {
-            int idSeleccionado = Convert.ToInt32(TAREAS.SelectedValue);
-            string tramiteSeleccionado = TAREAS.Text;
-            MessageBox.Show($"ID seleccionado: {idSeleccionado}\nTrámite seleccionado: {tramiteSeleccionado}");
-        }
-        private void CARGARTAREA_Click(object sender, EventArgs e)
-        {
-            if (TAREAS.SelectedValue == null)
-            {
-                MessageBox.Show("Por favor, seleccione una tarea.", "Campo requerido");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(COMENTARIODETAREA.Text))
-            {
-                MessageBox.Show("Por favor, ingrese un comentario.", "Campo requerido");
-                return;
-            }
-
-            using (ConexionMySQL conexion = new ConexionMySQL())
-            {
-                conexionMySQL.Insertar(Agentedeatencions_, (int)Dnis_, (int)TAREAS.SelectedValue, DateTime.Now, COMENTARIODETAREA.Text);
-                recarga(Agentedeatencions_);
-            }
-
-            COMENTARIODETAREA.Text = "";
-        }
-        private void recarga(string Agentedeatencions_)
-        {
-            // Cargar todos los datos en el DataTable
-            this.tareasadquiridiasTableAdapter.Fill(this.dataSet1.tareasadquiridias);
-
-            // Filtrar los datos en memoria usando LINQ
-            var filasFiltradas = this.dataSet1.tareasadquiridias.AsEnumerable()
-                                        .Where(row => row.Field<int>("ESTADO") == 0 &&
-                                                      row.Field<string>("AGENTEDETRABAJO") == Agentedeatencions_);
-
-            // Crear un nuevo DataTable con las filas filtradas
-            DataTable dtFiltrado = filasFiltradas.Any() ? filasFiltradas.CopyToDataTable() : this.dataSet1.tareasadquiridias.Clone();
-
-            // Limpiar el DataGridView y cargar solo las filas filtradas
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = dtFiltrado;
-        }
-        private void formulariodetareasadquiridasenventanilla_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet1.tareasadquiridias' Puede moverla o quitarla según sea necesario.
-            this.tareasadquiridiasTableAdapter.Fill(this.dataSet1.tareasadquiridias);
-            recarga(Agentedeatencions_);
+            // TODO: esta línea de código carga datos en la tabla 'dataSet2.inconvenientesagentes' Puede moverla o quitarla según sea necesario.
+            this.inconvenientesagentesTableAdapter.Fill(this.dataSet2.inconvenientesagentes);
             List<Control> controles = new List<Control> { apellynombre, legajo, DNI, legajohecho, REALIZODOMICILIO, JURADASALARIO };
             List<string> nombresColumnas = new List<string> { "apellynombre", "legajo", "dni", "LEGAJO ECHO", "REALIZO CAMBIO DE DOMICILIO", "JURADASALRIO" };
             ConsultaMySQL consulta = new ConsultaMySQL("SELECT personal.`apelldo y nombre`, personal.Legajo, personal.dni, personal.`Legajo Hecho`, personal.realizodomicilio, personal.JURADASALARIO FROM personal WHERE personal.dni = '" + Dnis_ + "'", controles, nombresColumnas);
             consulta.EjecutarConsulta();
             consulta.Dispose();
+        }
+        private void CARGARTAREA_Click(object sender, EventArgs e)
+        {         
+            if (string.IsNullOrEmpty(COMENTARIODETAREA.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un comentario.", "Campo requerido");
+                return;
+            }
+            using (ConexionMySQL conexion = new ConexionMySQL())
+            {
+                conexionMySQL.ActualizarDatosNOVEDADES((int)Dnis_, Agentedeatencions_, COMENTARIODETAREA.Text);
+                recarga(Agentedeatencions_);
+            }
+            COMENTARIODETAREA.Text = "";
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -114,7 +72,7 @@ namespace WindowsFormsApp1
 
                 var valorPrimeraColumna = row.Cells[0].Value.ToString();
                 int id = int.Parse(valorPrimeraColumna);
-                conexionMySQL.ActualizarDatosTAREAS(id, "1", DateTime.Now);
+                conexionMySQL.ActualizarDatosTAREASnovedades(id, "1", DateTime.Now);
                 recarga(Agentedeatencions_);
             }
         }
@@ -150,7 +108,22 @@ namespace WindowsFormsApp1
             consulta.EjecutarConsulta();
             consulta.Dispose();
         }
+        private void recarga(string Agentedeatencions_)
+        {
+            // Cargar todos los datos en el DataTable
+            this.inconvenientesagentesTableAdapter.Fill(this.dataSet2.inconvenientesagentes);
+           
+            // Filtrar los datos en memoria usando LINQ
+            var filasFiltradas = this.dataSet2.inconvenientesagentes.AsEnumerable()
+                                        .Where(row => row.Field<int>("ESTADO") == 0 &&
+                                                      row.Field<int>("dniagente") == Dnis_);
 
+            // Crear un nuevo DataTable con las filas filtradas
+            DataTable dtFiltrado = filasFiltradas.Any() ? filasFiltradas.CopyToDataTable() : this.dataSet2.inconvenientesagentes.Clone();
 
+            // Limpiar el DataGridView y cargar solo las filas filtradas
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = dtFiltrado;
+        }
     }
 }

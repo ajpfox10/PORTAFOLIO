@@ -55,7 +55,24 @@ namespace WindowsFormsApp1
         private void SetDniAndAgent()
         {
             Dnis_ = Convert.ToInt64(DNI.Text);
-            Agentedeatencions_ = AGENTE.SelectedItem?.ToString();
+            //Agentedeatencions_ = AGENTE.SelectedItem?.ToString();
+
+
+            if (AGENTE.SelectedItem != null)
+            {
+                Agentedeatencions_ = AGENTE.SelectedItem.ToString();
+            }
+            else
+            {
+                // Mostrar mensaje al usuario
+                MessageBox.Show("No se ha seleccionado ningún agente de atención. La aplicación se cerrará.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // Cerrar la aplicación
+                Application.Exit();
+            }
+
+
+
         }
         private void ShowDialogIfControlsComplete<T>(Func<T> formFactory) where T : Form
         {
@@ -178,6 +195,11 @@ namespace WindowsFormsApp1
         private void CRGTAREASVENTANILLAS_Click(object sender, EventArgs e)
         {
             ShowDialogIfControlsComplete(() => new formulariodetareasadquiridasenventanilla(Dnis_, Agentedeatencions_));
+        }
+
+        private void INCONVENIENTES__Click(object sender, EventArgs e)
+        {
+            ShowDialogIfControlsComplete(() => new Sistemasdenovedadesagente(Dnis_, Agentedeatencions_));
         }
     }
 }

@@ -1299,6 +1299,94 @@ namespace WindowsFormsApp1
                 }
             }
         }
+        public void ActualizarDatosNOVEDADES(int dniagente, string agenteoficina, string MEMO)
+        {
+            string query = "INSERT INTO inconvenientesagentes (inconvenientesagentes.dniagente, inconvenientesagentes.agenteoficina, inconvenientesagentes.MEMO) " +
+                         "VALUES (@dniagente, @agenteoficina, @MEMO)";
+            MySqlCommand cmd = new MySqlCommand(query, conexion);
+            cmd.Parameters.AddWithValue("@dniagente", dniagente);
+            cmd.Parameters.AddWithValue("@agenteoficina", agenteoficina);
+            cmd.Parameters.AddWithValue("@MEMO", MEMO);
+
+            try
+            {
+                // Abrir la conexión a la base de datos
+                Conectar();
+                // Ejecutar la consulta SQL
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                // Cerrar la conexión a la base de datos
+                Dispose();
+
+                if (filasAfectadas > 0)
+                {
+                    // Mostrar mensaje de confirmación de actualización
+                    MessageBox.Show("Los datos han sido actualizados con éxito.", "Actualización exitosa");
+                }
+                else
+                {
+                    // Mostrar mensaje de error si no se pudo actualizar
+                    MessageBox.Show("No se pudo actualizar los datos.", "Error al actualizar");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Mostrar mensaje de error en caso de excepción
+                MessageBox.Show("Se produjo un error: " + ex.Message, "Error");
+            }
+            finally
+            {
+                // Asegurarse de cerrar la conexión en el bloque finally
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+        public void ActualizarDatosTAREASnovedades(int ID, string ESTADOS, DateTime fechadebaja)
+        {
+            string query = "UPDATE inconvenientesagentes SET ESTADO=@ESTADOS, fechadebaja=@fechadebaja WHERE ID=@ID";
+            MySqlCommand cmd = new MySqlCommand(query, conexion);
+            cmd.Parameters.AddWithValue("@ESTADOS", ESTADOS);
+            cmd.Parameters.AddWithValue("@fechadebaja", fechadebaja);
+            cmd.Parameters.AddWithValue("@ID", ID);
+
+            try
+            {
+                // Abrir la conexión a la base de datos
+                Conectar();
+                // Ejecutar la consulta SQL
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                // Cerrar la conexión a la base de datos
+                Dispose();
+
+                if (filasAfectadas > 0)
+                {
+                    // Mostrar mensaje de confirmación de actualización
+                    MessageBox.Show("Los datos han sido actualizados con éxito.", "Actualización exitosa");
+                }
+                else
+                {
+                    // Mostrar mensaje de error si no se pudo actualizar
+                    MessageBox.Show("No se pudo actualizar los datos.", "Error al actualizar");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Mostrar mensaje de error en caso de excepción
+                MessageBox.Show("Se produjo un error: " + ex.Message, "Error");
+            }
+            finally
+            {
+                // Asegurarse de cerrar la conexión en el bloque finally
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+
     }
 }
 

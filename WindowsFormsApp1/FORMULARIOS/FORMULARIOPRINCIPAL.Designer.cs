@@ -57,12 +57,13 @@
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.cargaresoluciones1 = new System.Windows.Forms.Button();
             this.CRGTAREASVENTANILLAS = new System.Windows.Forms.Button();
+            this.INCONVENIENTES_ = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MESAENTRADA
             // 
-            this.MESAENTRADA.Location = new System.Drawing.Point(596, 371);
+            this.MESAENTRADA.Location = new System.Drawing.Point(447, 304);
             this.MESAENTRADA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MESAENTRADA.Name = "MESAENTRADA";
             this.MESAENTRADA.Size = new System.Drawing.Size(177, 55);
@@ -93,7 +94,7 @@
             // 
             // BOTONCARGAFAMILIA
             // 
-            this.BOTONCARGAFAMILIA.Location = new System.Drawing.Point(386, 305);
+            this.BOTONCARGAFAMILIA.Location = new System.Drawing.Point(237, 238);
             this.BOTONCARGAFAMILIA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BOTONCARGAFAMILIA.Name = "BOTONCARGAFAMILIA";
             this.BOTONCARGAFAMILIA.Size = new System.Drawing.Size(180, 52);
@@ -104,7 +105,7 @@
             // 
             // CARGADAMICILIO
             // 
-            this.CARGADAMICILIO.Location = new System.Drawing.Point(796, 302);
+            this.CARGADAMICILIO.Location = new System.Drawing.Point(647, 235);
             this.CARGADAMICILIO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CARGADAMICILIO.Name = "CARGADAMICILIO";
             this.CARGADAMICILIO.Size = new System.Drawing.Size(190, 58);
@@ -115,7 +116,7 @@
             // 
             // FORMULARIODESIGNACION
             // 
-            this.FORMULARIODESIGNACION.Location = new System.Drawing.Point(386, 371);
+            this.FORMULARIODESIGNACION.Location = new System.Drawing.Point(237, 304);
             this.FORMULARIODESIGNACION.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FORMULARIODESIGNACION.Name = "FORMULARIODESIGNACION";
             this.FORMULARIODESIGNACION.Size = new System.Drawing.Size(180, 55);
@@ -126,7 +127,7 @@
             // 
             // CARGARFAMILIA
             // 
-            this.CARGARFAMILIA.Location = new System.Drawing.Point(596, 302);
+            this.CARGARFAMILIA.Location = new System.Drawing.Point(447, 235);
             this.CARGARFAMILIA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CARGARFAMILIA.Name = "CARGARFAMILIA";
             this.CARGARFAMILIA.Size = new System.Drawing.Size(177, 58);
@@ -155,7 +156,7 @@
             // 
             // BONIFICACIONS
             // 
-            this.BONIFICACIONS.Location = new System.Drawing.Point(200, 306);
+            this.BONIFICACIONS.Location = new System.Drawing.Point(51, 239);
             this.BONIFICACIONS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BONIFICACIONS.Name = "BONIFICACIONS";
             this.BONIFICACIONS.Size = new System.Drawing.Size(152, 54);
@@ -166,7 +167,7 @@
             // 
             // CUMPLEAÑOSS
             // 
-            this.CUMPLEAÑOSS.Location = new System.Drawing.Point(201, 371);
+            this.CUMPLEAÑOSS.Location = new System.Drawing.Point(52, 304);
             this.CUMPLEAÑOSS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CUMPLEAÑOSS.Name = "CUMPLEAÑOSS";
             this.CUMPLEAÑOSS.Size = new System.Drawing.Size(150, 52);
@@ -177,7 +178,7 @@
             // 
             // GESTIONRRHH
             // 
-            this.GESTIONRRHH.Location = new System.Drawing.Point(1332, 302);
+            this.GESTIONRRHH.Location = new System.Drawing.Point(1183, 235);
             this.GESTIONRRHH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GESTIONRRHH.Name = "GESTIONRRHH";
             this.GESTIONRRHH.Size = new System.Drawing.Size(242, 58);
@@ -260,7 +261,7 @@
             // 
             // btnpedidos
             // 
-            this.btnpedidos.Location = new System.Drawing.Point(796, 371);
+            this.btnpedidos.Location = new System.Drawing.Point(647, 304);
             this.btnpedidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnpedidos.Name = "btnpedidos";
             this.btnpedidos.Size = new System.Drawing.Size(190, 55);
@@ -271,7 +272,7 @@
             // 
             // BOTONBAJA
             // 
-            this.BOTONBAJA.Location = new System.Drawing.Point(1011, 369);
+            this.BOTONBAJA.Location = new System.Drawing.Point(862, 302);
             this.BOTONBAJA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BOTONBAJA.Name = "BOTONBAJA";
             this.BOTONBAJA.Size = new System.Drawing.Size(298, 55);
@@ -282,7 +283,7 @@
             // 
             // CORREGIRERRORES
             // 
-            this.CORREGIRERRORES.Location = new System.Drawing.Point(1011, 302);
+            this.CORREGIRERRORES.Location = new System.Drawing.Point(862, 235);
             this.CORREGIRERRORES.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CORREGIRERRORES.Name = "CORREGIRERRORES";
             this.CORREGIRERRORES.Size = new System.Drawing.Size(298, 58);
@@ -293,7 +294,7 @@
             // 
             // TAREASASIGNAR
             // 
-            this.TAREASASIGNAR.Location = new System.Drawing.Point(796, 452);
+            this.TAREASASIGNAR.Location = new System.Drawing.Point(647, 385);
             this.TAREASASIGNAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TAREASASIGNAR.Name = "TAREASASIGNAR";
             this.TAREASASIGNAR.Size = new System.Drawing.Size(190, 51);
@@ -304,18 +305,19 @@
             // 
             // ASIGNACIONTAREAS
             // 
-            this.ASIGNACIONTAREAS.Location = new System.Drawing.Point(200, 454);
+            this.ASIGNACIONTAREAS.Location = new System.Drawing.Point(51, 387);
             this.ASIGNACIONTAREAS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ASIGNACIONTAREAS.Name = "ASIGNACIONTAREAS";
             this.ASIGNACIONTAREAS.Size = new System.Drawing.Size(152, 49);
             this.ASIGNACIONTAREAS.TabIndex = 30;
             this.ASIGNACIONTAREAS.Text = "ASIGNACION DE TAREAS";
             this.ASIGNACIONTAREAS.UseVisualStyleBackColor = true;
+            this.ASIGNACIONTAREAS.Visible = false;
             this.ASIGNACIONTAREAS.Click += new System.EventHandler(this.ASIGNACIONTAREAS_Click);
             // 
             // FOTOTARJETA
             // 
-            this.FOTOTARJETA.Location = new System.Drawing.Point(1332, 371);
+            this.FOTOTARJETA.Location = new System.Drawing.Point(1183, 304);
             this.FOTOTARJETA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FOTOTARJETA.Name = "FOTOTARJETA";
             this.FOTOTARJETA.Size = new System.Drawing.Size(242, 54);
@@ -326,7 +328,7 @@
             // 
             // CPOSTULANTES
             // 
-            this.CPOSTULANTES.Location = new System.Drawing.Point(1332, 452);
+            this.CPOSTULANTES.Location = new System.Drawing.Point(1183, 384);
             this.CPOSTULANTES.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CPOSTULANTES.Name = "CPOSTULANTES";
             this.CPOSTULANTES.Size = new System.Drawing.Size(242, 51);
@@ -337,7 +339,7 @@
             // 
             // cargaresoluciones1
             // 
-            this.cargaresoluciones1.Location = new System.Drawing.Point(1011, 452);
+            this.cargaresoluciones1.Location = new System.Drawing.Point(862, 385);
             this.cargaresoluciones1.Name = "cargaresoluciones1";
             this.cargaresoluciones1.Size = new System.Drawing.Size(298, 49);
             this.cargaresoluciones1.TabIndex = 33;
@@ -347,7 +349,7 @@
             // 
             // CRGTAREASVENTANILLAS
             // 
-            this.CRGTAREASVENTANILLAS.Location = new System.Drawing.Point(386, 454);
+            this.CRGTAREASVENTANILLAS.Location = new System.Drawing.Point(237, 387);
             this.CRGTAREASVENTANILLAS.Name = "CRGTAREASVENTANILLAS";
             this.CRGTAREASVENTANILLAS.Size = new System.Drawing.Size(180, 49);
             this.CRGTAREASVENTANILLAS.TabIndex = 34;
@@ -355,12 +357,23 @@
             this.CRGTAREASVENTANILLAS.UseVisualStyleBackColor = true;
             this.CRGTAREASVENTANILLAS.Click += new System.EventHandler(this.CRGTAREASVENTANILLAS_Click);
             // 
+            // INCONVENIENTES_
+            // 
+            this.INCONVENIENTES_.Location = new System.Drawing.Point(447, 387);
+            this.INCONVENIENTES_.Name = "INCONVENIENTES_";
+            this.INCONVENIENTES_.Size = new System.Drawing.Size(177, 47);
+            this.INCONVENIENTES_.TabIndex = 35;
+            this.INCONVENIENTES_.Text = "INCONVENIENTES";
+            this.INCONVENIENTES_.UseVisualStyleBackColor = true;
+            this.INCONVENIENTES_.Click += new System.EventHandler(this.INCONVENIENTES__Click);
+            // 
             // FORMULARIOPRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1820, 702);
+            this.ClientSize = new System.Drawing.Size(1820, 836);
+            this.Controls.Add(this.INCONVENIENTES_);
             this.Controls.Add(this.CRGTAREASVENTANILLAS);
             this.Controls.Add(this.cargaresoluciones1);
             this.Controls.Add(this.CPOSTULANTES);
@@ -423,5 +436,6 @@
         private System.Windows.Forms.Button cargaresoluciones1;
         private System.Windows.Forms.Button CPIARDNIAGENTE;
         private System.Windows.Forms.Button CRGTAREASVENTANILLAS;
+        private System.Windows.Forms.Button INCONVENIENTES_;
     }
 }
