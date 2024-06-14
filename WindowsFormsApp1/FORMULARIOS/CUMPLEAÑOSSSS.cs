@@ -44,17 +44,17 @@ namespace WindowsFormsApp1
             }
         }
 
-
         private void CARGARS_Click(object sender, EventArgs e)
         {
             try
             {
                 ConexionMySQL conexion = new ConexionMySQL();
+
                 // Consulta SQL para obtener los registros que cumplen con los criterios de antigüedad
                 string consulta = "SELECT `APELLDO Y NOMBRE`, `FECHA DE INGRESO`, " +
                                   "YEAR(CURDATE()) - YEAR(STR_TO_DATE(`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
                                   "IF(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(STR_TO_DATE(`FECHA DE INGRESO`, '%d/%m/%Y'), '%m%d'), 1, 0) AS Antiguedad, " +
-                                  "YEAR(CURDATE()) - YEAR(STR_TO_DATE(`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
+                                  "YEAR(CURDATE()) - 1 - YEAR(STR_TO_DATE(`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
                                   "IF(DATE_FORMAT(CONCAT(YEAR(CURDATE()) - 1, '-12-31'), '%m%d') < DATE_FORMAT(STR_TO_DATE(`FECHA DE INGRESO`, '%d/%m/%Y'), '%m%d'), 1, 0) AS AntiguedadAnterior " +
                                   "FROM PERSONAL " +
                                   "WHERE ACTIVO = -1 " +
@@ -104,8 +104,6 @@ namespace WindowsFormsApp1
                 ANTIGUEDAD.Items.Add(item);
             }
         }
-
-
 
 
 
