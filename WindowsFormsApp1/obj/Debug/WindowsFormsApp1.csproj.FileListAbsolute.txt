@@ -1604,3 +1604,5 @@ D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\obj\
 D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.formulariodetareasadquiridasenventanilla.resources
 D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
 D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Sistemasdenovedadesagente.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.stass.resources
+D:\Users\foxtrot\Desktop\WindowsFormsApp1\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CUMPLEAÑOSSSS.resources
