@@ -1387,6 +1387,53 @@ namespace WindowsFormsApp1
         }
 
 
+        public DataTable EjecutarConsulta(string consulta, Dictionary<string, object> parametros = null)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                // Ensure the connection is established
+                Conectar();
+
+                using (MySqlCommand command = new MySqlCommand(consulta, conexion))
+                {
+                    if (parametros != null)
+                    {
+                        foreach (var parametro in parametros)
+                        {
+                            command.Parameters.AddWithValue(parametro.Key, parametro.Value);
+                        }
+                    }
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejecutar la consulta: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+
+            return dataTable;
+        }
+
+
+
+
+
+
+
+
     }
 }
 
