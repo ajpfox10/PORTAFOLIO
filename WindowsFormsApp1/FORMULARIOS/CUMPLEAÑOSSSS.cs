@@ -27,6 +27,7 @@ namespace WindowsFormsApp1
             {
                 // Llenar el ComboBox con los nombres de las columnas
                 cmbColumnas.Items.Add("APELLIDO Y NOMBRE");
+                cmbColumnas.Items.Add("dni");
                 cmbColumnas.Items.Add("FECHA DE INGRESO");
                 cmbColumnas.Items.Add("Antiguedad");
                 cmbColumnas.Items.Add("Antiguedad al año anterior");
@@ -34,6 +35,7 @@ namespace WindowsFormsApp1
                 // Selecciona la primera columna por defecto
                 cmbColumnas.SelectedIndex = 0;
                 cmbColumnasSecundario.Items.Add("APELLIDO Y NOMBRE");
+                cmbColumnas.Items.Add("dni");
                 cmbColumnasSecundario.Items.Add("FECHA DE INGRESO");
                 cmbColumnasSecundario.Items.Add("Antiguedad");
                 cmbColumnasSecundario.Items.Add("Antiguedad al año anterior");
@@ -60,15 +62,17 @@ namespace WindowsFormsApp1
             {
                 using (ConexionMySQL conexion = new ConexionMySQL())
                 {
-                    string consulta = "SELECT PERSONAL.`APELLDO Y NOMBRE` AS `APELLIDO Y NOMBRE`, PERSONAL.`FECHA DE INGRESO`, ley.Ley, " +
-                                      "YEAR(CURDATE()) - YEAR(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
-                                      "IF(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y'), '%m%d'), 1, 0) AS Antiguedad, " +
-                                      "YEAR(CURDATE()) - 1 - YEAR(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
-                                      "IF(DATE_FORMAT(DATE_SUB(CURDATE(), INTERVAL 1 YEAR), '%m%d') < DATE_FORMAT(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y'), '%m%d'), 1, 0) AS `Antiguedad al año anterior` " +
-                                      "FROM ley " +
-                                      "INNER JOIN PERSONAL ON ley.IDLEY = PERSONAL.Ley " +
-                                      "WHERE PERSONAL.ACTIVO = -1 " +
-                                      "ORDER BY PERSONAL.`APELLDO Y NOMBRE`, `Antiguedad al año anterior` DESC";
+                    string consulta =
+                    "SELECT PERSONAL.`APELLDO Y NOMBRE` AS `APELLIDO Y NOMBRE`, PERSONAL.dni, PERSONAL.`FECHA DE INGRESO`, ley.Ley, " +
+                    "YEAR(CURDATE()) - YEAR(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
+                    "IF(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y'), '%m%d'), 1, 0) AS Antiguedad, " +
+                    "YEAR(CURDATE()) - 1 - YEAR(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
+                    "IF(DATE_FORMAT(CONCAT(YEAR(CURDATE()) - 1, '-12-31'), '%m%d') < DATE_FORMAT(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y'), '%m%d'), 1, 0) AS `Antiguedad al año anterior` " +
+                    "FROM ley " +
+                    "INNER JOIN PERSONAL ON ley.IDLEY = PERSONAL.Ley " +
+                    "WHERE PERSONAL.ACTIVO = -1 " +
+                    "ORDER BY PERSONAL.`APELLDO Y NOMBRE`, `Antiguedad al año anterior` DESC;";
+
 
                     datosOriginales = conexion.EjecutarConsulta(consulta);
 
@@ -99,6 +103,7 @@ namespace WindowsFormsApp1
             foreach (DataRowView drv in dv)
             {
                 ListViewItem item = new ListViewItem(drv["APELLIDO Y NOMBRE"].ToString());
+                item.SubItems.Add(drv["dni"].ToString());
                 item.SubItems.Add(drv["FECHA DE INGRESO"].ToString());
                 item.SubItems.Add(drv["Antiguedad"].ToString());
                 item.SubItems.Add(drv["Antiguedad al año anterior"].ToString());
@@ -128,6 +133,7 @@ namespace WindowsFormsApp1
             foreach (DataRowView drv in dv)
             {
                 ListViewItem item = new ListViewItem(drv["APELLIDO Y NOMBRE"].ToString());
+                item.SubItems.Add(drv["dni"].ToString());
                 item.SubItems.Add(drv["FECHA DE INGRESO"].ToString());
                 item.SubItems.Add(drv["Antiguedad"].ToString());
                 item.SubItems.Add(drv["Antiguedad al año anterior"].ToString());
@@ -169,9 +175,10 @@ namespace WindowsFormsApp1
             ANTIGUEDAD.Items.Clear();
 
             ANTIGUEDAD.Columns.Add("APELLIDO Y NOMBRE", 250);
+            ANTIGUEDAD.Columns.Add("dni", 100);
             ANTIGUEDAD.Columns.Add("FECHA DE INGRESO", 150);
             ANTIGUEDAD.Columns.Add("Antiguedad", 100);
-            ANTIGUEDAD.Columns.Add("Antiguedad al año anterior", 100);
+            ANTIGUEDAD.Columns.Add("Antiguedad al año anterior", 175);
             ANTIGUEDAD.Columns.Add("Ley", 100);
 
            // ANTIGUEDAD.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -179,6 +186,7 @@ namespace WindowsFormsApp1
             foreach (DataRow row in dataTable.Rows)
             {
                 ListViewItem item = new ListViewItem(row["APELLIDO Y NOMBRE"].ToString());
+                item.SubItems.Add(row["dni"].ToString());
                 item.SubItems.Add(row["FECHA DE INGRESO"].ToString());
                 item.SubItems.Add(row["Antiguedad"].ToString());
                 item.SubItems.Add(row["Antiguedad al año anterior"].ToString());
