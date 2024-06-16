@@ -12,6 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class CUMPLEAÑOSSSS : Form
     {
+        private DataTable datosFiltrados = null;
         public CUMPLEAÑOSSSS()
         {
             InitializeComponent();
@@ -25,13 +26,20 @@ namespace WindowsFormsApp1
             try
             {
                 // Llenar el ComboBox con los nombres de las columnas
-                cmbColumnas.Items.Add("APELLDO Y NOMBRE");
+                cmbColumnas.Items.Add("APELLIDO Y NOMBRE");
                 cmbColumnas.Items.Add("FECHA DE INGRESO");
                 cmbColumnas.Items.Add("Antiguedad");
-                cmbColumnas.Items.Add("AntiguedadAnterior");
+                cmbColumnas.Items.Add("Antiguedad al año anterior");
                 cmbColumnas.Items.Add("Ley");
                 // Selecciona la primera columna por defecto
                 cmbColumnas.SelectedIndex = 0;
+                cmbColumnasSecundario.Items.Add("APELLIDO Y NOMBRE");
+                cmbColumnasSecundario.Items.Add("FECHA DE INGRESO");
+                cmbColumnasSecundario.Items.Add("Antiguedad");
+                cmbColumnasSecundario.Items.Add("Antiguedad al año anterior");
+                cmbColumnasSecundario.Items.Add("Ley");
+                // Selecciona la primera columna por defecto
+                cmbColumnasSecundario.SelectedIndex = 0;
                 // Código de inicialización
             }
             catch (Exception ex)
@@ -43,27 +51,28 @@ namespace WindowsFormsApp1
         {
             CargarDatos();
         }
+        // Declarar una variable para almacenar los datos originales cargados
+        private DataTable datosOriginales = null;
+        // Método para cargar los datos iniciales
         private void CargarDatos()
         {
             try
             {
                 using (ConexionMySQL conexion = new ConexionMySQL())
                 {
-                    string consulta = "SELECT PERSONAL.`APELLDO Y NOMBRE`, PERSONAL.`FECHA DE INGRESO`, ley.Ley, " +
-                                     "YEAR(CURDATE()) - YEAR(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
-                                     "IF(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y'), '%m%d'), 1, 0) AS Antiguedad, " +
-                                     "YEAR(CURDATE()) - 1 - YEAR(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
-                                     "IF(DATE_SUB(CURDATE(), INTERVAL 1 YEAR) < DATE_FORMAT(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y'), '%m%d'), 1, 0) AS AntiguedadAnterior " +
-                                     "FROM ley " +
-                                     "INNER JOIN PERSONAL ON ley.IDLEY = PERSONAL.Ley " +
-                                     "WHERE PERSONAL.ACTIVO = -1 " +
-                                     "ORDER BY PERSONAL.`APELLDO Y NOMBRE`, AntiguedadAnterior DESC";
+                    string consulta = "SELECT PERSONAL.`APELLDO Y NOMBRE` AS `APELLIDO Y NOMBRE`, PERSONAL.`FECHA DE INGRESO`, ley.Ley, " +
+                                      "YEAR(CURDATE()) - YEAR(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
+                                      "IF(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y'), '%m%d'), 1, 0) AS Antiguedad, " +
+                                      "YEAR(CURDATE()) - 1 - YEAR(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
+                                      "IF(DATE_FORMAT(DATE_SUB(CURDATE(), INTERVAL 1 YEAR), '%m%d') < DATE_FORMAT(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y'), '%m%d'), 1, 0) AS `Antiguedad al año anterior` " +
+                                      "FROM ley " +
+                                      "INNER JOIN PERSONAL ON ley.IDLEY = PERSONAL.Ley " +
+                                      "WHERE PERSONAL.ACTIVO = -1 " +
+                                      "ORDER BY PERSONAL.`APELLDO Y NOMBRE`, `Antiguedad al año anterior` DESC";
 
-                    DataTable resultado = conexion.EjecutarConsulta(consulta);
+                    datosOriginales = conexion.EjecutarConsulta(consulta);
 
-      
-
-                    LlenarListView(resultado);
+                    LlenarListView(datosOriginales);
                 }
             }
             catch (Exception ex)
@@ -71,76 +80,67 @@ namespace WindowsFormsApp1
                 MessageBox.Show($"Error en CargarDatos: {ex.Message}\n{ex.StackTrace}", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void LlenarListView(DataTable dataTable)
+        // Método para aplicar el segundo nivel de filtrado sobre los datos ya filtrados
+        private void AplicarFiltroSecundario()
         {
-            try
+            if (datosFiltrados == null)
+                return;
+
+            string columnaSeleccionada = cmbColumnasSecundario.SelectedItem.ToString();
+            string valorBuscado = txtBuscarSecundario.Text.ToLower(); // Convertir a minúsculas para comparación
+
+            DataView dv = new DataView(datosFiltrados);
+
+            // Aplicar el filtro utilizando Convert en la columna y el valor buscado
+            dv.RowFilter = $"CONVERT([{columnaSeleccionada}], 'System.String') LIKE '%{Convert.ToString(valorBuscado)}%'";
+
+            // Limpiar el ListView y volver a llenarlo con los datos filtrados
+            ANTIGUEDAD.Items.Clear();
+            foreach (DataRowView drv in dv)
             {
-                // Limpiar el ListView antes de llenarlo
-                ANTIGUEDAD.Items.Clear();
-                // Configurar las columnas si es necesario
-                ANTIGUEDAD.Columns.Clear();
-                ANTIGUEDAD.Columns.Add("APELLDO Y NOMBRE", 250);
-                ANTIGUEDAD.Columns.Add("FECHA DE INGRESO", 150);
-                ANTIGUEDAD.Columns.Add("Antiguedad", 100);
-                ANTIGUEDAD.Columns.Add("Antiguedad Al año anterior", 175);
-                ANTIGUEDAD.Columns.Add("Ley", 255);
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    ListViewItem item = new ListViewItem(row["APELLDO Y NOMBRE"].ToString());
-                    item.SubItems.Add(row["FECHA DE INGRESO"].ToString());
-                    item.SubItems.Add(row["Antiguedad"].ToString()); // Convertir a string si es necesario
-                    item.SubItems.Add(row["AntiguedadAnterior"].ToString()); // Convertir a string si es necesario
-                    item.SubItems.Add(row["Ley"].ToString());
-                    ANTIGUEDAD.Items.Add(item);
-                }
-                // Ajustar el ancho de las columnas automáticamente
-                //ANTIGUEDAD.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error en LlenarListView: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ListViewItem item = new ListViewItem(drv["APELLIDO Y NOMBRE"].ToString());
+                item.SubItems.Add(drv["FECHA DE INGRESO"].ToString());
+                item.SubItems.Add(drv["Antiguedad"].ToString());
+                item.SubItems.Add(drv["Antiguedad al año anterior"].ToString());
+                item.SubItems.Add(drv["Ley"].ToString());
+                ANTIGUEDAD.Items.Add(item);
             }
         }
-
-
-
-
-
-
-
-
+        // Método para filtrar los datos inicialmente
         private void FiltrarDatos()
         {
-            try
-            {
-                using (ConexionMySQL conexion = new ConexionMySQL())
-                {
-                    string columnaSeleccionada = cmbColumnas.SelectedItem.ToString();
-                    string valorBuscado = txtBuscar.Text;
+            if (datosOriginales == null)
+                return;
 
-                    string consulta = "SELECT PERSONAL.`APELLDO Y NOMBRE`, PERSONAL.`FECHA DE INGRESO`, " +
-                                      "YEAR(CURDATE()) - YEAR(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
-                                      "IF(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y'), '%m%d'), 1, 0) AS Antiguedad, " +
-                                      "YEAR(CURDATE()) - 1 - YEAR(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y')) - " +
-                                      "IF(DATE_FORMAT(CONCAT(YEAR(CURDATE()) - 1, '-12-31'), '%m%d') < DATE_FORMAT(STR_TO_DATE(PERSONAL.`FECHA DE INGRESO`, '%d/%m/%Y'), '%m%d'), 1, 0) AS AntiguedadAnterior " +
-                                      "FROM ley INNER JOIN PERSONAL ON ley.IDLEY = PERSONAL.Ley " +
-                                      "WHERE PERSONAL.ACTIVO = -1 AND " + columnaSeleccionada + " LIKE @valorBuscado " +
-                                      "ORDER BY PERSONAL.`APELLDO Y NOMBRE`, AntiguedadAnterior DESC";
+            string columnaSeleccionada = cmbColumnas.SelectedItem.ToString();
+            string valorBuscado = txtBuscar.Text.ToLower(); // Convertir a minúsculas para comparación
 
-                    var parametros = new Dictionary<string, object>
-            {
-                { "@valorBuscado", "%" + valorBuscado + "%" }
-            };
+            DataView dv = new DataView(datosOriginales);
 
-                    DataTable resultado = conexion.EjecutarConsulta(consulta, parametros);
-                    LlenarListView(resultado);
-                }
-            }
-            catch (Exception ex)
+            // Aplicar el filtro utilizando Convert en la columna y el valor buscado
+            dv.RowFilter = $"CONVERT([{columnaSeleccionada}], 'System.String') LIKE '%{Convert.ToString(valorBuscado)}%'";
+
+            // Guardar los datos filtrados para el segundo nivel de filtrado
+            datosFiltrados = dv.ToTable();
+
+            // Limpiar el ListView y volver a llenarlo con los datos filtrados
+            ANTIGUEDAD.Items.Clear();
+            foreach (DataRowView drv in dv)
             {
-                MessageBox.Show($"Error en FiltrarDatos: {ex.Message}\n{ex.StackTrace}", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ListViewItem item = new ListViewItem(drv["APELLIDO Y NOMBRE"].ToString());
+                item.SubItems.Add(drv["FECHA DE INGRESO"].ToString());
+                item.SubItems.Add(drv["Antiguedad"].ToString());
+                item.SubItems.Add(drv["Antiguedad al año anterior"].ToString());
+                item.SubItems.Add(drv["Ley"].ToString());
+                ANTIGUEDAD.Items.Add(item);
             }
         }
+        // Evento para manejar el cambio en el primer ComboBox y aplicar el primer nivel de filtrado
+        private void cmbColumnas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarDatos();
+        }
+        // Evento para manejar el cambio en el TextBox del primer filtro y aplicar el primer nivel de filtrado
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -149,9 +149,43 @@ namespace WindowsFormsApp1
                 e.Handled = true; // Evitar el sonido de "ding" al presionar Enter
             }
         }
+        // Evento para manejar el cambio en el segundo ComboBox y aplicar el segundo nivel de filtrado
+        private void cmbColumnasSecundario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AplicarFiltroSecundario();
+        }
+        // Evento para manejar el cambio en el TextBox del segundo filtro y aplicar el segundo nivel de filtrado
+        private void txtBuscarSecundario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                AplicarFiltroSecundario();
+                e.Handled = true; // Evitar el sonido de "ding" al presionar Enter
+            }
+        }
+        // Método para llenar el ListView
+        private void LlenarListView(DataTable dataTable)
+        {
+            ANTIGUEDAD.Items.Clear();
 
+            ANTIGUEDAD.Columns.Add("APELLIDO Y NOMBRE", 250);
+            ANTIGUEDAD.Columns.Add("FECHA DE INGRESO", 150);
+            ANTIGUEDAD.Columns.Add("Antiguedad", 100);
+            ANTIGUEDAD.Columns.Add("Antiguedad al año anterior", 100);
+            ANTIGUEDAD.Columns.Add("Ley", 100);
 
+           // ANTIGUEDAD.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
+            foreach (DataRow row in dataTable.Rows)
+            {
+                ListViewItem item = new ListViewItem(row["APELLIDO Y NOMBRE"].ToString());
+                item.SubItems.Add(row["FECHA DE INGRESO"].ToString());
+                item.SubItems.Add(row["Antiguedad"].ToString());
+                item.SubItems.Add(row["Antiguedad al año anterior"].ToString());
+                item.SubItems.Add(row["Ley"].ToString());
+                ANTIGUEDAD.Items.Add(item);
+            }
+        }
         private void ConfigurarMenuContextual(ListView listView)
         {
             ContextMenuStrip menuContextual = new ContextMenuStrip();

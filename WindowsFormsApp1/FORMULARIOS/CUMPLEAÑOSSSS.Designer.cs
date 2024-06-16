@@ -37,8 +37,8 @@ namespace WindowsFormsApp1
             this.CUMPLES = new System.Windows.Forms.ListView();
             this.cmbColumnas = new System.Windows.Forms.ComboBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.cmbColumnas2 = new System.Windows.Forms.ComboBox();
-            this.txtValorFiltrar2 = new System.Windows.Forms.TextBox();
+            this.cmbColumnasSecundario = new System.Windows.Forms.ComboBox();
+            this.txtBuscarSecundario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // CARGA
@@ -108,9 +108,9 @@ namespace WindowsFormsApp1
             // cmbColumnas
             // 
             this.cmbColumnas.FormattingEnabled = true;
-            this.cmbColumnas.Location = new System.Drawing.Point(28, 295);
+            this.cmbColumnas.Location = new System.Drawing.Point(12, 295);
             this.cmbColumnas.Name = "cmbColumnas";
-            this.cmbColumnas.Size = new System.Drawing.Size(121, 21);
+            this.cmbColumnas.Size = new System.Drawing.Size(159, 21);
             this.cmbColumnas.TabIndex = 11;
             // 
             // txtBuscar
@@ -121,28 +121,29 @@ namespace WindowsFormsApp1
             this.txtBuscar.TabIndex = 12;
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
-            // cmbColumnas2
+            // cmbColumnasSecundario
             // 
-            this.cmbColumnas2.FormattingEnabled = true;
-            this.cmbColumnas2.Location = new System.Drawing.Point(28, 348);
-            this.cmbColumnas2.Name = "cmbColumnas2";
-            this.cmbColumnas2.Size = new System.Drawing.Size(121, 21);
-            this.cmbColumnas2.TabIndex = 13;
+            this.cmbColumnasSecundario.FormattingEnabled = true;
+            this.cmbColumnasSecundario.Location = new System.Drawing.Point(12, 348);
+            this.cmbColumnasSecundario.Name = "cmbColumnasSecundario";
+            this.cmbColumnasSecundario.Size = new System.Drawing.Size(159, 21);
+            this.cmbColumnasSecundario.TabIndex = 13;
             // 
-            // txtValorFiltrar2
+            // txtBuscarSecundario
             // 
-            this.txtValorFiltrar2.Location = new System.Drawing.Point(26, 375);
-            this.txtValorFiltrar2.Name = "txtValorFiltrar2";
-            this.txtValorFiltrar2.Size = new System.Drawing.Size(123, 20);
-            this.txtValorFiltrar2.TabIndex = 14;
+            this.txtBuscarSecundario.Location = new System.Drawing.Point(26, 375);
+            this.txtBuscarSecundario.Name = "txtBuscarSecundario";
+            this.txtBuscarSecundario.Size = new System.Drawing.Size(123, 20);
+            this.txtBuscarSecundario.TabIndex = 14;
+            this.txtBuscarSecundario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarSecundario_KeyPress);
             // 
             // CUMPLEAÑOSSSS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1207, 537);
-            this.Controls.Add(this.txtValorFiltrar2);
-            this.Controls.Add(this.cmbColumnas2);
+            this.Controls.Add(this.txtBuscarSecundario);
+            this.Controls.Add(this.cmbColumnasSecundario);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.cmbColumnas);
             this.Controls.Add(this.CARGARS);
@@ -169,7 +170,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ListView CUMPLES;
         private System.Windows.Forms.ComboBox cmbColumnas;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.ComboBox cmbColumnas2;
-        private System.Windows.Forms.TextBox txtValorFiltrar2;
+        private System.Windows.Forms.ComboBox cmbColumnasSecundario;
+        private System.Windows.Forms.TextBox txtBuscarSecundario;
     }
 }
