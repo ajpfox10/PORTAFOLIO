@@ -30,15 +30,27 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PORDNI = new System.Windows.Forms.RadioButton();
             this.foto = new System.Windows.Forms.CheckBox();
             this.JURADASALARIO = new System.Windows.Forms.CheckBox();
             this.REALIZODOMICILIO = new System.Windows.Forms.CheckBox();
             this.legajohecho = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.aGENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eSTADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mEMODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tRAMITEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apelldoYNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tareasadquiridiasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new WindowsFormsApp1.DataSet1();
+            this.inconvenientesagentesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CARGARTAREA = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,16 +66,15 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.legajo = new System.Windows.Forms.TextBox();
             this.apellynombre = new System.Windows.Forms.TextBox();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechadeinicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inconvenientesagentesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet2 = new WindowsFormsApp1.DataSet2();
-            this.inconvenientesagentesTableAdapter = new WindowsFormsApp1.DataSet2TableAdapters.inconvenientesagentesTableAdapter();
+            this.tareasadquiridiasTableAdapter = new WindowsFormsApp1.DataSet1TableAdapters.tareasadquiridiasTableAdapter();
+            this.tareasadquiridiasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tareasadquiridiasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inconvenientesagentesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tareasadquiridiasBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // PORDNI
@@ -126,43 +137,135 @@ namespace WindowsFormsApp1
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.aGENTEDataGridViewTextBoxColumn,
+            this.eSTADODataGridViewTextBoxColumn,
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn,
             this.idDataGridViewTextBoxColumn,
-            this.fechadeinicioDataGridViewTextBoxColumn,
-            this.memoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.inconvenientesagentesBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.mEMODataGridViewTextBoxColumn,
+            this.tRAMITEDataGridViewTextBoxColumn,
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn,
+            this.apelldoYNombreDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.tareasadquiridiasBindingSource1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(14, 407);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1604, 232);
             this.dataGridView1.TabIndex = 43;
+            // 
+            // aGENTEDataGridViewTextBoxColumn
+            // 
+            this.aGENTEDataGridViewTextBoxColumn.DataPropertyName = "AGENTE";
+            this.aGENTEDataGridViewTextBoxColumn.HeaderText = "AGENTE";
+            this.aGENTEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.aGENTEDataGridViewTextBoxColumn.Name = "aGENTEDataGridViewTextBoxColumn";
+            this.aGENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.aGENTEDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // eSTADODataGridViewTextBoxColumn
+            // 
+            this.eSTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO";
+            this.eSTADODataGridViewTextBoxColumn.HeaderText = "ESTADO";
+            this.eSTADODataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.eSTADODataGridViewTextBoxColumn.Name = "eSTADODataGridViewTextBoxColumn";
+            this.eSTADODataGridViewTextBoxColumn.ReadOnly = true;
+            this.eSTADODataGridViewTextBoxColumn.Width = 150;
+            // 
+            // fECHADEADQUISICIONDataGridViewTextBoxColumn
+            // 
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.DataPropertyName = "FECHADEADQUISICION";
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.HeaderText = "FECHADEADQUISICION";
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.Name = "fECHADEADQUISICIONDataGridViewTextBoxColumn";
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fECHADEADQUISICIONDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // mEMODataGridViewTextBoxColumn
+            // 
+            this.mEMODataGridViewTextBoxColumn.DataPropertyName = "MEMO";
+            this.mEMODataGridViewTextBoxColumn.HeaderText = "MEMO";
+            this.mEMODataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.mEMODataGridViewTextBoxColumn.Name = "mEMODataGridViewTextBoxColumn";
+            this.mEMODataGridViewTextBoxColumn.ReadOnly = true;
+            this.mEMODataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tRAMITEDataGridViewTextBoxColumn
+            // 
+            this.tRAMITEDataGridViewTextBoxColumn.DataPropertyName = "TRAMITE";
+            this.tRAMITEDataGridViewTextBoxColumn.HeaderText = "TRAMITE";
+            this.tRAMITEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tRAMITEDataGridViewTextBoxColumn.Name = "tRAMITEDataGridViewTextBoxColumn";
+            this.tRAMITEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tRAMITEDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // aGENTEDETRABAJODataGridViewTextBoxColumn
+            // 
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn.DataPropertyName = "AGENTEDETRABAJO";
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn.HeaderText = "AGENTEDETRABAJO";
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn.Name = "aGENTEDETRABAJODataGridViewTextBoxColumn";
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn.ReadOnly = true;
+            this.aGENTEDETRABAJODataGridViewTextBoxColumn.Width = 150;
+            // 
+            // apelldoYNombreDataGridViewTextBoxColumn
+            // 
+            this.apelldoYNombreDataGridViewTextBoxColumn.DataPropertyName = "Apelldo y Nombre";
+            this.apelldoYNombreDataGridViewTextBoxColumn.HeaderText = "Apelldo y Nombre";
+            this.apelldoYNombreDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.apelldoYNombreDataGridViewTextBoxColumn.Name = "apelldoYNombreDataGridViewTextBoxColumn";
+            this.apelldoYNombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.apelldoYNombreDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tareasadquiridiasBindingSource
+            // 
+            this.tareasadquiridiasBindingSource.DataMember = "tareasadquiridias";
+            this.tareasadquiridiasBindingSource.DataSource = this.dataSet1BindingSource;
+            // 
+            // dataSet1BindingSource
+            // 
+            this.dataSet1BindingSource.DataSource = this.dataSet1;
+            this.dataSet1BindingSource.Position = 0;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // CARGARTAREA
             // 
@@ -311,46 +414,14 @@ namespace WindowsFormsApp1
             this.apellynombre.Size = new System.Drawing.Size(290, 26);
             this.apellynombre.TabIndex = 31;
             // 
-            // idDataGridViewTextBoxColumn
+            // tareasadquiridiasTableAdapter
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 150;
+            this.tareasadquiridiasTableAdapter.ClearBeforeFill = true;
             // 
-            // fechadeinicioDataGridViewTextBoxColumn
+            // tareasadquiridiasBindingSource1
             // 
-            this.fechadeinicioDataGridViewTextBoxColumn.DataPropertyName = "fechadeinicio";
-            this.fechadeinicioDataGridViewTextBoxColumn.HeaderText = "FECHA DE ALTA INCONVENIENTE";
-            this.fechadeinicioDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.fechadeinicioDataGridViewTextBoxColumn.Name = "fechadeinicioDataGridViewTextBoxColumn";
-            this.fechadeinicioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechadeinicioDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // memoDataGridViewTextBoxColumn
-            // 
-            this.memoDataGridViewTextBoxColumn.DataPropertyName = "memo";
-            this.memoDataGridViewTextBoxColumn.HeaderText = "MEMO";
-            this.memoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.memoDataGridViewTextBoxColumn.Name = "memoDataGridViewTextBoxColumn";
-            this.memoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.memoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // inconvenientesagentesBindingSource
-            // 
-            this.inconvenientesagentesBindingSource.DataMember = "inconvenientesagentes";
-            this.inconvenientesagentesBindingSource.DataSource = this.dataSet2;
-            // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // inconvenientesagentesTableAdapter
-            // 
-            this.inconvenientesagentesTableAdapter.ClearBeforeFill = true;
+            this.tareasadquiridiasBindingSource1.DataMember = "tareasadquiridias";
+            this.tareasadquiridiasBindingSource1.DataSource = this.dataSet1BindingSource;
             // 
             // Sistemasdenovedadesagente
             // 
@@ -377,10 +448,13 @@ namespace WindowsFormsApp1
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Sistemasdenovedadesagente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tareasadquiridiasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inconvenientesagentesBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inconvenientesagentesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tareasadquiridiasBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,11 +483,21 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox legajo;
         private System.Windows.Forms.TextBox apellynombre;
-        private DataSet2 dataSet2;
+        
         private System.Windows.Forms.BindingSource inconvenientesagentesBindingSource;
-        private DataSet2TableAdapters.inconvenientesagentesTableAdapter inconvenientesagentesTableAdapter;
+    
+        private System.Windows.Forms.BindingSource dataSet1BindingSource;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource tareasadquiridiasBindingSource;
+        private DataSet1TableAdapters.tareasadquiridiasTableAdapter tareasadquiridiasTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aGENTEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eSTADODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fECHADEADQUISICIONDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechadeinicioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn memoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mEMODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tRAMITEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aGENTEDETRABAJODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apelldoYNombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource tareasadquiridiasBindingSource1;
     }
 }

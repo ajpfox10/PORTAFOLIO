@@ -189,8 +189,7 @@ namespace WindowsFormsApp1
         }
 
         private void CUMPLEAÑOSS_Click(object sender, EventArgs e)
-        {
-       
+        {       
                 try
                 {
                     CUMPLEAÑOSSSS cumple = new CUMPLEAÑOSSSS();
@@ -363,6 +362,19 @@ namespace WindowsFormsApp1
             catch (Exception ex)
             {
                 MessageBox.Show($"Error en INCONVENIENTES__Click: {ex.Message}", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void stras_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                stass ESTAD = new stass();
+                ESTAD.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error en CUMPLEAÑOSS_Click: {ex.Message}", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

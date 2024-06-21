@@ -101,6 +101,7 @@ namespace WindowsFormsApp1
         }
         private void ActualizarDatosConNuevoDnis()
         {
+            Dnis_ = Convert.ToInt64(DNI1.Text);
             this.BackColor = Color.MediumPurple;
             DatosYAccionesLoader loader = new DatosYAccionesLoader(Dnis_);
             string consultaCitaciones = "SELECT dni, citadopor AS 'CITADO POR', id, MOTIVODECITACION AS 'MOTIVO DE LA CITACION', CITACIONACTIVA AS 'CITACION ACTIVA', FECHADECITACION AS 'FECHA DE CITACION', CIERREDECITACION AS 'CIERRE DE CITACION' FROM citaciones WHERE CIERREDECITACION IS NULL AND dni='" + Dnis_ + "' ORDER BY id DESC";
@@ -209,6 +210,21 @@ namespace WindowsFormsApp1
         private void dni_TextChanged(object sender, EventArgs e)
         {
            DNI1.Text = dni.Text;
+        }
+        private void MESADEENTRADA_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Realiza la limpieza de datos sensibles
+            Dnis_ = 0;
+            _Agentedeatencions = string.Empty;
+
+
+
+            // Si es necesario, puedes limpiar más controles o recursos
+        }
+
+        private void DNI1_DoubleClick(object sender, EventArgs e)
+        {
+            ActualizarDatosConNuevoDnis();
         }
     }
 }
