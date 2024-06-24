@@ -32,16 +32,15 @@ namespace WindowsFormsApp1
             string consultaPedidos = "SELECT pedidos.ID, personal.DNI, personal.`apelldo y nombre` AS 'APELLIDO Y NOMBRE', pedidos.PEDIDO, pedidos.agente, pedidos.fechadepedido AS 'FECHA DE PEDIDO' FROM pedidos INNER JOIN personal ON pedidos.dni = personal.dni WHERE activa IS NULL  ORDER BY id DESC";
             string[] columnasPedidos = new string[] { "ID:0", "DNI:0", "APELLIDO Y NOMBRE:250", "PEDIDO:500", "AGENTE:175", "FECHA DE PEDIDO:250" };
             loader.CargarDatosYAcciones(PEDIDOSSS, consultaPedidos, columnasPedidos);
-
-
             // Llamar al método para pintar los pedidos antiguos al cargar los datos
-           PintarPedidosAntiguos();
-            ImprimirPropiedadesListView();
+            PintarPedidosAntiguos();
+            MostrarMensajeAtraso();
         }
         private void CargarDatosEnTextBox(string dni, string pedido)
         {
             textBoxDNI.Text = dni;
             richpedidos.Text = pedido;
+            MostrarMensajeAtraso();
         }
         private void CBTRA_Click(object sender, EventArgs e)
         {
@@ -154,9 +153,15 @@ namespace WindowsFormsApp1
 
                 if (DateTime.TryParse(fechaPedidoString, out fechaPedido))
                 {
-                    if ((DateTime.Now - fechaPedido).TotalDays > 2)
+                    TimeSpan diferencia = DateTime.Now - fechaPedido;
+                    if (diferencia.Days == 1)
                     {
-                        item.BackColor = Color.Red;
+                        item.BackColor = Color.Yellow; // Pintar de amarillo los pedidos con un día de atraso
+                        item.ForeColor = Color.Black; // Color de texto por defecto
+                    }
+                    else if (diferencia.Days > 1)
+                    {
+                        item.BackColor = Color.Red; // Pintar de rojo los pedidos con más de un día de atraso
                         item.ForeColor = Color.White; // Color de texto blanco para mejor visibilidad
                     }
                     else
@@ -168,28 +173,67 @@ namespace WindowsFormsApp1
                 }
             }
         }
-        private void ImprimirPropiedadesListView()
+
+
+        private void MostrarMensajeAtraso()
         {
-            Console.WriteLine("Propiedades públicas del ListView (PEDIDOSSS):");
-            ListView listView = PEDIDOSSS; // Asigna tu ListView a una variable local
+            int tareasUnDiaAtraso = 0;
+            int tareasDosDiasAtraso = 0;
 
-            // Obtener todas las propiedades públicas
-            PropertyInfo[] propiedades = listView.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            // Obtener la fecha actual
+            DateTime fechaActual = DateTime.Now;
 
-            // Imprimir cada propiedad y su valor
-            foreach (PropertyInfo propiedad in propiedades)
+            // Iterar sobre los elementos del ListView
+            foreach (ListViewItem item in PEDIDOSSS.Items)
             {
-                try
+                // Obtener el texto de la tercera columna (índice 2)
+                string fechaPedidoString = item.SubItems[5].Text; // Columna "FECHA DE PEDIDO"
+                string nombreColumna = PEDIDOSSS.Columns[5].Text; // Nombre de la columna
+
+                // Depurar información sobre la columna actual
+                Console.WriteLine($"Analizando columna: {nombreColumna}");
+
+                DateTime fechaPedido;
+
+                // Intentar convertir la fecha de pedido a DateTime
+                if (DateTime.TryParse(fechaPedidoString, out fechaPedido))
                 {
-                    object valor = propiedad.GetValue(listView);
-                    Console.WriteLine($"{propiedad.Name}: {valor}");
+                    // Calcular los días de atraso
+                    int diasAtraso = (fechaActual - fechaPedido).Days;
+                    Console.WriteLine($"Días de atraso para el elemento: {diasAtraso}");
+                    // Contar tareas con 1 día de atraso
+                    if (diasAtraso == 1)
+                    {
+                        tareasUnDiaAtraso++;
+                    }
+                    // Contar tareas con 2 días de atraso
+                    else if (diasAtraso >= 2)
+                    {
+                        tareasDosDiasAtraso++;
+                        Console.WriteLine($"Días de atraso para el elemento: {tareasDosDiasAtraso}");
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    Console.WriteLine($"{propiedad.Name}: Error al obtener valor ({ex.Message})");
+                    // Manejar caso donde no se puede convertir la fecha de pedido
+                    Debug.WriteLine($"No se pudo convertir la fecha de pedido ({fechaPedidoString}) de la columna {nombreColumna}");
                 }
             }
+         
+            // Construir el mensaje solo si hay tareas con atraso
+            if (tareasUnDiaAtraso > 0 || tareasDosDiasAtraso > 0)
+            {
+                string mensaje = $"USTED TIENE {tareasUnDiaAtraso} TAREAS CON UN DÍA DE ATRASO Y {tareasDosDiasAtraso} TAREAS CON DOS DÍAS DE ATRASO AL LLEGAR A LOS 3 DIAS SE REPRTARA A SU CORDINADOR.";
+
+                // Mostrar el mensaje en un MessageBox
+                MessageBox.Show(mensaje, "Información Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
+
+
+
+
 
     }
 }
