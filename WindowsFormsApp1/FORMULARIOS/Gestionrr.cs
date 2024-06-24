@@ -976,7 +976,9 @@ namespace WindowsFormsApp1
                 {
                     // Actualiza el valor de Dnis_.
                     Dnis_ = nuevoDnisValor;
-
+                    DATS.Clear();
+                    DATSPERSONALES.Clear();
+                    DOMICILIOS.Clear();
                     // Realiza la actualización de los datos en tu formulario con el nuevo valor de Dnis_.
                     ActualizarDatosConNuevoDnis();
                 }
@@ -986,5 +988,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+
     }
 }

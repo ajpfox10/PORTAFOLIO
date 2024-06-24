@@ -25,7 +25,6 @@ namespace WindowsFormsApp1
         private ConexionMySQL conexion = new ConexionMySQL();
         private ListViewManager listViewManager;
         private DateTime ultimoClick = DateTime.Now;
-        private int intervaloDobleClick = 1000; // Intervalo en milisegundos para considerar un doble clic
         public MESADEENTRADA(Int64 DNI, string Agentedeatencions_)
         {
             InitializeComponent();
@@ -33,12 +32,7 @@ namespace WindowsFormsApp1
             _Agentedeatencions = Agentedeatencions_;
             personaLEVENTOS = new PersonaLEVENTOS(apellido1, this.dni, PORDNI, PORAPELLIDO, Agentedeatencions_, Dnis_);
             Load += MESADEENTRADA_Load;       
-            cargars.Click += Carga_Click_1;
-            citaciones.MouseDown += ListView_MouseDown;
-            PEDIDOS.MouseDown += ListView_MouseDown;
-            CONSULTASVIEJAS.MouseDown += ListView_MouseDown;
-            RESOLUCIONES.MouseDown += ListView_MouseDown;
-            EXPEDIENTES.MouseDown += ListView_MouseDown;
+            cargars.Click += Carga_Click_1;           
             pedidosManager = new ListViewManager(PEDIDOS, DATOSANALIZAR, Dnis_, Agentedeatencions_, webBrowser);
             resolucionesManager = new ListViewManager(RESOLUCIONES, DATOSANALIZAR, Dnis_, Agentedeatencions_, webBrowser);
             consultasViejasManager = new ListViewManager(CONSULTASVIEJAS, DATOSANALIZAR, Dnis_, Agentedeatencions_, webBrowser);
@@ -125,44 +119,6 @@ namespace WindowsFormsApp1
             consulta.EjecutarConsulta();
             consulta.Dispose();
         }
-        // Método para manejar el clic derecho en un ListViewItem
-        private void ListView_MouseDown(object sender, MouseEventArgs e)
-        {
-            ListView listView = sender as ListView;
-            if (e.Button == MouseButtons.Right)
-            {
-                TimeSpan diferencia = DateTime.Now - ultimoClick;
-                if (diferencia.TotalMilliseconds < intervaloDobleClick)
-                {
-                    // Es un doble clic derecho
-                    ListViewItem item = listView.GetItemAt(e.X, e.Y);
-                    if (item != null)
-                    {
-                        // Seleccionar el ítem sobre el que se hizo clic derecho
-                        listView.SelectedItems.Clear();
-                        item.Selected = true;
-                        // Obtener la columna en la que se hizo clic derecho
-                        int columnIndex = -1;
-                        for (int i = 0; i < listView.Columns.Count; i++)
-                        {
-                            if (listView.Columns[i].Width > e.X)
-                            {
-                                columnIndex = i;
-                                break;
-                            }
-                        }
-                        // Obtener el dato de la columna y fila seleccionada
-                        if (columnIndex != -1)
-                        {
-                            string datoSeleccionado = item.SubItems[columnIndex].Text;
-                            Clipboard.SetText(datoSeleccionado);
-                            MessageBox.Show($"Dato '{datoSeleccionado}' copiado al portapapeles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-                ultimoClick = DateTime.Now;
-            }
-        }
         private void CARGARPEDIDO_Click(object sender, EventArgs e)
         {
 
@@ -206,7 +162,6 @@ namespace WindowsFormsApp1
                 }
             }
         }
-        // Método para copiar un dato específico de una columna seleccionada de un ListView dado
         private void dni_TextChanged(object sender, EventArgs e)
         {
            DNI1.Text = dni.Text;
@@ -221,10 +176,53 @@ namespace WindowsFormsApp1
 
             // Si es necesario, puedes limpiar más controles o recursos
         }
-
         private void DNI1_DoubleClick(object sender, EventArgs e)
         {
             ActualizarDatosConNuevoDnis();
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // Capturar las teclas de función F1, F2, F3, F4, F5
+            switch (keyData)
+            {
+                case Keys.F1:
+                    CopiarTextoColumnaActual(0);
+                    return true;
+                case Keys.F2:
+                    CopiarTextoColumnaActual(1);
+                    return true;
+                case Keys.F3:
+                    CopiarTextoColumnaActual(2);
+                    return true;
+                case Keys.F4:
+                    CopiarTextoColumnaActual(3);
+                    return true;
+                case Keys.F5:
+                    CopiarTextoColumnaActual(4);
+                    return true;
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
+        private void CopiarTextoColumnaActual(int columnIndex)
+        {
+            ListView listView = GetActiveListView(); // Método para obtener el ListView activo
+            if (listView != null && listView.SelectedItems.Count > 0 && columnIndex >= 0 && columnIndex < listView.Columns.Count)
+            {
+                string datoSeleccionado = listView.SelectedItems[0].SubItems[columnIndex].Text;
+                Clipboard.SetText(datoSeleccionado);
+                MessageBox.Show($"Dato '{datoSeleccionado}' de la columna {columnIndex} copiado al portapapeles.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private ListView GetActiveListView()
+        {
+            // Método para obtener el ListView activo según el foco actual
+            Control focusedControl = this.ActiveControl;
+            if (focusedControl is ListView listView)
+                return listView;
+            else
+                return null;
+        }
+
     }
 }
